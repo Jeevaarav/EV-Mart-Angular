@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* text-transform:capitalize; */
+    transition: all .2s linear;
+}
+section{
+    padding: 2rem 7%;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.book{
+  display: inline-block;
+  border-radius:5rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color:#130f40;
+  background: #ffee80;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem;
+    background: url("../../assets/EV mart/header4.jpg");
+    align-items: center;
+}
+.header h3{
+    font-size: 3.5rem;
+    color: #f9d806;
+}
+
+.header .head{
+    display: flex;
+    gap: 5rem;
+}
+.header i{
+    font-size: 3rem;
+    padding-top: 1.1rem;
+    cursor: pointer;
+    color: #f9d806;
+}
+.header .Logo{
+    width:200px;
+    height:80px;
+    cursor: pointer;
+}
+.dashboard{
+    background-color: chartreuse;
+}
+.dashboard h3{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.secboards{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(30rem,1fr));
+    gap: 2rem;
+}
+.secboards a{
+    color: black;
+}
+.boards{
+    background-color: #ffee80;
+    padding: 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+.boards i{
+  color: #130f40;
+}
+.boards h3{
+  color: #130f40;
+}
+
+.secboards .boards{
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+}
+.secboards .boards h3{
+    font-size: 2rem;
+}
+.secboards .boards i{
+    font-size: 5rem;
+}
+.logo{
+    font-size: 2rem;
+}
+.boards:hover{
+  background-color: black;
+    color: white;
+    text-decoration: none;
+}
+.boards:hover h3{
+    color: white;
+    text-decoration: none;
+}
+.boards:hover i{
+  color: white;
+  text-decoration: none;
+}
+.secboards a:hover{
+  text-decoration: none;
+}

@@ -1,0 +1,48 @@
+<head>
+    <title>Vehicle Management</title>
+</head>
+<body>
+    <header class="head">
+        <nav>
+            <a href="/vehiclemanagement">Vehicle Brands</a>
+            <a href="#">Vehicle Category</a>
+        </nav>
+    </header>
+    <details class="vehbrand">
+      <summary>Customize Vehicle's Brand</summary><h6>Click the vehicle image to autofill the input and make ease of Customization</h6>
+  </details>
+   <section class="addveh">
+      <div class="form">
+      <form [formGroup]="vehadd" (ngSubmit)="vehadd.valid && vehicle()" class="addveh">
+        <div>
+          <input type="text" placeholder="Enter Brand name" class="box" name="brandname" id="brandname" formControlName="Brandname">
+          <div *ngIf="vehadd.controls['Brandname'].invalid && vehadd.controls['Brandname'].touched"></div>
+          <small *ngIf="vehadd.controls['Brandname'].errors?.['required'] && vehadd.controls['Brandname'].dirty">Enter vehicle Brandname</small>
+        </div>
+        <div>
+          <input type="text" placeholder="Enter image path" class="box" name="imgpath" id="imgpath" formControlName="image">
+          <small *ngIf="vehadd.controls['image'].errors?.['required'] && vehadd.controls['image'].dirty">Enter image path</small>
+        </div>
+        <div>
+          <textarea name="message"  cols="30" rows="10" class="box" placeholder="Type description of the Vehicle" id="text" formControlName="content"></textarea>
+          <div *ngIf="vehadd.controls['content'].invalid && vehadd.controls['content'].touched"></div>
+          <small *ngIf="vehadd.controls['content'].errors?.['required'] && vehadd.controls['content'].dirty">Enter Vehicle brand details</small>
+          <small *ngIf="vehadd.controls['content'].errors?.['minlength']">Provide more Information about Vehicle Brand</small>
+        </div>
+          <button type="submit" class="book1">Add Vehicle</button>
+          <!-- <button type="submit" class="book1" value="updvehicle" name="updvehicle">Update Vehicle</button> -->
+      </form>
+  </div>
+   </section>
+    <h1 class="heading">Brand of <span>vehicles</span></h1>
+    <section class="services" id="services">
+     <div class="box-container">
+
+         <div class="box" *ngFor="let vehbrand of vehbrandname">
+                 <h3 id="head">{{vehbrand.Brandname}}</h3>
+                 <img src="{{vehbrand.image}}" alt="{{vehbrand.image}}" id="img">
+                 <p id="content">{{vehbrand.content}}</p>
+         </div>
+
+     </div>
+

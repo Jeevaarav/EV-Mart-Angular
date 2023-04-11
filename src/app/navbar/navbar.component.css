@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.header{
+  position: sticky;
+  top: 0;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  z-index:1;
+  display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ background-color: #fff;
+  padding-left: 1.5rem 3%;
+}
+.header .Logo{
+width:200px;
+height:80px;
+cursor: pointer;
+}
+.header a{
+  padding: 1rem;
+  color: #130f40;
+  font-size: 1.7rem;
+}
+.header a:hover{
+  color: #f9d806;
+  text-decoration: none;
+  border-bottom:4px solid yellow;
+}
+.header img{
+  width: 220px;
+  height: 100px;
+}
+.header .logo:hover{
+  text-decoration: none;
+  border: none;
+}
+.book{
+  display: inline-block;
+  border-radius:5rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color:#130f40;
+  background: #ffee80;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(6, 76, 240, 0.233);
+  z-index: 1;
+  animation: formslide 0.5s linear;
+  transition: transform 1000ms ease-in-out;
+  transform-origin: top;
+}
+@keyframes formslide {
+from{
+  transform: scaleY(0);
+}
+to{
+  transform: scaleY(1);
+}
+}
+/*      signin               */
+
+.login-form{
+  top:-105%;
+  left: 0; height: 100%; width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form form{
+  padding: 2rem;
+  margin: 20rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  background: #fff;
+  border: .1rem solid rgba(0,0,0,.1);
+  text-align: center;
+  width: 40rem;
+}
+.login-form form .buttons{
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}
+.login-form form .book{
+  display: block;
+  width: 100%;
+  margin:.5rem 0;
+}
+.login-form form h3{
+ color: #130f40;
+ font-size: 2.5rem;
+ padding-bottom:1rem;
+ text-transform: uppercase;
+}
+.login-form form .box{
+  margin: .7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+  /* caret-color: lime; */
+}
+
+.login-form form p{
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: #666;
+}
+.login-form form #close{
+  font-size: 2rem;
+  cursor: pointer;
+  float: right;
+}
+.login-form form .link{
+  color: #f9d806;
+  padding-left: 0.3rem;
+}
+.login-form form .link:hover{
+  color: #f9d806;
+  text-decoration: underline;
+}
+small{
+  color: red;
+  font-size: 1.3rem;
+}
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+/* .ng-invalid:not(form){
+  border-color: red;
+} */

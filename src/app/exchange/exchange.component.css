@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+:host{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+html{
+  font-size: 60%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+.book{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: var(--light-yellow);
+    color:var(--black);
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+.exchange{
+  padding: 2rem 5%;
+}
+.exchange .eximg img{
+  width: 100%;
+    cursor: pointer;
+}
+.comparison{
+  padding-top: 7rem;
+}
+.comparison .grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.comparison .grid p{
+  font-weight: 700;
+  font-size: 5rem;
+  text-shadow: 1px 1px 1px #ffee80,1px 2px 1px #ffee80,
+                1px 3px 1px #ffee80,1px 4px 1px #ffee80,
+                1px 6px 6px rgba(16,16,16,0.4);
+  text-transform: none;
+}
+.comparison .grid img{
+  width: 500px;
+  height: 500px;
+}
+.comparison .grid .flex{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  flex-wrap: wrap;
+  width: 30%;
+}
+.comparison .grid .flex h4{
+  text-transform: none;
+  font-size: 2rem;
+  color: var(--black);
+}

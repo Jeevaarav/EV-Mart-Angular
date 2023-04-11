@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+:host{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+html{
+  font-size: 60%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+.book{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: var(--light-yellow);
+    color:var(--black);
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+.offimg{
+  display: grid;
+  place-items: center;
+  padding-bottom: 6rem;
+}
+.offimg img{
+  width: 70vw;
+  height: 70vh;
+}
+.offimg h1{
+  text-transform: uppercase;
+  color: #130f40;
+  font-weight: 700;
+  font-size: 5rem;
+  text-shadow: 1px 1px 1px #ffee80,1px 2px 1px #ffee80,
+                1px 3px 1px #ffee80,1px 4px 1px #ffee80,
+                1px 6px 6px rgba(16,16,16,0.4);
+}
+.displayoff{
+  padding: 2rem 5%;
+}
+.displayoff h1{
+  padding-bottom: 2rem;
+  text-align: center;
+  text-transform: none;
+  font-size: 4rem;
+  color: var(--black);
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #ffee80,1px 2px 1px #ffee80,
+                1px 3px 1px #ffee80,1px 4px 1px #ffee80,
+                1px 6px 6px rgba(16,16,16,0.4);
+}
+.displayoff .grid img{
+  width: 462px;
+  height: 320px;
+}
+.displayoff .grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+  gap: 7rem;
+}
+.displayoff .grid h4{
+  text-align: center;
+  color: #130f40;
+  font-size: 2rem;
+}
+.displayoff .grid .flex{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.displayoff .grid .flex:nth-child(1),.displayoff .grid .flex:nth-child(3){
+  gap: 2.3rem;
+}
+.displayoff .grid .flex .know a{
+ color: green;
+ font-size: 2rem;
+}
+.displayoff .grid .flex .know i{
+  color: green;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+.payment{
+  margin-top:3rem;
+  padding: 2rem 5%;
+}
+.payment h1{
+  padding-bottom: 2rem;
+  text-align: center;
+  color: #130f40;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #ffee80,1px 2px 1px #ffee80,
+                1px 3px 1px #ffee80,1px 4px 1px #ffee80,
+                1px 6px 6px rgba(16,16,16,0.4);
+}
+.payment .paygrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+  gap: 3rem;
+}
+.payment .paygrid #first{
+  background-color: #f3e4f1;
+  padding: 1.5rem;
+}
+.payment .paygrid #first p{
+  font-size: 2rem;
+}
+.payment .paygrid #first i{
+  font-size: 5rem;
+  color: green;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+.payment .paygrid #second{
+  background-color: #f3e4f1;
+  padding: 1.5rem;
+}
+.payment .paygrid #second p{
+  font-size: 2rem;
+}
+.payment .paygrid #second i{
+  font-size: 5rem;
+  color: green;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+.payment .paygrid .payflex{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.payment .paygrid .payflex #first img{
+width: 70px;
+height: 70px;
+margin-bottom:0.8rem;
+}
+.payment .paygrid .payflex #first .imgflex{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.payflex p{
+  text-align: justify;
+}

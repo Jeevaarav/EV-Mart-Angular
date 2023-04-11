@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+section{
+    padding: 1.5rem 5%;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.book{
+  display: inline-block;
+  border-radius:5rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color:#130f40;
+  background: #ffee80;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.foot{
+  background-color: black;
+}
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 9.5rem;
+  align-items: center;
+}
+.footer form button{
+  text-align: center;
+}
+.footer p{
+  color: #fff;
+  font-size: 2.5rem;
+  width: 100%;
+}
+.footer .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: #130f40;
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+.footer .box1{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.footer a{
+  color: #ffee80;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+i{
+  color: #f9d806;
+}
+.copyrights{
+  background: black;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.copyrights p{
+  font-size: 2rem;
+  color: #fff;
+  width: 100%;
+}
+.footer .box2{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.footer i{
+  padding-right: 1.2rem;
+  font-size: 2rem;
+}
+.aboutus{
+  width: 300px;
+}
+.aboutus h3{
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.aboutus p{
+  font-size: 1.5rem;
+  text-align: justify;
+  text-transform:initial;
+}
+.success{
+  color: green;
+  font-size:2rem;
+  padding: 1.5rem;
+}.success i{
+  color: green;
+  font-size: 2rem;
+  padding: 0;
+}

@@ -1,0 +1,111 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Register": [
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "reguser": "Mani1234",
+      "regpass": "Mani2001@",
+      "regconfirm": "Mani2001@",
+      "id": 1
+    },
+    {
+      "regemail": "jeevaaravinth2001@gmail.com",
+      "reguser": "Jeevaarav",
+      "regpass": "Jeeva2001@",
+      "regconfirm": "Jeeva2001@",
+      "id": 2
+    },
+    {
+      "regemail": "harishk@gmail.com",
+      "reguser": "harish12",
+      "regpass": "Harish2001@",
+      "regconfirm": "Harish2001@",
+      "id": 3
+    },
+    {
+      "regemail": "shyaam@gmail.com",
+      "reguser": "Shyaam12",
+      "regpass": "Shyaam2001@",
+      "regconfirm": "Shyaam2001@",
+      "id": 4
+    },
+    {
+      "regemail": "gopal@gmail.com",
+      "reguser": "Gopal123",
+      "regpass": "Gopal2001@",
+      "regconfirm": "Gopal2001@",
+      "id": 5
+    },
+    {
+      "regemail": "naveen@gmail.com",
+      "reguser": "Naveen12",
+      "regpass": "Naveen@123",
+      "regconfirm": "Hea",
+      "id": 6
+    },
+    {
+      "regemail": "babu@gmail.com",
+      "reguser": "Babu1234",
+      "regpass": "Babu@2001",
+      "regconfirm": "Babu@2001",
+      "id": 7
+    }
+  ],
+  "subscription": [
+    {
+      "mail": "jeevaaravinth2001@gmail.com",
+      "id": 1
+    },
+    {
+      "mail": "mani2002@gmail.com",
+      "id": 2
+    },
+    {
+      "mail": "harish@gmail.com",
+      "id": 3
+    }
+  ],
+  "vehicleBrands": [
+    {
+      "Brandname": "OLA S1",
+      "image": "../../assets/EV mart/OlA.png",
+      "content": "#EV Mart-With Mission Electric, We Pledge To Reject Petrol And Commit To Electric Vehicles By Making Sure No Petrol Two-Wheelers Are Sold In India After 2025. At The Heart Of Ola Electric Is Our Vision To Reduce Global Emissions And Fossil Fuel Dependency By Making India The Epic Centre Of Electrification. We Aim To Not Just Make Electric Vehicles But Engineer A Change In The Mindsets Of Every Indian, A Change That Powers The Vision Behind Mission Electric."
+    },
+    {
+      "Brandname": "Hero Electric",
+      "image": "../../assets/EV mart/Hero electric.png",
+      "content": "#EV Mart-HERO ELECTRIC Is A Pioneer And Market Leader In The Indian Electric Two-Wheeler Industry. We Have Been The From Runner For Electric Mobility In India For Over A Decade. We Believe In Offering An Ecological 2-Wheeler Solution To Our Consumers, Which Above All Else, Gives Our Customers Excellent Value For Money. Hero Electrics Endeavour To Make The Country Greener With Zero Pollution Transportation Through its Wide Range Of Electric Vehicles Is Supported By Our Mission Of 'No Emission'"
+    },
+    {
+      "Brandname": "Revolt",
+      "image": "../../assets/EV mart/Revolt.png",
+      "content": "#EV Mart-Revolt Motors Is The Next-Gen Mobility Company, Created For The Smart World. With Technology At Its Roots And A Class-Apart Product In The Works, Revolt Has Introduced India’s First AI-Enabled Motorcycle Without Compromising On The Performance Or Aesthetics Of A Regular Ride.Democratising Clean Commute Using Next-Gen Mobility Solutions.To Create A Future Of Next-Gen Mobility With 100% Accessibility And 0% Fuel Residue."
+    },
+    {
+      "Brandname": "Ather",
+      "image": "../../assets/EV mart/Ather.png",
+      "content": "#EV Mart-The Automobile Industry Is In The Midst Of A Huge Technological Disruption. Today, Electric Is The Preferred Choice Because Of Its Inherent Efficiency That Will Shape Urban Commute And The Cities Of Tomorrow. In Parallel, The World Around Us Is Getting Connected, Enabling Integration Of Devices And Making Our Life Experiences Seamless. Intelligent Vehicles Will Revolutionize Our Commute Experience In The Future And The Ather 450 Stands At The Cusp Of This Exciting Reality."
+    },
+    {
+      "Brandname": "Ampere",
+      "image": "../../assets/EV mart/ampere-removebg-preview.png",
+      "content": "#EV Mart-#NewAgeEnergy Is More Than Just Words, It Powers Ampere’s Dreams Of A Better Future, A Greener Environment, And A Healthier Planet Each Day We Make Sustainable Mobility More Accessible By Evolving To The Needs Of Our Riders And Our Planet.With The Foresight And Passion To Revolutionise Everyday Mobility. We Realised Our Dream Of A Sustainable Future And Set In Motion A Chain Of Events That Would Later Bring Eco-Friendly Mobility Within Everyone Grasp."
+    }
+  ]
+}
