@@ -13,7 +13,7 @@
     <a href="#">Contact</a>
     <a routerLink="offers">Offers</a>
   </nav>
-  <button type="button" class="book" id="book" (click)="open()">Login</button>
+  <button type="button" class="book" id="book" (click)="open()" >Login</button>
   <button type="button" class="book" id="book" *ngIf="btn">Logout</button>
 </header>
 
@@ -92,14 +92,18 @@
 <!------------------ forgotform1 ------------------------>
 <div class="background" *ngIf="forgot">
   <div class="login-form">
-    <form>
+    <form [formGroup]="forgotform1" (ngSubmit)="forgotpassword()">
     <button class="fa-solid fa-circle-xmark fa-beat" id="close" (click)="forgotclose()"></button>
 <h3>Recover Password</h3>
 <div class="control">
-        <input type="text" class="box" placeholder="Email" id="email" name="email" ><br><br>
+        <input type="text" class="box" placeholder="Email" id="email" name="email" formControlName="forgotemail"><br><br>
+        <small *ngIf="forgotform1.controls['forgotemail'].errors?.['required'] && forgotform1.controls['forgotemail'].dirty">Please enter email ID</small>
+        <small *ngIf="forgotform1.controls['forgotemail'].errors?.['pattern']">Please provide email ID</small>
       </div>
       <div class="control">
-        <input type="text" class="box" placeholder="Username" id="username" name="username" >
+        <input type="text" class="box" placeholder="Username" id="username" name="username" formControlName="forgotuser">
+        <small *ngIf="forgotform1.controls['forgotuser'].errors?.['required'] && forgotform1.controls['forgotuser'].dirty">Please enter username</small>
+        <small *ngIf="forgotform1.controls['forgotuser'].errors?.['pattern']">Provide proper username(Don't start with number)</small>
       </div>
         <button type="submit" class="book" (click)="forgotnewopen()">Submit</button>
       </form>

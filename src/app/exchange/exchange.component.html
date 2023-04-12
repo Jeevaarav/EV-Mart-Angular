@@ -19,4 +19,15 @@
       <div><img src="../../assets/EV mart/Leading Electric vehicle.png" alt="EV vs Petrol" title="EV vs Petrol"></div>
     </div>
   </section>
+  <section class="slideshow">
+  <div class="row">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let image of slides" class="slide">
+        <div>
+        <img src="{{image.img}}" width="100%"></div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  </section>
+
 </body>

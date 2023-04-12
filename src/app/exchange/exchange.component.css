@@ -77,3 +77,33 @@ html{
   font-size: 2rem;
   color: var(--black);
 }
+.slick-slider {
+  width: 60%;
+  margin: auto;
+}
+.slick-list{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.slick-dots li.slick-active button::before{
+  color:#f9d806;
+  font-size: 1.5rem;
+
+}
+.slick-dots li.slick-active button{
+  width: 30px;
+  height: 20px;
+}
+.slideshow{
+  padding: 1.4rem 2%;
+}
+.slide img{
+  width: 500px;
+  height: 500px;
+}
+.slideshow .slide{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
