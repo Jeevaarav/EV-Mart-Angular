@@ -19,7 +19,6 @@ export class ExchangeComponent {
     "autoplay":true,
     "autoplaySpeed":2500,
     "infinite":true,
-    "dots":true,
     verticalSwiping:true,
     vertical:true,
     pauseOnHover:false,

@@ -88,22 +88,25 @@ html{
 .slick-dots li.slick-active button::before{
   color:#f9d806;
   font-size: 1.5rem;
-
 }
 .slick-dots li.slick-active button{
   width: 30px;
   height: 20px;
 }
-.slideshow{
-  padding: 1.4rem 2%;
-}
 .slide img{
   width: 500px;
   height: 500px;
 }
-.slideshow .slide{
+.row{
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  flex-wrap: nowrap;
 }
+.dots div{
+  width: 10px;
+  height: 50px;
+  background-color: #130f40;
+}
+
+
 

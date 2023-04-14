@@ -65,6 +65,13 @@
       "regpass": "Babu@2001",
       "regconfirm": "Babu@2001",
       "id": 7
+    },
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "reguser": "Shreya_offl_03",
+      "regpass": "Jeeva@2222",
+      "regconfirm": "Jeeva@2222",
+      "id": 8
     }
   ],
   "subscription": [

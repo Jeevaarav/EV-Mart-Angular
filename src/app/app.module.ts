@@ -14,6 +14,8 @@ import { VehiclemanagementComponent } from './vehiclemanagement/vehiclemanagemen
 import { OffersComponent } from './offers/offers.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import {NgImageSliderModule} from 'ng-image-slider';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { RegisterpageComponent } from './registerpage/registerpage.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {NgImageSliderModule} from 'ng-image-slider';
     AdminComponent,
     VehiclemanagementComponent,
     OffersComponent,
-    ExchangeComponent
+    ExchangeComponent,
+    LoginpageComponent,
+    RegisterpageComponent,
   ],
   imports: [
     BrowserModule,

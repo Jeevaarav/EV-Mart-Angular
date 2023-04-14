@@ -6,6 +6,10 @@ import { ProductpageComponent } from './productpage/productpage.component';
 import { VehiclemanagementComponent } from './vehiclemanagement/vehiclemanagement.component';
 import { OffersComponent } from './offers/offers.component';
 import { ExchangeComponent } from './exchange/exchange.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { RegisterpageComponent } from './registerpage/registerpage.component';
+
+
 
 const routes: Routes = [
   {
@@ -15,6 +19,21 @@ const routes: Routes = [
   {
     path:"Product",
     component:ProductpageComponent
+  },
+  {
+    path:"login",
+    component:LoginpageComponent
+  },
+  {
+    path:"",
+    children:[{
+      path:"login/register",
+      component:RegisterpageComponent
+    }]
+  },
+  {
+    path:"register",
+    component:RegisterpageComponent
   },
   {
    path:"offers",
