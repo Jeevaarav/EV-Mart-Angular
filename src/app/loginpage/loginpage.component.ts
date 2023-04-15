@@ -15,9 +15,24 @@ import { ForgotService } from '../forgot.service';
   encapsulation:ViewEncapsulation.None
 })
 export class LoginpageComponent {
+  msg:any="";
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){ }
 login=this.form.group({
   email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
   password:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]]
 });
+check(a:any,b:any){
+  if(a=="" && b==""){
+    this.msg="Please fill the blanks";
+  }
+  else{
+    this.msg="";
+  }
+}
+logdetails(){
+  const email=this.login.controls['email'].value;
+  const password=this.login.controls['password'].value;
+  this.logincred.retrievedata(email,password);
+  this.login.reset();
+}
 }

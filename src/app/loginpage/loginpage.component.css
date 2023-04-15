@@ -36,8 +36,8 @@ html{
   z-index: 1;
 }
 .head img{
-  width: 300px;
-  height: 120px;
+  width: 250px;
+  height: 100px;
   cursor: pointer;
 }
 .head a{
@@ -62,9 +62,19 @@ to{
 }
 }
 /*      signin               */
-
+.section{
+  padding: 1rem 2%;
+}
+.small{
+  font-size: 1.5rem;
+}
+.msg{
+  background-color: rgba(254, 121, 104,0.3);
+  font-size: 2rem;
+}
 .login-form{
-  background: url("../../assets/EV mart/liquid-cheese.png");
+  /* background: url("../../assets/EV mart/liquid-cheese.png"); */
+  background-color: rgba(108, 122, 137,.2 );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

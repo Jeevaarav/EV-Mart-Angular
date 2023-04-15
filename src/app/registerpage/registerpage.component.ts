@@ -8,7 +8,11 @@ import { ForgotService } from '../forgot.service';
 @Component({
   selector: 'app-registerpage',
   templateUrl: './registerpage.component.html',
-  styleUrls: ['./registerpage.component.css']
+  styleUrls: ['./registerpage.component.css'],
+  encapsulation:ViewEncapsulation.None,
+  styles:[`.regform input.ng-valid{border: 2px solid green}`,`.regform input.ng-invalid && .regform input.ng-dirty{border:2px solid red}`,
+  `.logform input.ng-valid{border: 2px solid green}`,`.logform input.ng-invalid && .regform input.ng-dirty{border:2px solid red}`,
+  `.subform input.ng-invalid{border: none}` ]
 })
 export class RegisterpageComponent {
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){ }
@@ -18,4 +22,16 @@ export class RegisterpageComponent {
     regpass:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]],
     regconfirm:['',Validators.required]
   });
+  regdetails(){
+    this.logincred.savedata(this.register.value).subscribe(data=>{
+      alert("Thanks for registering EV Mart, Let's experience the EV world");
+      let user={
+        mail:this.register.controls['regemail'].value
+      }
+      this.logincred.sendEmail("http://localhost:4000/sendmail",user).subscribe((mailinfo:any)=>{
+      let res:any=mailinfo;
+      })
+      this.route.navigateByUrl('/login');
+    });
+  }
 }

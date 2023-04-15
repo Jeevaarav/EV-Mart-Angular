@@ -16,6 +16,8 @@ import { ExchangeComponent } from './exchange/exchange.component';
 import {NgImageSliderModule} from 'ng-image-slider';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { RegisterpageComponent } from './registerpage/registerpage.component';
     ExchangeComponent,
     LoginpageComponent,
     RegisterpageComponent,
+    ForgotpassComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { RegisterpageComponent } from './registerpage/registerpage.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgImageSliderModule
+    NgImageSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,5 +35,11 @@ export class LogincredentialsService {
         return alert("Invalid Details");
       }
     });
+
+
+  }
+  sendEmail(url:any,data:any){
+    console.log(url);
+    return this.http.post(url,data);
   }
 }

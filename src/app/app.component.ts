@@ -18,6 +18,12 @@ export class AppComponent {
           console.log(val.url);
           this.navopen1=false;
         }
+        else if(val.url=='/login/register'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/login/forgot1'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }

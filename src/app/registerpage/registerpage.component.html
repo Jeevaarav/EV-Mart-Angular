@@ -1,6 +1,7 @@
-<div class="background" >
+<div class="section">
+  <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
   <div class="login-form">
-    <form [formGroup]="register" (ngSubmit)="register.valid" class="regform">
+    <form [formGroup]="register" (ngSubmit)="register.valid && regdetails()" class="regform">
       <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
       <h3>Create new account</h3>
       <div class="control">
@@ -34,9 +35,9 @@
         </div>
       </div>
       <button type="submit" class="book">Register now</button>
-      <p id="text"><span id="span">Have</span> an account?<span id="span1"><a href="#" id="span1" class="link"
-            >Sign-in</a></span></p>
+      <p id="text"><span id="span">Have</span> an account?<span id="span1"><a routerLink="/login" id="span1" class="link">Sign-in</a></span></p>
 
     </form>
   </div>
 </div>
+

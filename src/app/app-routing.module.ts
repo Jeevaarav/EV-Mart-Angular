@@ -8,6 +8,8 @@ import { OffersComponent } from './offers/offers.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+
 
 
 
@@ -29,7 +31,16 @@ const routes: Routes = [
     children:[{
       path:"login/register",
       component:RegisterpageComponent
-    }]
+    },
+    {
+      path:"login/forgot1",
+      component:ForgotpassComponent
+    },
+  {
+    path:"",
+    component:LoginpageComponent
+  }
+]
   },
   {
     path:"register",
