@@ -17,6 +17,7 @@ import {NgImageSliderModule} from 'ng-image-slider';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
     LoginpageComponent,
     RegisterpageComponent,
     ForgotpassComponent,
+    ForgotnewComponent,
   ],
   imports: [
     BrowserModule,

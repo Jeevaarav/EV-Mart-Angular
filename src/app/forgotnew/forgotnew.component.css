@@ -146,15 +146,6 @@ input.ng-invalid.ng-touched{
   font-size: 2rem;
   text-transform: none;
 }
-.forgot .msg1{
-  color: red;
-  background-color: rgba(254, 121, 104,0.3);
-  font-size: 1.6rem;
-  text-transform: none;
-}
-br{
-  display: none;
-}
 /* .ng-invalid:not(form){
   border-color: red;
 } */

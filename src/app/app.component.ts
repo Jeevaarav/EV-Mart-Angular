@@ -24,6 +24,9 @@ export class AppComponent {
         else if(val.url=='/login/forgot1'){
           this.navopen1=false;
         }
+        else if(val.url=='/login/forgot1/forgotnew'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }

@@ -20,30 +20,16 @@
     {
       "regemail": "2k19me070@kiot.ac.in",
       "reguser": "Mani1234",
-      "regpass": "Mani2001@",
-      "regconfirm": "Mani2001@",
+      "regpass": "Jeeva@2001",
+      "regconfirm": "Jeeva@2001",
       "id": 1
     },
     {
       "regemail": "jeevaaravinth2001@gmail.com",
       "reguser": "Jeevaarav",
-      "regpass": "Jeeva2001@",
-      "regconfirm": "Jeeva2001@",
+      "regpass": "Aravinth@2001",
+      "regconfirm": "Aravinth@2001",
       "id": 2
-    },
-    {
-      "regemail": "shyaam@gmail.com",
-      "reguser": "Shyaam123",
-      "regpass": "Shyaam@2001",
-      "regconfirm": "Shyaam@2001",
-      "id": 3
-    },
-    {
-      "regemail": "shyaam@gmail.com",
-      "reguser": "Mani1235",
-      "regpass": "Mani2001@",
-      "regconfirm": "Mani2001@",
-      "id": 4
     },
     {
       "regemail": "shyaam@gmail.com",
@@ -55,9 +41,15 @@
     {
       "regemail": "electricveemart@gmail.com",
       "reguser": "Electric",
-      "regpass": "Electric@02",
-      "regconfirm": "Electric@20",
+      "regpass": "Electric@2023",
+      "regconfirm": "Electric@2023",
       "id": 6
+    },
+    {
+      "regemail": "manidhanush2001@gmail.com",
+      "reguser": "Manikandan",
+      "regpass": "@Mani2004",
+      "regconfirm": "@Mani2004"
     }
   ],
   "subscription": [

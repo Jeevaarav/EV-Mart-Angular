@@ -1,0 +1,23 @@
+<div class="section">
+  <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
+  <div class="login-form">
+    <form [formGroup]="forgotnew" class="forgotnew" (ngSubmit)="forgotnew.valid && changepass(email.value)">
+      <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
+      <h3>Recover Password</h3>
+      <div>
+        <input type="email"  class="box" id="email"  value="{{inputmsg}}" readonly placeholder="Enter Email ID" #email>
+        <!-- <small *ngIf="forgotnew.controls['foremail'].errors?.['required'] && forgotnew.controls['foremail'].dirty">We need your mail ID</small> -->
+      </div>
+      <div>
+        <input type="password" placeholder="New password" class="box" id="pass" name="pass" formControlName="forpass">
+        <small *ngIf="forgotnew.controls['forpass'].errors?.['required'] && forgotnew.controls['forpass'].dirty">We need your new password</small>
+        <small *ngIf="forgotnew.controls['forpass'].errors?.['pattern']">Kindly use uppercase,special characters</small>
+      </div>
+      <div>
+        <input type="password" placeholder="Confirm password" class="box" id="confirmpass" name="confirmpass" formControlName="confirmpass">
+        <small *ngIf="forgotnew.controls['confirmpass'].errors?.['required'] && forgotnew.controls['confirmpass'].dirty">Enter confirm password</small>
+      </div>
+        <button type="submit" class="book">Change Password</button>
+    </form>
+  </div>
+</div>

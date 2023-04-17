@@ -9,6 +9,7 @@ import { ExchangeComponent } from './exchange/exchange.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 
 
 
@@ -35,6 +36,10 @@ const routes: Routes = [
     {
       path:"login/forgot1",
       component:ForgotpassComponent
+    },
+    {
+      path:"login/forgot1/forgotnew",
+      component:ForgotnewComponent
     },
   {
     path:"",
