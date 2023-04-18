@@ -11,8 +11,8 @@
           <h3>{{vehicle.Brandname}}</h3>
           <img src="{{vehicle.image}}" alt="">
           <p>{{vehicle.content}}</p>
-          <a href="#" class="book">test ride</a>
-          <a href="#" class="book">order now</a>
+          <button class="book" (click)="ride(this.vehicle)">Test ride</button>
+          <a href="#"><button class="book" >Order now</button></a>
       </div>
   </div>
 </section>

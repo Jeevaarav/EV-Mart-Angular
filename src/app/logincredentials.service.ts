@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class LogincredentialsService {
   closenav:boolean=true;
+  custemail:any;
+  regcheck:any;
   constructor(private http:HttpClient,private route:Router) {
   }
   savedata(a:any){
@@ -23,6 +25,7 @@ export class LogincredentialsService {
         return logged.regemail===custmail && logged.regpass===custpass;
       });
       if(user){
+        this.custemail=custmail;
       this.route.navigateByUrl("/Product");
       return alert("Login Successfull");
       }
@@ -41,5 +44,30 @@ export class LogincredentialsService {
   sendEmail(url:any,data:any){
     console.log(url);
     return this.http.post(url,data);
+  }
+
+  registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any){
+    this.http.get<any>("http://localhost:3000/Register").subscribe((check)=>{
+      const regcheck=check.find((find:any)=>{
+        return find.regemail==regmail;
+      });
+      if(regcheck){
+        this.regcheck="Email Id already exist, sign-in instead";
+        return this.regcheck;
+      }
+      else{
+        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm}).subscribe((data)=>{
+        alert("Thanks for registering EV Mart, Let's experience the EV world");
+        let user={
+          mail:regmail,
+          name:reguser
+        }
+        this.sendEmail("http://localhost:4000/sendmail",user).subscribe((mailinfo:any)=>{
+        let res:any=mailinfo;
+        });
+        this.route.navigateByUrl('/login');
+        })
+      }
+    })
   }
 }

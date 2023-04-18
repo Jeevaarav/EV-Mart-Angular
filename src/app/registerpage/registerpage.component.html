@@ -4,14 +4,15 @@
     <form [formGroup]="register" (ngSubmit)="register.valid && regdetails()" class="regform">
       <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
       <h3>Create new account</h3>
+      <small class="msg">{{call}}</small>
       <div class="control">
-        <input type="email" placeholder="email" class="box" name="email" id="email" formControlName="regemail" >
+        <input type="email" placeholder="email" class="box" name="email" id="email" formControlName="regemail" #email>
         <div *ngIf="(register.controls['regemail'].invalid && register.controls['regemail'].touched || register.controls['regemail'].dirty)"></div>
         <small *ngIf="register.controls['regemail'].errors?.['required'] && register.controls['regemail'].dirty">Please enter mail ID</small>
         <small *ngIf="register.controls['regemail'].errors?.['pattern']">Please provide provide mail ID</small>
       </div>
       <div class="control">
-        <input type="text" placeholder="Username" class="box" name="username" id="username" formControlName="reguser">
+        <input type="text" placeholder="Username" class="box" name="username" id="username" formControlName="reguser" #username>
         <div *ngIf="(register.controls['reguser'].invalid && register.controls['reguser'].touched || register.controls['reguser'].dirty)"></div>
         <small *ngIf="register.controls['reguser'].errors?.['required'] && register.controls['reguser'].dirty">Please enter username</small>
         <small *ngIf="register.controls['reguser'].errors?.['pattern']">Provide proper username(Don't start with number) </small>
@@ -34,7 +35,7 @@
           <!-- <i class="fa fa-eye-slash" id="togglePassword1"></i> -->
         </div>
       </div>
-      <button type="submit" class="book">Register now</button>
+      <button type="submit" class="book" (click)="fill(email.value,username.value,password.value,confirm.value)">Register now</button>
       <p id="text"><span id="span">Have</span> an account?<span id="span1"><a routerLink="/login" id="span1" class="link">Sign-in</a></span></p>
 
     </form>

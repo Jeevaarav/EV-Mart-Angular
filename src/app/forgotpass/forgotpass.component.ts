@@ -16,6 +16,7 @@ export class ForgotpassComponent {
   msg:any="";
   call:any;
   store:any;
+  break:any;
   // const disp=document.getElementById('br');
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){
     setInterval(()=>{
@@ -30,7 +31,9 @@ export class ForgotpassComponent {
   forgotuser(forgotmail:any,forgotuser:any){
     if(forgotmail=="" || forgotuser==""){
       this.call="";
-      this.msg="Please fill the blank";   
+      this.msg="Please fill the blank";
+      this.break=document.getElementById('br');
+      this.break.style.display="block";
       setTimeout(()=>{
         this.msg="";
       },2000);
@@ -43,7 +46,8 @@ export class ForgotpassComponent {
     const mail=this.forgotform1.controls['forgotemail'].value;
     const user=this.forgotform1.controls['forgotuser'].value;
     this.forgotserv.forgotuser(mail,user);
-
+    this.forgotform1.reset();
+    this.forgotserv.errormsg="";
   }
 
 message()
