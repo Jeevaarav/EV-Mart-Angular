@@ -28,11 +28,25 @@
       </div>
     </ngx-slick-carousel>
   <div class="dots">
-    <h4>Exchange your scooter in 3 steps</h4>
-    <p><strong> Visit an Ola Experience Centre</strong>
-      Bring your petrol scooter to a nearby experience centre</p>
+    <div><h4>Exchange your old one in 3 steps</h4></div>
+    <div class="flex">
+    <div><span> Visit an EV Mart Centre</span><p>
+      Bring your petrol scooter to a nearby EV Mart centre</p>
+    </div>
+    </div>
+    <div class="flex">
+      <div class="flexgap"><span> Get your vehicle inspected</span><p>
+        After we check your vehicle, we will provide you with a quote.</p>
+      </div>
+      </div>
+      <div class="flex">
+        <div><span> Ride home your new Electric one</span><p>
+          Purchase the vehicle for a reduced amount and pay in full or via split payment</p>
+        </div>
+        <div><a (click)="book()">Book Appointment &nbsp;<i class="fa-solid fa-arrow-right fa-flip"></i></a></div>
+        </div>
   </div>
   </div>
   </section>
-
+  <app-footer></app-footer>
 </body>

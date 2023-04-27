@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+:host{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+html{
+  font-size: 60%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+.appoint{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+  /* align-items: center; */
+}
+.appoint .videoimg{
+  width: 55vw;
+  height: 100vh;
+}
+.appoint .form h3{
+  font-size: 4rem;
+  text-shadow: 1px 1px 1px #ffee80,1px 2px 1px #ffee80,
+                1px 3px 1px #ffee80,1px 4px 1px #ffee80,
+                1px 6px 6px rgba(16,16,16,0.4);
+  font-weight: 700;
+}
+.box{
+  margin: .7rem 0;
+  width: 91%;
+  text-transform: none;
+  color: black;
+  font-size: 1.9rem;
+  padding: 1.5rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-left: none;
+}
+.boxing{
+  margin: .7rem 0;
+  width: 8%;
+  text-transform: none;
+  color: black;
+  font-size: 1.9rem;
+  padding: 1.5rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-right: none;
+  background: url("../../assets/EV mart/INR.png");
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.pin .code{
+  font-size: 2rem;
+  background-color: #E5E4E2;
+  padding: 1.5rem;
+}
+.bookappoint form{
+  width: 650px;
+}
+.bookappoint form input{
+  background-color: #E5E4E2;
+  padding: 1.5rem;
+}
+.formflex{
+  display: flex;
+  gap: 5rem;
+}
+.box1{
+  margin: .7rem 0;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+}
+.formflex div input{
+  width: 300px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+.form p{
+  font-size: 2.5rem;
+  color: #130f40;
+  text-transform: none;
+}
+.form .button{
+  width: 100%;
+  background-color: black;
+  color: #E5E4E2;
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+input{
+  caret: 5rem;
+}
+input::placeholder{
+  font-size: 2.2rem;
+}
+.box2{
+  margin: .7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+}
+.form img{
+  width:250px;
+height:120px;
+cursor: pointer;
+}
+

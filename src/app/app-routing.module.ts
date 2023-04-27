@@ -10,6 +10,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { ForgotnewComponent } from './forgotnew/forgotnew.component';
+import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 
 
 
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
    path:"offers",
    component:OffersComponent
+  },
+  {
+    path:"bookappointment",
+    component:BookappointmentComponent
   },
   {
     path:"",

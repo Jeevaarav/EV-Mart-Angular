@@ -28,7 +28,7 @@ html{
     display: inline-block;
     margin-top: 1rem;
     border-radius: 5rem;
-    background: var(--light-yellow);
+    background: #f9d806;
     color:var(--black);
     font-weight: 500;
     font-size: 1.7rem;
@@ -44,6 +44,7 @@ html{
 }
 .comparison{
   padding-top: 7rem;
+  padding-bottom: 5rem;
 }
 .comparison .grid{
   display: flex;
@@ -93,15 +94,25 @@ html{
   width: 30px;
   height: 20px;
 }
+.slide{
+  display: flex;
+  flex-direction: row;
+}
 .slide img{
   width: 500px;
-  height: 500px;
+  height: 540px;
 }
 .slides{
-  padding: 2rem 2%;
+  padding-left:22%;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+.slick-next.slick-arrow::before{
+  display: none;
+}
+.slick-dots li button:before{
+  width: 50px;
+  height: 50px;
 }
 .row{
   display: flex;
@@ -110,10 +121,10 @@ html{
   gap: 5rem;
   width: 900px;
 }
-.dots div{
-  width: 10px;
-  height: 50px;
-  background-color: #130f40;
+.dots{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .dots h4{
   font-weight: 700;
@@ -123,11 +134,95 @@ html{
                 1px 6px 6px rgba(16,16,16,0.4);
   text-transform: none;
 }
+.dots .flex span{
+  font-weight: bolder;
+  font-size: 3rem;
+  text-align: left;
+  color: #130f40;
+  text-transform: none;
+}
 .dots p{
-  font-size: 2.3rem;
+  font-size: 2rem;
   text-transform: none;
   text-align: justify;
 }
+.dots .flex{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.dots .flex .flexgap{
+  width: 475px;
+}
+.dots .flex a{
+  color: #228B22;
+  font-size: 3rem;
+}
+.dots .flex a:hover{
+  color: #228B22;
+  cursor: pointer;
+}
+.dots .flex i{
+  color: #228B22;
+}
+.changediv{
+  display: none;
+  margin-top: -540px;
+}
+.changediv li{
+  color: white;
+  margin: 12rem;
+  margin-left: 550px;
+}
+
+/* .changediv li #slick-slide-control00{
+  color:#f9d806;
+} */
+
+/* .changediv .slick-active{
+  margin-left: 550px;
+  margin-top: -200px;
+  width: 50px;
+  height: 150px;
+} */
+#slick-slide-control00{
+  display: none;
+}
+#slick-slide-control01{
+  display: none;
+}
+#slick-slide-control02{
+  display: none;
+}
+#slick-slide-control12{
+  display: none;
+}
+#slick-slide-control10{
+  display: none;
+}
+#slick-slide-control11{
+  display: none;
+}
+#slick-slide-control22{
+  display: none;
+}
+#slick-slide-control21{
+  display: none;
+}
+#slick-slide-control20{
+  display: none;
+}
+.changediv li.slick-active{
+  background-color: #228B22;
+  /* margin-left: 550px;
+  /* margin-top: -380px; */
+  width: 16px;
+  height: 100px;
+}
+
+
+
 
 
 
