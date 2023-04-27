@@ -19,6 +19,7 @@ import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import { EmailverificationComponent } from './emailverification/emailverification.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { BookappointmentComponent } from './bookappointment/bookappointment.comp
     ForgotpassComponent,
     ForgotnewComponent,
     BookappointmentComponent,
+    EmailverificationComponent,
   ],
   imports: [
     BrowserModule,

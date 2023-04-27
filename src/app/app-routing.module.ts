@@ -11,6 +11,7 @@ import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import { EmailverificationComponent } from './emailverification/emailverification.component';
 
 
 
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
    path:"offers",
    component:OffersComponent
+  },
+  {
+    path:"emailverify",
+    component:EmailverificationComponent
   },
   {
     path:"bookappointment",

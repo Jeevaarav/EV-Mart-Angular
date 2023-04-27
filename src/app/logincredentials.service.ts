@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http'
 import { Router } from '@angular/router';
+import * as alertifyjs from 'alertifyjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class LogincredentialsService {
   closenav:boolean=true;
   custemail:any;
   regcheck:any;
+  resendmail:any;
+  resenduser:any;
   constructor(private http:HttpClient,private route:Router) {
   }
   savedata(a:any){
@@ -45,6 +48,10 @@ export class LogincredentialsService {
     console.log(url);
     return this.http.post(url,data);
   }
+  resendEmail(reurl:any,redata:any){
+    console.log(reurl);
+    return this.http.post(reurl,redata);
+  }
 
   registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((check)=>{
@@ -58,6 +65,8 @@ export class LogincredentialsService {
       else{
         this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm}).subscribe((data)=>{
         alert("Thanks for registering EV Mart, Let's experience the EV world");
+        localStorage.setItem('key',regmail);
+        localStorage.setItem('key1',reguser);
         let user={
           mail:regmail,
           name:reguser
@@ -65,9 +74,21 @@ export class LogincredentialsService {
         this.sendEmail("http://localhost:4000/sendmail",user).subscribe((mailinfo:any)=>{
         let res:any=mailinfo;
         });
-        this.route.navigateByUrl('/login');
+        this.route.navigateByUrl('/emailverify');
         })
       }
     })
+  }
+
+  resendemail(){
+    let resenduser={
+      mail:localStorage.getItem('key'),
+      name:localStorage.getItem('key1')
+    }
+    this.resendEmail("http://localhost:4000/sendmail",resenduser).subscribe((mailinfo:any)=>{
+        let res:any=mailinfo;
+        alertifyjs.success("Email resent success");
+        });
+        this.route.navigateByUrl('/emailverify');
   }
 }

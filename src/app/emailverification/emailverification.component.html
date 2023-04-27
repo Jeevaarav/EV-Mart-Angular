@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Emailverification</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="head">
+      <nav class="sidebar">
+        <div>
+          <img src="../../assets/image/EV-removebg.png" alt="EV Mart Logo">
+        </div>
+        <div class="nav">
+          <div> <a (click)="Ola()">OLA</a></div>
+          <div><a (click)="Revolt()">Revolt</a></div>
+          <div><a (click)="Ather()">Ather</a></div>
+          <div><a (click)="Ampere()">Ampere</a></div>
+        </div>
+      </nav>
+    </div>
+    <div class="maincontain">
+    <div class="resend">
+        <div class="email">
+          <span>Email verification</span>
+          <p>A Email has been sent to your mail address</p>
+        </div>
+        <div>
+          <a (click)="sendmail()">Resend Email</a>
+        </div>
+
+    </div>
+    <div class="glimpse">
+      <img src="{{change}}" alt="OLA" title="OLA" id="olaimg">
+    </div>
+  </div>
+  </div>
+</body>

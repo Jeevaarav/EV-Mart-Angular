@@ -18,44 +18,38 @@
   },
   "Register": [
     {
-      "regemail": "2k19me070@kiot.ac.in",
-      "reguser": "Mani1234",
-      "regpass": "Jeeva@2001",
-      "regconfirm": "Jeeva@2001",
-      "id": 1,
-      "order": [
-        {
-          "Brandname": "OLA S1",
-          "image": "../../assets/EV mart/OlA.png",
-          "content": "#EV Mart-With Mission Electric, We Pledge To Reject Petrol And Commit To Electric Vehicles By Making Sure No Petrol Two-Wheelers Are Sold In India After 2025. At The Heart Of Ola Electric Is Our Vision To Reduce Global Emissions And Fossil Fuel Dependency By Making India The Epic Centre Of Electrification. We Aim To Not Just Make Electric Vehicles But Engineer A Change In The Mindsets Of Every Indian, A Change That Powers The Vision Behind Mission Electric.",
-          "id": 1
-        },
-        {
-          "Brandname": "Ultraviolette F77",
-          "image": "../../assets/EV mart/ultraviolette f77.png",
-          "content": "#EV Mart-Ultraviolette Automotive Pvt. Ltd., is an innovator in sustainable mobility and energy infrastructure. Established in 2016, Ultraviolette Automotive was founded by Narayan Subramaniam and Niraj Rajmohan. The company was born out of the unique vision of creating top-of-the line mobility solutions, that’s driven by progressive design and energy efficient technology. Ultraviolette Automotive is developing India’s first ecosystem of high-performance electric vehicles and future-ready energy infrastructure.",
-          "id": 6
-        }
-      ]
-    },
-    {
       "regemail": "jeevaaravinth2001@gmail.com",
       "reguser": "Jeevaarav",
       "regpass": "Aravinth@2001",
       "regconfirm": "Aravinth@2001",
-      "id": 2
+      "id": 1
     },
     {
       "regemail": "shyaam@gmail.com",
       "reguser": "Shyaam123",
       "regpass": "Shyaam@2001",
-      "regconfirm": "Shyaam@2001"
+      "regconfirm": "Shyaam@2001",
+      "id": 2
     },
     {
       "regemail": "dhivyaasharvan@gmail.com",
       "reguser": "DhivyaaKS",
       "regpass": "LATHAsaran&3395",
-      "regconfirm": "LATHAsaran&3395"
+      "regconfirm": "LATHAsaran&3395",
+      "id": 3
+    },
+    {
+      "regemail": "2k19me016@kiot.ac.in",
+      "reguser": "Harish123",
+      "regpass": "Harish@2001",
+      "regconfirm": "Harish@2001",
+      "id": 4
+    },
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "reguser": "Jeevaarav",
+      "regpass": "Jeeva@2001",
+      "regconfirm": "Jeeva@201"
     }
   ],
   "subscription": [
