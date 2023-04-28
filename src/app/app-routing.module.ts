@@ -12,6 +12,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
+import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.component';
 
 
 
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path:"bookappointment",
     component:BookappointmentComponent
+  },
+  {
+    path:"bookconfirm",
+    component:BookingconfirmComponent
   },
   {
     path:"",

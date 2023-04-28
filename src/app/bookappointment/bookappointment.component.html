@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Book Appointment</title>
-  </head>
-  <body>
-    <section class="appoint">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Book Appointment</title>
+</head>
+
+<body>
+  <section class="appoint">
+    <div>
+      <img src="../../assets/EV mart/Video tag.gif" alt="Exchange" class="videoimg">
+    </div>
+    <div class="form">
+      <div><img src="../../assets/image/EV-removebg.png" alt="Logo"></div>
+      <div class="formcenter">
         <div>
-          <img src="../../assets/EV mart/Video tag.gif" alt="Exchange" class="videoimg">
-        </div>
-        <div class="form">
-          <div><img src="../../assets/image/EV-removebg.png" alt="Logo"></div>
-          <div>
           <h3>EV Mart centre</h3>
           <p>Just book the appointment to visit the EV Mart centre</p>
           <div class="bookappoint">
-          <form>
-            <div class="pin">
-              <input type="text" class="boxing">
-              <span class="code">+91</span>
-          <input type="text" placeholder="Phone Number" class="box">
+            <!-- -------------------------form ------------------------------------------>
+            <form [formGroup]="Bookappointment" (ngSubmit)="Booking(EVcenteraddress.innerText)" class="bookform">
+              <div>
+                <input type="text" class="boxemail" placeholder="Email ID" formControlName="regemail">
+                <div>
+                  <small class="red" *ngIf="Bookappointment.controls['regemail'].errors?.['required'] && Bookappointment.controls['regemail'].dirty">Please enter Mail ID</small>
+                  <small class="red" *ngIf="Bookappointment.controls['regemail'].errors?.['pattern'] ">Please provide proper Mail ID</small>
+                </div>
+              </div>
+              <div class="pin">
+                <input type="text" class="boxing" readonly>
+                <span class="code">+91</span>
+
+                <input type="text" placeholder="Phone Number" class="box" minlength="10" formControlName="phone">
+                <div><small class="red"
+                    *ngIf="Bookappointment.controls['phone'].errors?.['required'] && Bookappointment.controls['phone'].dirty">Phone
+                    Number is required</small>
+                  <small class="red" *ngIf="Bookappointment.controls['phone'].errors?.['pattern']">Phone number should
+                    be 10 digits</small>
+                </div>
+
+              </div>
+              <div>
+                <input type="text" placeholder="Name" class="box2" formControlName="username">
+                <div>
+                  <small class="red" *ngIf="Bookappointment.controls['username'].errors?.['required'] && Bookappointment.controls['username'].dirty">Username is required</small>
+                  <small class="red" *ngIf="Bookappointment.controls['username'].errors?.['pattern']">username should not start with numbers</small>
+                </div>
+              </div>
+              <div class="formflex">
+                <div class="select">
+                  <select class="box1" formControlName="dateofvisit">
+                    <option value="" selected disabled hidden>Date of visit</option>
+                    <option value="{{Monday}}" class="date">{{Monday}}</option>
+                    <option value="{{Thursday}}" class="date">{{Thursday}}</option>
+                    <option value="{{Tuesday}}" class="date">{{Tuesday}}</option>
+                    <option value="{{Friday}}" class="date">{{Friday}}</option>
+                    <option value="{{Saturday}}" class="date">{{Saturday}}</option>
+                  </select>
+                    <small class="red" *ngIf="Bookappointment.controls['dateofvisit'].errors?.['required'] && Bookappointment.controls['dateofvisit'].touched">Please Select Date</small>
+                </div>
+                <div class="option">
+                  <select class="boxtiming" formControlName="Timeslot">
+                    <option value="" class="time" selected disabled hidden>Time Slot</option>
+                    <option value="{{Mrng}}" class="date">{{Mrng}}</option>
+                    <option value="{{Noon}}" class="date">{{Noon}}</option>
+                    <option value="{{Eve}}" class="date">{{Eve}}</option>
+                  </select>
+                  <small class="red" *ngIf="Bookappointment.controls['Timeslot'].errors?.['required'] && Bookappointment.controls['Timeslot'].touched">Please Select Timeslot</small>
+                </div>
+              </div>
+              <div class="formflex">
+                <div class="city">
+                  <select class="boxlocation" #location (change)="onselect(location.value)" formControlName="location">
+                    <option value="" class="time" selected disabled hidden>City</option>
+                    <option value="{{Salem}}" class="date">{{Salem}}</option>
+                    <option value="{{Chennai}}" class="date">{{Chennai}}</option>
+                    <option value="{{Madurai}}" class="date">{{Madurai}}</option>
+                    <option value="{{Dindugal}}" class="date">{{Dindugal}}</option>
+                    <option value="{{Kovai}}" class="date">{{Kovai}}</option>
+                  </select>
+                  <small class="red" *ngIf="Bookappointment.controls['location'].errors?.['required'] && Bookappointment.controls['location'].touched">Please select location</small>
+                </div>
+                <div class="read">
+                  <input type="text" placeholder="EV Mart center" class="box" value="{{inval}}" readonly formControlName="EVcenter">
+                  </div>
+              </div>
+              <small class="address" #EVcenteraddress>{{Salemadd}}</small>
+              <div class="lastflex" *ngIf="show">
+                <div> <small class="address"><i class="fa-solid fa-clock"></i>&nbsp; 9AM-8PM (MON-SUN)</small></div>
+                <div> <small class="address"><i class="fa-solid fa-phone"></i>&nbsp;7904925991</small></div>
+              </div>
+              <button class="button" type="submit" [disabled]="!Bookappointment.valid">Confirm Booking</button>
+            </form>
+
+          </div>
         </div>
-        <div>
-          <input type="text" placeholder="Name" class="box2">
-        </div>
-          <div class="formflex">
-         <div> <input type="text" placeholder="Date of Visit" class="box1"></div>
-         <div> <input type="text" placeholder="Select time slot" class="box1"></div>
-        </div>
-        <div class="formflex">
-          <div> <input type="text" placeholder="City" class="box1"></div>
-          <div> <input type="text" placeholder="EV Mart center" class="box1"></div>
-         </div>
-         <button class="button">Confirm Booking</button>
-        </form>
       </div>
     </div>
-        </div>
-    </section>
-  </body>
+  </section>
+</body>
 </html>
-
-

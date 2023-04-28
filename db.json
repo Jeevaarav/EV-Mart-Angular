@@ -18,13 +18,6 @@
   },
   "Register": [
     {
-      "regemail": "jeevaaravinth2001@gmail.com",
-      "reguser": "Jeevaarav",
-      "regpass": "Aravinth@2001",
-      "regconfirm": "Aravinth@2001",
-      "id": 1
-    },
-    {
       "regemail": "shyaam@gmail.com",
       "reguser": "Shyaam123",
       "regpass": "Shyaam@2001",
@@ -46,10 +39,16 @@
       "id": 4
     },
     {
+      "regemail": "jeevaaravinth2001@gmail.com",
+      "reguser": "Aravinth",
+      "regpass": "Aravinth2001@",
+      "regconfirm": "Aravinth2001@"
+    },
+    {
       "regemail": "2k19me070@kiot.ac.in",
       "reguser": "Jeevaarav",
       "regpass": "Jeeva@2001",
-      "regconfirm": "Jeeva@201"
+      "regconfirm": "Jeeva@2001"
     }
   ],
   "subscription": [
@@ -110,6 +109,71 @@
       "image": "../../assets/EV mart/ultraviolette f77.png",
       "content": "#EV Mart-Ultraviolette Automotive Pvt. Ltd., is an innovator in sustainable mobility and energy infrastructure. Established in 2016, Ultraviolette Automotive was founded by Narayan Subramaniam and Niraj Rajmohan. The company was born out of the unique vision of creating top-of-the line mobility solutions, that’s driven by progressive design and energy efficient technology. Ultraviolette Automotive is developing India’s first ecosystem of high-performance electric vehicles and future-ready energy infrastructure.",
       "id": 6
+    }
+  ],
+  "Exchangebooking": [
+    {
+      "regemail": "jeevaaravinth2001@gmail.com",
+      "phone": "7904925991",
+      "username": "Aravinth",
+      "dateofvisit": "01-05-2023",
+      "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
+    },
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "phone": "7904925991",
+      "username": "JeevaAravinth",
+      "dateofvisit": "04-05-2023",
+      "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
+    }
+  ],
+  "EV-Martcenter": [
+    {
+      "dateofvisit": {
+        "Monday": "01-05-2023",
+        "Thursday": "04-05-2023",
+        "Tuesday": "09-05-2023",
+        "Friday": "12-05-2023",
+        "Saturday": "13-05-2023"
+      },
+      "id": 1
+    },
+    {
+      "Timeslot": {
+        "Mrng": "09.00 - 10.00 Am",
+        "Noon": "01.00 - 02.00 Pm",
+        "Eve": "07.00 - 08.00 Pm"
+      },
+      "id": 2
+    },
+    {
+      "City": {
+        "Salem": "Salem",
+        "Chennai": "Chennai",
+        "Madurai": "Madurai",
+        "Kovai": "Kovai",
+        "Dindugal": "Dindugal"
+      }
+    },
+    {
+      "Address": {
+        "address1": "EV Mart Center, Junction Main Road, Tamil Nadu 636005",
+        "address2": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005",
+        "address3": "EV Mart Center, Madurai Main, Madurai, Tamil Nadu 625001",
+        "address4": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011",
+        "address5": "EV Mart Center, Pollachi Main Road, Sundarapuram, Coimbatore, Tamil Nadu 641024"
+      }
+    },
+    {
+      "Shortaddress": {
+        "short1": "EV Mart Center,Near Junction",
+        "short2": "EV Mart Center,Triplicane",
+        "short3": "EV Mart Center,Madurai",
+        "short4": "EV Mart Center,Jawahar Nagar",
+        "short5": "EV Mart Center,Pollachi Rd."
+      }
     }
   ]
 }

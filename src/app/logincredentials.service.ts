@@ -87,8 +87,9 @@ export class LogincredentialsService {
     }
     this.resendEmail("http://localhost:4000/sendmail",resenduser).subscribe((mailinfo:any)=>{
         let res:any=mailinfo;
-        alertifyjs.success("Email resent success");
+
         });
+        alertifyjs.success().setContent('<h3>Email resent success</h3>').show();
         this.route.navigateByUrl('/emailverify');
   }
 }

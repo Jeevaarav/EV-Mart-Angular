@@ -33,6 +33,9 @@ export class AppComponent {
         else if(val.url=='/emailverify'){
           this.navopen1=false;
         }
+        else if(val.url=='/bookconfirm'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }
