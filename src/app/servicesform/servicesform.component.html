@@ -1,0 +1,37 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="main">
+    <div class="form">
+      <form [formGroup]="servform" (ngSubmit)="servform.valid && submit(category.value)">
+        <div class="heading">
+          <p>EV Mart Service Form</p>
+        </div>
+        <div>
+        <input type="text" class="box" placeholder="Email ID" formControlName="Email">
+          <small *ngIf="servform.controls['Email'].errors?.['required'] && servform.controls['Email'].dirty">We need your Mail ID</small>
+          <small *ngIf="servform.controls['Email'].errors?.['pattern']">Provide proper mail ID</small>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Username" formControlName="User">
+        <small *ngIf="servform.controls['User'].errors?.['required'] && servform.controls['User'].dirty">We need Username</small>
+        <small *ngIf="servform.controls['User'].errors?.['pattern']">Username should not start with numbers</small>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Category" value="{{value}}-Category" readonly #category>
+      </div>
+      <div>
+        <textarea class="box" cols="20" rows="10" placeholder="Problem description" formControlName="problem"></textarea>
+        <small *ngIf="servform.controls['problem'].errors?.['required'] && servform.controls['problem'].dirty">Fill the issues</small>
+        <small *ngIf="servform.controls['problem'].errors?.['minlength']">Describe more about issues</small>
+      </div>
+      <button class="book">
+        Request Service
+      </button>
+      </form>
+    </div>
+  </div>
+</body>

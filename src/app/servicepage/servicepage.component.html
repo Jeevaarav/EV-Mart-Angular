@@ -11,22 +11,12 @@
           <div class="para"> EV Mart Service Center</div>
         </div>
         <div class="maintain">
-          <div class="vehicle">
-            <div><p>Vehicle Maintanence<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
-            <div><h5>Vehicle maintanence is important to reduce the accidents those are happening due to irregular maintanence</h5></div>
+         <a routerLink="/Service/serviceform" *ngFor="let serv of evmartserv">
+          <div class="vehicle" (click)="details(this.serv.title)">
+            <div><p>{{serv.title}}<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
+            <div><h5>{{serv.content}}</h5></div>
           </div>
-          <div class="vehicle">
-            <div><p>Battery Replacement<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
-            <div><h5>If Battery charge does not statisfy as like given quotation.  Then you need to change the battery. </h5></div>
-          </div>
-          <div class="vehicle">
-            <div><p>Vehicle Maintanence<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
-            <div><h5>Vehicle maintanence is important to reduce the accidents those are happening due to irregular maintanence</h5></div>
-          </div>
-          <div class="vehicle">
-            <div><p>Battery Replacement<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
-            <div><h5>If Battery charge does not statisfy as like given quotation.  Then you need to change the battery. </h5></div>
-          </div>
+        </a>
         </div>
       </div>
     </div>

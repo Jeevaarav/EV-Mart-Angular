@@ -23,6 +23,9 @@ import { EmailverificationComponent } from './emailverification/emailverificatio
 import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.component';
 import { OrderpageComponent } from './orderpage/orderpage.component';
 import { ServicepageComponent } from './servicepage/servicepage.component';
+import { ServicesformComponent } from './servicesform/servicesform.component';
+import { ServiceadminComponent } from './serviceadmin/serviceadmin.component';
+import { AdminformComponent } from './adminform/adminform.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { ServicepageComponent } from './servicepage/servicepage.component';
     BookingconfirmComponent,
     OrderpageComponent,
     ServicepageComponent,
+    ServicesformComponent,
+    ServiceadminComponent,
+    AdminformComponent,
   ],
   imports: [
     BrowserModule,

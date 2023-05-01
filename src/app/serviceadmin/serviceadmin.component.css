@@ -64,9 +64,10 @@ html{
 
 }
 .maintain a p{
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 1rem ;
   color: black;
+  text-transform: none;
 }
 .maintain a .vehicle{
   background-color: rgba(6, 76, 240, 0.233);
@@ -83,7 +84,7 @@ html{
   padding-left: 5rem;
 }
 .maintain a .vehicle h5{
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1.5rem;
   text-align: justify;
   text-transform: none;

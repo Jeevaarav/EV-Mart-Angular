@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="main">
+    <div class="form">
+      <form [formGroup]="servform" (ngSubmit)="servform.valid && submit(email.value)">
+        <div class="heading">
+          <p>EV Mart Admin Service</p>
+        </div>
+        <div>
+        <input type="text" class="box" placeholder="Email ID" value="{{val3.email}}" readonly #email>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Username" value="{{val3.reguser}}" readonly>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Category" value="{{value}}-Category" readonly #category>
+      </div>
+      <div>
+        <textarea class="box" cols="10" rows="5" placeholder="Problem description" value="{{val3.problem}}" readonly></textarea>
+      </div>
+      <div>
+        <input type="date" class="box" formControlName="date" >
+        <small *ngIf="servform.controls['date'].errors?.['required'] && servform.controls['date'].touched">Provide date of service</small>
+      </div>
+      <div>
+        <input type="time" class="box" formControlName="time" >
+        <small *ngIf="servform.controls['time'].errors?.['required'] && servform.controls['time'].touched">Provide time slot for service</small>
+      </div>
+      <div>
+       <textarea  placeholder="Reply mail" cols="30" rows="5" formControlName="Reply" class="box"></textarea>
+        <small *ngIf="servform.controls['Reply'].errors?.['required'] && servform.controls['Reply'].dirty">Reply mail</small>
+      </div>
+      <button class="book">
+        Reply
+      </button>
+      </form>
+    </div>
+  </div>
+</body>

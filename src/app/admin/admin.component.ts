@@ -9,10 +9,15 @@ import { LogincredentialsService } from '../logincredentials.service';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent {
-  count:any=""
+  count:any="";
+  servcount:any;
   constructor(private route:Router,private service:LogincredentialsService,private details:AdminService){
     this.details.countread().subscribe(data=>{
       this.count=data.length;
+    });
+
+    this.details.servicecount().subscribe(servcount=>{
+      this.servcount=servcount.length;
     })
   }
   logout(){

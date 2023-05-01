@@ -16,6 +16,9 @@ import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.compone
 import { OrderpageComponent } from './orderpage/orderpage.component';
 import { LoginGuard } from './login.guard';
 import { ServicepageComponent } from './servicepage/servicepage.component';
+import { ServicesformComponent } from './servicesform/servicesform.component';
+import { ServiceadminComponent } from './serviceadmin/serviceadmin.component';
+import { AdminformComponent } from './adminform/adminform.component';
 
 
 
@@ -32,6 +35,13 @@ const routes: Routes = [
   {
     path:"Service",
     component:ServicepageComponent
+  },
+  {
+    path:"",
+    children:[{
+      path:"Service/serviceform",
+      component:ServicesformComponent
+    }]
   },
   {
     path:"orderpage",
@@ -98,9 +108,16 @@ const routes: Routes = [
     children:[{
       path:"admin/vehiclemanagement",
       component:VehiclemanagementComponent
-    }]
+    },
+  {
+    path:"admin/adminserv",
+    component:ServiceadminComponent
+  },
+{
+  path:"admin/adminserv/adminform",
+  component:AdminformComponent
+}]
   }
-
 ];
 
 @NgModule({

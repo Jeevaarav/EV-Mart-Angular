@@ -183,5 +183,53 @@
         "short5": "EV Mart Center,Pollachi Rd."
       }
     }
+  ],
+  "Services": [
+    {
+      "title": "Vehicle Maintanence",
+      "content": "Vehicle maintanence is important to reduce the accidents those are happening due to irregular maintanence."
+    },
+    {
+      "title": "Battery Replacement",
+      "content": "If Battery charge does not statisfy as like given quotation. Then you need to change the battery."
+    },
+    {
+      "title": "Circuit Issue",
+      "content": "If any of the circuit disconnected suddenly then it will lead to short circuit and more damage of other parts."
+    },
+    {
+      "title": "Dashboard Issue",
+      "content": "If Dashboard fails in the connection then it is difficult to monitor the battery condition and other features."
+    },
+    {
+      "title": "Charger Services",
+      "content": "Using irrelevant charger leads to damage the battery and its life cycle per charge."
+    },
+    {
+      "title": "Other Services",
+      "content": "Other services like spare parts, body, fasteners etc. will be mentioned here."
+    }
+  ],
+  "Serviceform": [
+    {
+      "email": "2k19me070@kiot.ac.in",
+      "reguser": "Jevaarav",
+      "category": "Battery Replacement-Category",
+      "problem": "category*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']",
+      "regemail": 1,
+      "Reply": "jhgvyhgv hn",
+      "Date": "2023-05-03",
+      "Time": "14:02"
+    },
+    {
+      "email": "jeevaaravinth2001@gmail.com",
+      "reguser": "Jeevaarav",
+      "category": "Dashboard Issue-Category",
+      "problem": "knsdjsdbcjbdscnsmzjcn sdmnc sdk sjkcnsdjkcbjdshcns dcjdcbjksdncik sdnkcj dscuhckhsdkxhcniksidjxfncidskjxncksdjnckjhsjdcnbesjkzdhn jkshcnksdjhfbckj sdhnbvjhsdb",
+      "regemail": 2,
+      "Reply": "jbhvjnd",
+      "Date": "2023-05-01",
+      "Time": "23:28"
+    }
   ]
 }

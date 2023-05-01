@@ -1,0 +1,27 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <section class="section">
+    <div class="flex">
+      <div class="category">
+        <div class="black">
+          <div class="para"> EV Mart Service Center</div>
+        </div>
+        <div class="maintain">
+         <a routerLink="/admin/adminserv/adminform" *ngFor="let serv of evmartserv">
+          <div class="vehicle" (click)="details(this.serv)" id="vehicle" #vehicle>
+            <div><p>{{serv.email}}<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
+            <div><h5>{{serv.problem}}</h5>
+            <h5><b>Date Alloted:</b> {{serv.Date}}</h5><h5><b>Time slot:</b> {{serv.Time}}</h5>
+          </div>
+
+          </div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
