@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+:root{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+.book{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #ffee80;
+    color:#130f40;
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.section{
+  padding: 1.5rem 5%;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.black{
+  width: 80vw;
+  background-color: black;
+  color: white;
+  font-size: 4rem;
+  height: 100px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.maintain{
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding-left: 10%;
+}
+.maintain p{
+  font-size: 2.5rem;
+  padding: 1rem ;
+}
+.maintain .vehicle{
+  background-color: rgba(6, 76, 240, 0.233);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.maintain p i{
+  padding-left: 5rem;
+}
+.maintain .vehicle h5{
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-align: justify;
+  text-transform: none;
+}
+.maintain .vehicle div{
+  width: 30vw;
+}
+mark{
+  background-color: #FFEA00;
+}
+.category{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color:#E5E4E2;
+}

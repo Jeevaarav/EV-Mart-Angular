@@ -5,13 +5,13 @@
 </head>
 <!--Featured vehicles-->
 <section class="services" id="services">
-  <h1 class="heading">featured <span>vehicles</span></h1>
+  <h1 class="heading">featured <span>vehicle's Brand</span></h1>
   <div class="box-container" >
       <div class="box" *ngFor="let vehicle of vehdetails">
           <h3>{{vehicle.Brandname}}</h3>
           <img src="{{vehicle.image}}" alt="">
           <p>{{vehicle.content}}</p>
-          <button class="book" (click)="ride(this.vehicle)">View Varients</button>
+        <a routerLink="/orderpage"> <button class="book">View Varients</button></a>
       </div>
   </div>
 </section>

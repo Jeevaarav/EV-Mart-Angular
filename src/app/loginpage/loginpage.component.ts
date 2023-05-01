@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,ViewEncapsulation} from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
 import { ForgotService } from '../forgot.service';
 
@@ -16,7 +16,13 @@ import { ForgotService } from '../forgot.service';
 })
 export class LoginpageComponent {
   msg:any="";
-  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){ }
+  returl:any;
+  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private router:ActivatedRoute){
+    this.router.queryParamMap.subscribe(data=>{
+      this.returl=data.get('returl');
+      console.log(this.returl);
+    })
+   }
 login=this.form.group({
   email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
   password:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]]
@@ -32,7 +38,8 @@ check(a:any,b:any){
 logdetails(){
   const email=this.login.controls['email'].value;
   const password=this.login.controls['password'].value;
-  this.logincred.retrievedata(email,password);
+  this.logincred.retrievedata(email,password,this.returl);
+  this.logincred.userlogged(email,password);
   this.login.reset();
 }
 }

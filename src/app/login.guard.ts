@@ -1,15 +1,32 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LogincredentialsService } from './logincredentials.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown> {
+  store:any;
+  constructor(private service:LogincredentialsService,private route:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    state: RouterStateSnapshot): boolean  {
+      if(localStorage.getItem('loggedin')=='false'){
+        this.route.navigate(['/login'],{queryParams:{returl:route.url}});
+        return false;
+      }
+      else if(localStorage.getItem('loggedin')=='true'){
+        return true;
+      }
+      else{
+        if(this.service.logout()){
+          return false;
+        }
+        else{
+          return true;
+        }
+      }
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
@@ -23,5 +40,5 @@ export class LoginGuard implements CanActivate, CanActivateChild, CanDeactivate<
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
   }
-  
+
 }

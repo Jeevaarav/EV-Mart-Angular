@@ -75,7 +75,7 @@
   ],
   "vehicleBrands": [
     {
-      "Brandname": "OLA S1",
+      "Brandname": "OLA",
       "image": "../../assets/EV mart/OlA.png",
       "content": "#EV Mart-With Mission Electric, We Pledge To Reject Petrol And Commit To Electric Vehicles By Making Sure No Petrol Two-Wheelers Are Sold In India After 2025. At The Heart Of Ola Electric Is Our Vision To Reduce Global Emissions And Fossil Fuel Dependency By Making India The Epic Centre Of Electrification. We Aim To Not Just Make Electric Vehicles But Engineer A Change In The Mindsets Of Every Indian, A Change That Powers The Vision Behind Mission Electric.",
       "id": 1
@@ -105,7 +105,7 @@
       "id": 5
     },
     {
-      "Brandname": "Ultraviolette F77",
+      "Brandname": "Ultraviolette",
       "image": "../../assets/EV mart/ultraviolette f77.png",
       "content": "#EV Mart-Ultraviolette Automotive Pvt. Ltd., is an innovator in sustainable mobility and energy infrastructure. Established in 2016, Ultraviolette Automotive was founded by Narayan Subramaniam and Niraj Rajmohan. The company was born out of the unique vision of creating top-of-the line mobility solutions, that’s driven by progressive design and energy efficient technology. Ultraviolette Automotive is developing India’s first ecosystem of high-performance electric vehicles and future-ready energy infrastructure.",
       "id": 6
@@ -123,10 +123,18 @@
     {
       "regemail": "2k19me070@kiot.ac.in",
       "phone": "7904925991",
-      "username": "JeevaAravinth",
+      "username": "Jeevarav",
       "dateofvisit": "04-05-2023",
       "Timeslot": "01.00 - 02.00 Pm",
-      "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
+      "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
+    },
+    {
+      "regemail": "2k19ece017@kiot.ac.in",
+      "phone": "9361627761",
+      "username": "Dhivyaa1",
+      "dateofvisit": "04-05-2023",
+      "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
     }
   ],
   "EV-Martcenter": [

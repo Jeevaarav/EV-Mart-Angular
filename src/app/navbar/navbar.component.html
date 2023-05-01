@@ -7,14 +7,14 @@
   <a routerLink="" class="logo"><img src="../../assets/image/EV-removebg.png" alt="EV Mart" class="Logo"
       title="Logo"></a>
   <nav class="navbar">
-    <a routerLink="Product">Product</a>
+    <a routerLink="Product" routerLinkActive="active-link">Product</a>
     <a href="#">Information</a>
-    <a href="#">Service</a>
+    <a routerLink="Service">Service</a>
     <a href="#">Contact</a>
     <a routerLink="offers">Offers</a>
   </nav>
-  <a routerLink="login" class="btnlog"><button type="button" class="book" id="book">Login</button></a>
-  <button type="button" class="book" id="book" *ngIf="btn">Logout</button>
+  <a routerLink="login" class="btnlog"><button type="button" class="book" id="book" *ngIf="logbtn">Login</button></a>
+  <button type="button" class="book" id="book" *ngIf="btn" (click)="logout()">Logout</button>
 </header>
 
 

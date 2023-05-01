@@ -13,6 +13,9 @@ import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
 import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.component';
+import { OrderpageComponent } from './orderpage/orderpage.component';
+import { LoginGuard } from './login.guard';
+import { ServicepageComponent } from './servicepage/servicepage.component';
 
 
 
@@ -25,6 +28,15 @@ const routes: Routes = [
   {
     path:"Product",
     component:ProductpageComponent
+  },
+  {
+    path:"Service",
+    component:ServicepageComponent
+  },
+  {
+    path:"orderpage",
+    component:OrderpageComponent,
+    canActivate:[LoginGuard]
   },
   {
     path:"login",

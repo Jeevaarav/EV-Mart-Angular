@@ -7,11 +7,16 @@ import * as alertifyjs from 'alertifyjs';
   providedIn: 'root'
 })
 export class LogincredentialsService {
+  loggedin:boolean=false;
   closenav:boolean=true;
   custemail:any;
   regcheck:any;
   resendmail:any;
   resenduser:any;
+  username:any;
+  password:any;
+  logoutshow:boolean=false;
+  store:any;
   constructor(private http:HttpClient,private route:Router) {
   }
   savedata(a:any){
@@ -22,15 +27,25 @@ export class LogincredentialsService {
   //   console.log(body);
   //   return this.http.get<any>("http://localhost:3000/Register"+"/"+body);
   // }
-  retrievedata(custmail:any,custpass:any){
+  retrievedata(custmail:any,custpass:any,returl:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{
         return logged.regemail===custmail && logged.regpass===custpass;
       });
       if(user){
         this.custemail=custmail;
-      this.route.navigateByUrl("/Product");
-      return alert("Login Successfull");
+        localStorage.setItem('logmail',custmail);
+        localStorage.setItem('logpass',custpass);
+        if(returl==null){
+          this.route.navigateByUrl("/Product");
+        }
+        else{
+          console.log(returl);
+          this.route.navigate([returl]);
+        }
+        localStorage.setItem('loggedin','true');
+        this.logoutshow=true;
+        return alert("Login Successfull");
       }
       else if(custmail=="evadmin2023@gmail.com" && custpass=="EVadmin@2023"){
         this.route.navigateByUrl('/admin');
@@ -91,5 +106,19 @@ export class LogincredentialsService {
         });
         alertifyjs.success().setContent('<h3>Email resent success</h3>').show();
         this.route.navigateByUrl('/emailverify');
+  }
+
+
+  userlog(){
+    this.store=localStorage.getItem('loggedin');
+    return this.store;
+  }
+
+  logout(){
+    return this.loggedin=false;
+  }
+  userlogged(u:any,p:any){
+    this.username=u,
+    this.password=p;
   }
 }

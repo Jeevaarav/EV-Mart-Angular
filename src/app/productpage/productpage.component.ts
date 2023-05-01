@@ -16,8 +16,4 @@ constructor(private vehservice:AdminService,private book:OrderbookingService,pri
     this.vehdetails=data;
   })
 }
-ride(a:any){
- this.book.orderbook(a,this.login.custemail);
-}
-
 }

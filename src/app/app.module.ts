@@ -21,6 +21,8 @@ import { ForgotnewComponent } from './forgotnew/forgotnew.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
 import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.component';
+import { OrderpageComponent } from './orderpage/orderpage.component';
+import { ServicepageComponent } from './servicepage/servicepage.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { BookingconfirmComponent } from './bookingconfirm/bookingconfirm.compone
     BookappointmentComponent,
     EmailverificationComponent,
     BookingconfirmComponent,
+    OrderpageComponent,
+    ServicepageComponent,
   ],
   imports: [
     BrowserModule,

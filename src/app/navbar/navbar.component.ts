@@ -20,11 +20,36 @@ forgot:boolean=false;
 forgotnew:boolean=false;
 error:any="";
 btn:boolean=false;
-constructor(private form:FormBuilder){ }
+logbtn:boolean=true;
+close:any="close";
+constructor(private form:FormBuilder,private service:LogincredentialsService,private route:Router){
+  console.log(localStorage.getItem('loggedin'));
+  if(localStorage.getItem('loggedin')=='true'){
+    this.btn=true;
+    this.logbtn=false;
+    }
+    else{
+      this.btn=false;
+      this.logbtn=true;
+    }
+ }
 
-forgotform1=this.form.group({
-  forgotemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-  forgotuser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
-})
+// forgotform1=this.form.group({
+//   forgotemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+//   forgotuser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
+// })
+logout(){
+  if(confirm("Are you sure want to log-out?")){
+  localStorage.setItem('loggedin','false');
+  this.route.navigateByUrl("").then(()=>{
+    window.location.reload();
+  });
+}
+else{
+  console.log(this.logbtn);
+}
+
+}
+
 
 }
