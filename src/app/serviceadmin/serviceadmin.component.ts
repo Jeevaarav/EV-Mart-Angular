@@ -18,7 +18,7 @@ export class ServiceadminComponent {
       if(this.evmartserv[i].Reply!=null){
         this.color=document.getElementsByTagName('div');
         console.log(this.color);
-        this.color.style.backgroundColor='Red';
+        this.color.style.background='red';
         }
       }
     });

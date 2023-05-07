@@ -1,1 +1,62 @@
-<p>orderpage works!</p>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="main">
+    <div class="displayimg">
+      <img src="../../assets/EV mart/Ather/display1.webp" alt="display1" id="changeimg">
+    </div>
+    <div class="config">
+      <div class="con">
+     <p> COLOR : <small class="colorindex">{{colorindex}}</small></p>
+     <div class="flex">
+     <div class="img" *ngFor="let color1 of loop;let w=index;let second=first" >
+      <img src="{{color1.color}}" alt="Changecolor" (click)="colorchange(this.w,this.color1.color)" id="{{'wave'+w}}" class="wave" [ngClass]="(status && w==0)?'true':'false'">
+     </div>
+    </div>
+  </div>
+
+  <div class="varients">
+   <div class="choose"> <p>Choose Model and Varients</p></div>
+    <div class="display">
+      <div class="ather" *ngFor="let varients of varients;let first=first;let s=index" (click)="varient(this.s,this.varients.vname)" [ngClass]="(boolstatus && s==0)?'default':'click'" id="{{'state'+s}}">
+        <p>{{varients.vname}}</p>
+      </div>
+    </div>
+    <div class="contain" *ngFor="let spec of spec;let h=index">
+    <div class="spec" [ngClass]="(range && h==0)?'range':'notrange'" (click)="specifications(h)" id="{{'spec'+h}}">
+      <div class="deal">
+        <div class="oddspec">
+        <p>Battery</p>
+        <small >{{spec.battery}}</small>
+      </div>
+      <div class="oddspec">
+        <p>Range</p>
+        <small >{{spec.range}}</small>
+      </div>
+      <div class="oddspec">
+        <p>Top Speed</p>
+        <small >{{spec.topspeed}}</small>
+      </div>
+      </div>
+      <div class="delivery">
+        <p>Estimated delivery by 14th May 2023</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+    </div>
+    <div class="continue">
+      <div class="switch">
+        <p>#Switch to Electric</p>
+      </div>
+      <div class="conflex">
+      <div><h3>₹ 1,00,000</h3></div>
+      <div><button class="btncon">Continue</button></div>
+    </div>
+    </div>
+  </div>
+</body>

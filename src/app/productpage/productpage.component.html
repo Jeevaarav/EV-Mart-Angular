@@ -11,7 +11,7 @@
           <h3>{{vehicle.Brandname}}</h3>
           <img src="{{vehicle.image}}" alt="">
           <p>{{vehicle.content}}</p>
-        <a routerLink="/orderpage"> <button class="book">View Varients</button></a>
+        <a routerLink="/orderpage" (click)="order(this.vehicle.Brandname)"> <button class="book">View Varients</button></a>
       </div>
   </div>
 </section>
