@@ -147,6 +147,32 @@ small{
 input.ng-invalid.ng-touched{
   border: 2px solid red;
 }
+.control {
+  display: flex;
+  flex-direction: row;
+  gap: -5rem;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.control .input{
+  width: 86%;
+}
+.control .input input{
+  border-top-right-radius:0;
+  border-bottom-right-radius: 0;
+}
+.control .icon i{
+  font-size: 1.5rem;
+  background-color: #E5E4E2;
+  padding:1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.control .icon{
+  cursor: pointer;
+}
 /* .ng-invalid:not(form){
   border-color: red;
 } */

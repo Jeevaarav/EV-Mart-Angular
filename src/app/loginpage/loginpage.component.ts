@@ -17,6 +17,7 @@ import { ForgotService } from '../forgot.service';
 export class LoginpageComponent {
   msg:any="";
   returl:any;
+  field2:boolean=true;
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private router:ActivatedRoute){
     this.router.queryParamMap.subscribe(data=>{
       this.returl=data.get('returl');
@@ -41,5 +42,9 @@ logdetails(){
   this.logincred.retrievedata(email,password,this.returl);
   this.logincred.userlogged(email,password);
   this.login.reset();
+}
+
+togglepass(){
+  this.field2=!this.field2;
 }
 }

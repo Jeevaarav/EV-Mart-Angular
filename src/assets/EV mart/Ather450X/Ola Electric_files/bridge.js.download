@@ -1,0 +1,82 @@
+/* eslint-disable no-unused-vars */
+console.log('js briidge called');
+var isWebview = Boolean(
+  window.OlaJSNativeBridge || window.OlaElectricJSNativeBridge,
+);
+
+window.OlaJSNativeBridge =
+  window.OlaJSNativeBridge || window.OlaElectricJSNativeBridge || {};
+
+/**
+ * This holds the array of callbacks for given native events
+ */
+window.OlaJSNativeBridge.appEventListeners = {};
+
+/**
+ * App will call this function
+ * @param {string} eventName - Name of the event you want to listen from App.
+ * @param {object} data      - (Optional) Relevant data
+ */
+
+window.OlaJSNativeBridge.nativeToWeb = function (eventName, data) {
+  data = data || {};
+  var currentListeners = this.appEventListeners[eventName] || [];
+  if (!currentListeners.length) {
+    return;
+  }
+  try {
+    var clLength = currentListeners.length;
+    for (var i = 0; i < clLength; i++) {
+      if (currentListeners[i]) {
+        currentListeners[i](JSON.parse(data));
+      }
+    }
+  } catch (error) {
+    throw new error(error);
+  }
+};
+
+window.OlaJSNativeBridge.webToNative =
+  window.OlaJSNativeBridge.webToNative ||
+  function (eventName, data) {
+    console.log(eventName, data);
+  };
+
+/**
+ * Registers a callback. Remember to delete the callback when element is unmounted.
+ * @param {string} eventName    - Name of the event you want to listen from App.
+ * @param {function reference}  - (Optional) Bind it with your element content before passing.
+ */
+
+window.OlaJSNativeBridge.addAppEventListener = function (
+  eventName,
+  callback,
+  data,
+) {
+  var currentListeners = this.appEventListeners[eventName] || [];
+  data = data || {};
+  currentListeners.push(callback);
+  this.appEventListeners[eventName] = currentListeners;
+  if (window.webkit && window.webkit.messageHandlers) {
+    window.webkit.messageHandlers[eventName].postMessage(data);
+  } else {
+    this.webToNative(
+      eventName,
+      callback ? 'nativeToWeb' : '',
+      JSON.stringify(data),
+    );
+  }
+  return {
+    eventName: eventName,
+    pos: currentListeners.length - 1,
+  };
+};
+
+/**
+ *  Deletes the callback
+ *  @param {object} ref      - Reference Object from Event Listener
+ */
+
+window.OlaJSNativeBridge.removeAppEventListener = function (ref) {
+  this.appEventListeners[ref.eventName][ref.pos] = undefined;
+};

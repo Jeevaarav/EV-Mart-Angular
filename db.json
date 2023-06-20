@@ -38,12 +38,6 @@
       "regconfirm": "Aravinth2001@"
     },
     {
-      "regemail": "2k19me070@kiot.ac.in",
-      "reguser": "Jeevaarav",
-      "regpass": "Jeeva@2001",
-      "regconfirm": "Jeeva@2001"
-    },
-    {
       "regemail": "padmapriya0016@gmail.com",
       "reguser": "Priyadharshini",
       "regpass": "Priya@2001",
@@ -60,6 +54,12 @@
       "reguser": "shyaam30",
       "regpass": "Shyaam@12",
       "regconfirm": "Shyaam@12"
+    },
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "reguser": "Jeevaarav",
+      "regpass": "Aravinthsaran@1",
+      "regconfirm": "Aravinthsaran@1"
     }
   ],
   "subscription": [
@@ -89,6 +89,76 @@
       "Brandname": "OLA",
       "image": "../../assets/EV mart/OlA.png",
       "content": "#EV Mart-With Mission Electric, We Pledge To Reject Petrol And Commit To Electric Vehicles By Making Sure No Petrol Two-Wheelers Are Sold In India After 2025. At The Heart Of Ola Electric Is Our Vision To Reduce Global Emissions And Fossil Fuel Dependency By Making India The Epic Centre Of Electrification. We Aim To Not Just Make Electric Vehicles But Engineer A Change In The Mindsets Of Every Indian, A Change That Powers The Vision Behind Mission Electric.",
+      "div": [
+        {
+          "color": "../../assets/EV mart/OLAS1/Gerua.png"
+        },
+        {
+          "color": "../../assets/EV mart/OLAS1/Porcelian White.png"
+        },
+        {
+          "color": "../../assets/EV mart/OLAS1/Khaki.png"
+        },
+        {
+          "color": "../../assets/EV mart/OLAS1/Neo Mint.png"
+        }
+      ],
+      "displayimg": [
+        {
+          "img": "../../assets/EV mart/OLAS1/display1.webp"
+        },
+        {
+          "img": "../../assets/EV mart/OLAS1/display2.webp"
+        },
+        {
+          "img": "../../assets/EV mart/OLAS1/display3.webp"
+        },
+        {
+          "img": "../../assets/EV mart/OLAS1/display4.webp"
+        },
+        {
+          "img": "../../assets/EV mart/OLAS1/display5.webp"
+        },
+        {
+          "img": "../../assets/EV mart/OLAS1/display6.webp"
+        }
+      ],
+      "varients": [
+        {
+          "vname": "OLA S1"
+        },
+        {
+          "vname": "OLA S1Pro"
+        }
+      ],
+      "OLAS1": [
+        {
+          "battery": "4kWh",
+          "range": "181 km",
+          "topspeed": "116 kmph",
+          "price": "1,14,000"
+        },
+        {
+          "battery": "4kWh",
+          "range": "181 km",
+          "topspeed": "116 kmph",
+          "price": "1,60,000"
+        }
+      ],
+      "OLAS1Pro": [
+        {
+          "battery": "1kWh",
+          "range": "120 km",
+          "topspeed": "50 kmph",
+          "price": "1,44,000"
+        },
+        {
+          "battery": "1kWh",
+          "range": "120 km",
+          "topspeed": "50 kmph",
+          "price": "1,50,000"
+        }
+      ],
       "regemail": 1
     },
     {
@@ -101,44 +171,38 @@
       "Brandname": "Revolt",
       "image": "../../assets/EV mart/Revolt.png",
       "content": "#EV Mart-Revolt Motors Is The Next-Gen Mobility Company, Created For The Smart World. With Technology At Its Roots And A Class-Apart Product In The Works, Revolt Has Introduced India’s First AI-Enabled Motorcycle Without Compromising On The Performance Or Aesthetics Of A Regular Ride.Democratising Clean Commute Using Next-Gen Mobility Solutions.To Create A Future Of Next-Gen Mobility With 100% Accessibility And 0% Fuel Residue.",
-      "regemail": 3
-    },
-    {
-      "Brandname": "Ather",
-      "image": "../../assets/EV mart/Ather.png",
-      "content": "#EV Mart-The Automobile Industry Is In The Midst Of A Huge Technological Disruption. Today, Electric Is The Preferred Choice Because Of Its Inherent Efficiency That Will Shape Urban Commute And The Cities Of Tomorrow. In Parallel, The World Around Us Is Getting Connected, Enabling Integration Of Devices And Making Our Life Experiences Seamless. Intelligent Vehicles Will Revolutionize Our Commute Experience In The Future And The Ather 450 Stands At The Cusp Of This Exciting Reality.",
       "div": [
         {
-          "color": "../../assets/EV mart/Ather/True Red.png"
+          "color": "../../assets/EV mart/Ather450X/True Red.png"
         },
         {
-          "color": "../../assets/EV mart/Ather/Cosmic Black.png"
+          "color": "../../assets/EV mart/Ather450X/Cosmic Black.png"
         },
         {
-          "color": "../../assets/EV mart/Ather/Salt Green.png"
+          "color": "../../assets/EV mart/Ather450X/Salt Green.png"
         },
         {
-          "color": "../../assets/EV mart/Ather/Lunar Grey.png"
+          "color": "../../assets/EV mart/Ather450X/Lunar Grey.png"
         }
       ],
       "displayimg": [
         {
-          "img": "../../assets/EV mart/Ather/display1.webp"
+          "img": "../../assets/EV mart/Ather450X/display1.webp"
         },
         {
-          "img": "../../assets/EV mart/Ather/display2.webp"
+          "img": "../../assets/EV mart/Ather450X/display2.webp"
         },
         {
-          "img": "../../assets/EV mart/Ather/display3.webp"
+            "img": "../../assets/EV mart/Ather450X/display3.webp"
         },
         {
-          "img": "../../assets/EV mart/Ather/display4.webp"
+          "img": "../../assets/EV mart/Ather450X/display4.webp"
         },
         {
-          "img": "../../assets/EV mart/Ather/display5.webp"
+          "img": "../../assets/EV mart/Ather450X/display5.webp"
         },
         {
-          "img": "../../assets/EV mart/Ather/display6.webp"
+          "img": "../../assets/EV mart/Ather450X/display6.webp"
         }
       ],
       "varients": [
@@ -153,19 +217,104 @@
         {
           "battery": "4kWh",
           "range": "181 km",
-          "topspeed": "116 kmph"
+          "topspeed": "116 kmph",
+          "price": "1,14,000"
         },
         {
-          "battery": "2kWh",
-          "range": "160 km",
-          "topspeed": "100 kmph"
+          "battery": "4kWh",
+          "range": "181 km",
+          "topspeed": "116 kmph",
+          "price": "1,60,000"
         }
       ],
       "Ather450XProPack": [
         {
           "battery": "1kWh",
           "range": "120 km",
-          "topspeed": "50 kmph"
+          "topspeed": "50 kmph",
+          "price": "1,44,000"
+        },
+        {
+          "battery": "1kWh",
+          "range": "120 km",
+          "topspeed": "50 kmph",
+          "price": "1,50,000"
+        }
+      ],
+      "regemail": 3
+    },
+    {
+      "Brandname": "Ather",
+      "image": "../../assets/EV mart/Ather.png",
+      "content": "#EV Mart-The Automobile Industry Is In The Midst Of A Huge Technological Disruption. Today, Electric Is The Preferred Choice Because Of Its Inherent Efficiency That Will Shape Urban Commute And The Cities Of Tomorrow. In Parallel, The World Around Us Is Getting Connected, Enabling Integration Of Devices And Making Our Life Experiences Seamless. Intelligent Vehicles Will Revolutionize Our Commute Experience In The Future And The Ather 450 Stands At The Cusp Of This Exciting Reality.",
+      "div": [
+        {
+          "color": "../../assets/EV mart/Ather450X/True Red.png"
+        },
+        {
+          "color": "../../assets/EV mart/Ather450X/Cosmic Black.png"
+        },
+        {
+          "color": "../../assets/EV mart/Ather450X/Salt Green.png"
+        },
+        {
+          "color": "../../assets/EV mart/Ather450X/Lunar Grey.png"
+        }
+      ],
+      "displayimg": [
+        {
+          "img": "../../assets/EV mart/Ather450X/display1.webp"
+        },
+        {
+          "img": "../../assets/EV mart/Ather450X/display2.webp"
+        },
+        {
+            "img": "../../assets/EV mart/Ather450X/display3.webp"
+        },
+        {
+          "img": "../../assets/EV mart/Ather450X/display4.webp"
+        },
+        {
+          "img": "../../assets/EV mart/Ather450X/display5.webp"
+        },
+        {
+          "img": "../../assets/EV mart/Ather450X/display6.webp"
+        }
+      ],
+      "varients": [
+        {
+          "vname": "Ather 450X"
+        },
+        {
+          "vname": "Ather 450X Pro Pack"
+        }
+      ],
+      "Ather450X": [
+        {
+          "battery": "4kWh",
+          "range": "181 km",
+          "topspeed": "116 kmph",
+          "price": "1,14,000"
+        },
+        {
+          "battery": "4kWh",
+          "range": "181 km",
+          "topspeed": "116 kmph",
+          "price": "1,60,000"
+        }
+      ],
+      "Ather450XProPack": [
+        {
+          "battery": "1kWh",
+          "range": "120 km",
+          "topspeed": "50 kmph",
+          "price": "1,44,000"
+        },
+        {
+          "battery": "1kWh",
+          "range": "120 km",
+          "topspeed": "50 kmph",
+          "price": "1,50,000"
         }
       ],
       "regemail": 4
@@ -230,6 +379,22 @@
       "username": "Harish__13",
       "dateofvisit": "13-05-2023",
       "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
+    },
+    {
+      "regemail": "manidhanush2001@gmail.com",
+      "phone": "6379623737",
+      "username": "Manikandan",
+      "dateofvisit": "04-05-2023",
+      "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
+    },
+    {
+      "regemail": "2k19ece050@kiot.ac.in",
+      "phone": "8558798440",
+      "username": "jeevaaaaa",
+      "dateofvisit": "04-05-2023",
+      "Timeslot": "09.00 - 10.00 Am",
       "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
     }
   ],
@@ -336,6 +501,16 @@
       "Reply": "uhuujui<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam in unde, eum, error nobis facilis recusandae doloremque atque optio, quod magnam sapiente minus! Eaque repellat dolore sequi asperiores consequuntur nihil?</p>",
       "Date": "2023-05-26",
       "Time": "21:15"
+    },
+    {
+      "email": "2k19ece050@kiot.ac.in",
+      "reguser": "Nandhagopal",
+      "category": "Vehicle Maintanence-Category",
+      "problem": "dvdhgcggfvvhgwbgv gdbvcx gwbvcx bdvcx gewhgsdkeidhxewjhdjxewhgsdbxewhgsxvhwhdbxhngxvbdvxbdvxebvgfcgdfyhgfghfghfghfchgfgfhygfyfhfghffhfhfhfhfhghghjhgtiojuty9",
+      "regemail": 4,
+      "Reply": "hjgbjhsdbjdsmn ,msx dngu3edh",
+      "Date": "2023-05-17",
+      "Time": "03:12"
     }
   ]
 }

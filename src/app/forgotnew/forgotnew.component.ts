@@ -21,11 +21,7 @@ export class ForgotnewComponent {
   });
   changepass(a:any){
     console.log(this.forgotnew.value);
-    this.forgot.changepassword(this.forgotnew.value,a).subscribe((change)=>{
-      alertifyjs.success().setContent('<h3>Password Changed Successfully</h3>');
-      this.routes.navigateByUrl('/login');
-      this.forgot.errormsg="";
-    });
+    this.forgot.changepassword(this.forgotnew.value,a);
   }
 
 }

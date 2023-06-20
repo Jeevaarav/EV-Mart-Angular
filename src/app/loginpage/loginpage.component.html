@@ -1,3 +1,10 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Book Appointment</title>
+</head>
+<body>
 <div class="section">
 <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
   <div class="login-form">
@@ -11,11 +18,12 @@
         <small *ngIf="login.controls['email'].errors?.['pattern']" class="small">Please Provide proper mail ID</small>
       </div>
       <div class="control">
-        <input type="password" placeholder="password" class="box" id="password" name="password" formControlName="password" #password>
+        <div class="input"><input type="password" placeholder="password" class="box" id="password" name="password" formControlName="password" #password [type]="field2 ? 'password':'text'"></div>
+        <div class="icon"><i class="fa-sharp fa-solid fa-eye-slash" (click)="togglepass()" [ngClass]="{'fa-eye-slash':field2,'fa-eye':!field2}"></i></div>
         <div *ngIf="login.controls['password'].invalid && login.controls['password'].touched"></div>
         <small *ngIf="login.controls['password'].errors?.['required'] && login.controls['password'].dirty" class="small">Please fill the Password</small>
         <small *ngIf="login.controls['password'].errors?.['pattern']" class="small">Password should be at least 8 characters</small>
-        <!-- <i class="fa fa-eye-slash" id="togglePassword"></i> -->
+
       </div>
       <p >forgot your password?<a routerLink="/login/forgot1" class="link" >click here</a></p>
       <button type="submit" class="book" (click)="check(email.value,password.value)">Login now</button>
@@ -23,3 +31,4 @@
     </form>
   </div>
 </div>
+</body>

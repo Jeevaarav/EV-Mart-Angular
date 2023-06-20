@@ -17,6 +17,8 @@ import { ForgotService } from '../forgot.service';
 export class RegisterpageComponent {
   errorfill:any="";
   call:any="";
+  field:boolean=true;
+  field2:boolean=true;
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){
     setInterval(()=>{
       this.call=this.logincred.regcheck;
@@ -36,7 +38,7 @@ export class RegisterpageComponent {
 
     this.logincred.registrationcheck(email,username,password,confirm);
     this.register.reset();
-    
+
     // this.logincred.savedata(this.register.value).subscribe(()=>{
     //   alert("Thanks for registering EV Mart, Let's experience the EV world");
     //   this.route.navigateByUrl('/login');
@@ -53,5 +55,13 @@ export class RegisterpageComponent {
     else{
       this.errorfill="";
     }
+  }
+
+  togglefunction(){
+    this.field=!this.field;
+  }
+
+  togglepass(){
+    this.field2=!this.field2;
   }
 }

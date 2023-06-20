@@ -1,8 +1,14 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Book Appointment</title>
+</head>
+<body>
 <div class="section">
   <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
   <div class="login-form">
     <form [formGroup]="register" (ngSubmit)="register.valid && regdetails()" class="regform">
-      <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
       <h3>Create new account</h3>
       <small class="msg">{{call}}</small>
       <div class="control">
@@ -16,18 +22,19 @@
         <div *ngIf="(register.controls['reguser'].invalid && register.controls['reguser'].touched || register.controls['reguser'].dirty)"></div>
         <small *ngIf="register.controls['reguser'].errors?.['required'] && register.controls['reguser'].dirty">Please enter username</small>
         <small *ngIf="register.controls['reguser'].errors?.['pattern']">Provide proper username(Don't start with number) </small>
-
       </div>
       <div class="control">
-        <input type="password" placeholder="password" class="box" name="password" id="password" formControlName="regpass" #password>
+        <div class="input"><input type="password" placeholder="Password" class="box" name="password" id="password" formControlName="regpass" #password [type]="field2 ? 'password':'text'"></div>
+        <div class="icon"><i class="fa-sharp fa-solid fa-eye-slash" (click)="togglepass()" [ngClass]="{'fa-eye-slash':field2,'fa-eye':!field2}"></i></div>
         <div *ngIf="(register.controls['regpass'].invalid && register.controls['regpass'].touched || register.controls['regpass'].dirty)"></div>
         <small *ngIf="register.controls['regpass'].errors?.['required'] && register.controls['regpass'].dirty">Please enter password</small>
-        <small *ngIf="register.controls['regpass'].errors?.['pattern']">password is not strong enough </small>
+        <small *ngIf="register.controls['regpass'].errors?.['pattern']">Password is not strong enough </small>
         <div>
         </div>
       </div>
       <div class="control">
-        <input type="password" placeholder="Confirm password" class="box" name="confirm_password" id="confirm_password" formControlName="regconfirm" #confirm >
+        <div class="input"><input type="password" placeholder="Confirm Password" class="box" name="confirm_password" id="confirm_password" formControlName="regconfirm" #confirm [type]="field ? 'password':'text'"></div>
+        <div class="icon"><i class="fa-sharp fa-solid fa-eye-slash" (click)="togglefunction()" [ngClass]="{'fa-eye-slash':field,'fa-eye':!field}"></i></div>
         <div *ngIf="(register.controls['regconfirm'].invalid && register.controls['regconfirm'].touched || register.controls['regconfirm'].dirty)"></div>
         <!-- <small *ngIf="!register.controls['regconfirm'].dirty">{{error}}</small> -->
         <small *ngIf="register.controls['regconfirm'].errors?.['required'] && register.controls['regconfirm'].dirty">Please enter confirm password</small>
@@ -41,4 +48,4 @@
     </form>
   </div>
 </div>
-
+</body>

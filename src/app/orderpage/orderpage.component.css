@@ -263,3 +263,24 @@ html{
   border:2px solid green;
   background-color: white;
 }
+.evenspec img{
+  width: 30vw;
+  height: 80%;
+}
+.checkflex{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.checkflex input:checked{
+  accent-color: #90EE90;
+}
+.checkflex label{
+  font-size: 1.7rem;
+  text-transform: none;
+}
+.checkflex .check{
+  width: 25px;
+  height: 25px;
+}
