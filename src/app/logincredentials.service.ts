@@ -17,6 +17,14 @@ export class LogincredentialsService {
   password:any;
   logoutshow:boolean=false;
   store:any;
+  reguser:any="";
+  profiledetails:any;
+  phone:any;
+  user:any;
+  email:any;
+  profilepageget:any;
+  parse:any;
+  profilemail:any;
   constructor(private http:HttpClient,private route:Router) {
   }
   savedata(a:any){
@@ -30,10 +38,14 @@ export class LogincredentialsService {
   retrievedata(custmail:any,custpass:any,returl:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{
+        this.profiledetails=JSON.stringify(logged);
+        localStorage.setItem('profilepage',this.profiledetails);
+        localStorage.setItem('reguser',logged.reguser);
         return logged.regemail===custmail && logged.regpass===custpass;
       });
       if(user){
         this.custemail=custmail;
+        this.reguser=localStorage.getItem('reguser');
         localStorage.setItem('logmail',custmail);
         localStorage.setItem('logpass',custpass);
         if(returl==null){
@@ -68,7 +80,7 @@ export class LogincredentialsService {
     return this.http.post(reurl,redata);
   }
 
-  registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any){
+  registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any,regphone:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((check)=>{
       const regcheck=check.find((find:any)=>{
         return find.regemail==regmail;
@@ -78,7 +90,7 @@ export class LogincredentialsService {
         return this.regcheck;
       }
       else{
-        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm}).subscribe((data)=>{
+        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm,regphonenum:regphone}).subscribe((data)=>{
         alert("Thanks for registering EV Mart, Let's experience the EV world");
         localStorage.setItem('key',regmail);
         localStorage.setItem('key1',reguser);
@@ -120,5 +132,37 @@ export class LogincredentialsService {
   userlogged(u:any,p:any){
     this.username=u,
     this.password=p;
+  }
+
+
+  profileupdate(phone:any,mail:any,user:any){
+    this.http.get<any>("http://localhost:3000/Register").subscribe((update)=>{
+      const userprofile=update.find((profile:any)=>{
+        this.profilemail=localStorage.setItem('mailcheck',profile.regemail);
+        console.log(this.profilemail);
+        return profile.regemail==mail ;
+      })
+      if(userprofile){
+         this.http.patch("http://localhost:3000/Register"+'/'+localStorage.getItem('mailcheck'),{regphonenum:phone,reguser:user}).subscribe((changedet)=>{
+         this.phone=localStorage.setItem('updatephone',phone);
+         this.user=localStorage.setItem('updateuser',user);
+        this.profilepageget=localStorage.getItem('profilepage');
+        this.parse=JSON.parse(this.profilepageget);
+        let userdata={
+          regemail:mail,
+          regphonenum:phone,
+          reguser:user
+        }
+        localStorage.setItem('profilepage',JSON.stringify(userdata));
+         console.log("success");
+         window.location.reload();
+        });
+        }
+      else{
+        console.log("Cannot found");
+      }
+    })
+
+
   }
 }

@@ -26,6 +26,9 @@ import { ServicepageComponent } from './servicepage/servicepage.component';
 import { ServicesformComponent } from './servicesform/servicesform.component';
 import { ServiceadminComponent } from './serviceadmin/serviceadmin.component';
 import { AdminformComponent } from './adminform/adminform.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -51,6 +54,9 @@ import { AdminformComponent } from './adminform/adminform.component';
     ServicesformComponent,
     ServiceadminComponent,
     AdminformComponent,
+    ProfilePageComponent,
+    OrderdetailsComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,

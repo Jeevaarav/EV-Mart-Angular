@@ -19,6 +19,8 @@ import { ServicepageComponent } from './servicepage/servicepage.component';
 import { ServicesformComponent } from './servicesform/servicesform.component';
 import { ServiceadminComponent } from './serviceadmin/serviceadmin.component';
 import { AdminformComponent } from './adminform/adminform.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 
 
@@ -31,6 +33,17 @@ const routes: Routes = [
   {
     path:"Product",
     component:ProductpageComponent
+  },
+  {
+    path:"Profile",
+    component:ProfilePageComponent
+  },
+  {
+    path:"",
+    children:[{
+      path:"Profile/Orders",
+      component:OrderdetailsComponent
+    }]
   },
   {
     path:"Service",

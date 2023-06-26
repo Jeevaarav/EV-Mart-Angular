@@ -28,6 +28,7 @@ export class RegisterpageComponent {
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
     reguser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]],
     regpass:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]],
+    regphone:['',[Validators.required,Validators.pattern("[7-9]{1}[0-9]{9}")]],
     regconfirm:['',Validators.required]
   });
   regdetails(){
@@ -35,9 +36,15 @@ export class RegisterpageComponent {
     const username=this.register.controls['reguser'].value;
     const password=this.register.controls['regpass'].value;
     const confirm=this.register.controls['regconfirm'].value;
+    const phone=this.register.controls['regphone'].value;
 
-    this.logincred.registrationcheck(email,username,password,confirm);
+    if(confirm==password){
+    this.logincred.registrationcheck(email,username,password,confirm,phone);
     this.register.reset();
+    }
+    else{
+      alert("Password does not match");
+    }
 
     // this.logincred.savedata(this.register.value).subscribe(()=>{
     //   alert("Thanks for registering EV Mart, Let's experience the EV world");

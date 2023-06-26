@@ -14,7 +14,12 @@
     <a routerLink="offers" routerLinkActive="active">Offers</a>
   </nav>
   <a routerLink="login" class="btnlog"><button type="button" class="book" id="book" *ngIf="logbtn">Login</button></a>
-  <button type="button" class="book" id="book" *ngIf="btn" (click)="logout()">Logout</button>
-</header>
+  <button type="button" class="book" id="book" *ngIf="btn" (click)="drop()">{{reguser}}<i class="fa-solid fa-caret-down" id="evMartdrop"></i></button>
 
+</header>
+<div class="evMartdown" *ngIf="dropdown">
+  <a (click)="myaccount()">My Account</a>
+  <a (click)="logout()">Logout</a>
+  <a (click)="menuClose()">Close</a>
+</div>
 

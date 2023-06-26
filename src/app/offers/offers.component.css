@@ -73,8 +73,15 @@ html{
 }
 .displayoff .grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
-  gap: 7rem;
+  grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+  gap: 10rem;
+  position: relative;
+}
+.limitedoffer img{
+  width: 170px;
+  height: 120px;
+  z-index: 1;
+  position: absolute;
 }
 .displayoff .grid h4{
   text-align: center;
@@ -168,3 +175,12 @@ margin-bottom:0.8rem;
 .payflex p{
   text-align: justify;
 }
+.timer h4{
+  text-transform: none;
+}
+.validity{
+  color: #7393B3;
+  font-size: 2rem;
+  text-transform: none;
+}
+

@@ -87,14 +87,13 @@ export class OrderpageComponent implements OnInit {
     localStorage.setItem('varientindex',ind);
   }
   colorchange(index:any,color:any){
-    console.log(color);
     this.colorchgpath=this.useval.varients[0].vname;
     this.imgchange=document.getElementById("changeimg");
     this.showborder1=localStorage.getItem('index');
     this.showborder2=document.getElementById("wave"+this.showborder1);
     this.showborder2.style.outline='none';
     this.status=false;
-    this.color=color.split(this.colorchgpath+'/');
+    this.color=color.split(this.vname+'/');
     console.log(this.color);
     this.colorfinal=this.color[1].split('.png');
     this.colorindex=this.colorfinal[0];

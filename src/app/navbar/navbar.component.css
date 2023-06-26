@@ -25,7 +25,7 @@ html{
   position: sticky;
   top: 0;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
-  z-index:1;
+  z-index:2;
   display: flex;
  align-items: center;
  justify-content: space-between;
@@ -169,6 +169,47 @@ input.ng-invalid.ng-touched{
   color: #f9d806;
   border-bottom: 4px solid yellow;
 }
+.username{
+  display: none;
+}
+#evMartdrop{
+  color: #130f40;
+  padding-left: 0.5rem;
+}
+.evMartdown{
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  width: 15%;
+  padding: 1rem;
+  position: absolute;
+  right: 0px;
+  top: 90px;
+  position: fixed;
+  animation: topmenu 300ms ease-in-out;
+  transform-origin: top;
+}
+@keyframes topmenu {
+  from{
+    transform: scaleY(0);
+  }
+  to{
+    transform: scaleY(1);
+  }
+}
+#book{
+  position: relative;
+}
+.evMartdown a{
+  font-size: 1.8rem;
+  border: 1px solid #130f40;
+  padding: 1rem;
+  background-color: #ffee80;
+  cursor: pointer;
+  color: #130f40;
+  text-decoration: none;
+}
+
 /* .ng-invalid:not(form){
   border-color: red;
 } */

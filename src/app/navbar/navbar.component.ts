@@ -22,7 +22,10 @@ error:any="";
 btn:boolean=false;
 logbtn:boolean=true;
 close:any="close";
+reguser:any;
+dropdown:boolean=false;
 constructor(private form:FormBuilder,private service:LogincredentialsService,private route:Router){
+  this.reguser=localStorage.getItem('reguser');
   console.log(localStorage.getItem('loggedin'));
   if(localStorage.getItem('loggedin')=='true'){
     this.btn=true;
@@ -40,7 +43,9 @@ constructor(private form:FormBuilder,private service:LogincredentialsService,pri
 // })
 logout(){
   if(confirm("Are you sure want to log-out?")){
+  this.dropdown=false;
   localStorage.setItem('loggedin','false');
+  localStorage.removeItem('reguser');
   this.route.navigateByUrl("").then(()=>{
     window.location.reload();
   });
@@ -51,5 +56,17 @@ else{
 
 }
 
+drop(){
+    this.dropdown=true;
+}
+menuClose(){
+  this.dropdown=false;
+}
+myaccount(){
+  this.dropdown=false;
+  this.route.navigateByUrl('/Profile').then(()=>{
+    window.location.reload();
+  });
+}
 
 }
