@@ -35,12 +35,12 @@ export class LogincredentialsService {
   //   console.log(body);
   //   return this.http.get<any>("http://localhost:3000/Register"+"/"+body);
   // }
-  retrievedata(custmail:any,custpass:any,returl:any){
+  retrievedata(custmail:any,custpass:any,returl:any,servurl:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{
         this.profiledetails=JSON.stringify(logged);
         localStorage.setItem('profilepage',this.profiledetails);
-        localStorage.setItem('reguser',logged.reguser);
+        sessionStorage.setItem('reguser',logged.reguser);
         return logged.regemail===custmail && logged.regpass===custpass;
       });
       if(user){
@@ -48,14 +48,21 @@ export class LogincredentialsService {
         this.reguser=localStorage.getItem('reguser');
         localStorage.setItem('logmail',custmail);
         localStorage.setItem('logpass',custpass);
-        if(returl==null){
+        if(returl==null && servurl==null){
           this.route.navigateByUrl("/Product");
+        }
+        else if(servurl!=null){
+          console.log(servurl);
+          this.route.navigate([servurl]).then(()=>{
+            window.location.reload();
+          });
         }
         else{
           console.log(returl);
           this.route.navigate([returl]);
         }
         localStorage.setItem('loggedin','true');
+        sessionStorage.setItem('isLogged','true');
         this.logoutshow=true;
         return alert("Login Successfull");
       }

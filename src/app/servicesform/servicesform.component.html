@@ -13,12 +13,12 @@
         <div>
         <input type="text" class="box" placeholder="Email ID" formControlName="Email">
           <small *ngIf="servform.controls['Email'].errors?.['required'] && servform.controls['Email'].dirty">We need your Mail ID</small>
-          <small *ngIf="servform.controls['Email'].errors?.['pattern']">Provide proper mail ID</small>
+          <small *ngIf="servform.controls['Email'].errors?.['pattern']">Provide registered mail ID</small>
       </div>
       <div>
         <input type="text" class="box" placeholder="Username" formControlName="User">
         <small *ngIf="servform.controls['User'].errors?.['required'] && servform.controls['User'].dirty">We need Username</small>
-        <small *ngIf="servform.controls['User'].errors?.['pattern']">Username should not start with numbers</small>
+        <small *ngIf="servform.controls['User'].errors?.['pattern']">Provide registered username</small>
       </div>
       <div>
         <input type="text" class="box" placeholder="Category" value="{{value}}-Category" readonly #category>

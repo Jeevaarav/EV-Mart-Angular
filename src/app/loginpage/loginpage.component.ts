@@ -17,8 +17,13 @@ import { ForgotService } from '../forgot.service';
 export class LoginpageComponent {
   msg:any="";
   returl:any;
+  servurl:any;
   field2:boolean=true;
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private router:ActivatedRoute){
+    this.router.queryParamMap.subscribe(servform=>{
+      this.servurl=servform.get('serviceurl');
+      console.log(this.servurl);
+    })
     this.router.queryParamMap.subscribe(data=>{
       this.returl=data.get('returl');
       console.log(this.returl);
@@ -39,7 +44,7 @@ check(a:any,b:any){
 logdetails(){
   const email=this.login.controls['email'].value;
   const password=this.login.controls['password'].value;
-  this.logincred.retrievedata(email,password,this.returl);
+  this.logincred.retrievedata(email,password,this.returl,this.servurl);
   this.logincred.userlogged(email,password);
   this.login.reset();
 }

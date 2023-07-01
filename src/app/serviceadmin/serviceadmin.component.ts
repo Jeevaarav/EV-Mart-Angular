@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { EvmartserviceService } from '../evmartservice.service';
 import { AdminService } from '../admin.service';
+import { Router } from '@angular/router';
+import { LogincredentialsService } from '../logincredentials.service';
 
 @Component({
   selector: 'app-serviceadmin',
@@ -10,7 +12,7 @@ import { AdminService } from '../admin.service';
 export class ServiceadminComponent {
   evmartserv:any;
   color:any;
-  constructor(private service:EvmartserviceService,private reply:AdminService){
+  constructor(private service:EvmartserviceService,private reply:AdminService,private route:Router){
     this.service.retrieveserv().subscribe((data)=>{
       this.evmartserv=data;
       console.log(this.evmartserv[1].Reply);
@@ -26,5 +28,9 @@ export class ServiceadminComponent {
   }
   details(take:any){
     this.reply.replyform(take);
+  }
+  logout(){
+    alert("Are you sure want to logout");
+    this.route.navigateByUrl('');
   }
 }

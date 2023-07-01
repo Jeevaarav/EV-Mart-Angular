@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,ViewEncapsulation} from '@angular/core';
-import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
 import { ForgotService } from '../forgot.service';
@@ -26,11 +26,12 @@ export class RegisterpageComponent {
   }
   register=this.form.group({
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-    reguser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]],
+    reguser:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
     regpass:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]],
     regphone:['',[Validators.required,Validators.pattern("[7-9]{1}[0-9]{9}")]],
     regconfirm:['',Validators.required]
   });
+
   regdetails(){
     const email=this.register.controls['regemail'].value;
     const username=this.register.controls['reguser'].value;
@@ -72,3 +73,42 @@ export class RegisterpageComponent {
     this.field2=!this.field2;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// customPatternValidator(control:AbstractControl): ValidationErrors | null{
+//   const pattern1=/^[a-zA-Z][a-zA-Z0-9_-]{2,15}$/;
+//   const pattern2=/^(?!.*(.).*\\1{3})/
+//   const value=control.value;
+
+//   if(value && !pattern1.test(value)){
+//     return {invalidPattern:'Username should start with a letter, contain only alphanumeric characters'};
+//   }
+//   if(value && !pattern2.test(value)){
+//     return {invalidPattern:'Do not use repetitive characters'};
+//   }
+//   return null;
+// }

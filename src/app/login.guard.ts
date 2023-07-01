@@ -12,11 +12,11 @@ export class LoginGuard implements CanActivate, CanActivateChild, CanDeactivate<
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean  {
-      if(localStorage.getItem('loggedin')=='false'){
+      if(!sessionStorage.getItem('isLogged')){
         this.route.navigate(['/login'],{queryParams:{returl:route.url}});
         return false;
       }
-      else if(localStorage.getItem('loggedin')=='true'){
+      else if(sessionStorage.getItem('loggedin')=='true'){
         return true;
       }
       else{

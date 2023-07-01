@@ -11,7 +11,7 @@
           <div class="para"> EV Mart Service Center</div>
         </div>
         <div class="maintain">
-         <a routerLink="/Service/serviceform" *ngFor="let serv of evmartserv">
+         <a routerLink="/serviceform" *ngFor="let serv of evmartserv">
           <div class="vehicle" (click)="details(this.serv.title)">
             <div><p>{{serv.title}}<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
             <div><h5>{{serv.content}}</h5></div>

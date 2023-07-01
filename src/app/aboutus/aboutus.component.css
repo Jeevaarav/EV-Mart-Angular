@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+:root{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+.book{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #ffee80;
+    color:#130f40;
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6rem 0 10rem 18rem;
+}
+.main p{
+  font-size: 3.5rem;
+  color: #130f40;
+  text-transform: none;
+}
+.main .heading{
+  width: 450px;
+}
+.content{
+  margin-left:16% ;
+  display: flex;
+  flex-direction: row;
+  gap:15rem;
+}
+.content p{
+  font-size: 1.8rem;
+  text-align: justify;
+  line-height: 3.3rem;
+  text-transform: none;
+  font-weight: lighter;
+  width: 400px;
+}
+.color{
+  width: 80px;
+  height: 10px;
+  background-color: green;
+  margin-bottom: 2rem;
+}
+.icon i{
+  font-size: 7rem;
+  padding: 2rem;
+  background: #ffee80;
+  border-radius: 50%;
+  margin-right: 10rem;
+  color: #130f40;
+}
+.collage img{
+  width: 500px;
+  height: 450px;
+  padding-bottom: 3rem;
+}
+.setVideo .video{
+  width: 100%;
+  height: 700px;
+  background: #E5E4E2;
+  margin-bottom: 2rem;
+}
+.setVideo video{
+  width: 100%;
+  height: 700px;
+}
+.setVideo .topic h2{
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #130f40;
+  text-align: center;
+  padding: 5rem 0 3rem 0;
+}
+.leadership img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.leadership{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 20rem 2rem 20rem;
+  margin: 0 10rem 2rem 10rem;
+  background:url('../../assets/EV mart/leadercolor.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+.leaderflex{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.leaderflex p{
+  font-size: 5rem;
+}
+.leaderflex h3{
+  font-size: 3rem;
+}
+.leaderflex q{
+  font-size: 2rem;
+  text-transform: none;
+  color: darkgreen;
+}
+.leaderflex q::before{
+  content: open-quote;
+}
+.leaderflex q:after{
+  content: close-quote;
+}
+.aboutleader p{
+  font-size: 2rem;
+  color: #130f40;
+  width: 600px;
+  text-align: justify;
+  text-transform: none;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.aboutservices{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 10rem 5rem 10rem;
+}
+.aboutservices h1{
+  font-size: 4rem;
+  text-transform: none;
+}
+.aboutservices p{
+  padding-top:2rem ;
+  font-size: 1.7rem;
+  text-transform: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.serviceimg{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.serviceimg img{
+  width: 300px;
+  height: 300px;
+}
+.serviceimg h4{
+  font-size: 2rem;
+  text-transform: none;
+  color: #130f40;
+}
+.serviceimg h6{
+  font-size: 1.5rem;
+  text-transform: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.serviceimg .firstimg{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+/* .leaderflex i{
+  font-size: 1.5rem;
+  color: #666;
+} */

@@ -17,7 +17,7 @@ constructor(private service:EvmartserviceService,private formbuild:FormBuilder){
 }
 servform=this.formbuild.group({
   Email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-  User:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]],
+  User:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
   problem:['',[Validators.required,Validators.minLength(150)]]
 });
 

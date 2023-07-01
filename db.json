@@ -22,7 +22,14 @@
       "reguser": "Aravinth",
       "regpass": "Jeeva@2001",
       "regconfirm": "Jeeva@2001",
-      "regphonenum": "6374505526"
+      "regphonenum": "6374505525"
+    },
+    {
+      "regemail": "2k19me070@kiot.ac.in",
+      "reguser": "Jeevaarav",
+      "regpass": "Aravinth@2001",
+      "regconfirm": "Aravinth@2001",
+      "regphonenum": "7904925991"
     }
   ],
   "subscription": [
@@ -434,22 +441,6 @@
       "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
     },
     {
-      "regemail": "2k19ece017@kiot.ac.in",
-      "phone": "9361627761",
-      "username": "Dhivyaa1",
-      "dateofvisit": "04-05-2023",
-      "Timeslot": "01.00 - 02.00 Pm",
-      "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
-    },
-    {
-      "regemail": "2k19me028@kiot.ac.in",
-      "phone": "6379623737",
-      "username": "Manikandan",
-      "dateofvisit": "04-05-2023",
-      "Timeslot": "01.00 - 02.00 Pm",
-      "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
-    },
-    {
       "regemail": "padmapriya0016@gmail.com",
       "phone": "9360408441",
       "username": "priyadharshini",
@@ -458,38 +449,22 @@
       "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
     },
     {
-      "regemail": "2k19me016@kiot.ac.in",
-      "phone": "9385673533",
-      "username": "Harish__13",
-      "dateofvisit": "13-05-2023",
-      "Timeslot": "01.00 - 02.00 Pm",
-      "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
-    },
-    {
       "regemail": "manidhanush2001@gmail.com",
       "phone": "6379623737",
       "username": "Manikandan",
       "dateofvisit": "04-05-2023",
       "Timeslot": "01.00 - 02.00 Pm",
       "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
-    },
-    {
-      "regemail": "2k19ece050@kiot.ac.in",
-      "phone": "8558798440",
-      "username": "jeevaaaaa",
-      "dateofvisit": "04-05-2023",
-      "Timeslot": "09.00 - 10.00 Am",
-      "location": "EV Mart Center, Jawahar Nagar, Dindugal, Tamil Nadu 641011"
     }
   ],
   "EV-Martcenter": [
     {
       "dateofvisit": {
-        "Monday": "01-05-2023",
-        "Thursday": "04-05-2023",
-        "Tuesday": "09-05-2023",
-        "Friday": "12-05-2023",
-        "Saturday": "13-05-2023"
+        "Monday": "30-06-2023",
+        "Thursday": "02-07-2023",
+        "Tuesday": "07-07-2023",
+        "Friday": "12-07-2023",
+        "Saturday": "20-07-2023"
       },
       "id": 1
     },
@@ -558,43 +533,10 @@
   "Serviceform": [
     {
       "email": "2k19me070@kiot.ac.in",
-      "reguser": "Jevaarav",
-      "category": "Battery Replacement-Category",
-      "problem": "category*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']*ngIf=\"servform.controls['problem'].errors?.['required']",
-      "regemail": 1,
-      "Reply": "jhgvyhgv hn",
-      "Date": "2023-05-03",
-      "Time": "14:02"
-    },
-    {
-      "email": "jeevaaravinth2001@gmail.com",
       "reguser": "Jeevaarav",
-      "category": "Dashboard Issue-Category",
-      "problem": "knsdjsdbcjbdscnsmzjcn sdmnc sdk sjkcnsdjkcbjdshcns dcjdcbjksdncik sdnkcj dscuhckhsdkxhcniksidjxfncidskjxncksdjnckjhsjdcnbesjkzdhn jkshcnksdjhfbckj sdhnbvjhsdb",
-      "regemail": 2,
-      "Reply": "jbhvjnd",
-      "Date": "2023-05-01",
-      "Time": "23:28"
-    },
-    {
-      "email": "2k19me016@kiot.ac.in",
-      "reguser": "Harish__13",
-      "category": "Dashboard Issue-Category",
-      "problem": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam in unde, eum, error nobis facilis recusandae doloremque atque optio, quod magnam sapiente minus! Eaque repellat dolore sequi asperiores consequuntur nihil?</p>",
-      "regemail": 3,
-      "Reply": "uhuujui<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam in unde, eum, error nobis facilis recusandae doloremque atque optio, quod magnam sapiente minus! Eaque repellat dolore sequi asperiores consequuntur nihil?</p>",
-      "Date": "2023-05-26",
-      "Time": "21:15"
-    },
-    {
-      "email": "2k19ece050@kiot.ac.in",
-      "reguser": "Nandhagopal",
       "category": "Vehicle Maintanence-Category",
-      "problem": "dvdhgcggfvvhgwbgv gdbvcx gwbvcx bdvcx gewhgsdkeidhxewjhdjxewhgsdbxewhgsxvhwhdbxhngxvbdvxbdvxebvgfcgdfyhgfghfghfghfchgfgfhygfyfhfghffhfhfhfhfhghghjhgtiojuty9",
-      "regemail": 4,
-      "Reply": "hjgbjhsdbjdsmn ,msx dngu3edh",
-      "Date": "2023-05-17",
-      "Time": "03:12"
+      "problem": "My vehicle's body was damaged. I need an replacement for the body parts. My model name is OLA S1 Pro. Backside of my vehicle damaged. I hereby attached my vehicle photos.",
+      "regemail": 1
     }
   ],
   "offers": [
@@ -619,11 +561,16 @@
     {
       "img": "../../assets/EV mart/ather offer.webp",
       "content": "Get ₹5,000* off on the Ather 550!",
-      "time": "June 26 2023 16:20:00",
+      "time": "June 30 2023 14:46:00",
       "link": "",
       "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
       "button": "Order now",
       "regemail": "3"
+    }
+  ],
+  "map": [
+    {
+      "link": ""
     }
   ]
 }

@@ -49,6 +49,7 @@ html{
   color: #fff;
   font-size: 2.5rem;
   width: 100%;
+  text-transform: none;
 }
 .footer .box{
     margin: .7rem 0;

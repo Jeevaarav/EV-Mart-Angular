@@ -29,6 +29,12 @@ import { AdminformComponent } from './adminform/adminform.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { InformationComponent } from './information/information.component';
+import { BenefitsOfEVComponent } from './benefits-of-ev/benefits-of-ev.component';
+import { BustingMythsComponent } from './busting-myths/busting-myths.component';
+import { EVIncentivesComponent } from './ev-incentives/ev-incentives.component';
+import { TypesofEVComponent } from './typesof-ev/typesof-ev.component';
+import { EVhelpComponent } from './evhelp/evhelp.component';
 
 
 @NgModule({
@@ -57,6 +63,12 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     ProfilePageComponent,
     OrderdetailsComponent,
     AboutusComponent,
+    InformationComponent,
+    BenefitsOfEVComponent,
+    BustingMythsComponent,
+    EVIncentivesComponent,
+    TypesofEVComponent,
+    EVhelpComponent,
   ],
   imports: [
     BrowserModule,

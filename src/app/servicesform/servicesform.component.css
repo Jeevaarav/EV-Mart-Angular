@@ -36,8 +36,9 @@ html{
     scroll-behavior: smooth;
 }
 .main{
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form{
   padding: 2rem;

@@ -25,15 +25,16 @@ close:any="close";
 reguser:any;
 dropdown:boolean=false;
 constructor(private form:FormBuilder,private service:LogincredentialsService,private route:Router){
-  this.reguser=localStorage.getItem('reguser');
+  this.reguser=sessionStorage.getItem('reguser');
   console.log(localStorage.getItem('loggedin'));
-  if(localStorage.getItem('loggedin')=='true'){
+  if(sessionStorage.getItem('isLogged')=='true'){
     this.btn=true;
     this.logbtn=false;
     }
     else{
       this.btn=false;
       this.logbtn=true;
+      localStorage.setItem('loggedin','false');
     }
  }
 
@@ -46,6 +47,7 @@ logout(){
   this.dropdown=false;
   localStorage.setItem('loggedin','false');
   localStorage.removeItem('reguser');
+  sessionStorage.setItem('isLogged','false');
   this.route.navigateByUrl("").then(()=>{
     window.location.reload();
   });

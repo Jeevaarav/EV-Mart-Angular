@@ -105,4 +105,30 @@ mark{
 i{
   color: black;
 }
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  background: url("../../assets/EV mart/header4.jpg");
+  align-items: center;
+}
+.header h3{
+  font-size: 3.5rem;
+  color: #f9d806;
+}
 
+.header .head{
+  display: flex;
+  gap: 5rem;
+}
+.header i{
+  font-size: 3rem;
+  padding-top: 1.1rem;
+  cursor: pointer;
+  color: #f9d806;
+}
+.header .Logo{
+  width:200px;
+  height:80px;
+  cursor: pointer;
+}

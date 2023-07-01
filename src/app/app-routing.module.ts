@@ -21,6 +21,14 @@ import { ServiceadminComponent } from './serviceadmin/serviceadmin.component';
 import { AdminformComponent } from './adminform/adminform.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { InformationComponent } from './information/information.component';
+import { BenefitsOfEVComponent } from './benefits-of-ev/benefits-of-ev.component';
+import { BustingMythsComponent } from './busting-myths/busting-myths.component';
+import { EVIncentivesComponent } from './ev-incentives/ev-incentives.component';
+import { TypesofEVComponent } from './typesof-ev/typesof-ev.component';
+import { ServiceGuardGuard } from './service-guard.guard';
+import { EVhelpComponent } from './evhelp/evhelp.component';
 
 
 
@@ -57,6 +65,15 @@ const routes: Routes = [
     }]
   },
   {
+    path:"serviceform",
+    component:ServicesformComponent,
+    canActivate:[ServiceGuardGuard]
+  },
+  {
+    path:"Help",
+    component:EVhelpComponent
+  },
+  {
     path:"orderpage",
     component:OrderpageComponent,
     canActivate:[LoginGuard]
@@ -86,12 +103,41 @@ const routes: Routes = [
 ]
   },
   {
+    path:"Information",
+    component:InformationComponent
+  },
+  {
+    path:"",
+    children:[
+      {
+        path:"Information/Benefits",
+        component:BenefitsOfEVComponent
+      },
+      {
+        path:"Information/myths",
+        component:BustingMythsComponent
+      },
+      {
+        path:"Information/EVIncentives",
+        component:EVIncentivesComponent
+      },
+      {
+        path:"Information/TypesofEV",
+        component:TypesofEVComponent
+      }
+    ]
+  },
+  {
     path:"register",
     component:RegisterpageComponent
   },
   {
    path:"offers",
    component:OffersComponent
+  },
+  {
+    path:"About",
+    component:AboutusComponent
   },
   {
     path:"emailverify",

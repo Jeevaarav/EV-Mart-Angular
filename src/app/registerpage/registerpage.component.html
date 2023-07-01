@@ -21,7 +21,7 @@
         <input type="text" placeholder="Username" class="box" name="username" id="username" formControlName="reguser" #username>
         <div *ngIf="(register.controls['reguser'].invalid && register.controls['reguser'].touched || register.controls['reguser'].dirty)"></div>
         <small *ngIf="register.controls['reguser'].errors?.['required'] && register.controls['reguser'].dirty">Please enter username</small>
-        <small *ngIf="register.controls['reguser'].errors?.['pattern']">Provide proper username(Don't start with number) </small>
+        <small *ngIf="register.controls['reguser'].errors?.['pattern']">Provide proper username</small>
       </div>
       <div class="control">
         <input type="tel" placeholder="Phone Number" class="box" name="Phone" id="Phone" formControlName="regphone" #phonenumber maxlength="10">

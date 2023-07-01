@@ -173,6 +173,12 @@ input.ng-invalid.ng-touched{
 .control .icon{
   cursor: pointer;
 }
+.fa-eye-slash{
+  color: black;
+}
+.fa-eye{
+  color: black;
+}
 /* .ng-invalid:not(form){
   border-color: red;
 } */
