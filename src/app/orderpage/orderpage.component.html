@@ -10,6 +10,7 @@
     </div>
     <div class="config">
       <div class="con">
+        <a routerLink="/Product"><i class="fa-solid fa-arrow-left"></i></a>
      <p> COLOR : <small class="colorindex">{{colorindex}}</small></p>
      <div class="flex">
      <div class="img" *ngFor="let color1 of loop;let w=index;let second=first" >
@@ -42,7 +43,7 @@
       </div>
       </div>
       <div class="delivery">
-        <p>Estimated delivery by 14th May 2023</p>
+        <p>Estimated delivery by 14th July 2023</p>
       </div>
     </div>
   </div>
@@ -50,7 +51,7 @@
    <a routerLink="/offers/exchange"> <img src="../../assets/EV mart/Poster offer.png" alt="Exchange offer" title="Exchange offer"></a>
   </div>
   <div class="checkflex">
-    <input type="checkbox" class="check">
+    <input type="checkbox" class="check" (click)="checked($event)">
     <label>Agree to the terms and conditions</label>
   </div>
   </div>
@@ -61,7 +62,7 @@
       </div>
       <div class="conflex">
       <div><h3>₹ {{price}}</h3></div>
-      <div><button class="btncon">Continue</button></div>
+      <a routerLink="/orderpage/revieworder"><div><button class="btncon" [disabled]="!check">Continue</button></div></a>
     </div>
     </div>
   </div>

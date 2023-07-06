@@ -38,32 +38,32 @@ html{
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
 }
-.head{
+.head1{
     background-color:#ffee80;
     padding: 2rem;
     position: sticky;
-    top: 0;
+    top: 105px;
     z-index: 2;
 }
 section{
     padding: 1.5rem 5%;
 }
-.head a{
+.head1 a{
     color: #130f40;
     font-size: 2rem;
 }
-.head nav{
+.head1 nav{
     display: flex;
     gap: 2rem;
     justify-content: center;
 }
-.head a:hover{
+.head1 a:hover{
     border-bottom-style:solid;
 }
-.head a:visited,.head a:active, .head a:focus{
+.head1 a:visited,.head a:active, .head a:focus{
     border-bottom-style: solid;
 }
-.head a:target{
+.head1 a:target{
     border-bottom-style: solid;
 }
 .heading{
@@ -160,4 +160,31 @@ resize: none;
 }
 small{
     font-size: 1.4rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  background: url("../../assets/EV mart/header4.jpg");
+  align-items: center;
+}
+.header h3{
+  font-size: 3.5rem;
+  color: #f9d806;
+}
+
+.header .head{
+  display: flex;
+  gap: 5rem;
+}
+.head i{
+  font-size: 3rem;
+  padding-top: 1.1rem;
+  cursor: pointer;
+  color: #f9d806;
+}
+.header .Logo{
+  width:200px;
+  height:80px;
+  cursor: pointer;
 }

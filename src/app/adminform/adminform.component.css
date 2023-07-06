@@ -29,6 +29,12 @@
     cursor: pointer;
     padding: 1rem 2rem;
 }
+label{
+  font-size: 1.6rem;
+  float: left;
+  padding-top: 1.8rem;
+  color: #f9d806;
+}
 html{
     font-size: 60%;
     overflow-x: hidden;
@@ -47,7 +53,18 @@ html{
   background: #fff;
   border: .1rem solid rgba(0,0,0,.1);
   text-align: center;
-  width: 70rem;
+  width: 90%;
+}
+.form form{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.divide{
+  padding: 1.5rem;
+  width: 45%;
 }
 .form form .box{
   margin: .7rem 0;

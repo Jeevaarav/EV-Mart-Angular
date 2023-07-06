@@ -35,4 +35,8 @@ export class VehiclemanagementComponent {
     });
   }
 
+  logout(){
+    alert("Are you sure want to logout");
+    this.route.navigateByUrl('');
+  }
 }

@@ -5,14 +5,19 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class ServiceGuardGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown> {
   constructor(private route:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
-      if(localStorage.getItem('loggedin')=='false'){
+      if(!sessionStorage.getItem('isLogged')){  
         this.route.navigate(['/login'],{queryParams:{serviceurl:route.url}});
         return false;
+      }
+      else if(sessionStorage.getItem('isLogged')=="true"){
+        return true;
       }
       else{
     return true;

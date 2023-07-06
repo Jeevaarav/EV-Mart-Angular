@@ -29,6 +29,9 @@ import { EVIncentivesComponent } from './ev-incentives/ev-incentives.component';
 import { TypesofEVComponent } from './typesof-ev/typesof-ev.component';
 import { ServiceGuardGuard } from './service-guard.guard';
 import { EVhelpComponent } from './evhelp/evhelp.component';
+import { ReviewOrderComponent } from './review-order/review-order.component';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
+import { FillbookingGuard } from './fillbooking.guard';
 
 
 
@@ -44,14 +47,20 @@ const routes: Routes = [
   },
   {
     path:"Profile",
-    component:ProfilePageComponent
-  },
-  {
-    path:"",
+    component:ProfilePageComponent,
     children:[{
-      path:"Profile/Orders",
-      component:OrderdetailsComponent
-    }]
+      path:"Address",
+      component:ManageAddressComponent
+    },
+    {
+      path:"",
+      redirectTo:"Orders",
+      pathMatch:'full'
+    },
+  {
+    path:"Orders",
+    component:OrderdetailsComponent
+  }]
   },
   {
     path:"Service",
@@ -77,6 +86,16 @@ const routes: Routes = [
     path:"orderpage",
     component:OrderpageComponent,
     canActivate:[LoginGuard]
+  },
+  {
+    path:"",
+    children:[
+      {
+        path:"orderpage/revieworder",
+        component:ReviewOrderComponent,
+        canDeactivate:[FillbookingGuard]
+      }
+    ]
   },
   {
     path:"login",

@@ -11,7 +11,7 @@
 </div>
 <div>
     <!-- <img src="../../assets/image/EV-removebg.png" alt="EV Mart" class="Logo" title="Logo"> -->
-    <button class="book" (click)="logout()">Logout</button>
+    <button class="book1" (click)="logout()">Logout</button>
 </div>
 </header>
   <section class="section">
@@ -20,17 +20,59 @@
         <div class="black">
           <div class="para"> EV Mart Service Center</div>
         </div>
-        <div class="maintain">
-         <a routerLink="/admin/adminserv/adminform" *ngFor="let serv of evmartserv">
+        <div class="maintain"> 
+          <div class="maintainabs">
+          <h2 class="servicehead">Service Request Pending</h2>
+        </div>
+        <div class="collection">
+          <div class="individual" *ngFor="let evmartserv of evmartserv;let index=index">
+            <p>Vehicle No: {{evmartserv.vehiclenumber}}</p>
+            <p>varient: {{evmartserv.varient}}</p>
+            <p>Date of request: {{dateFormat[index]}}</p>
+            <a routerLink="/admin/adminserv/adminform" (click)="details(index)"><button class="book">See more</button></a>
+          </div>
+        </div>
+
+          <div class="empty" *ngIf="emptyimg">
+            <div>
+          <img src="../../assets/EV mart/serviceempty.gif" alt="Serviceempty" title="service empty">
+        </div>
+        <div>
+          <h2>No Service request. It's Empty</h2>
+        </div>
+        </div>
+        </div>
+
+        <div class="done">
+          <div class="Accepted">
+            <h1>Service request Accepted</h1>
+          </div>
+          <div class="collection">
+            <div class="individual" *ngFor="let servDone of serviceDone;let index=index">
+              <p>Vehicle No: {{servDone.vehicleno}}</p>
+              <p>varient: {{servDone.varient}}</p>
+              <p>Date Alloted: {{servDone.date}}</p>
+              <p class="accept"><i class="fa-solid fa-check"></i>Accepted</p>
+            </div>
+          </div>
+          <div class="empty" *ngIf="acceptedService">
+            <div>
+          <img src="../../assets/EV mart/serviceempty.gif" alt="Serviceempty" title="service empty">
+        </div>
+        <div>
+          <h2>No Service Accepted. It's Empty</h2>
+        </div>
+        </div>
+        </div>
+        <!-- <div class="maintain" *ngFor="let serv of evmartserv">
+         <a routerLink="/admin/adminserv/adminform">
           <div class="vehicle" (click)="details(this.serv)" id="vehicle" #vehicle>
-            <div><p>{{serv.email}}<i class="fa-solid fa-chevron-right fa-beat"></i></p></div>
-            <div><h5>{{serv.problem}}</h5>
+            <p>{{serv.email}}<i class="fa-solid fa-chevron-right fa-beat"></i></p>
+            <h5>{{serv.problem}}</h5>
             <h5><b>Date Alloted:</b> {{serv.Date}}</h5><h5><b>Time slot:</b> {{serv.Time}}</h5>
           </div>
-
-          </div>
         </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { EvmartserviceService } from '../evmartservice.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-servicesform',
@@ -11,17 +12,61 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ServicesformComponent {
   value:any;
   val2:any;
-constructor(private service:EvmartserviceService,private formbuild:FormBuilder){
+  servicedata:any;
+  varientData:any;
+  totalVal:any;
+  store:any;
+  varientLoop:any;
+  date:any;
+  splitdate:any;
+constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private http:HttpClient){
   this.value=localStorage.getItem('serviceform');
 
+  this.http.get<any>("http://localhost:3000/Servicedata").subscribe((value)=>{
+  this.servicedata=value[0].Brandname;
+  this.totalVal=value;
+  console.log(this.servicedata);
+  console.log(value[0].Brandname[0]);
+  })
 }
 servform=this.formbuild.group({
-  Email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-  User:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
-  problem:['',[Validators.required,Validators.minLength(150)]]
+  brand:['',Validators.required],
+  varient:['',Validators.required],
+  vehiclenumber:['',[Validators.required,Validators.pattern("^[A-Z]{2}[ -][0-9]{1,2}(?: [A-Z])?(?: [A-Z]*)? [0-9]{4}$")]],
+  problem:['',[Validators.required,Validators.minLength(100)]]
 });
 
 submit(category:any){
-  this.service.storedata(this.servform.value,category);
+  this.date=new Date();
+  const brand=this.servform.controls['brand'].value;
+  const varient=this.servform.controls['varient'].value;
+  const vehiclenumber=this.servform.controls['vehiclenumber'].value;
+  const problem=this.servform.controls['problem'].value;
+  const mail=sessionStorage.getItem('logmail');
+  this.service.storedata(brand,varient,vehiclenumber,problem,mail,this.date,category);
+}
+
+takeBrand(brand:any){
+  console.log(brand);
+  this.http.get<any>("http://localhost:3000/Servicedata").subscribe((val)=>{
+    console.log(val[0].Brandname);
+    const check=val[0].Brandname.find((y:any)=>{
+      console.log(y.Brand);
+      this.store=y;
+      console.log(this.store.Varients);
+      return y.Brand==brand;
+    });
+    if(check){
+      this.varientLoop=this.store.Varients;
+    }
+    else{
+      alert("Not found");
+    }
+  })
+  // console.log(this.totalVal[0].Brandname[index]);
+  // this.varientData=this.totalVal[0].Brandname[index];
+}
+takeVarient(varient:any){
+  console.log(varient);
 }
 }

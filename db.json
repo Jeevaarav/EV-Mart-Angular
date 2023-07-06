@@ -22,14 +22,39 @@
       "reguser": "Aravinth",
       "regpass": "Jeeva@2001",
       "regconfirm": "Jeeva@2001",
-      "regphonenum": "6374505525"
-    },
-    {
-      "regemail": "2k19me070@kiot.ac.in",
-      "reguser": "Jeevaarav",
-      "regpass": "Aravinth@2001",
-      "regconfirm": "Aravinth@2001",
-      "regphonenum": "7904925991"
+      "regphonenum": "6374505533",
+      "address": [
+        {
+          "fulladdress": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "doorno": "621B",
+          "landmark": "Jaisuryas",
+          "pincode": "636010"
+        }
+      ],
+      "order": [
+        {
+          "orderID": 764,
+          "state": "Tamilnadu",
+          "city": "Anna Nagar",
+          "evmart": "Anna Nagar Center",
+          "firstname": "Aravinth",
+          "lastname": "venkatesh",
+          "phonenumber": "6374505525",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "landmark": "Jaisuryas",
+          "pincode": "636006",
+          "doorno": "621A",
+          "varientname": "OLA S1",
+          "varientimg": "../../assets/EV mart/OLAS1/display1.webp",
+          "varientcolor": "Gerua",
+          "battery": "3kWh",
+          "range": "141 km",
+          "topspeed": "95 kmph",
+          "price": "1,29,999",
+          "day": "Thursday",
+          "date": "06-07-2023 01:26:45 PM"
+        }
+      ]
     }
   ],
   "subscription": [
@@ -261,16 +286,16 @@
       ],
       "Ather450X": [
         {
-          "battery": "4kWh",
+          "battery": "3kWh",
           "range": "181 km",
           "topspeed": "116 kmph",
           "price": "1,14,000"
         },
         {
-          "battery": "4kWh",
-          "range": "181 km",
-          "topspeed": "116 kmph",
-          "price": "1,60,000"
+          "battery": "2kWh",
+          "range": "100 km",
+          "topspeed": "100 kmph",
+          "price": "1,00,000"
         }
       ],
       "Ather450XProPack": [
@@ -278,12 +303,12 @@
           "battery": "1kWh",
           "range": "120 km",
           "topspeed": "50 kmph",
-          "price": "1,44,000"
+          "price": "1,30,000"
         },
         {
-          "battery": "1kWh",
-          "range": "120 km",
-          "topspeed": "50 kmph",
+          "battery": "2kWh",
+          "range": "150 km",
+          "topspeed": "80 kmph",
           "price": "1,50,000"
         }
       ],
@@ -436,7 +461,7 @@
       "regemail": "jeevaaravinth2001@gmail.com",
       "phone": "7904925991",
       "username": "Aravinth",
-      "dateofvisit": "01-05-2023",
+      "dateofvisit": "08-05-2023",
       "Timeslot": "01.00 - 02.00 Pm",
       "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
     },
@@ -444,7 +469,7 @@
       "regemail": "padmapriya0016@gmail.com",
       "phone": "9360408441",
       "username": "priyadharshini",
-      "dateofvisit": "04-05-2023",
+      "dateofvisit": "09-05-2023",
       "Timeslot": "09.00 - 10.00 Am",
       "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
     },
@@ -452,9 +477,17 @@
       "regemail": "manidhanush2001@gmail.com",
       "phone": "6379623737",
       "username": "Manikandan",
-      "dateofvisit": "04-05-2023",
+      "dateofvisit": "12-05-2023",
       "Timeslot": "01.00 - 02.00 Pm",
       "location": "EV Mart Center, Junction Main Road, Tamil Nadu 636005"
+    },
+    {
+      "regemail": "amsababu@gmail.com",
+      "phone": "9994610553",
+      "username": "Amsaveni",
+      "dateofvisit": "02-07-2023",
+      "Timeslot": "01.00 - 02.00 Pm",
+      "location": "EV Mart Center, Triplicane, Chennai, Tamil Nadu 600005"
     }
   ],
   "EV-Martcenter": [
@@ -532,23 +565,29 @@
   ],
   "Serviceform": [
     {
-      "email": "2k19me070@kiot.ac.in",
-      "reguser": "Jeevaarav",
-      "category": "Vehicle Maintanence-Category",
-      "problem": "My vehicle's body was damaged. I need an replacement for the body parts. My model name is OLA S1 Pro. Backside of my vehicle damaged. I hereby attached my vehicle photos.",
+      "email": "jeevaaravinth2001@gmail.com",
+      "Brand": "Ultraviolette",
+      "varient": "F77 Original",
+      "vehiclenumber": "TN 30 6559",
+      "problem": "The problem is circuit which short circuit and fired inside and components gone",
+      "category": "Circuit Issue-Category",
+      "date": "2023-07-03T06:18:47.383Z",
+      "regemail": 1
+    }
+  ],
+  "servicedone": [
+    {
+      "email": "jeevaaravinth2001@gmail.com",
+      "category": "Circuit Issue-Category",
+      "vehicleno": "TN 20 L 2569",
+      "varient": "OLA S1 Air-Model",
+      "date": "2023-07-04",
+      "time": "19:32",
+      "reply": "Thanks for Choosing our Service.",
       "regemail": 1
     }
   ],
   "offers": [
-    {
-      "img": "../../assets/EV mart/offer1.jpg",
-      "content": "Get ₹8,000* off on the Ola S1 Pro!",
-      "time": "June 25 2023 23:35:00",
-      "link": "",
-      "validity": "We have always got your back! Watch out this offer, valid only for 26 June",
-      "button": "Order now",
-      "regemail": "1"
-    },
     {
       "img": "../../assets/EV mart/offer2.webp",
       "content": "Upgrade your ride - Get ₹2,000* as Exchange Bonus",
@@ -561,7 +600,7 @@
     {
       "img": "../../assets/EV mart/ather offer.webp",
       "content": "Get ₹5,000* off on the Ather 550!",
-      "time": "June 30 2023 14:46:00",
+      "time": "July 03 2023 13:17:00",
       "link": "",
       "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
       "button": "Order now",
@@ -571,6 +610,84 @@
   "map": [
     {
       "link": ""
+    }
+  ],
+  "Servicedata": [
+    {
+      "Brandname": [
+        {
+          "Brand": "OLA",
+          "Varients": [
+            {
+              "Varient": "OLA S1"
+            },
+            {
+              "Varient": "OLA S1 Pro"
+            },
+            {
+              "Varient": "OLA S1 Air"
+            }
+          ]
+        },
+        {
+          "Brand": "Ather",
+          "Varients": [
+            {
+              "Varient": "Ather 450X"
+            },
+            {
+              "Varient": "Ather 450X Pro"
+            }
+          ]
+        },
+        {
+          "Brand": "Ampere",
+          "Varients": [
+            {
+              "Varient": "Primus"
+            },
+            {
+              "Varient": "Magnus EX"
+            },
+            {
+              "Varient": "Zeal EX"
+            }
+          ]
+        },
+        {
+          "Brand": "Revolt",
+          "Varients": [
+            {
+              "Varient": "RV400"
+            }
+          ]
+        },
+        {
+          "Brand": "Ultraviolette",
+          "Varients": [
+            {
+              "Varient": "F77 Original"
+            },
+            {
+              "Varient": "F77 Recon"
+            },
+            {
+              "Varient": "F77 Limited"
+            }
+          ]
+        },
+        {
+          "Brand": "Hero Electric",
+          "Varients": [
+            {
+              "Varient": "Optima CX"
+            },
+            {
+              "Varient": "Optima LX"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -19,10 +19,7 @@ html{
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
 }
-.body{
-  background-color: #37718e;
-  padding-bottom: 3rem;
-}
+
 .book{
   display: inline-block;
   border-radius:5rem;
@@ -36,50 +33,61 @@ html{
 }
 .main{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 3rem 16rem 1rem 16rem;
-  align-items: center;
+  flex-direction: column;
 }
-.evMartnumber{
+.address{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color:#fff; 
+  justify-content: center;
+  align-items: center;
+  border: 2px solid orange;
+  padding: 2rem;
+}
+.newaddress{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    background-color:#fff; 
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange;
+    padding: 1.5rem;
+}
+.newone .icon{
+  width: 30px;
+}
+.address .newone{
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.main h4{
-  color: #fff;
-}
-.main h3{
-  color: #fff;
-}
-.evMartnumber h5{
-  color: #fff;
-}
-.evMartDetails p{
-  font-size: 2.5rem;
-  text-transform: capitalize;
-  color: #fff;
-}
-.evMartDetails h5{
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
-.evMartDetails h4{
-  font-size: 1.5rem;
-  text-transform: lowercase;
-}
-.evMartDetails h3{
-  font-size: 1.5rem;
-  text-transform: lowercase;
-}
-.evMartbtn .evMartedit{
+  gap: 2rem;
   padding: 2rem;
-  font-size: 2rem;
-  box-sizing: border-box;
-  background-color: #E5E4E2;
+}
+.newaddress .newone{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+}
+.newone i{
+  color: #130f40;
+  font-size: 3rem;
+}
+.newaddress .newone i{
+  color: #130f40;
+  font-size: 3rem;
+}
+.address h3{
+  font-size: 2.2rem;
+}
+.button{
+  margin-top: 2.5rem;
+}
+.modifybutton{
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 .evMartdisplay{
   display: flex;
@@ -114,7 +122,7 @@ html{
 .evMarteditprofile{
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 3;
@@ -146,7 +154,17 @@ html{
 }
 .box{
   margin: 1rem 0 0 3rem;
-  width: 70%;
+  width: 75%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.3rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+}
+.box1{
+  margin: 1rem 0 0 3rem;
+  width: 75%;
   text-transform: none;
   color: #130f40;
   font-size: 1.6rem;
@@ -159,7 +177,7 @@ html{
   text-transform: uppercase;
   color: #130f40;
   border-bottom: 4px solid #ffee80;
-  width: 35%;
+  width: 55%;
   margin: 3rem 0 0 3rem;
 }
 .rightBar form label{
@@ -193,4 +211,19 @@ html{
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
   margin: 2rem 15rem 2rem 15rem;
   background-color:#fff;
+}
+.addressinput textarea{
+  resize:none;
+}
+.rightBar button:disabled,button[disabled]{
+  border: 1px solid black;
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+.newaddress h5{
+  color:#130f40;
+  font-size: 1.5rem;
+  text-align: justify;
+  text-transform: none;
 }

@@ -28,7 +28,7 @@ export class RegisterpageComponent {
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
     reguser:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
     regpass:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]],
-    regphone:['',[Validators.required,Validators.pattern("[7-9]{1}[0-9]{9}")]],
+    regphone:['',[Validators.required,Validators.pattern("[6-9]{1}[0-9]{9}")]],
     regconfirm:['',Validators.required]
   });
 

@@ -4,13 +4,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="main">
+  <div class="head"><h1>Orders placed</h1></div>
+  <div class="main" *ngFor="let order of getOrder;let i=index;">
     <div class="img">
-    <img src="../../assets/EV mart/Ather.png" alt="">
+    <img src="{{order.varientimg}}" alt="">
+  </div>
+  <div class="details">
+    <p class="varient">{{order.varientname}}</p>
+    <p>Order ID - #{{order.orderID}}</p>
+    <p>Color - {{order.varientcolor}}</p>
+    <p>Price - Rs.{{order.price}}</p>
+    <p>{{order.day}} , {{order.date}}</p>
+    <p class="small">Still you have time to cancel the order:{{daysToDday}}:{{hoursToDday}}:{{minutesToDday}}:{{secondsToDday}} </p>
   </div>
   <div>
-    <p>OLA S1 PRo</p>
-    <p>Price: 1,00,000</p>
+    <button class="book" *ngIf="cancel" (click)="cancelorder(this.i)">Cancel Order</button>
   </div>
   </div>
 </body>

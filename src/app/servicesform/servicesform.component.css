@@ -70,3 +70,10 @@ html{
 small{
   text-transform: none;
 }
+#select{
+  cursor: pointer;
+}
+.success{
+  color: green;
+  font-size: 1.8rem;
+}

@@ -24,7 +24,7 @@ export class LogincredentialsService {
   email:any;
   profilepageget:any;
   parse:any;
-  profilemail:any;
+  profilemail:any; address:any; profileaddress:any;
   constructor(private http:HttpClient,private route:Router) {
   }
   savedata(a:any){
@@ -39,15 +39,31 @@ export class LogincredentialsService {
     this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{
         this.profiledetails=JSON.stringify(logged);
+        sessionStorage.setItem('profilepage',this.profiledetails);
         localStorage.setItem('profilepage',this.profiledetails);
         sessionStorage.setItem('reguser',logged.reguser);
+        sessionStorage.setItem('regphone',logged.regphonenum);
         return logged.regemail===custmail && logged.regpass===custpass;
       });
       if(user){
         this.custemail=custmail;
         this.reguser=localStorage.getItem('reguser');
-        localStorage.setItem('logmail',custmail);
-        localStorage.setItem('logpass',custpass);
+        this.address=sessionStorage.getItem('profilepage');
+        this.profileaddress=JSON.parse(this.address);
+        if(!this.profileaddress.address){
+          sessionStorage.removeItem('pincode');
+          sessionStorage.removeItem('landmark');
+          sessionStorage.removeItem('fulladdress');
+          sessionStorage.removeItem('doorno');
+        }
+        else{
+          sessionStorage.setItem('fulladdress',this.profileaddress.address[0].fulladdress);
+          sessionStorage.setItem('doorno',this.profileaddress.address[0].doorno);
+          sessionStorage.setItem('landmark',this.profileaddress.address[0].landmark);
+          sessionStorage.setItem('pincode',this.profileaddress.address[0].pincode);
+        }
+        sessionStorage.setItem('logmail',custmail);
+        sessionStorage.setItem('logpass',custpass);
         if(returl==null && servurl==null){
           this.route.navigateByUrl("/Product");
         }

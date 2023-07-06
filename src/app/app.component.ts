@@ -45,6 +45,15 @@ export class AppComponent {
         else if(val.url=='/admin/adminserv'){
           this.navopen1=false;
         }
+        else if(val.url=='/admin/vehiclemanagement'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/admin/adminserv/adminform'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/orderpage/revieworder'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }

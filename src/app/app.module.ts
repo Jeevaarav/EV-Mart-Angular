@@ -35,6 +35,11 @@ import { BustingMythsComponent } from './busting-myths/busting-myths.component';
 import { EVIncentivesComponent } from './ev-incentives/ev-incentives.component';
 import { TypesofEVComponent } from './typesof-ev/typesof-ev.component';
 import { EVhelpComponent } from './evhelp/evhelp.component';
+import { ReviewOrderComponent } from './review-order/review-order.component';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
+import { FillbookingGuard } from './fillbooking.guard';
+import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.component';
+import { ProfileserviceComponent } from './profileservice/profileservice.component';
 
 
 @NgModule({
@@ -69,6 +74,10 @@ import { EVhelpComponent } from './evhelp/evhelp.component';
     EVIncentivesComponent,
     TypesofEVComponent,
     EVhelpComponent,
+    ReviewOrderComponent,
+    ManageAddressComponent,
+    OrderconfirmpageComponent,
+    ProfileserviceComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +88,7 @@ import { EVhelpComponent } from './evhelp/evhelp.component';
     HttpClientModule,
     NgImageSliderModule,
   ],
-  providers: [],
+  providers: [FillbookingGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

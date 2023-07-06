@@ -27,7 +27,7 @@
     font-weight: 500;
     font-size: 1.7rem;
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; 
 }
 html{
     font-size: 60%;
@@ -40,9 +40,33 @@ html{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   gap:1rem;
 }
 .main img{
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
+}
+.head h1{
+  font-size: 2rem;
+  text-transform: none;
+  color: #130f40;
+}
+.details{
+  font-size: 2rem;
+  color: black;
+  text-transform: none;
+  width: 400px;
+}
+.details .varient{
+  font-size: 3rem;
+  color: #130f40;
+}
+.details .small{
+  font-size: 1.5rem;
+  color: red;
+  text-transform: none;
+}
+.details p{
+  font-size: 1.7rem;
 }

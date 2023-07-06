@@ -67,6 +67,7 @@ export class OffersComponent implements OnInit,OnDestroy {
         this.checkdate(this.secondsToDday,this.minutesToDday,this.hoursToDday,this.daysToDday);
   }
 
+ 
   checkdate(sec:any,min:any,hours:any,day:any){
     if(sec==0 && min==0 && hours==0 && day==0){
       this.http.delete("http://localhost:3000/offers/1").subscribe(()=>{

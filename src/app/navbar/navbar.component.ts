@@ -47,7 +47,7 @@ logout(){
   this.dropdown=false;
   localStorage.setItem('loggedin','false');
   localStorage.removeItem('reguser');
-  sessionStorage.setItem('isLogged','false');
+  sessionStorage.removeItem('isLogged');
   this.route.navigateByUrl("").then(()=>{
     window.location.reload();
   });

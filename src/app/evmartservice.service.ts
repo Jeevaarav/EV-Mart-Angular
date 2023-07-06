@@ -19,8 +19,8 @@ export class EvmartserviceService {
     localStorage.setItem('serviceform',data);
   }
 
-  storedata(details:any,category:any){
-    this.http.post<any>("http://localhost:3000/Serviceform",{email:details.Email,reguser:details.User,category:category,problem:details.problem}).subscribe((x)=>{
+  storedata(brand:any,varient:any,vehiclenumber:any,problem:any,mail:any,date:any,category:any){
+    this.http.post<any>("http://localhost:3000/Serviceform",{email:mail,Brand:brand,varient:varient,vehiclenumber:vehiclenumber,problem:problem,category:category,date:date}).subscribe((x)=>{
       setTimeout(()=>{
         this.route.navigateByUrl("/Service");
        },4000)

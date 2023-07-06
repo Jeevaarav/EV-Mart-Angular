@@ -11,14 +11,23 @@
           <p>EV Mart Service Form</p>
         </div>
         <div>
-        <input type="text" class="box" placeholder="Email ID" formControlName="Email">
-          <small *ngIf="servform.controls['Email'].errors?.['required'] && servform.controls['Email'].dirty">We need your Mail ID</small>
-          <small *ngIf="servform.controls['Email'].errors?.['pattern']">Provide registered mail ID</small>
+          <select  id="select" class="box" #brand (change)="takeBrand(brand.value)" formControlName="brand">
+            <option value="" disabled selected  >Select your Brand of Vehicle</option>
+            <option value={{servdata.Brand}}  *ngFor="let servdata of servicedata;let ind=index"  >{{servdata.Brand}}</option>
+          </select>
+          <small *ngIf="servform.controls['brand'].errors?.['required'] && servform.controls['brand'].touched">Please select Brand of Vehicle</small>
       </div>
       <div>
-        <input type="text" class="box" placeholder="Username" formControlName="User">
-        <small *ngIf="servform.controls['User'].errors?.['required'] && servform.controls['User'].dirty">We need Username</small>
-        <small *ngIf="servform.controls['User'].errors?.['pattern']">Provide registered username</small>
+        <select name="" id="" class="box" #varient (change)="takeVarient(varient.value)" formControlName="varient">
+          <option value="" disabled selected>Select your Varient</option>
+          <option value="{{vardata.Varient}}" *ngFor="let vardata of varientLoop;let ind=index" >{{vardata.Varient}}</option>
+        </select>
+        <small *ngIf="servform.controls['varient'].errors?.['required'] && servform.controls['varient'].touched">Please select Brandname first</small>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Mention Your Vehicle No." formControlName="vehiclenumber">
+        <small *ngIf="servform.controls['vehiclenumber'].errors?.['required'] && servform.controls['vehiclenumber'].dirty">Provide Vehicle number</small>
+        <small *ngIf="servform.controls['vehiclenumber'].errors?.['pattern']">Please provide valid Vehicle number(Only in CAPS)</small>
       </div>
       <div>
         <input type="text" class="box" placeholder="Category" value="{{value}}-Category" readonly #category>
@@ -27,6 +36,7 @@
         <textarea class="box" cols="20" rows="10" placeholder="Problem description" formControlName="problem"></textarea>
         <small *ngIf="servform.controls['problem'].errors?.['required'] && servform.controls['problem'].dirty">Fill the issues</small>
         <small *ngIf="servform.controls['problem'].errors?.['minlength']">Describe more about issues</small>
+        <small *ngIf="servform.valid" class="success">Minimum Approximate amount for service : Rs. 5000/-. It may vary depend upon the vehicle</small>
       </div>
       <button class="book">
         Request Service
