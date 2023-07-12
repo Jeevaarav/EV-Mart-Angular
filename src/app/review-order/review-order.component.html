@@ -8,7 +8,7 @@
 <div class="section">
   <div class="head"><a><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
   <div class="details-form">
-    <form class="form" [formGroup]="reviewform" (ngSubmit)="reviewform.valid && orderbooked()">
+    <form class="form" [formGroup]="reviewform" (ngSubmit)="reviewform.valid && fillDetails()">
       <div>
         <i class="fa-solid fa-arrow-left" (click)="notify()"></i>
       </div>
@@ -19,33 +19,24 @@
       <p>Select your Location</p>
     </div>
     <div>
-      <select name="" id="" class="box" formControlName="State" #state (change)="stateselect(state.value)" >
+      <select class="box" formControlName="State" #state (change)="stateselect(state.value)" >
         <option value="" selected disabled>State</option>
-        <option value="Tamilnadu">Tamilnadu</option>
-        <option value="Karnataka">Karnataka</option>
-        <option value="Madhya Pradesh">Madhya Pradesh</option>
-        <option value="Telugana">Telugana</option>
+        <option  value="{{statelist.state}}" *ngFor="let statelist of stateListStore">{{statelist.state}}</option>
       </select>
       <small *ngIf="reviewform.controls['State'].errors?.['required'] && reviewform.controls['State'].touched">Please Select State</small>
     </div>
     <div>
-      <select name="" id="" class="box" formControlName="City" #city (change)="cityselect(city.value)">
+      <select class="box" formControlName="City" #city (change)="cityselect(city.value)">
         <option value="" selected disabled>City</option>
-        <option value="Salem">Salem</option>
-        <option value="Anna Nagar">Anna Nagar</option>
-        <option value="Perambur">Perambur</option>
-        <option value="Saidapet">Saidapet</option>
-        <option value="Warangal">Warangal</option>
-        <option value="Nalgonda">Nalgonda</option>
-        <option value="Medak">Medak</option>
-        <option value="Bangalore">Bangalore</option>
-        <option value="Mangalore">Mangalore</option>
-        <option value="Bidar">Bidar</option>
+        <option value="{{district.district}}" *ngFor="let district of districtStore;let i=index;">{{district.district}}</option>
       </select>
       <small *ngIf="reviewform.controls['City'].errors?.['required'] && reviewform.controls['City'].touched">Please Select City</small>
     </div>
     <div>
-      <input type="text" value="" placeholder="EV Mart Center" class="box" formControlName="Centername">
+      <select class="box" formControlName="Centername" #centername (change)="evcentername(centername.value)">
+        <option value="" selected disabled>Select EV Mart center</option>
+        <option value="{{center.centername}}" *ngFor="let center of centerNameStore">{{center.centername}}</option>
+      </select>
       <small *ngIf="reviewform.controls['Centername'].errors?.['required'] && reviewform.controls['Centername'].touched">Please Select EV Mart Center</small>
     </div>
     <div class="contact">
@@ -119,7 +110,7 @@
         </div>
           <div class="colourflex">
             <div><p>Booking amount</p></div>
-            <div><p>Fully refundable Rs.2500</p></div>
+            <div><p>Fully refundable &nbsp;Rs. {{Amount}}</p></div>
           </div>
           <div class="colourflex">
             <div><p>Battery</p></div>
@@ -146,19 +137,13 @@
         <p>Delivery time is dependent on stock and colour availability. Please reach out to your EV mart at 7904925991 for more details.</p>
       </div>
       <div>
-        <button class="payment" [disabled]="!reviewform.valid">Pay now</button>
+        <button class="payment" [disabled]="!reviewform.valid" (click)="fillDetails()">Pay now</button>
       </div>
   </div>
   </form>
   </div>
 </div>
-<div class="redirectorder" *ngIf="orderplaced">
-    <div class="flex">
-     <div> <img src="../../assets/EV mart/Tick.png" alt="Confirmed" title="Confirmed"></div>
-      <div><h3>Your Order Placed Successfully</h3></div>
-      <div><p>We look forward to seeing you at the all new EV Mart center. It will redirecting you to the productpage in few seconds.......</p></div>
-    </div>
-</div>
+
 
 </body>
 

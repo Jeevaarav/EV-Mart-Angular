@@ -7,7 +7,7 @@ import { Subscription,interval } from 'rxjs';
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.css']
 })
-export class OffersComponent implements OnInit,OnDestroy {
+export class OffersComponent implements OnInit {
   offer:any;
   date:any;
   Dday:any;
@@ -90,7 +90,7 @@ export class OffersComponent implements OnInit,OnDestroy {
          this.getTimeDifference();
       });
   }
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
-  }
+  // ngOnDestroy(){
+  //   this.subscription.unsubscribe();
+  // }
 }

@@ -16,55 +16,66 @@ export class BookappointmentComponent {
   Salemadd:any;
   show:boolean=false;
   inval:any;
+  slotDays:any;
+  slottimeperday:any;
 
   constructor(private service:EvmartcenterService,private form:FormBuilder){
     this.service.slot().subscribe((data)=>{
-      localStorage.setItem("Monday",data[0].dateofvisit.Monday);
-      localStorage.setItem("Thursday",data[0].dateofvisit.Thursday);
-      localStorage.setItem("Tuesday",data[0].dateofvisit.Tuesday);
-      localStorage.setItem("Friday",data[0].dateofvisit.Friday);
-      localStorage.setItem("Saturday",data[0].dateofvisit.Saturday);
+      this.slotDays=data[0].dateofvisit;
+      console.log(data[0].dateofvisit[0].slottime[0]);
+      // localStorage.setItem("Monday",data[0].dateofvisit.Monday);
+      // localStorage.setItem("Thursday",data[0].dateofvisit.Thursday);
+      // localStorage.setItem("Tuesday",data[0].dateofvisit.Tuesday);
+      // localStorage.setItem("Friday",data[0].dateofvisit.Friday);
+      // localStorage.setItem("Saturday",data[0].dateofvisit.Saturday);
 
 
-      localStorage.setItem("Mrng",data[1].Timeslot.Mrng);
-      localStorage.setItem("Noon",data[1].Timeslot.Noon);
+      // localStorage.setItem("Mrng",data[1].Timeslot.Mrng);
+      // localStorage.setItem("Noon",data[1].Timeslot.Noon);
 
-      localStorage.setItem("Salem",data[2].City.Salem);
-      localStorage.setItem("Chennai",data[2].City.Chennai);
-      localStorage.setItem("Madurai",data[2].City.Madurai);
-      localStorage.setItem("Kovai",data[2].City.Kovai);
-      localStorage.setItem("Dindugal",data[2].City.Dindugal);
+      // localStorage.setItem("Salem",data[2].City.Salem);
+      // localStorage.setItem("Chennai",data[2].City.Chennai);
+      // localStorage.setItem("Madurai",data[2].City.Madurai);
+      // localStorage.setItem("Kovai",data[2].City.Kovai);
+      // localStorage.setItem("Dindugal",data[2].City.Dindugal);
 
-      localStorage.setItem('address1',data[3].Address.address1);
-      localStorage.setItem('address2',data[3].Address.address2);
-      localStorage.setItem('address3',data[3].Address.address3);
-      localStorage.setItem('address4',data[3].Address.address4);
-      localStorage.setItem('address5',data[3].Address.address5);
-      localStorage.setItem('short1',data[4].Shortaddress.short1);
-      localStorage.setItem('short2',data[4].Shortaddress.short2);
-      localStorage.setItem('short3',data[4].Shortaddress.short3);
-      localStorage.setItem('short4',data[4].Shortaddress.short4);
-      localStorage.setItem('short5',data[4].Shortaddress.short5);
+      // localStorage.setItem('address1',data[3].Address.address1);
+      // localStorage.setItem('address2',data[3].Address.address2);
+      // localStorage.setItem('address3',data[3].Address.address3);
+      // localStorage.setItem('address4',data[3].Address.address4);
+      // localStorage.setItem('address5',data[3].Address.address5);
+      // localStorage.setItem('short1',data[4].Shortaddress.short1);
+      // localStorage.setItem('short2',data[4].Shortaddress.short2);
+      // localStorage.setItem('short3',data[4].Shortaddress.short3);
+      // localStorage.setItem('short4',data[4].Shortaddress.short4);
+      // localStorage.setItem('short5',data[4].Shortaddress.short5);
 
-      this.Monday=localStorage.getItem('Monday');
-      this.Tuesday=localStorage.getItem('Tuesday');
-      this.Friday=localStorage.getItem('Friday');
-      this.Thursday=localStorage.getItem('Thursday');
-      this.Saturday=localStorage.getItem('Saturday');
+      // this.Monday=localStorage.getItem('Monday');
+      // this.Tuesday=localStorage.getItem('Tuesday');
+      // this.Friday=localStorage.getItem('Friday');
+      // this.Thursday=localStorage.getItem('Thursday');
+      // this.Saturday=localStorage.getItem('Saturday');
 
-      this.Mrng=localStorage.getItem('Mrng');
-      this.Noon=localStorage.getItem('Noon');
-      this.Eve=localStorage.getItem('Eve');
+      // this.Mrng=localStorage.getItem('Mrng');
+      // this.Noon=localStorage.getItem('Noon');
+      // this.Eve=localStorage.getItem('Eve');
 
-      this.Salem=localStorage.getItem('Salem');
-      this.Kovai=localStorage.getItem('Kovai');
-      this.Dindugal=localStorage.getItem('Dindugal');
-      this.Madurai=localStorage.getItem('Madurai');
-      this.Chennai=localStorage.getItem('Chennai');
+      // this.Salem=localStorage.getItem('Salem');
+      // this.Kovai=localStorage.getItem('Kovai');
+      // this.Dindugal=localStorage.getItem('Dindugal');
+      // this.Madurai=localStorage.getItem('Madurai');
+      // this.Chennai=localStorage.getItem('Chennai');
 
     });
   }
 
+  slotTime(slottime:any){
+
+  }
+
+  slotdate(index:any){
+    this.slottimeperday=this.slotDays[index].slottime;
+  }
   onselect(value:any){
     if(value=='Salem'){
       this.inval=localStorage.getItem('short1');

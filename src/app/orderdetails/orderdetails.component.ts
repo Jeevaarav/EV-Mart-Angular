@@ -31,6 +31,10 @@ export class OrderdetailsComponent implements OnInit,OnDestroy {
   getFullDetails:any;
   canceldetails:any;
   usemail:any;
+
+
+  dummyTime:any;
+  dummySliceTime:any;
   constructor(private http:HttpClient){
 
     this.subscription=Subscription;
@@ -59,10 +63,14 @@ export class OrderdetailsComponent implements OnInit,OnDestroy {
   }
 
   getTimeDifference(){
-    console.log(this.a);
+    // console.log(this.a);
     this.local=localStorage.getItem('offertime'+this.a);
-    console.log(this.local);
-    this.Dday=new Date();
+    // console.log(this.local);
+    console.log(this.getOrder[1].bookingdate);
+    this.dummyTime=this.getOrder[1].bookingdate;
+    this.dummySliceTime=this.dummyTime.slice(12,17);
+    console.log(this.dummySliceTime);
+    this.Dday=new Date('10-Jul-2023 01:9 PM');
     console.log(this.Dday);
     this.timeDifference=this.Dday.getTime()-new Date().getTime();
     this.allocateTime(this.timeDifference);

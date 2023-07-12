@@ -51,22 +51,17 @@
               </div>
               <div class="formflex">
                 <div class="select">
-                  <select class="box1" formControlName="dateofvisit">
+                  <select class="box1" formControlName="dateofvisit" #dateofvisit (change)="slotTime(dateofvisit.value)">
                     <option value="" selected disabled hidden>Date of visit</option>
-                    <option value="{{Monday}}" class="date">{{Monday}}</option>
-                    <option value="{{Thursday}}" class="date">{{Thursday}}</option>
-                    <option value="{{Tuesday}}" class="date">{{Tuesday}}</option>
-                    <option value="{{Friday}}" class="date">{{Friday}}</option>
-                    <option value="{{Saturday}}" class="date">{{Saturday}}</option>
+                    <option value="{{slotdays.Date}}" class="date" *ngFor="let slotdays of slotDays;let i=index;" (click)="slotdate(i)">{{slotdays.Date}}</option>
+
                   </select>
                     <small class="red" *ngIf="Bookappointment.controls['dateofvisit'].errors?.['required'] && Bookappointment.controls['dateofvisit'].touched">Please Select Date</small>
                 </div>
                 <div class="option">
                   <select class="boxtiming" formControlName="Timeslot">
                     <option value="" class="time" selected disabled hidden>Time Slot</option>
-                    <option value="{{Mrng}}" class="date">{{Mrng}}</option>
-                    <option value="{{Noon}}" class="date">{{Noon}}</option>
-                    <option value="{{Eve}}" class="date">{{Eve}}</option>
+                    <option value="{{slottime.slottime}}" class="date" *ngFor="let slottime of slottimeperday;let j=index;">{{slottime.slottime}}</option>
                   </select>
                   <small class="red" *ngIf="Bookappointment.controls['Timeslot'].errors?.['required'] && Bookappointment.controls['Timeslot'].touched">Please Select Timeslot</small>
                 </div>

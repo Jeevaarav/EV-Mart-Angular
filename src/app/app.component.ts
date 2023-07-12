@@ -54,20 +54,26 @@ export class AppComponent {
         else if(val.url=='/orderpage/revieworder'){
           this.navopen1=false;
         }
+        else if(val.url=='/payment'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/debitcard'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/evmartcenterpayment'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/walletpayment'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/orderconfirmpage'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }
       }
-    })
-    // setInterval(()=>{
-    //   if(this.navopen.closenav==false)
-    // {
-    //   this.opennav=false;
-    // }
-    // else{
-    //   this.opennav=true;
-    // }
-    // },1000);
+    });
 
   }
 }

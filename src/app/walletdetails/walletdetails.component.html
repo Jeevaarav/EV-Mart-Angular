@@ -1,0 +1,40 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="payment-display">
+    <div class="vehicle-image">
+      <img src="{{orderedVehicleImage}}" alt="orderedVehicleImage" title="{{orderedVehicleName}}">
+    </div>
+    <div class="payment-heading">
+      <div>
+       <a routerLink="/payment"> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+      <div class="payment-price">
+        <div>
+          <h2>Total Payable</h2>
+        </div>
+        <div>
+          <h2>Rs. {{Amount}}</h2>
+        </div>
+      </div>
+      <div class="google-pay" *ngFor="let paymentupi of getPaymentDetails;let index=index">
+        <div><img src="{{paymentupi.UPIimg}}" alt="{{paymentupi.UPIimg}}" title="paymentupi.UPIname"></div>
+        <div><h2>{{paymentupi.UPIname}}</h2></div>
+        <div *ngIf="hideUPI[index]"><a (click)="showButton(index)">Link account</a></div>
+        <div class="show-more" *ngIf="showProceed[index]">
+        <div class="dotted-line"></div>
+        <div><p>Proceed to link {{paymentupi.UPIname}} with your number below</p></div>
+        <div><p>{{phoneNumber}}</p></div>
+        <div class="pay-button">
+          <div><button class="book" (click)="closeButton(index)">CANCEL</button></div>
+          <div><button class="book">CONTINUE</button></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>

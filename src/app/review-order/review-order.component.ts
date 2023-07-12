@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { bookingdetails } from '../fillbooking.guard';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
+import { FillbookdetailsService } from '../fillbookdetails.service';
 
 @Component({
   selector: 'app-review-order',
@@ -11,7 +11,7 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./review-order.component.css'],
   styles:[`input.ng-invalid && .details-form input.ng-dirty {border:2px solid red}`,`input.valid{border:2px solid green}`]
 })
-export class ReviewOrderComponent implements bookingdetails {
+export class ReviewOrderComponent {
   mail:any;
   user:any;
   profile:any;
@@ -40,8 +40,18 @@ export class ReviewOrderComponent implements bookingdetails {
   getFullDetails:any;
   getOrder:any;
   splitimg:any;
+  reserveAmount:any;
+  splitPrice:any;
+  joinPrice:any;
+  formatedAmount:any;
+  Amount:any;
+  stateListStore:any;
+  districtstate:any;
+  districtStore:any=[];
+  evmartcenter:any;
+  centerNameStore:any;
 
-  constructor(private route:Router,private form:FormBuilder,private http:HttpClient){
+  constructor(private route:Router,private form:FormBuilder,private http:HttpClient,private filldetails:FillbookdetailsService){
    this.mail=sessionStorage.getItem('logmail');
     this.user=sessionStorage.getItem('reguser');
     this.profile=sessionStorage.getItem('profilepage');
@@ -57,21 +67,26 @@ export class ReviewOrderComponent implements bookingdetails {
     this.range=this.specdetails.range;
     this.topspeed=this.specdetails.topspeed;
     this.price=this.specdetails.price;
+    this.splitPrice=this.price.split(',');
+    this.joinPrice=this.splitPrice.join('');
+    console.log(this.joinPrice);
+    this.reserveAmount=Math.floor(parseInt(this.joinPrice)*(30/100));
+    this.formatedAmount=this.reserveAmount.toString();
+    this.Amount= Number(this.formatedAmount).toLocaleString();
+    console.log(this.Amount);
+    sessionStorage.setItem('Amount',this.Amount);
     this.date=new Date();
     this.year=this.date.getFullYear();
     this.datetaken=this.date.getDate();
     this.timetaken=this.date.getTime();
-    console.log(formatDate(this.timetaken, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530'));
+
+    this.filldetails.stateDisplay().subscribe((stateslist)=>{
+      this.stateListStore=stateslist;
+      console.log(this.stateListStore[0].districts[0]);
+    })
   }
 
-  canExit(){
-    if(confirm("You want to leave the page")){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
+
   reviewform=this.form.group({
     State:['',Validators.required],
     City:['',Validators.required],
@@ -94,23 +109,29 @@ export class ReviewOrderComponent implements bookingdetails {
 
   stateselect(state:any){
       this.state=state;
+      this.http.get<any>("http://localhost:3000/states").subscribe((states)=>{
+        const stateactive=states.find((states:any)=>{
+          this.districtstate=states;
+          return states.state==state;
+        });
+        if(stateactive){
+          this.districtStore=this.districtstate.districts;
+          this.centerNameStore=this.districtstate.Evmartcenter;
+          console.log(this.districtStore);
+        }
+        else{
+          console.log("Not found");
+        }
+      })
   }
   cityselect(city:any){
     this.city=city;
   }
-
-  orderbooked(){
-    const state=this.state;
-    const city=this.city;
-    const evmart=this.reviewform.controls['Centername'].value;
-    const mail=this.reviewform.controls['mail'].value;
-    const firstname=this.reviewform.controls['firstname'].value;
-    const lastname=this.reviewform.controls['lastname'].value;
-    const phonenumber=this.reviewform.controls['phonenumber'].value;
-    const address=this.reviewform.controls['address'].value;
-    const landmark=this.reviewform.controls['landmark'].value;
-    const pincode=this.reviewform.controls['pincode'].value;
-    const doorno=this.reviewform.controls['doorno'].value;
+  evcentername(center:any){
+    this.evmartcenter=center;
+  }
+  fillDetails(){
+    const orderid=Math.floor(Math.random() * (1000 - 0 + 1)) + 0;
     const varientimg=sessionStorage.getItem('varient_image');
     const varientname=sessionStorage.getItem('varient_name');
     const varientcolor=sessionStorage.getItem('varient_Color');
@@ -118,10 +139,8 @@ export class ReviewOrderComponent implements bookingdetails {
     const range=this.range;
     const topspeed=this.topspeed;
     const price=this.price;
-    const orderid=Math.floor(Math.random() * (1000 - 0 + 1)) + 0;
     this.date=new Date();
     this.day=this.date.getDay();
-    console.log(this.day);
     if(this.day==0){
       this.getday="Sunday";
     }
@@ -144,39 +163,33 @@ export class ReviewOrderComponent implements bookingdetails {
       this.getday="Saturday";
     }
 
-    this.orderformattime=(formatDate(this.timetaken, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530'));
+    this.orderformattime=(formatDate(this.timetaken, 'dd-MMM-yyyy hh:mm:ss a', 'en-US', '+0530'));
 
-    this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
-      const user=x.find((logged:any)=>{
-        // console.log(logged.order);
-        this.getFullDetails=logged;
-        return logged.regemail==sessionStorage.getItem('logmail');
-      });
-      if(user){
-        this.getOrder=this.getFullDetails.order;
-        if(this.getFullDetails.order!=null){
-          this.getOrder.push({orderID:orderid,state:state,city:city,evmart:evmart,firstname:firstname,lastname:lastname,phonenumber:phonenumber,address:address,landmark:landmark,pincode:pincode,doorno:doorno,varientname:varientname,varientimg:varientimg,varientcolor:varientcolor,battery:battery,range:range,topspeed:topspeed,price:price,day:this.getday,date:this.orderformattime});
-          this.http.patch<any>("http://localhost:3000/Register/"+mail,{order:this.getOrder}).subscribe((z)=>{
-          console.log(z);
-          this.orderplaced=true;
-          setTimeout(()=>{
-              this.orderplaced=false;
-              this.route.navigateByUrl('Product');
-          },4000)
-        });
-        }
-        else{
-        this.http.patch("http://localhost:3000/Register/"+mail,{order:[{orderID:orderid,state:state,city:city,evmart:evmart,firstname:firstname,lastname:lastname,phonenumber:phonenumber,address:address,landmark:landmark,pincode:pincode,doorno:doorno,varientname:varientname,varientimg:varientimg,varientcolor:varientcolor,battery:battery,range:range,topspeed:topspeed,price:price,day:this.getday,date:this.orderformattime}]}).subscribe((patched)=>{
-          console.log("patched");
-          this.orderplaced=true;
-          setTimeout(()=>{
-              this.orderplaced=false;
-              this.route.navigateByUrl('Product');
-          },4000)
-        })
-      }
-      }
-    });
+    let filldetails={
+      orderid:orderid,
+      day:this.getday,
+      varientcolor:varientcolor,
+      varientimg:varientimg,
+      varientname:varientname,
+      battery:battery,
+      range:range,
+      topspeed:topspeed,
+      price:price,
+      State:this.state,
+      City:this.city,
+      Centername:this.evmartcenter,
+      mail:this.reviewform.controls['mail'].value,
+      address:this.reviewform.controls['address'].value,
+      firstname:this.reviewform.controls['firstname'].value,
+      lastname:this.reviewform.controls['lastname'].value,
+      phonenumber:this.reviewform.controls['phonenumber'].value,
+      landmark:this.reviewform.controls['landmark'].value,
+      pincode:this.reviewform.controls['pincode'].value,
+      doorno:this.reviewform.controls['doorno'].value
+    }
+
+    this.filldetails.storeDetails(filldetails);
 
   }
+
 }

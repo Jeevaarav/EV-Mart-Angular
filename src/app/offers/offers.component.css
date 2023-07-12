@@ -183,4 +183,20 @@ margin-bottom:0.8rem;
   font-size: 2rem;
   text-transform: none;
 }
-
+.exchange-offer{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.exchange-offer .know a{
+  color: green;
+}
+.exchange-offer .know{
+  font-size: 2rem;
+  color: green;
+}
+.exchange-offer .know i{
+  color: green;
+  padding-left: 1rem;
+}

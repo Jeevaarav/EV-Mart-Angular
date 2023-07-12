@@ -105,18 +105,27 @@ export class OrderpageComponent implements OnInit {
   colorchange(index:any,color:any){
     this.colorchgpath=this.useval.varients[0].vname;
     this.imgchange=document.getElementById("changeimg");
-    this.showborder1=localStorage.getItem('index');
-    this.showborder2=document.getElementById("wave"+this.showborder1);
-    this.showborder2.style.outline='none';
     this.status=false;
+    this.showborder1=sessionStorage.getItem('index');
+    if(this.showborder1==null){
+      sessionStorage.setItem('index',index);
+    this.showborder1=sessionStorage.getItem('index');
+    }
+    console.log(index);
+    console.log(this.imgchange);
+    this.showborder2=document.getElementById("wave"+this.showborder1);
+    console.log(this.showborder2);
+    this.showborder2.style.outline='none';
     this.color=color.split(this.vname+'/');
     console.log(this.color);
     this.colorfinal=this.color[1].split('.png');
     this.colorindex=this.colorfinal[0];
     sessionStorage.setItem('varient_Color',this.colorindex);
     console.log(index);
+
     this.showborder=document.getElementById("wave"+index);
-    localStorage.setItem('index',index);
+    console.log(this.showborder);
+    sessionStorage.setItem('index',index);
     this.showborder.style.outline='4px solid green';
     this.showborder.style.outlineOffset='5px';
     this.imgchange.src=this.useval.displayimg[index].img;

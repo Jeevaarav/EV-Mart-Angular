@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="payment-display">
+    <div class="vehicle-image">
+      <img src="{{orderedVehicleImage}}" alt="orderedVehicleImage" title="{{orderedVehicleName}}">
+    </div>
+    <div class="payment-heading">
+      <div>
+       <a routerLink="/payment"> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+      <div class="payment-price">
+        <div>
+          <h2>Total Payable</h2>
+        </div>
+        <div>
+          <h2>Rs. {{varientAmount}}</h2>
+        </div>
+      </div>
+      <div>
+        <form class="debit-form" [formGroup]="myform" (ngSubmit)="myform.valid && getDebitCard()">
+          <div class="card-number">
+          <div class="inside-div">
+            <input type="tel" class="box" placeholder="Card Number" formControlName="input" maxlength="16" >
+            <div class="outside-div"><img src="../../assets/EV mart/mastercard.png" alt="mastercard" *ngIf="masterCardImage" class="mastercard"> <i class="{{showCardType}}" [style.color]="cardColor" *ngIf="cardIcon"></i></div>
+            <small>{{displayBank}}</small>
+            <small class="errormsg" *ngIf="myform.controls['input'].errors?.['required'] && myform.controls['input'].dirty">Enter Card Number</small>
+            <small *ngIf="myform.controls['input'].errors?.['pattern']">(Card Number is not valid)</small>
+            <small class="banknotfound">{{bankNotFound}}</small>
+          </div>
+          <div class="card-expiry">
+            <div class="expirydate">
+            <input type="tel" class="box" placeholder="Expiry (MM/YY)" formControlName="expiry" maxlength="5" #expirydate (keyup)="expiryDateValidate(expirydate.value)">
+            <small *ngIf="myform.controls['expiry'].errors?.['required'] && myform.controls['expiry'].dirty">Enter expiry date</small>
+            <small *ngIf="myform.controls['expiry'].errors?.['pattern']">Enter in proper format</small>
+            <small>{{cardExpires}}</small>
+          </div>
+          <div class="cvv">
+            <input type="password" placeholder="CVV" class="box" formControlName="CVV" maxlength="4">
+            <small *ngIf="myform.controls['CVV'].errors?.['required'] && myform.controls['CVV'].dirty">Enter CVV</small>
+            <small *ngIf="myform.controls['CVV'].errors?.['pattern']">Invalid CVV</small>
+          </div>
+          </div>
+          <div class="cvv">
+            <input type="text" placeholder="Card Holder Name" class="box" formControlName="cardholder" #cardname (keyup)="cardname.value=cardname.value.toUpperCase()">
+            <small *ngIf="myform.controls['cardholder'].errors?.['required'] && myform.controls['cardholder'].dirty">Enter card holder name</small>
+          </div>
+          <div class="pay-button">
+            <button>Pay</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

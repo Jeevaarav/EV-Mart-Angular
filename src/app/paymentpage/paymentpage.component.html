@@ -1,0 +1,106 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="payment-display">
+    <div class="vehicle-image">
+      <img src="{{orderedVehicleImage}}" alt="orderedVehicleImage" title="{{orderedVehicleName}}">
+    </div>
+    <div class="payment-heading">
+      <div>
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      <div class="payment-price">
+        <div>
+          <h2>Total Payable</h2>
+        </div>
+        <div>
+          <h2>Rs. {{totalPayamount}}</h2>
+        </div>
+      </div>
+      <div>
+        <h3>Payment Mode</h3>
+      </div>
+      <div class="payment-mode">
+        <p>Pay as reserved booking</p>
+        <div class="border-line"></div>
+      </div>
+      <div class="card">
+       <a routerLink="/debitcard"> <div class="payatcenter">
+          <div><i class="fa-solid fa-credit-card"></i></div>
+          <div>
+            <p>Debit Card</p>
+          </div>
+          <div><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </a>
+      </div>
+      <div class="card">
+        <a routerLink="/walletpayment"><div class="payatcenter">
+          <div><i class="fa-solid fa-wallet"></i></div>
+          <div>
+            <p>Wallet</p>
+          </div>
+          <div><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </a>
+      </div>
+      <div class="payment-mode">
+        <p>Pay at EV Mart Center</p>
+        <div class="border-line"></div>
+      </div>
+      <a routerLink="/evmartcenterpayment"><div class="card">
+       <div class="payatcenter">
+          <div><i class="fa-solid fa-building"></i></div>
+          <div>
+            <p>Pay at EV Mart Center</p>
+          </div>
+          <div><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        <div><small>Pay by swiping your credit/debit card (can be done only at our Ola centres)</small></div>
+      </div>
+    </a>
+    <div class="payment-mode">
+      <p>Saved Payment Options</p>
+      <div class="border-line"></div>
+    </div>
+    <div class="cardDisplay"  (click)="showSavedCard()">
+      <div><i class="{{cardTypeIcon}}"></i></div>
+      <div class="carddisplay-details">
+      <div>
+        <p>{{displayCardNumber}}</p>
+      </div>
+      <div>
+        <h2>{{displayCardHolder}}</h2>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="entermaindiv" *ngIf="showPaymentCard">
+  <div class="enterDetails" >
+    <div class="xmark" (click)="closeDebit()"><i class="fa-solid fa-xmark"></i></div>
+    <div class="main-container">
+    <form class="card-display">
+      <i class="{{cardTypeIcon}}" id="cardtype"></i>
+      <div>
+        <input type="text" class="box1" value="{{displayCardNumber}}" readonly >
+      </div>
+      <div class="cvv-num">
+        <div><h2>{{displayCardHolder}}</h2></div>
+        <div>
+          <input type="tel" placeholder="00/00">
+        </div>
+        <div>
+          <input type="password" placeholder="CVV">
+        </div>
+      </div>
+      <button class="debit-pay">Click here to Pay</button>
+    </form>
+  </div>
+</div>
+</div>
+</body>

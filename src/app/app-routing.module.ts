@@ -32,6 +32,12 @@ import { EVhelpComponent } from './evhelp/evhelp.component';
 import { ReviewOrderComponent } from './review-order/review-order.component';
 import { ManageAddressComponent } from './manage-address/manage-address.component';
 import { FillbookingGuard } from './fillbooking.guard';
+import { PaymentpageComponent } from './paymentpage/paymentpage.component';
+import { DebitcardpaymentComponent } from './debitcardpayment/debitcardpayment.component';
+import { EvmartcenterpaymentComponent } from './evmartcenterpayment/evmartcenterpayment.component';
+import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
+import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
+import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.component';
 
 
 
@@ -60,6 +66,10 @@ const routes: Routes = [
   {
     path:"Orders",
     component:OrderdetailsComponent
+  },
+  {
+    path:"profilePayment",
+    component:ProfilepaymentdetailsComponent
   }]
   },
   {
@@ -92,8 +102,7 @@ const routes: Routes = [
     children:[
       {
         path:"orderpage/revieworder",
-        component:ReviewOrderComponent,
-        canDeactivate:[FillbookingGuard]
+        component:ReviewOrderComponent
       }
     ]
   },
@@ -155,6 +164,10 @@ const routes: Routes = [
    component:OffersComponent
   },
   {
+    path:"exchange",
+    component:ExchangeComponent
+  },
+  {
     path:"About",
     component:AboutusComponent
   },
@@ -171,11 +184,25 @@ const routes: Routes = [
     component:BookingconfirmComponent
   },
   {
-    path:"",
-    children:[{
-      path:"offers/exchange",
-      component:ExchangeComponent
-    }]
+    path:"payment",
+    component:PaymentpageComponent
+  },
+  {
+    path:"debitcard",
+    component:DebitcardpaymentComponent,
+    canDeactivate:[FillbookingGuard]
+  },
+  {
+    path:"evmartcenterpayment",
+    component:EvmartcenterpaymentComponent
+  },
+  {
+    path:"walletpayment",
+    component:WalletdetailsComponent
+  },
+  {
+    path:"orderconfirmpage",
+    component:OrderconfirmpageComponent
   },
   {
     path:"admin",

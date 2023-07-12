@@ -31,28 +31,76 @@
           "pincode": "636010"
         }
       ],
-      "order": [
+      "paymentcard": {
+        "cardnumber": "XXXXXXXXXXXX5154",
+        "cardholdername": "MANIKANDAN O",
+        "cardtype": "Visa"
+      },
+      "orders": [
         {
-          "orderID": 764,
-          "state": "Tamilnadu",
-          "city": "Anna Nagar",
-          "evmart": "Anna Nagar Center",
-          "firstname": "Aravinth",
-          "lastname": "venkatesh",
-          "phonenumber": "6374505525",
-          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
-          "landmark": "Jaisuryas",
-          "pincode": "636006",
-          "doorno": "621A",
+          "orderid": 134,
+          "varientcolor": "Porcelian White",
+          "varientimg": "http://localhost:4200/assets/EV%20mart/OLAS1/display2.webp",
           "varientname": "OLA S1",
-          "varientimg": "../../assets/EV mart/OLAS1/display1.webp",
-          "varientcolor": "Gerua",
           "battery": "3kWh",
           "range": "141 km",
           "topspeed": "95 kmph",
           "price": "1,29,999",
-          "day": "Thursday",
-          "date": "06-07-2023 01:26:45 PM"
+          "bookingdate": "11-Jul-2023 03:32:58 PM",
+          "day": "Tuesday",
+          "State": "Bihar",
+          "City": "Kaimur (Bhabua)",
+          "Centername": "EV MART Center, Aurangabad",
+          "mail": "jeevaaravinth2001@gmail.com",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "firstname": "Aravinth",
+          "lastname": "nbhjbn",
+          "phonenumber": "6374505533",
+          "landmark": "Jaisuryas",
+          "pincode": "636010",
+          "doorno": "621B",
+          "paymentmode": "Debit Card",
+          "paymentstatus": "paid"
+        },
+        {
+          "orderid": 579,
+          "varientcolor": "Salt Green",
+          "varientimg": "http://localhost:4200/assets/EV%20mart/Ather450X/display3.webp",
+          "varientname": "Ather 450X Pro Pack",
+          "battery": "2kWh",
+          "range": "150 km",
+          "topspeed": "80 kmph",
+          "price": "1,50,000",
+          "bookingdate": "11-Jul-2023 03:34:26 PM",
+          "day": "Tuesday",
+          "State": "Bihar",
+          "City": "Kaimur (Bhabua)",
+          "Centername": "EV MART Center, Arwal",
+          "mail": "jeevaaravinth2001@gmail.com",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "firstname": "Aravinth",
+          "lastname": "bvhvvbhj",
+          "phonenumber": "6374505533",
+          "landmark": "Jaisuryas",
+          "pincode": "636010",
+          "doorno": "621B",
+          "paymentmode": "Debit Card",
+          "paymentstatus": "paid"
+        }
+      ]
+    },
+    {
+      "regemail": "manidhanush2001@gmail.com",
+      "reguser": "aaaaaaaaa",
+      "regpass": "@Mani2001",
+      "regconfirm": "@Mani2001",
+      "regphonenum": "6666666666",
+      "address": [
+        {
+          "fulladdress": "nattamangalam,\nsalem",
+          "doorno": "000000000000",
+          "landmark": "DBS BANK",
+          "pincode": "000000"
         }
       ]
     }
@@ -492,22 +540,65 @@
   ],
   "EV-Martcenter": [
     {
-      "dateofvisit": {
-        "Monday": "30-06-2023",
-        "Thursday": "02-07-2023",
-        "Tuesday": "07-07-2023",
-        "Friday": "12-07-2023",
-        "Saturday": "20-07-2023"
-      },
+      "dateofvisit": [
+        {
+          "Date": "05-07-2023",
+          "Timeslot": [
+            {
+              "slottime": "09.00 - 10.00 Am"
+            },
+            {
+              "slottime": "01.00 - 02.00 Pm"
+            },
+            {
+              "slottime": "07.00 - 08.00 Pm"
+            }
+          ]
+        },
+        {
+          "Date": "07-07-2023",
+          "Timeslot": [
+            {
+              "slottime": "10.00 - 11.00 Am"
+            },
+            {
+              "slottime": "01.00 - 02.00 Pm"
+            },
+            {
+              "slottime": "07.00 - 08.00 Pm"
+            }
+          ]
+        },
+        {
+          "Date": "26-07-2023",
+          "Timeslot": [
+            {
+              "slottime": "09.00 - 10.00 Am"
+            },
+            {
+              "slottime": "01.00 - 02.00 Pm"
+            },
+            {
+              "slottime": "07.00 - 08.00 Pm"
+            }
+          ]
+        },
+        {
+          "Date": "05-06-2023",
+          "Timeslot": [
+            {
+              "slottime": "09.00 - 10.00 Am"
+            },
+            {
+              "slottime": "01.00 - 02.00 Pm"
+            },
+            {
+              "slottime": "07.00 - 08.00 Pm"
+            }
+          ]
+        }
+      ],
       "id": 1
-    },
-    {
-      "Timeslot": {
-        "Mrng": "09.00 - 10.00 Am",
-        "Noon": "01.00 - 02.00 Pm",
-        "Eve": "07.00 - 08.00 Pm"
-      },
-      "id": 2
     },
     {
       "City": {
@@ -589,13 +680,13 @@
   ],
   "offers": [
     {
-      "img": "../../assets/EV mart/offer2.webp",
-      "content": "Upgrade your ride - Get ₹2,000* as Exchange Bonus",
-      "time": "June 25 2023 23:20:00",
-      "link": "/offers/exchange",
-      "validity": "Have a petrol 2 wheeler with a drinking problem? Exchange it for India's famous EV",
-      "button": "Know more",
-      "regemail": "2"
+      "img": "../../assets/EV mart/ather offer.webp",
+      "content": "Get ₹5,000* off on the Ather 550!",
+      "time": "July 03 2023 13:17:00",
+      "link": "",
+      "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
+      "button": "Order now",
+      "regemail": "1"
     },
     {
       "img": "../../assets/EV mart/ather offer.webp",
@@ -604,7 +695,7 @@
       "link": "",
       "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
       "button": "Order now",
-      "regemail": "3"
+      "regemail": "2"
     }
   ],
   "map": [
@@ -686,6 +777,1294 @@
               "Varient": "Optima LX"
             }
           ]
+        }
+      ]
+    }
+  ],
+  "Visa": [
+    {
+      "binNumber": "406814",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "461934",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "461933",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "457357",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "470441",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "483748",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "438623",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "483749",
+      "bankname": "CITY UNION BANK"
+    },
+    {
+      "binNumber": "436370",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "436369",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "436371",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "466256",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "457500",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "463237",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "463238",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "466257",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "436312",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "436372",
+      "bankname": "DBS BANK"
+    },
+    {
+      "binNumber": "445533",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "445535",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "445532",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "462851",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "404322",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "445534",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "418254",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "418234",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "474864",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "486575",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "421334",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "421334",
+      "bankname": "HDFC BANK"
+    }
+  ],
+  "Mastercard": [
+    {
+      "binNumber": "539194",
+      "bankname": "KVB BANK"
+    },
+    {
+      "binNumber": "511511",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "511665",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "511666",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "512962",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "512967",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "512968",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "513490",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "514560",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "514834",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "517635",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "517652",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "517848",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "521511",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "522023",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "522024",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526266",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "523674",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524111",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524181",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524216",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524254",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524368",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524877",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "524931",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "525760",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526266",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526269",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526265",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526271",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526419",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "526715",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "527692",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "528882",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "528887",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "528945",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "529185",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "529186",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "546094",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "550372",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552088",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552260",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552365",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552394",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "553583",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "556620",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "559300",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "531829",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "531831",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "531836",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "532118",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "532135",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "532676",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "532961",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "533136",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "534952",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "540536",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "541919",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "545226",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552274",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552385",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "553115",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "555153",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552218",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "532973",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "533744",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "533744",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "536311",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "541172",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "541919",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "545964",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552344",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "552389",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "553162",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "556042",
+      "bankname": "HDFC BANK"
+    },
+    {
+      "binNumber": "558983",
+      "bankname": "HDFC BANK"
+    }
+  ],
+  "paymentUPI": [
+    {
+      "UPIname": "BHIM",
+      "UPIimg": "../../assets/EV mart/BHIMupi.png"
+    },
+    {
+      "UPIname": "Google Pay",
+      "UPIimg": "../../assets/EV mart/googlepayupi.png"
+    },
+    {
+      "UPIname": "Phone Pay",
+      "UPIimg": "../../assets/EV mart/phonepayupi.png"
+    },
+    {
+      "UPIname": "Paytm",
+      "UPIimg": "../../assets/EV mart/paytmupi.png"
+    }
+  ],
+  "states": [
+    {
+      "state": "Bihar",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Arwal"
+        },
+        {
+          "centername": "EV MART Center, Aurangabad"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Araria"
+        },
+        {
+          "district": "Arwal"
+        },
+        {
+          "district": "Aurangabad"
+        },
+        {
+          "district": "Banka"
+        },
+        {
+          "district": "Begusarai"
+        },
+        {
+          "district": "Bhagalpur"
+        },
+        {
+          "district": "Bhojpur"
+        },
+        {
+          "district": "Buxar"
+        },
+        {
+          "district": "Darbhanga"
+        },
+        {
+          "district": "East Champaran (Motihari)"
+        },
+        {
+          "district": "Gaya"
+        },
+        {
+          "district": "Gopalganj"
+        },
+        {
+          "district": "Jamui"
+        },
+        {
+          "district": "Jehanabad"
+        },
+        {
+          "district": "Kaimur (Bhabua)"
+        },
+        {
+          "district": "Katihar"
+        },
+        {
+          "district": "Khagaria"
+        },
+        {
+          "district": "Kishanganj"
+        },
+        {
+          "district": "Lakhisarai"
+        },
+        {
+          "district": "Madhepura"
+        },
+        {
+          "district": "Madhubani"
+        },
+        {
+          "district": "Munger (Monghyr)"
+        },
+        {
+          "district": "Muzaffarpur"
+        },
+        {
+          "district": "Nalanda"
+        },
+        {
+          "district": "Nawada"
+        },
+        {
+          "district": "Patna"
+        },
+        {
+          "district": "Purnia (Purnea)"
+        },
+        {
+          "district": "Rohtas"
+        },
+        {
+          "district": "Saharsa"
+        },
+        {
+          "district": "Samastipur"
+        },
+        {
+          "district": "Saran"
+        },
+        {
+          "district": "Sheikhpura"
+        },
+        {
+          "district": "Sheohar"
+        },
+        {
+          "district": "Sitamarhi"
+        },
+        {
+          "district": "Siwan"
+        },
+        {
+          "district": "Supaul"
+        },
+        {
+          "district": "Vaishali"
+        },
+        {
+          "district": "West Champaran"
+        }
+      ]
+    },
+    {
+      "state": "Chandigarh (UT)",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Chandigarh"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Chandigarh"
+        }
+      ]
+    },
+    {
+      "state": "Delhi (NCT)",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Centre, Pitam Pura"
+        },
+        {
+          "centername": "EV MART Centre, Sector 2, Noida"
+        },
+        {
+          "centername": "EV MART Centre, MG Road, Gurgaon"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Central Delhi"
+        },
+        {
+          "district": "East Delhi"
+        },
+        {
+          "district": "New Delhi"
+        },
+        {
+          "district": "North Delhi"
+        },
+        {
+          "district": "North East  Delhi"
+        },
+        {
+          "district": "North West  Delhi"
+        },
+        {
+          "district": "Shahdara"
+        },
+        {
+          "district": "South Delhi"
+        },
+        {
+          "district": "South East Delhi"
+        },
+        {
+          "district": "South West  Delhi"
+        },
+        {
+          "district": "West Delhi"
+        }
+      ]
+    },
+    {
+      "state": "Karnataka",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Koramangala"
+        },
+        {
+          "centername": "EV MART Center, Indiranagar"
+        },
+        {
+          "centername": "EV MART Center, Jayanagar"
+        },
+        {
+          "centername": "EV MART Center, RR Nagar"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Bagalkot"
+        },
+        {
+          "district": "Ballari (Bellary)"
+        },
+        {
+          "district": "Belagavi (Belgaum)"
+        },
+        {
+          "district": "Bengaluru (Bangalore) Rural"
+        },
+        {
+          "district": "Bengaluru (Bangalore) Urban"
+        },
+        {
+          "district": "Bidar"
+        },
+        {
+          "district": "Chamarajanagar"
+        },
+        {
+          "district": "Chikballapur"
+        },
+        {
+          "district": "Chikkamagaluru (Chikmagalur)"
+        },
+        {
+          "district": "Chitradurga"
+        },
+        {
+          "district": "Dakshina Kannada"
+        },
+        {
+          "district": "Davangere"
+        },
+        {
+          "district": "Dharwad"
+        },
+        {
+          "district": "Gadag"
+        },
+        {
+          "district": "Hassan"
+        },
+        {
+          "district": "Haveri"
+        },
+        {
+          "district": "Kalaburagi (Gulbarga)"
+        },
+        {
+          "district": "Kodagu"
+        },
+        {
+          "district": "Kolar"
+        },
+        {
+          "district": "Koppal"
+        },
+        {
+          "district": "Mandya"
+        },
+        {
+          "district": "Mysuru (Mysore)"
+        },
+        {
+          "district": "Raichur"
+        },
+        {
+          "district": "Ramanagara"
+        },
+        {
+          "district": "Shivamogga (Shimoga)"
+        },
+        {
+          "district": "Tumakuru (Tumkur)"
+        },
+        {
+          "district": "Udupi"
+        },
+        {
+          "district": "Uttara Kannada (Karwar)"
+        },
+        {
+          "district": "Vijayapura (Bijapur)"
+        },
+        {
+          "district": "Yadgir"
+        }
+      ]
+    },
+    {
+      "state": "Maharashtra",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Phugewadi"
+        },
+        {
+          "centername": "EV MART Center, Hadapsar"
+        },
+        {
+          "centername": "EV MART Center, Baner"
+        },
+        {
+          "centername": "EV MART Center, Erandwane"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Ahmednagar"
+        },
+        {
+          "district": "Akola"
+        },
+        {
+          "district": "Amravati"
+        },
+        {
+          "district": "Aurangabad"
+        },
+        {
+          "district": "Beed"
+        },
+        {
+          "district": "Bhandara"
+        },
+        {
+          "district": "Buldhana"
+        },
+        {
+          "district": "Chandrapur"
+        },
+        {
+          "district": "Dhule"
+        },
+        {
+          "district": "Gadchiroli"
+        },
+        {
+          "district": "Gondia"
+        },
+        {
+          "district": "Hingoli"
+        },
+        {
+          "district": "Jalgaon"
+        },
+        {
+          "district": "Jalna"
+        },
+        {
+          "district": "Kolhapur"
+        },
+        {
+          "district": "Latur"
+        },
+        {
+          "district": "Mumbai City"
+        },
+        {
+          "district": "Mumbai Suburban"
+        },
+        {
+          "district": "Nagpur"
+        },
+        {
+          "district": "Nanded"
+        },
+        {
+          "district": "Nandurbar"
+        },
+        {
+          "district": "Nashik"
+        },
+        {
+          "district": "Osmanabad"
+        },
+        {
+          "district": "Palghar"
+        },
+        {
+          "district": "Parbhani"
+        },
+        {
+          "district": "Pune"
+        },
+        {
+          "district": "Raigad"
+        },
+        {
+          "district": "Ratnagiri"
+        },
+        {
+          "district": "Sangli"
+        },
+        {
+          "district": "Satara"
+        },
+        {
+          "district": "Sindhudurg"
+        },
+        {
+          "district": "Solapur"
+        },
+        {
+          "district": "Thane"
+        },
+        {
+          "district": "Wardha"
+        },
+        {
+          "district": "Washim"
+        },
+        {
+          "district": "Yavatmal"
+        }
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center,  Vidhyut Nagar"
+        },
+        {
+          "centername": "EV MART Center, Kalyan Nagar, Jaipur"
+        },
+        {
+          "centername": "EV MART Center,   Garia"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Ajmer"
+        },
+        {
+          "district": "Alwar"
+        },
+        {
+          "district": "Banswara"
+        },
+        {
+          "district": "Baran"
+        },
+        {
+          "district": "Barmer"
+        },
+        {
+          "district": "Bharatpur"
+        },
+        {
+          "district": "Bhilwara"
+        },
+        {
+          "district": "Bikaner"
+        },
+        {
+          "district": "Bundi"
+        },
+        {
+          "district": "Chittorgarh"
+        },
+        {
+          "district": "Churu"
+        },
+        {
+          "district": "Dausa"
+        },
+        {
+          "district": "Dholpur"
+        },
+        {
+          "district": "Dungarpur"
+        },
+        {
+          "district": "Hanumangarh"
+        },
+        {
+          "district": "Jaipur"
+        },
+        {
+          "district": "Jaisalmer"
+        },
+        {
+          "district": "Jalore"
+        },
+        {
+          "district": "Jhalawar"
+        },
+        {
+          "district": "Jhunjhunu"
+        },
+        {
+          "district": "Jodhpur"
+        },
+        {
+          "district": "Karauli"
+        },
+        {
+          "district": "Kota"
+        },
+        {
+          "district": "Nagaur"
+        },
+        {
+          "district": "Pali"
+        },
+        {
+          "district": "Pratapgarh"
+        },
+        {
+          "district": "Rajsamand"
+        },
+        {
+          "district": "Sawai Madhopur"
+        },
+        {
+          "district": "Sikar"
+        },
+        {
+          "district": "Sirohi"
+        },
+        {
+          "district": "Sri Ganganagar"
+        },
+        {
+          "district": "Tonk"
+        },
+        {
+          "district": "Udaipur"
+        }
+      ]
+    },
+    {
+      "state": "Tamil Nadu",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Ambattur"
+        },
+        {
+          "centername": "EV MART Center, Guindy"
+        },
+        {
+          "centername": "EV MART Center,  Porur"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Ariyalur"
+        },
+        {
+          "district": "Chennai"
+        },
+        {
+          "district": "Coimbatore"
+        },
+        {
+          "district": "Cuddalore"
+        },
+        {
+          "district": "Dharmapuri"
+        },
+        {
+          "district": "Dindigul"
+        },
+        {
+          "district": "Erode"
+        },
+        {
+          "district": "Kanchipuram"
+        },
+        {
+          "district": "Kanyakumari"
+        },
+        {
+          "district": "Karur"
+        },
+        {
+          "district": "Krishnagiri"
+        },
+        {
+          "district": "Madurai"
+        },
+        {
+          "district": "Nagapattinam"
+        },
+        {
+          "district": "Namakkal"
+        },
+        {
+          "district": "Nilgiris"
+        },
+        {
+          "district": "Perambalur"
+        },
+        {
+          "district": "Pudukkottai"
+        },
+        {
+          "district": "Ramanathapuram"
+        },
+        {
+          "district": "Salem"
+        },
+        {
+          "district": "Sivaganga"
+        },
+        {
+          "district": "Thanjavur"
+        },
+        {
+          "district": "Theni"
+        },
+        {
+          "district": "Thoothukudi (Tuticorin)"
+        },
+        {
+          "district": "Tiruchirappalli"
+        },
+        {
+          "district": "Tirunelveli"
+        },
+        {
+          "district": "Tiruppur"
+        },
+        {
+          "district": "Tiruvallur"
+        },
+        {
+          "district": "Tiruvannamalai"
+        },
+        {
+          "district": "Tiruvarur"
+        },
+        {
+          "district": "Vellore"
+        },
+        {
+          "district": "Viluppuram"
+        },
+        {
+          "district": "Virudhunagar"
+        }
+      ]
+    },
+    {
+      "state": "Telangana",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center, Begumpet"
+        },
+        {
+          "centername": "EV MART Center, Sangeet Nagar"
+        },
+        {
+          "centername": "EV MART Center, Somajiguda"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Adilabad"
+        },
+        {
+          "district": "Bhadradri Kothagudem"
+        },
+        {
+          "district": "Hyderabad"
+        },
+        {
+          "district": "Jagtial"
+        },
+        {
+          "district": "Jangaon"
+        },
+        {
+          "district": "Jayashankar Bhoopalpally"
+        },
+        {
+          "district": "Jogulamba Gadwal"
+        },
+        {
+          "district": "Kamareddy"
+        },
+        {
+          "district": "Karimnagar"
+        },
+        {
+          "district": "Khammam"
+        },
+        {
+          "district": "Komaram Bheem Asifabad"
+        },
+        {
+          "district": "Mahabubabad"
+        },
+        {
+          "district": "Mahabubnagar"
+        },
+        {
+          "district": "Mancherial"
+        },
+        {
+          "district": "Medak"
+        },
+        {
+          "district": "Medchal"
+        },
+        {
+          "district": "Nagarkurnool"
+        },
+        {
+          "district": "Nalgonda"
+        },
+        {
+          "district": "Nirmal"
+        },
+        {
+          "district": "Nizamabad"
+        },
+        {
+          "district": "Peddapalli"
+        },
+        {
+          "district": "Rajanna Sircilla"
+        },
+        {
+          "district": "Rangareddy"
+        },
+        {
+          "district": "Sangareddy"
+        },
+        {
+          "district": "Siddipet"
+        },
+        {
+          "district": "Suryapet"
+        },
+        {
+          "district": "Vikarabad"
+        },
+        {
+          "district": "Wanaparthy"
+        },
+        {
+          "district": "Warangal (Rural)"
+        },
+        {
+          "district": "Warangal (Urban)"
+        },
+        {
+          "district": "Yadadri Bhuvanagiri"
+        }
+      ]
+    },
+    {
+      "state": "West Bengal",
+      "Evmartcenter": [
+        {
+          "centername": "EV MART Center,  Shibpur"
+        },
+        {
+          "centername": "EV MART Center, Bhowanipore"
+        },
+        {
+          "centername": "EV MART Center, Noapara"
+        }
+      ],
+      "districts": [
+        {
+          "district": "Alipurduar"
+        },
+        {
+          "district": "Bankura"
+        },
+        {
+          "district": "Birbhum"
+        },
+        {
+          "district": "Burdwan (Bardhaman)"
+        },
+        {
+          "district": "Cooch Behar"
+        },
+        {
+          "district": "Dakshin Dinajpur (South Dinajpur)"
+        },
+        {
+          "district": "Darjeeling"
+        },
+        {
+          "district": "Hooghly"
+        },
+        {
+          "district": "Howrah"
+        },
+        {
+          "district": "Jalpaiguri"
+        },
+        {
+          "district": "Kalimpong"
+        },
+        {
+          "district": "Kolkata"
+        },
+        {
+          "district": "Malda"
+        },
+        {
+          "district": "Murshidabad"
+        },
+        {
+          "district": "Nadia"
+        },
+        {
+          "district": "North 24 Parganas"
+        },
+        {
+          "district": "Paschim Medinipur (West Medinipur)"
+        },
+        {
+          "district": "Purba Medinipur (East Medinipur)"
+        },
+        {
+          "district": "Purulia"
+        },
+        {
+          "district": "South 24 Parganas"
+        },
+        {
+          "district": "Uttar Dinajpur (North Dinajpur)"
         }
       ]
     }

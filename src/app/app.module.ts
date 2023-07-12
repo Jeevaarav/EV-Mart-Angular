@@ -40,6 +40,11 @@ import { ManageAddressComponent } from './manage-address/manage-address.componen
 import { FillbookingGuard } from './fillbooking.guard';
 import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.component';
 import { ProfileserviceComponent } from './profileservice/profileservice.component';
+import { PaymentpageComponent } from './paymentpage/paymentpage.component';
+import { DebitcardpaymentComponent } from './debitcardpayment/debitcardpayment.component';
+import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
+import { EvmartcenterpaymentComponent } from './evmartcenterpayment/evmartcenterpayment.component';
+import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
 
 
 @NgModule({
@@ -78,6 +83,11 @@ import { ProfileserviceComponent } from './profileservice/profileservice.compone
     ManageAddressComponent,
     OrderconfirmpageComponent,
     ProfileserviceComponent,
+    PaymentpageComponent,
+    DebitcardpaymentComponent,
+    WalletdetailsComponent,
+    EvmartcenterpaymentComponent,
+    ProfilepaymentdetailsComponent,
   ],
   imports: [
     BrowserModule,

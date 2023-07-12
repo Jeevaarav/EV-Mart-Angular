@@ -15,6 +15,8 @@ export class ProductpageComponent {
 constructor(private vehservice:AdminService,private book:OrderbookingService,private login:LogincredentialsService){
   this.vehservice.countread().subscribe(data=>{
     this.vehdetails=data;
+    console.log(this.vehdetails);
+    console.log("Jeeva");
   })
 }
 
