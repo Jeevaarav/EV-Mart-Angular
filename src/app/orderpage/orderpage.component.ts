@@ -35,16 +35,12 @@ export class OrderpageComponent implements OnInit {
   border:any;
 
   constructor(private service:OrderbookingService){
-    this.storeparse=localStorage.getItem('orderpage1');
+    this.storeparse=sessionStorage.getItem('orderpage1');
     this.useval=JSON.parse(this.storeparse);
-    // console.log(this.useval);
-    // console.log(this.useval.varients[0].vname);
     this.vname=this.useval.varients[0].vname.split(' ').join("");
     console.log(this.vname);
     this.showcase="../../assets/EV mart/"+this.vname+"/display1.webp";
     sessionStorage.setItem('varient_image',this.showcase);
-    // console.log(this.showcase);
-    // this.colorindex=this.useval.div
     this.path=this.useval.div[0].color;
     console.log(this.path);
     this.path1=this.path.split(this.vname+'/');
@@ -61,6 +57,8 @@ export class OrderpageComponent implements OnInit {
     this.varients=this.useval.varients;
     sessionStorage.setItem('varient_name',this.varients[0].vname);
     this.loop=this.useval.div;
+    sessionStorage.setItem('varientindex',"0");
+    sessionStorage.setItem('index',"0")
     // console.log(this.div);
 
 
@@ -83,11 +81,12 @@ export class OrderpageComponent implements OnInit {
     // console.log(this.vname);
     sessionStorage.setItem('varient_name',vname);
     this.boolstatus=false;
-    this.show1=localStorage.getItem('varientindex');
+    this.show1=sessionStorage.getItem('varientindex');
+    console.log(this.show1);
     this.show2=document.getElementById("state"+this.show1);
     this.show2.style.border='none';
     this.show2.style.background='white';
-    this.use=localStorage.getItem('orderpage1');
+    this.use=sessionStorage.getItem('orderpage1');
     this.usestore=JSON.parse(this.use);
     // console.log(this.usestore);
     this.split1=vname.split(" ");
@@ -99,8 +98,8 @@ export class OrderpageComponent implements OnInit {
     this.price=this.spec[0].price;
     this.show=document.getElementById("state"+ind);
     this.show.style.background='#EADDCA';
-    this.show.style.border='1px solid green'
-    localStorage.setItem('varientindex',ind);
+    this.show.style.border='1px solid green';
+    sessionStorage.setItem('varientindex',ind);
   }
   colorchange(index:any,color:any){
     this.colorchgpath=this.useval.varients[0].vname;

@@ -24,11 +24,10 @@ export class ProfilepaymentdetailsComponent {
       if(user){
         if(this.getUserDetails.paymentcard!=null){
           this.hideNoPaymentcard=false;
-          this.showCardNumber=this.getUserDetails.paymentcard.cardnumber;
-          this.showCardHolder=this.getUserDetails.paymentcard.cardholdername;
-          console.log(this.hideNoPaymentcard);
-          console.log(this.getUserDetails.paymentcard.cardtype);
-          if(this.getUserDetails.paymentcard.cardtype=="Visa"){
+          this.showCardNumber=this.getUserDetails.paymentcard[0].cardnumber;
+          this.showCardHolder=this.getUserDetails.paymentcard[0].cardholdername;
+          console.log(this.getUserDetails.paymentcard[0].cardtype);
+          if(this.getUserDetails.paymentcard[0].cardtype=="Visa"){
             this.cardTypeIcon="fa-brands fa-cc-visa"
           }
           else{
@@ -44,4 +43,10 @@ export class ProfilepaymentdetailsComponent {
       }
     })
   }
+
+  // deleteSavedCard(){
+  //     this._http.delete("http://localhost:3000/Register/"+sessionStorage.getItem('logmail')).subscribe(()=>{
+
+  //     })
+  // }
 }

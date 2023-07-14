@@ -20,7 +20,7 @@ export class OrderbookingService {
         console.log("route enters");
        this.storejson=JSON.stringify(this.store);
         console.log(this.storejson);
-        localStorage.setItem('orderpage1',this.storejson);
+        sessionStorage.setItem('orderpage1',this.storejson);
         this.route.navigateByUrl('/orderpage');
       }
       else{

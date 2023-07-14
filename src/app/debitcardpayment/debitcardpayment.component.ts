@@ -198,7 +198,7 @@ export class DebitcardpaymentComponent implements debitcard {
         return getDetails.regemail==sessionStorage.getItem('logmail');
       })
       if(user){
-        this._http.patch("http://localhost:3000/Register/"+sessionStorage.getItem('logmail'),{paymentcard:{cardnumber:this.encryptCardNumber,cardholdername:cardholdername,cardtype:this.findCardType}}).subscribe(()=>{
+        this._http.patch("http://localhost:3000/Register/"+sessionStorage.getItem('logmail'),{paymentcard:[{cardnumber:this.encryptCardNumber,cardholdername:cardholdername,cardtype:this.findCardType}]}).subscribe(()=>{
           console.log("Success");
         })
       }

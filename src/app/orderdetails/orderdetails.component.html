@@ -5,8 +5,14 @@
 </head>
 <body>
   <div class="head"><h1>Orders placed</h1></div>
-  <div class="main" *ngFor="let order of getOrder;let i=index;">
-    <div class="img">
+  <div class="orderprofile" *ngIf="ordersEmpty">
+    <div><img src="../../assets/EV mart/serviceempty.gif" alt="emptygif" title="Order(S) empty"></div>
+    <div><p>No Order(S) to shown</p></div>
+  </div>
+  <div class="main" *ngFor="let order of getOrder;let i=index;" >
+    <div class="pastordershown"><p>New Orders</p></div>
+    <div *ngIf="ordersBooked" class="inside-showorder">
+    <div class="img" >
     <img src="{{order.varientimg}}" alt="">
   </div>
   <div class="details">
@@ -15,10 +21,26 @@
     <p>Color - {{order.varientcolor}}</p>
     <p>Price - Rs.{{order.price}}</p>
     <p>{{order.day}} , {{order.bookingdate}}</p>
-    <p class="small">Still you have time to cancel the order:{{daysToDday}}:{{hoursToDday}}:{{minutesToDday}}:{{secondsToDday}} </p>
+    <a>View Details</a>
   </div>
+</div>
   <div>
     <button class="book" *ngIf="cancel" (click)="cancelorder(this.i)">Cancel Order</button>
   </div>
+  </div>
+  <div class="main" *ngFor="let pastorder of pastOrders;let i=index;" >
+    <div class="pastordershown"><p>Past Orders</p></div>
+    <div  class="inside-showorder" *ngIf="showPastOrders">
+    <div class="img" >
+    <img src="{{pastorder.varientimg}}" alt="">
+  </div>
+  <div class="details">
+    <p class="varient">{{pastorder.varientname}}</p>
+    <p>Order ID - #{{pastorder.orderid}}</p>
+    <p>Color - {{pastorder.varientcolor}}</p>
+    <p>Price - Rs.{{pastorder.price}}</p>
+    <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
+  </div>
+</div>
   </div>
 </body>

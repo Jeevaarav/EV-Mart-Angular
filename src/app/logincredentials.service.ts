@@ -113,7 +113,7 @@ export class LogincredentialsService {
         return this.regcheck;
       }
       else{
-        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm,regphonenum:regphone}).subscribe((data)=>{
+        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm,regphonenum:regphone,orders:[]}).subscribe((data)=>{
         alert("Thanks for registering EV Mart, Let's experience the EV world");
         localStorage.setItem('key',regmail);
         localStorage.setItem('key1',reguser);

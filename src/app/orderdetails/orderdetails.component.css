@@ -38,10 +38,13 @@ html{
 .main{
   padding: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
   gap:1rem;
+}
+.main .pastordershown p{
+  font-size: 2rem;
+  color: #130f40;
 }
 .main img{
   width: 300px;
@@ -69,4 +72,22 @@ html{
 }
 .details p{
   font-size: 1.7rem;
+}
+.orderprofile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  flex-direction: column;
+}
+.orderprofile p{
+  font-size: 2rem;
+  color: #130f40;
+  text-transform: none;
+}
+.inside-showorder{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
 }

@@ -2,6 +2,7 @@ import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderintervalService } from './orderinterval.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +25,17 @@ export class FillbookdetailsService {
   orderDate:any;
   bookingDate:any;
   getTime:any;
+  setDate:any;
+  formateDateset:any;
+  cancelDate:any;
+  deliveryDate:any;
+  formatDeliveryDate:any;
 
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router,private orderInterval:OrderintervalService) { }
 
 
   stateDisplay(){
-    return this.http.get<any>("http://localhost:3000/states")
+    return this.http.get<any>("http://localhost:3000/states");
   }
 
   storeDetails(filldetails:any){
@@ -45,8 +51,24 @@ export class FillbookdetailsService {
     this.parseDetails=JSON.parse(this.getFillDetails);
     this.orderDate=new Date();
     this.getTime=this.orderDate.getTime();
-
+    
     this.bookingDate=formatDate(this.getTime,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
+
+    this.deliveryDate=this.orderDate.setMinutes(
+      this.orderDate.getMinutes()+15
+    )
+
+    this.formatDeliveryDate=formatDate(this.deliveryDate,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
+
+
+
+    this.cancelDate=new Date();
+
+    this.setDate=this.cancelDate.setMinutes(
+      this.cancelDate.getMinutes()+1
+    );
+    this.formateDateset=formatDate(this.setDate,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
+    
 
     if(paymentMode=="Debit Card"){
       this.orderDetails={
@@ -59,6 +81,7 @@ export class FillbookdetailsService {
       topspeed:this.parseDetails.topspeed,
       price:this.parseDetails.price,
       bookingdate:this.bookingDate,
+      deliveryDate:this.formatDeliveryDate,
       day:this.parseDetails.day,
       State:this.parseDetails.State,
       City:this.parseDetails.City,
@@ -75,6 +98,8 @@ export class FillbookdetailsService {
       paymentstatus:"paid"
       }
 
+
+
       this.stringifyOrderDetails=JSON.stringify(this.orderDetails);
       this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{
@@ -84,28 +109,24 @@ export class FillbookdetailsService {
       if(user){
         this.getOrder=this.getFullDetails.orders;
         console.log(this.getOrder);
-        if(this.getFullDetails.orders!=null){
+        if(this.getFullDetails.orders.length){
           this.getOrder.push(this.orderDetails);
           this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:this.getOrder}).subscribe((z)=>{
           console.log(z);
-          this.route.navigateByUrl("orderconfirmpage");
-          // setTimeout(()=>{
-          //   this.orderplaced=false;
-          // },4000)
+          this.route.navigateByUrl("");
+          this.orderInterval.getTime(this.formateDateset);
         });
         }
         else{
           alert("check patched first");
         this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:[this.orderDetails]}).subscribe((patched)=>{
           console.log("patched");
-          this.route.navigateByUrl("orderconfirmpage");
-          // this.orderplaced=true;
-          // setTimeout(()=>{
-          //     this.route.navigateByUrl('Product');
-          // },4000)
+          this.route.navigateByUrl("");
+          this.orderInterval.getTime(this.formateDateset);
         })
       }
       }
+      
     });
     }
   }

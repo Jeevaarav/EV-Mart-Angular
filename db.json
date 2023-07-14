@@ -31,78 +31,22 @@
           "pincode": "636010"
         }
       ],
-      "paymentcard": {
-        "cardnumber": "XXXXXXXXXXXX5154",
-        "cardholdername": "MANIKANDAN O",
-        "cardtype": "Visa"
-      },
-      "orders": [
+      "paymentcard": [
         {
-          "orderid": 134,
-          "varientcolor": "Porcelian White",
-          "varientimg": "http://localhost:4200/assets/EV%20mart/OLAS1/display2.webp",
-          "varientname": "OLA S1",
-          "battery": "3kWh",
-          "range": "141 km",
-          "topspeed": "95 kmph",
-          "price": "1,29,999",
-          "bookingdate": "11-Jul-2023 03:32:58 PM",
-          "day": "Tuesday",
-          "State": "Bihar",
-          "City": "Kaimur (Bhabua)",
-          "Centername": "EV MART Center, Aurangabad",
-          "mail": "jeevaaravinth2001@gmail.com",
-          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
-          "firstname": "Aravinth",
-          "lastname": "nbhjbn",
-          "phonenumber": "6374505533",
-          "landmark": "Jaisuryas",
-          "pincode": "636010",
-          "doorno": "621B",
-          "paymentmode": "Debit Card",
-          "paymentstatus": "paid"
-        },
-        {
-          "orderid": 579,
-          "varientcolor": "Salt Green",
-          "varientimg": "http://localhost:4200/assets/EV%20mart/Ather450X/display3.webp",
-          "varientname": "Ather 450X Pro Pack",
-          "battery": "2kWh",
-          "range": "150 km",
-          "topspeed": "80 kmph",
-          "price": "1,50,000",
-          "bookingdate": "11-Jul-2023 03:34:26 PM",
-          "day": "Tuesday",
-          "State": "Bihar",
-          "City": "Kaimur (Bhabua)",
-          "Centername": "EV MART Center, Arwal",
-          "mail": "jeevaaravinth2001@gmail.com",
-          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
-          "firstname": "Aravinth",
-          "lastname": "bvhvvbhj",
-          "phonenumber": "6374505533",
-          "landmark": "Jaisuryas",
-          "pincode": "636010",
-          "doorno": "621B",
-          "paymentmode": "Debit Card",
-          "paymentstatus": "paid"
+          "cardnumber": "XXXXXXXXXXXX5255",
+          "cardholdername": "ARAVINTH",
+          "cardtype": "Visa"
         }
-      ]
+      ],
+      "orders": []
     },
     {
-      "regemail": "manidhanush2001@gmail.com",
-      "reguser": "aaaaaaaaa",
-      "regpass": "@Mani2001",
-      "regconfirm": "@Mani2001",
-      "regphonenum": "6666666666",
-      "address": [
-        {
-          "fulladdress": "nattamangalam,\nsalem",
-          "doorno": "000000000000",
-          "landmark": "DBS BANK",
-          "pincode": "000000"
-        }
-      ]
+      "regemail": "harish@gmail.com",
+      "reguser": "Harish",
+      "regpass": "Harish@2001",
+      "regconfirm": "Harish@2001",
+      "regphonenum": "9894823544",
+      "orders": []
     }
   ],
   "subscription": [
@@ -540,66 +484,37 @@
   ],
   "EV-Martcenter": [
     {
-      "dateofvisit": [
+      "regemail": 3,
+      "Date": "10-Jul-2023",
+      "Timeslot": [
         {
-          "Date": "05-07-2023",
-          "Timeslot": [
-            {
-              "slottime": "09.00 - 10.00 Am"
-            },
-            {
-              "slottime": "01.00 - 02.00 Pm"
-            },
-            {
-              "slottime": "07.00 - 08.00 Pm"
-            }
-          ]
+          "slottime": "09.30 - 10.30 Am"
         },
         {
-          "Date": "07-07-2023",
-          "Timeslot": [
-            {
-              "slottime": "10.00 - 11.00 Am"
-            },
-            {
-              "slottime": "01.00 - 02.00 Pm"
-            },
-            {
-              "slottime": "07.00 - 08.00 Pm"
-            }
-          ]
+          "slottime": "01.00 - 02.00 Pm"
         },
         {
-          "Date": "26-07-2023",
-          "Timeslot": [
-            {
-              "slottime": "09.00 - 10.00 Am"
-            },
-            {
-              "slottime": "01.00 - 02.00 Pm"
-            },
-            {
-              "slottime": "07.00 - 08.00 Pm"
-            }
-          ]
-        },
-        {
-          "Date": "05-06-2023",
-          "Timeslot": [
-            {
-              "slottime": "09.00 - 10.00 Am"
-            },
-            {
-              "slottime": "01.00 - 02.00 Pm"
-            },
-            {
-              "slottime": "07.00 - 08.00 Pm"
-            }
-          ]
+          "slottime": "07.00 - 08.00 Pm"
         }
-      ],
-      "id": 1
+      ]
     },
+    {
+      "regemail": 4,
+      "Date": "30-Jul-2023",
+      "Timeslot": [
+        {
+          "slottime": "10.00 - 10.30 Am"
+        },
+        {
+          "slottime": "01.00 - 02.00 Pm"
+        },
+        {
+          "slottime": "07.00 - 08.00 Pm"
+        }
+      ]
+    }
+  ],
+  "cities": [
     {
       "City": {
         "Salem": "Salem",
@@ -2067,6 +1982,240 @@
           "district": "Uttar Dinajpur (North Dinajpur)"
         }
       ]
+    }
+  ],
+  "exchangeoffers": [
+    {
+      "pincode": "636010",
+      "city": "Salem"
+    },
+    {
+      "pincode": "636006",
+      "city": "Salem"
+    },
+    {
+      "pincode": "620001",
+      "city": "Tiruchirappali"
+    },
+    {
+      "pincode": "600028",
+      "city": "Chennai"
+    },
+    {
+      "pincode": "600019",
+      "city": "Chennai"
+    },
+    {
+      "pincode": "625001",
+      "city": "Madurai"
+    },
+    {
+      "pincode": "625003",
+      "city": "Madurai"
+    }
+  ],
+  "oldvehicle": [
+    {
+      "Brand": "Bajaj",
+      "Model": [
+        {
+          "model1": "Avenger Cruise 220"
+        },
+        {
+          "model1": "Avenger Cruise 150"
+        },
+        {
+          "model1": "Avenger Cruise 160"
+        }
+      ],
+      "vehiclecolor": [
+        {
+          "color": "Black/White"
+        },
+        {
+          "color": "Grey/Blue"
+        },
+        {
+          "color": "Green/Yellow/Red"
+        },
+        {
+          "color": "Brown/Bronze/Copper"
+        }
+      ],
+      "loan":[
+        {
+          "status":"Completed"
+        },
+        {
+          "status":"Pending"
+        }
+      ],
+      "condition":[
+        {
+          "status":"Running"
+        },
+        {
+          "status":"Not Working"
+        }
+      ],
+      "vehicleowner":[
+        {
+          "status":"First"
+        },
+        {
+          "status":"Second"
+        }
+      ]
+    },
+    {
+      "Brand": "Hero",
+      "Model": [
+        {
+          "model1": "Destini 125"
+        },
+        {
+          "model1": "Duet"
+        },
+        {
+          "model1": "Glamour"
+        }
+      ],
+      "vehiclecolor": [
+        {
+          "color": "Black/White"
+        },
+        {
+          "color": "Grey/Blue"
+        },
+        {
+          "color": "Green/Yellow/Red"
+        },
+        {
+          "color": "Brown/Bronze/Copper"
+        }
+      ],
+      "loan":[
+        {
+          "status":"Completed"
+        },
+        {
+          "status":"Pending"
+        }
+      ],
+      "condition":[
+        {
+          "status":"Running"
+        },
+        {
+          "status":"Not Working"
+        }
+      ],
+      "vehicleowner":[
+        {
+          "status":"First"
+        },
+        {
+          "status":"Second"
+        }
+      ]
+    },
+    {
+      "Brand": "Honda",
+      "Model": [
+        {
+          "model1": "Activa"
+        },
+        {
+          "model1": "Activa 3G"
+        },
+        {
+          "model1": "Activa 4G"
+        }
+      ],
+      "vehiclecolor": [
+        {
+          "color": "Black/White"
+        },
+        {
+          "color": "Grey/Blue"
+        },
+        {
+          "color": "Green/Yellow/Red"
+        },
+        {
+          "color": "Brown/Bronze/Copper"
+        }
+      ],
+      "loan":[
+        {
+          "status":"Completed"
+        },
+        {
+          "status":"Pending"
+        }
+      ],
+      "condition":[
+        {
+          "status":"Running"
+        },
+        {
+          "status":"Not Working"
+        }
+      ],
+      "vehicleowner":[
+        {
+          "status":"First"
+        },
+        {
+          "status":"Second"
+        }
+      ]
+    }
+  ],
+  "yearofmanufacture": [
+    {
+      "year": "2015"
+    },
+    {
+      "year": "2016"
+    },
+    {
+      "year": "2017"
+    },
+    {
+      "year": "2018"
+    },
+    {
+      "year": "2019"
+    },
+    {
+      "year": "2020"
+    },
+    {
+      "year": "2021"
+    },
+    {
+      "year": "2022"
+    }
+  ],
+  "kilometerrange": [
+    {
+      "kms": "0-10000"
+    },
+    {
+      "kms": "10001-20000"
+    },
+    {
+      "kms": "200001-30000"
+    },
+    {
+      "kms": "30001-40000"
+    },
+    {
+      "kms": "40001-60000"
+    },
+    {
+      "kms": "Greater than 60000"
     }
   ]
 }

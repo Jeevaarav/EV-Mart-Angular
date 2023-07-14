@@ -45,6 +45,7 @@ import { DebitcardpaymentComponent } from './debitcardpayment/debitcardpayment.c
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 import { EvmartcenterpaymentComponent } from './evmartcenterpayment/evmartcenterpayment.component';
 import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
+import { ExchangebookingComponent } from './exchangebooking/exchangebooking.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilep
     WalletdetailsComponent,
     EvmartcenterpaymentComponent,
     ProfilepaymentdetailsComponent,
+    ExchangebookingComponent,
   ],
   imports: [
     BrowserModule,

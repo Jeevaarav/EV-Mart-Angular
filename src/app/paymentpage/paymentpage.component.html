@@ -67,7 +67,10 @@
       <p>Saved Payment Options</p>
       <div class="border-line"></div>
     </div>
-    <div class="cardDisplay"  (click)="showSavedCard()">
+    <div class="no-Link" *ngIf="linkedAccount">
+      <div><p>No Linked Accounts</p></div>
+    </div>
+    <div class="cardDisplay"  (click)="showSavedCard()" *ngIf="showSaved">
       <div><i class="{{cardTypeIcon}}"></i></div>
       <div class="carddisplay-details">
       <div>
@@ -87,7 +90,7 @@
     <form class="card-display">
       <i class="{{cardTypeIcon}}" id="cardtype"></i>
       <div>
-        <input type="text" class="box1" value="{{displayCardNumber}}" readonly >
+        <input type="text" class="box1" value="{{displayCardNumber}}" readonly>
       </div>
       <div class="cvv-num">
         <div><h2>{{displayCardHolder}}</h2></div>

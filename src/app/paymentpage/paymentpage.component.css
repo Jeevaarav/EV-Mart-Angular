@@ -357,3 +357,15 @@ h1{
   font-size: 1.5rem;
   border-radius: 0 0 2rem 2rem ;
 }
+.no-Link{
+  border: 1.5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+}
+.no-Link p{
+  font-size: 1.5rem;
+  color: #130f40;
+}

@@ -51,45 +51,7 @@ html{
   border-left: none;
  background-color: #E5E4E2;
 }
-.boxemail{
-  margin: .7rem 0;
-  width: 97%;
-  text-transform: none;
-  color: black;
-  font-size: 1.9rem;
-  padding: 1.5rem 1.2rem;
-  border:.1rem solid rgba(0,0,0,.1);
- background-color: #E5E4E2;
-}
-select.box1{
-    width: 100%;
-    text-transform: none;
-    color: black;
-    font-size: 1.9rem;
-    padding: 1.5rem 1.2rem;
-    border:.1rem solid rgba(0,0,0,.1);
-    background-color: #E5E4E2;
-    margin-top: 2rem;
-    cursor: pointer;
-}
-.pin-code{
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-.pin-code h2{
-  font-size: 2.5rem;
-  color: #130f40;
-  text-transform: none;
-}
-.pin-code p{
-  font-size: 1.5rem;
-  color: black;
-  text-transform: none;
-  text-align: justify;
-  padding-right: 2rem;
-}
-.pin-code i{
+.book-appoint i{
   color: black;
   padding: 2rem;
   border-radius: 50%;
@@ -97,26 +59,89 @@ select.box1{
   margin-bottom: 1.5rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
 }
-.submit-pincode{
-  width: 90%;
-  padding: 1rem 0 1rem 0;
-  color: #fff;
-  background-color: black;
-  font-size: 2.5rem;
+.old-vehicle{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.old-vehicle h3{
+  font-size: 2rem;
+  color: black;
   text-transform: none;
 }
-.button{
-  margin-top: 40vh;
-}
-.submit-pincode:disabled{
-  border: 1px solid black;
-  background-color: grey;
-  color: white;
-  cursor: not-allowed;
-}
-.show-pin{
-  color: black;
-  text-transform: uppercase;
+.old-vehicle h4{
   font-size: 1.5rem;
-  margin-right: 2rem;
+  color: black;
+  text-transform: none;
+  line-height: 3rem;
 }
+.old-vehicle a{
+  color: green;
+  font-size: 2rem;
+  text-transform: none;
+  cursor: pointer;
+}
+.pop-up-msg{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color:hsla(170, 50%, 45%, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.pop-notify{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30%;
+  padding: 4rem;
+  background-color: #fff;
+  overflow-y: scroll;
+  height: 60vh;
+}
+.pop-notify h1{
+  text-transform: none;
+  font-size: 2rem;
+}
+.pop-notify li{
+  font-size: 1.4rem;
+  text-transform: none;
+  line-height: 3rem;
+  text-align: justify;
+}
+.pop-notify p{
+  font-size: 1.5rem;
+  line-height: 3rem;
+  text-transform: none;
+  text-align: justify;
+}
+.book{
+  width: 30%;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 1rem 0 1rem 0;
+  background-color: black;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.checkvalue{
+  width: 85%;
+  padding: 1.2rem 0 1.2rem 0;
+  background-color: black;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.small{
+  color: red;
+  font-size: 1.3rem;
+  text-transform: none;
+}
+

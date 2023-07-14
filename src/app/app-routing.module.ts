@@ -38,6 +38,7 @@ import { EvmartcenterpaymentComponent } from './evmartcenterpayment/evmartcenter
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
 import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.component';
+import { ExchangebookingComponent } from './exchangebooking/exchangebooking.component';
 
 
 
@@ -45,7 +46,8 @@ import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.c
 const routes: Routes = [
   {
     path:"",
-    component:IndexComponent
+    component:IndexComponent,
+    title:"EV Mart"
   },
   {
     path:"Product",
@@ -162,6 +164,10 @@ const routes: Routes = [
   {
    path:"offers",
    component:OffersComponent
+  },
+  {
+    path:"oldvehicle",
+    component:ExchangebookingComponent
   },
   {
     path:"exchange",

@@ -19,6 +19,8 @@ export class PaymentpageComponent {
     displayCardNumber:any;
     displayCardHolder:any;
     showPaymentCard:Boolean=false;
+    showSaved:Boolean=false;
+    linkedAccount:Boolean=true;
 
     constructor(private _http:HttpClient){
       this.orderedVehicleImage=sessionStorage.getItem('varient_image');
@@ -31,9 +33,13 @@ export class PaymentpageComponent {
           return check.regemail==sessionStorage.getItem("logmail");
         })
         if(user){
-          this.displayCardDetails=this.getDebitCardNumber.paymentcard.cardtype;
-          this.displayCardNumber=this.getDebitCardNumber.paymentcard.cardnumber;
-          this.displayCardHolder=this.getDebitCardNumber.paymentcard.cardholdername;
+          if(this.getDebitCardNumber.paymentcard.length!=null){
+            console.log(this.getDebitCardNumber.paymentcard[0].cardnumber);
+            this.linkedAccount=false;
+            this.showSaved=true;
+          this.displayCardDetails=this.getDebitCardNumber.paymentcard[0].cardtype;
+          this.displayCardNumber=this.getDebitCardNumber.paymentcard[0].cardnumber;
+          this.displayCardHolder=this.getDebitCardNumber.paymentcard[0].cardholdername;
 
           if(this.displayCardDetails=="Visa"){
             this.cardTypeIcon="fa-brands fa-cc-visa";
@@ -42,6 +48,11 @@ export class PaymentpageComponent {
             this.cardTypeIcon="fa-brands fa-cc-mastercard";
           }
           console.log(this.cardTypeIcon);
+          }
+          else{
+            this.linkedAccount=true;
+            this.showSaved=false;
+          }
         }
       })
     }
