@@ -12,7 +12,7 @@ import { debitcard } from '../fillbooking.guard';
   styleUrls: ['./debitcardpayment.component.css']
 })
 export class DebitcardpaymentComponent implements debitcard {
-  orderedVehicleImage:any;
+    orderedVehicleImage:any;
     orderedVehicleName:any;
     myform:FormGroup;
     visa:any;
@@ -20,8 +20,6 @@ export class DebitcardpaymentComponent implements debitcard {
     displayBank:any;
     showCardType="fa-solid fa-credit-card";
     cardColor:any='#666';
-    masterCardImage:Boolean=false;
-    cardIcon:Boolean=true;
     bankNotFound:any="";
     expiryDate:any;
     formatDate:any;
@@ -34,7 +32,6 @@ export class DebitcardpaymentComponent implements debitcard {
     getCarddetails:any;
     expiryDateStore:any=0;
     getCardNumber:any;
-    splitCardNumber:any=[];
     replaceCardNumber:any="";
     encryptNumber:any="";
     splitLastdigit:any;
@@ -42,6 +39,11 @@ export class DebitcardpaymentComponent implements debitcard {
     findCardType:any;
     varientAmount:any;
     orderConfirmcount:any=0;
+
+    splitCardNumber:any=[];
+
+    masterCardImage:Boolean=false;
+    cardIcon:Boolean=true;
 
     constructor(private formName:FormBuilder,private cardType:CarddetailsService,private fillDetails:FillbookdetailsService,private _http:HttpClient){
       this.varientAmount=sessionStorage.getItem('Amount');
@@ -54,6 +56,8 @@ export class DebitcardpaymentComponent implements debitcard {
       this.cardType.getmasterDetails().subscribe(y=>{
         this.mastercard=y;
       })
+
+      //Validating the input 
       this.myform=formName.group({
         input:['',[Validators.required,Validators.pattern("^[45][0-9]{15}$")]],
         CVV:['',[Validators.required,Validators.pattern("[0-9]{1,4}")]],
@@ -61,6 +65,7 @@ export class DebitcardpaymentComponent implements debitcard {
         cardholder:['',Validators.required]
       })
 
+      //Check dynamically value changes
       this.myform.valueChanges.subscribe(x=>{
         this.cardValidation(x.input);
       })
@@ -68,6 +73,7 @@ export class DebitcardpaymentComponent implements debitcard {
 
     }
 
+    //canDeactivate used to protect the page before leaving
     canExit(){
       if(this.orderConfirmcount>0){
         return true;
@@ -80,6 +86,7 @@ export class DebitcardpaymentComponent implements debitcard {
       }
     }
 
+    //Expiry date validation to check the card validity
     expiryDateValidate(inputexpirydate:any){
       this.expiryDate=new Date();
       this.timeTaken=this.expiryDate.getTime();
@@ -113,6 +120,7 @@ export class DebitcardpaymentComponent implements debitcard {
         }
       }
 
+  //This block is used to check the cardtype of the input
     cardValidation(number:any){
       if(number[0]=="4"){
         this.findCardType="Visa";
@@ -175,6 +183,7 @@ export class DebitcardpaymentComponent implements debitcard {
   }
   }
 
+  // To get the Order Details after submission of form to send through service and store the card Details
   getDebitCard(){
     this.orderConfirmcount++;
     if(this.expiryDateStore==1){

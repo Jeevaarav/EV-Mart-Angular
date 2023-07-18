@@ -86,7 +86,7 @@ export class ReviewOrderComponent {
     })
   }
 
-
+  //review order form validators
   reviewform=this.form.group({
     State:['',Validators.required],
     City:['',Validators.required],
@@ -101,12 +101,14 @@ export class ReviewOrderComponent {
     phonenumber:[sessionStorage.getItem('regphone'),[Validators.required,Validators.pattern("[6-9]{1}[0-9]{9}")]]
   })
 
+  //prevent backward
   notify(){
     if(confirm("Are you sure? If you go back you will have to fill in your booking details again")){
       this.route.navigateByUrl('/orderpage');
     }
   }
-
+  
+  //selection of state value
   stateselect(state:any){
       this.state=state;
       this.http.get<any>("http://localhost:3000/states").subscribe((states)=>{
@@ -124,12 +126,16 @@ export class ReviewOrderComponent {
         }
       })
   }
+
+  //seletion of city value
   cityselect(city:any){
     this.city=city;
   }
   evcentername(center:any){
     this.evmartcenter=center;
   }
+
+  //after submission the input values
   fillDetails(){
     const orderid=Math.floor(Math.random() * (1000 - 0 + 1)) + 0;
     const varientimg=sessionStorage.getItem('varient_image');
@@ -175,6 +181,7 @@ export class ReviewOrderComponent {
       range:range,
       topspeed:topspeed,
       price:price,
+      onlinepaidamount:sessionStorage.getItem('Amount'),
       State:this.state,
       City:this.city,
       Centername:this.evmartcenter,
@@ -191,5 +198,4 @@ export class ReviewOrderComponent {
     this.filldetails.storeDetails(filldetails);
 
   }
-
 }

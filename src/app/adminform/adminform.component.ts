@@ -17,7 +17,6 @@ export class AdminformComponent {
     check:any;
     valCheck:any;
     booleanCheck:any;
-    datecheck:Boolean=false; timeCheck:Boolean=false;
     takeDate:any;
     currentHour:any;
     currentTime:any;
@@ -26,12 +25,17 @@ export class AdminformComponent {
     splitTime:any;
     booleanDate:any;
 
+    datecheck:Boolean=false; 
+    timeCheck:Boolean=false;
+
+
   constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private admin:AdminService){
     this.value=sessionStorage.getItem('adminservicedetails');
-    // this.val2=localStorage.getItem('replymail');
     this.val3=JSON.parse(this.value);
     console.log(this.checkDate);
   }
+
+  //validators for each input
   servform=this.formbuild.group({
     Reply:['Thanks for Choosing our Service',Validators.required],
     date:['',[Validators.required,Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)]],
@@ -39,17 +43,7 @@ export class AdminformComponent {
   });
 
 
-  // validateOldDate(control: FormControl): { [key: string]: boolean } | null {
-  //   const inputDate = control.value;
-
-  //   if (this.isDateOld(inputDate)) {
-  //     return { oldDate: true };
-  //   }
-
-  //   return null;
-  // }
-
-
+//validate the service date for expiring
   checkDate(dateval:any){
     this.check=new Date();
     this.valCheck=new Date(dateval);
@@ -63,6 +57,8 @@ export class AdminformComponent {
     }
   }
 
+
+  //validate the service time for expiring
   checkTime(time:any){
     this.takeDate=new Date();
     this.currentHour=this.takeDate.getHours();
@@ -80,18 +76,21 @@ export class AdminformComponent {
     console.log(this.currentMinute);
   }
 
-  submit(mail:any,category:any,vehicleno:any,model:any){
+  
+//form submission after validation
+  submit(mail:any,category:any,vehicleno:any,model:any,brand:any){
     console.log(this.servform.value);
     const reply=this.servform.controls['Reply'].value;
     const date=this.servform.controls['date'].value;
     const time=this.servform.controls['time'].value;
     const email=mail;
+    const brandname=brand;
     const probcategory=category;
     const vehiclenum=vehicleno;
     const varient=model;
 
     if(this.booleanCheck==true && this.booleanDate==true){
-    this.admin.postdata(email,probcategory,vehiclenum,varient,date,time,reply);
+    this.admin.postdata(email,probcategory,vehiclenum,varient,date,time,reply,brandname);
     }
     else{
       if(this.booleanCheck==false){
@@ -108,4 +107,5 @@ export class AdminformComponent {
       }
     }
   }
+
   }

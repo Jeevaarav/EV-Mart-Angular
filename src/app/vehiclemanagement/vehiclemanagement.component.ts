@@ -18,11 +18,15 @@ export class VehiclemanagementComponent {
       this.vehbrandname=vehbrand;
     })
   }
+
+  //vehicle addition form validators
   vehadd=this.formbuild.group({
     Brandname:['',Validators.required],
     image:['',Validators.required],
     content:['',[Validators.required,Validators.minLength(200)]]
   });
+
+  //vehicle brand add data for user page
   vehicle(){
     this.service.vehaddition(this.vehadd.value).subscribe(data=>{
       this.vehadd.reset();
@@ -35,6 +39,7 @@ export class VehiclemanagementComponent {
     });
   }
 
+  //logout for admin
   logout(){
     alert("Are you sure want to logout");
     this.route.navigateByUrl('');

@@ -1,126 +1,140 @@
+<!-- 
+Description:This component is used 
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 25-03-2023
+Reviewed by: Nil
+-->
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../slideshow.js"></script>
 </head>
 
 
 <body>
-
+  <!------------------ Find your vehicle  -------------------------->
   <section id="home" class="home">
     <h1 class="home-parallax" data-speed="-2">Find your vehicle</h1>
-    <img class="home-parallax"  src="../../assets/EV mart/Find your vehicle.jpg" alt="OLA" data-speed="5" title="EV mart">
+    <img class="home-parallax" src="../../assets/EV mart/Find your vehicle.jpg" alt="OLA" data-speed="5"
+      title="EV mart">
     <a routerLink="Product" class="book" id="evMartbtn">Explore vehicles</a>
- </section>
+  </section>
+  <!------------------ Find your vehicle  -------------------------->
 
- <section class="icons-container">
-  <div class="icon">
+  <!------------------ Icons for EV Mart  -------------------------->
+  <section class="icons-container">
+    <div class="icon">
       <i class="fas fa-home"></i>
       <div class="content">
-          <h3>50+</h3>
-          <p>branches</p>
+        <h3>50+</h3>
+        <p>branches</p>
       </div>
-  </div>
+    </div>
 
-  <div class="icon">
+    <div class="icon">
       <i class="fas fa-car"></i>
       <div class="content">
-          <h3>500+</h3>
-          <p>vehicles sold</p>
+        <h3>500+</h3>
+        <p>vehicles sold</p>
       </div>
-  </div>
+    </div>
 
-  <div class="icon">
+    <div class="icon">
       <i class="fas fa-users"></i>
       <div class="content">
-          <h3>500+</h3>
-          <p>happy clients</p>
+        <h3>500+</h3>
+        <p>happy clients</p>
       </div>
-  </div>
+    </div>
 
-  <div class="icon">
+    <div class="icon">
       <i class="fas fa-car"></i>
       <div class="content">
-          <h3>100+</h3>
-          <p>new models</p>
+        <h3>100+</h3>
+        <p>new models</p>
       </div>
-  </div>
-</section>
-<section class="slideshow">
-  <h1 class="heading">popular <span>brands</span></h1>
-<div class="row">
-  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let image of images" class="slide">
-      <div>
-      <img src="{{image.img}}" width="100%"></div>
-      <div class="show">
-      <h1 class="heading1">{{image.title}}</h1>
-      <div class="price"><span>price: </span>Rs.{{image.price}}</div>
-                        <p>
-                            2022
-                            <span class="fas fa-circle"></span>{{image.span1}}
-                            <span class="fas fa-circle"></span>{{image.span2}}
-                            <span class="fas fa-circle"></span>{{image.span3}}
-                        </p>
-                        <!-- <a href="#" class="book">view more</a> -->
-
     </div>
+  </section>
+  <!------------------ Icons for EV Mart  -------------------------->
+
+  <!------------------ Popular Brands -------------------------->
+  <section class="slideshow">
+    <h1 class="heading">popular <span>brands</span></h1>
+    <div class="row">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let image of images" class="slide">
+          <div>
+            <img src="{{image.img}}" width="100%">
+          </div>
+          <div class="show">
+            <h1 class="heading1">{{image.title}}</h1>
+            <div class="price"><span>price: </span>Rs.{{image.price}}</div>
+            <p>
+              2022
+              <span class="fas fa-circle"></span>{{image.span1}}
+              <span class="fas fa-circle"></span>{{image.span2}}
+              <span class="fas fa-circle"></span>{{image.span3}}
+            </p>
+            <!-- <a href="#" class="book">view more</a> -->
+
+          </div>
+        </div>
+      </ngx-slick-carousel>
     </div>
-  </ngx-slick-carousel>
-</div>
-</section>
+  </section>
+  <!------------------ Popular Brands -------------------------->
 
-
-<section class="services" id="services">
-  <h1 class="heading">our <span>services</span></h1>
-  <div class="box-container">
+  <!------------------ Services available -------------------------->
+  <section class="services" id="services">
+    <h1 class="heading">our <span>services</span></h1>
+    <div class="box-container">
       <div class="box">
-          <i class="fas fa-person-biking"></i>
-          <h3>vehicle selling</h3>
-          <p>The vehicle from different companies are available. Test drive/Booking option also proided. The vehicles at lowest price also availble. The informationa about the vehicle also provided for the user to read it </p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-person-biking"></i>
+        <h3>vehicle selling</h3>
+        <p>The vehicle from different companies are available. Test drive/Booking option also proided. The vehicles at
+          lowest price also availble. The informationa about the vehicle also provided for the user to read it </p>
       </div>
 
       <div class="box">
-          <i class="fas fa-screwdriver-wrench"></i>
-          <h3>parts rework</h3>
-          <p>The parts of the vehicle will be repaired. If any damage in the parts of the vehicle, it will be repaired here. </p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-screwdriver-wrench"></i>
+        <h3>parts rework</h3>
+        <p>The parts of the vehicle will be repaired. If any damage in the parts of the vehicle, it will be repaired
+          here. </p>
       </div>
 
       <div class="box">
-          <i class="fas fa-car-battery"></i>
-          <h3>Battery Replacement</h3>
-          <p>The swaping of the battery is done to continously increasing the range of the vehicle. If battery drains, it will be replaced in station witgh recharged one. </p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-car-battery"></i>
+        <h3>Battery Replacement</h3>
+        <p>The swaping of the battery is done to continously increasing the range of the vehicle. If battery drains, it
+          will be replaced in station witgh recharged one. </p>
       </div>
 
       <div class="box">
-          <i class="fas fa-bolt-lightning"></i>
-          <h3>Circuit checking</h3>
-          <p>Safety is more important while driving especially electric vehicles. Circuit and other components are checked periodidally </p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-bolt-lightning"></i>
+        <h3>Circuit checking</h3>
+        <p>Safety is more important while driving especially electric vehicles. Circuit and other components are checked
+          periodidally </p>
       </div>
 
       <div class="box">
-          <i class="fas fa-headset"></i>
-          <h3>24/7 support</h3>
-          <p>The servies will support 24/7 without any deviation. The messages and FAQ answers will be done 24/7. The support will be provided without any more delay</p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-headset"></i>
+        <h3>24/7 support</h3>
+        <p>The servies will support 24/7 without any deviation. The messages and FAQ answers will be done 24/7. The
+          support will be provided without any more delay</p>
       </div>
 
       <div class="box">
-          <i class="fas fa-pen"></i>
-          <h3>Latest update</h3>
-          <p>The newly launched vehicles in the market is updated day to day. The News about the Electric vehicles is also availble in services</p>
-          <!-- <a href="#" class="book">read more</a> -->
+        <i class="fas fa-pen"></i>
+        <h3>Latest update</h3>
+        <p>The newly launched vehicles in the market is updated day to day. The News about the Electric vehicles is also
+          availble in services</p>
       </div>
-  </div>
-</section>
-
-<app-footer></app-footer>
-
+    </div>
+  </section>
+  <!------------------ Services available -------------------------->
 </body>
-
-

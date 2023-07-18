@@ -298,3 +298,87 @@ html{
   margin-bottom: 1.5rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
 }
+.price-details{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background:hsla(170, 50%, 45%, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.price-details__showprice{
+  width: 30%;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.price-details__showprice p{
+  font-size: 2.5rem;
+  color: black;
+  text-transform: none;
+}
+.price-box{
+  width: 30%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #E5E4E2;
+}
+.price-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.price-list p{
+  font-size: 1.6rem;
+  color: black;
+  text-transform: none;
+}
+.varient-price{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.varient-price p{
+  font-size: 1.6rem;
+  color: black;
+  text-transform: none;
+}
+.got-it{
+  font-size: 1.2rem;
+  width: 30%;
+  color: white;
+  background-color: black;
+  text-transform: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.got-it button{
+  background-color: black;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0 1rem 0;
+}
+.conflex i{
+  color: #666;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.exchange-offer p{
+  color: green;
+}
+.price-pipe{
+  letter-spacing: 0.2rem;
+}
+.conflex h3{
+  letter-spacing: 0.3rem;
+  font-size: 2rem;
+}

@@ -1,34 +1,52 @@
+<!-- 
+Description:This component is used for login to use the website by the user
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 14-04-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Book Appointment</title>
 </head>
-<body>
-<div class="section">
-<div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
-  <div class="login-form">
-    <form [formGroup]="login" (ngSubmit)="login.valid && logdetails()" class="logform">
-      <h3>login here</h3>
-      <small class="msg">{{msg}}</small>
-      <div class="control">
-        <input type="email" placeholder="email" class="box" id="email" name="email" formControlName="email" #email>
-        <div *ngIf="login.controls['email'].invalid && (login.controls['email'].touched || login.controls['email'].dirty)"></div>
-        <small *ngIf="login.controls['email'].errors?.['required'] && login.controls['email'].dirty" class="small">Please fill the mail ID</small>
-        <small *ngIf="login.controls['email'].errors?.['pattern']" class="small">Please Provide proper mail ID</small>
-      </div>
-      <div class="control">
-        <div class="input"><input type="password" placeholder="password" class="box" id="password" name="password" formControlName="password" #password [type]="field2 ? 'password':'text'"></div>
-        <div class="icon"><i class="fa-sharp fa-solid fa-eye-slash" (click)="togglepass()" [ngClass]="{'fa-eye-slash':field2,'fa-eye':!field2}"></i></div>
-        <div *ngIf="login.controls['password'].invalid && login.controls['password'].touched"></div>
-        <small *ngIf="login.controls['password'].errors?.['required'] && login.controls['password'].dirty" class="small">Please fill the Password</small>
-        <small *ngIf="login.controls['password'].errors?.['pattern']" class="small">Password should be at least 8 characters</small>
 
-      </div>
-      <p >forgot your password?<a routerLink="/login/forgot1" class="link" >click here</a></p>
-      <button type="submit" class="book" (click)="check(email.value,password.value)">Login now</button>
-      <p>don't have an account? <a routerLink="/login/register" class="link">create one</a></p>
-    </form>
+<body>
+  <!----------------- login form for authenticate the user  ---------------->
+  <div class="section">
+    <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
+    <div class="login-form">
+      <form [formGroup]="login" (ngSubmit)="login.valid && logdetails()" class="logform">
+        <h3>login here</h3>
+        <small class="msg">{{msg}}</small>
+        <div class="control">
+          <input type="email" placeholder="email" class="box" id="email" name="email" formControlName="email" #email>
+          <div
+            *ngIf="login.controls['email'].invalid && (login.controls['email'].touched || login.controls['email'].dirty)">
+          </div>
+          <small *ngIf="login.controls['email'].errors?.['required'] && login.controls['email'].dirty"
+            class="small">Please fill the mail ID</small>
+          <small *ngIf="login.controls['email'].errors?.['pattern']" class="small">Please Provide proper mail ID</small>
+        </div>
+        <div class="control">
+          <div class="input"><input type="password" placeholder="password" class="box" id="password" name="password"
+              formControlName="password" #password [type]="field2 ? 'password':'text'"></div>
+          <div class="icon"><i class="fa-sharp fa-solid fa-eye-slash" (click)="togglepass()"
+              [ngClass]="{'fa-eye-slash':field2,'fa-eye':!field2}"></i></div>
+          <div *ngIf="login.controls['password'].invalid && login.controls['password'].touched"></div>
+          <small *ngIf="login.controls['password'].errors?.['required'] && login.controls['password'].dirty"
+            class="small">Please fill the Password</small>
+          <small *ngIf="login.controls['password'].errors?.['pattern']" class="small">Password should be at least 8
+            characters</small>
+
+        </div>
+        <p>forgot your password?<a routerLink="/login/forgot1" class="link">click here</a></p>
+        <button type="submit" class="book" (click)="check(email.value,password.value)">Login now</button>
+        <p>don't have an account? <a routerLink="/login/register" class="link">create one</a></p>
+      </form>
+    </div>
   </div>
-</div>
+  <!----------------- login form for authenticate the user  ---------------->
 </body>

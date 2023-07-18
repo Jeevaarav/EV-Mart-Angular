@@ -17,12 +17,12 @@ export class BookappointmentComponent {
   showButton:any=0;
 
   constructor(private form:FormBuilder,private _http:HttpClient,private route:Router){}
-
+  //Pincode Validators 
   Pincode=this.form.group({
     Pincode:['',[Validators.required,Validators.pattern("[0-9]{6}")]]
   })
 
-
+  //This block is used to search for the pincode and validating the pincode
   searchPincode(pincode:any){
     if(pincode.length==6){
       this._http.get<any>("http://localhost:3000/exchangeoffers").subscribe((pincodeval)=>{
@@ -46,6 +46,7 @@ export class BookappointmentComponent {
     }
   }
 
+  //This block is used to get the pincode after form submitted
   getPincode(){
     if(this.showButton>0){
       console.log(this.Pincode.value);

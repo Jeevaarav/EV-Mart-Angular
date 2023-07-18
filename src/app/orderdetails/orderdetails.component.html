@@ -1,35 +1,51 @@
+<!-- 
+Description:This component is used for showing the order is confirmed
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 06-07-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="head"><h1>Orders placed</h1></div>
+  <!--------------- empty orders  ----------------->
   <div class="orderprofile" *ngIf="ordersEmpty">
     <div><img src="../../assets/EV mart/serviceempty.gif" alt="emptygif" title="Order(S) empty"></div>
     <div><p>No Order(S) to shown</p></div>
   </div>
-  <div class="main" *ngFor="let order of getOrder;let i=index;" >
-    <div class="pastordershown"><p>New Orders</p></div>
+    <!--------------- empty orders  ----------------->
+
+  <!------------------------------ new orders ---------------------->
+  <div class="pastordershown" *ngIf="userNewOrders"><p>New Orders</p></div>
+  <div class="main" *ngFor="let order of newOrders;let i=index;" >
     <div *ngIf="ordersBooked" class="inside-showorder">
-    <div class="img" >
+    <div class="img">
     <img src="{{order.varientimg}}" alt="">
   </div>
   <div class="details">
     <p class="varient">{{order.varientname}}</p>
     <p>Order ID - #{{order.orderid}}</p>
     <p>Color - {{order.varientcolor}}</p>
-    <p>Price - Rs.{{order.price}}</p>
+    <p>Total Price - Rs.{{order.price}}</p>
     <p>{{order.day}} , {{order.bookingdate}}</p>
-    <a>View Details</a>
+    <p>Online Paid Amount-Rs. {{order.onlinepaidamount}}</p>
+    <a (click)="viewNewOrderDetails(i)">View Details</a>
   </div>
-</div>
   <div>
     <button class="book" *ngIf="cancel" (click)="cancelorder(this.i)">Cancel Order</button>
   </div>
+</div> 
   </div>
-  <div class="main" *ngFor="let pastorder of pastOrders;let i=index;" >
-    <div class="pastordershown"><p>Past Orders</p></div>
+  <div class="view-more" *ngIf="viewmorenew"><a routerLink="/userNewOrders"><button class="book">View More</button></a></div>
+   <!------------------------------ new orders ---------------------->
+
+   <!------------------------------ past orders --------------------->
+   <div class="pastordershown" *ngIf="pastOrderHeading"><p>Past Orders</p></div>
+  <div class="main" *ngFor="let pastorder of getOrder;let i=index;" >
     <div  class="inside-showorder" *ngIf="showPastOrders">
     <div class="img" >
     <img src="{{pastorder.varientimg}}" alt="">
@@ -38,9 +54,92 @@
     <p class="varient">{{pastorder.varientname}}</p>
     <p>Order ID - #{{pastorder.orderid}}</p>
     <p>Color - {{pastorder.varientcolor}}</p>
-    <p>Price - Rs.{{pastorder.price}}</p>
+    <p>Total Price - Rs.{{pastorder.price}}</p>
     <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
+    <p>Online Paid Amount-Rs. {{pastorder.onlinepaidamount}}</p>
+    <a (click)="viewPastOrderDetails(i)">View Details</a>
   </div>
+  <div><p class="delivered">Yet to be delivered <i class="fa-solid fa-circle-xmark"></i></p></div>
 </div>
   </div>
+  <div class="view-more" *ngIf="viewmorebtn"><a routerLink="/userPastorderDetails"><button class="book">View More</button></a></div>
+   <!------------------------------ past orders --------------------->
+
+   <!------------------------------ delivered orders ------------------------->
+   <div class="pastordershown" *ngIf="deliveryOrders"><p>Delivered Orders</p></div>
+   <div class="main" *ngFor="let pastorder of getDeliveryOrders;let i=index;" >
+     <div  class="inside-showorder" *ngIf="showDeliveryOrders">
+     <div class="img" >
+     <img src="{{pastorder.varientimg}}" alt="">
+   </div>
+   <div class="details">
+     <p class="varient">{{pastorder.varientname}}</p>
+     <p>Order ID - #{{pastorder.orderid}}</p>
+     <p>Color - {{pastorder.varientcolor}}</p>
+     <p>Total Price - Rs.{{pastorder.price}}</p>
+     <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
+     <p>Online Paid Amount-Rs. {{pastorder.onlinepaidamount}}</p>
+     <a (click)="viewOrderDetails(i)">View Details</a>
+   </div>
+   <div><p class="delivered">Delivered <i class="fa-solid fa-circle-check" id="delivered"></i></p></div>
+ </div>
+   </div>
+   <div class="view-more" *ngIf="viewDeliverybtn"><a routerLink="/userDeliveryDetails"><button class="book">View More</button></a></div>
+      <!------------------------------ delivered orders ------------------------->
+
+      <!----------------------------------- viewOrderDetails ------------------------>
+      <div class="evMarteditprofile" *ngIf="showOrderDetails">
+        <div class="rightBar">
+          <i class="fa-solid fa-xmark" (click)="showOrderbooked()"></i>
+          <p class="order-details">Order details</p>
+          <div class="orderViewDetails" id="print-details">
+            <h1>Order ID: #{{showOrder.orderid}}</h1>
+            <div class="order-location">
+            <div><i class="fa-solid fa-location-dot"></i></div>
+            <div><h2>{{showOrder.Centername}}</h2></div>
+          </div>
+          <div class="order-location">
+          <div><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h2>Address</h2>
+            <h4 class="address-show">{{showOrder.doorno}} , {{showOrder.address}} , {{showOrder.pincode}}</h4>
+          </div>
+        </div>
+        <div class="order-location" *ngIf="NewOrdersExit">
+          <div><i class="fa-solid fa-check"></i></div>
+          <div *ngIf="deliveredOn"><h4>Delivered on {{showOrder.deliveryDate}}</h4></div>
+          <div *ngIf="arrivalOn"><h4>Arrival on {{showOrder.deliveryDate}}</h4></div>
+        </div>
+        <div class="order-products">
+          <div><h2>Effective Ex-showroom price</h2></div>
+          <div><h2>Rs. {{showOrder.price-10000}}</h2></div>
+        </div>
+        <div class="order-productsdetails">
+          <div><h2>{{showOrder.varientname}} (On Road)</h2></div>
+          <div><h2>Rs. {{showOrder.price}}</h2></div>
+        </div>
+        <div class="order-products">
+          <div><h2 class="spec">Specifications</h2></div>
+        </div>
+        <div class="order-productsdetails">
+          <div><h2>Battery</h2></div>
+          <div><h2>{{showOrder.battery}}</h2></div>
+        </div>
+        <div class="order-productsdetails">
+          <div><h2>Top Speed</h2></div>
+          <div><h2>{{showOrder.topspeed}}</h2></div>
+        </div>
+        <div class="order-productsdetails">
+          <div><h2>Range</h2></div>
+          <div><h2>{{showOrder.range}}</h2></div>
+        </div>
+        <div class="order-finaldetails">
+          <div><h2>Total Paid</h2></div>
+          <div><h2>Paid via {{showOrder.paymentmode}}</h2></div>
+          <div><h2>{{showOrder.price}}</h2></div>
+        </div>
+          </div>
+        </div>
+      </div>
+<!----------------------------------- viewOrderDetails ------------------------>
 </body>

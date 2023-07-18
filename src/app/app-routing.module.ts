@@ -39,6 +39,11 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
 import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
 import { OrderconfirmpageComponent } from './orderconfirmpage/orderconfirmpage.component';
 import { ExchangebookingComponent } from './exchangebooking/exchangebooking.component';
+import { UserpastordersComponent } from './userpastorders/userpastorders.component';
+import { ProfiledeliveredordersComponent } from './profiledeliveredorders/profiledeliveredorders.component';
+import { UsernewordersComponent } from './userneworders/userneworders.component';
+import { ProfileserviceComponent } from './profileservice/profileservice.component';
+import { UserseevicesComponent } from './userseevices/userseevices.component';
 
 
 
@@ -59,6 +64,10 @@ const routes: Routes = [
     children:[{
       path:"Address",
       component:ManageAddressComponent
+    },
+    {
+      path:"userProfileService",
+      component:ProfileserviceComponent
     },
     {
       path:"",
@@ -209,6 +218,23 @@ const routes: Routes = [
   {
     path:"orderconfirmpage",
     component:OrderconfirmpageComponent
+  },
+  {
+    path:"userPastorderDetails",
+    component:UserpastordersComponent,
+    title:"PastOrders"
+  },
+  {
+    path:"userDeliveryDetails",
+    component:ProfiledeliveredordersComponent
+  },
+  {
+    path:"userNewOrders",
+    component:UsernewordersComponent
+  },
+  {
+    path:"userService",
+    component:UserseevicesComponent
   },
   {
     path:"admin",

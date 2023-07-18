@@ -18,6 +18,7 @@ export class PaymentpageComponent {
     cardTypeIcon:any;
     displayCardNumber:any;
     displayCardHolder:any;
+
     showPaymentCard:Boolean=false;
     showSaved:Boolean=false;
     linkedAccount:Boolean=true;
@@ -27,6 +28,7 @@ export class PaymentpageComponent {
       this.orderedVehicleName=sessionStorage.getItem('varient_name');
       this.totalPayamount=sessionStorage.getItem('Amount');
 
+      //used for displaying the card if registered by the user.
       this._http.get<any>("http://localhost:3000/Register").subscribe((register)=>{
         const user=register.find((check:any)=>{
           this.getDebitCardNumber=check;
@@ -56,6 +58,8 @@ export class PaymentpageComponent {
         }
       })
     }
+
+    //these blocks are used for hide and show the details
     showSavedCard(){
       this.showPaymentCard=true;
     }

@@ -1,8 +1,17 @@
+<!-- 
+Description:This component is used as navbar through out the website.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 07-04-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<!----------------  Header  ------------------->
 <header class="header">
   <a routerLink="" class="logo"><img src="../../assets/image/EV-removebg.png" alt="EV Mart" class="Logo"
       title="Logo"></a>
@@ -14,12 +23,16 @@
     <a routerLink="offers" routerLinkActive="active">Offers</a>
   </nav>
   <a routerLink="login" class="btnlog"><button type="button" class="book" id="book" *ngIf="logbtn">Login</button></a>
-  <button type="button" class="book" id="book" *ngIf="btn" (click)="drop()">{{reguser}}<i class="fa-solid fa-caret-down" id="evMartdrop"></i></button>
+  <button type="button" class="book" id="book" *ngIf="btn" (click)="drop()">{{reguser}}<i class="fa-solid fa-caret-down"
+      id="evMartdrop"></i></button>
 
 </header>
+<!----------------  Header  ------------------->
+
+<!----------------  navbar dropdown ------------------->
 <div class="evMartdown" *ngIf="dropdown">
   <a (click)="myaccount()">My Account</a>
   <a (click)="logout()">Logout</a>
   <a (click)="menuClose()">Close</a>
+  <!----------------  navbar dropdown ------------------->
 </div>
-

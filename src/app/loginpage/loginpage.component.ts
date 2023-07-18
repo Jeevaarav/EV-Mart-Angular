@@ -18,7 +18,9 @@ export class LoginpageComponent {
   msg:any="";
   returl:any;
   servurl:any;
+
   field2:boolean=true;
+
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private router:ActivatedRoute){
     this.router.queryParamMap.subscribe(servform=>{
       this.servurl=servform.get('serviceurl');
@@ -29,10 +31,14 @@ export class LoginpageComponent {
       console.log(this.returl);
     })
    }
+
+   //login form validators
 login=this.form.group({
   email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
   password:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]]
 });
+
+//check if the inputs are blanks
 check(a:any,b:any){
   if(a=="" && b==""){
     this.msg="Please fill the blanks";
@@ -41,6 +47,8 @@ check(a:any,b:any){
     this.msg="";
   }
 }
+
+//getting input data for login validation after submission
 logdetails(){
   const email=this.login.controls['email'].value;
   const password=this.login.controls['password'].value;
@@ -49,6 +57,7 @@ logdetails(){
   this.login.reset();
 }
 
+//used for show password
 togglepass(){
   this.field2=!this.field2;
 }

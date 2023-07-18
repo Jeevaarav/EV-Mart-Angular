@@ -1,0 +1,92 @@
+<!-- 
+Description:This component is used for showing the past order for profile user.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 14-07-2023
+Reviewed by: Nil
+-->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!------------------------------- pastorders ----------------------------------->
+
+  <a routerLink="/Profile"><i class="fa-solid fa-arrow-left" id="back-arrow"></i></a>
+<div class="pastordershown"><p>{{pastOrdersCount}}&nbsp;</p><p>Past Order(s)</p></div>
+  <div class="main" *ngFor="let pastorder of showPastOrders;let i=index;">
+    <div  class="inside-showorder" >
+    <div class="img">
+    <img src="{{pastorder.varientimg}}" alt="">
+  </div>
+  <div class="details">
+    <p class="varient">{{pastorder.varientname}}</p>
+    <p>Order ID - #{{pastorder.orderid}}</p>
+    <p>Color - {{pastorder.varientcolor}}</p>
+    <p>Price - Rs.{{pastorder.price}}</p>
+    <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
+    <a (click)="viewOrderDetails(i)">View Details</a>
+  </div>
+  <div class="delivered"><p >Yet to be delivered <i class="fa-solid fa-circle-xmark"></i></p></div>
+</div>
+  </div>
+
+  <!------------------------------- pastorders ----------------------------------->
+
+  <!------------------------------- viewDetails ------------------------------->
+  <div class="evMarteditprofile" *ngIf="showOrderDetails">
+    <div class="rightBar">
+      <i class="fa-solid fa-xmark" (click)="showOrderbooked()"></i>
+      <p class="order-details">Order details</p>
+      <div class="orderViewDetails" id="print-details">
+        <h1>Order ID: #{{showOrder.orderid}}</h1>
+        <div class="order-location">
+        <div><i class="fa-solid fa-location-dot"></i></div>
+        <div><h2>{{showOrder.Centername}}</h2></div>
+      </div>
+      <div class="order-location">
+      <div><i class="fa-solid fa-location-dot"></i></div>
+      <div>
+        <h2>Address</h2>
+        <h4 class="address-show">{{showOrder.doorno}} , {{showOrder.address}} , {{showOrder.pincode}}</h4>
+      </div>
+    </div>
+    <div class="order-location">
+      <div><i class="fa-solid fa-check"></i></div>
+      <div><h4>Arrival on {{showOrder.deliveryDate}}</h4></div>
+    </div>
+    <div class="order-products">
+      <div><h2>Effective Ex-showroom price</h2></div>
+      <div><h2>Rs. {{showOrder.price-10000 | currency:"INR":"symbol":"1.0-0"}}</h2></div>
+    </div>
+    <div class="order-productsdetails">
+      <div><h2>{{showOrder.varientname}} (On Road)</h2></div>
+      <div><h2>Rs. {{showOrder.price | currency:"INR":"symbol":"1.0-0"}}</h2></div>
+    </div>
+    <div class="order-products">
+      <div><h2 class="spec">Specifications</h2></div>
+    </div>
+    <div class="order-productsdetails">
+      <div><h2>Battery</h2></div>
+      <div><h2>{{showOrder.battery}}</h2></div>
+    </div>
+    <div class="order-productsdetails">
+      <div><h2>Top Speed</h2></div>
+      <div><h2>{{showOrder.topspeed}}</h2></div>
+    </div>
+    <div class="order-productsdetails">
+      <div><h2>Range</h2></div>
+      <div><h2>{{showOrder.range}}</h2></div>
+    </div>
+    <div class="order-finaldetails">
+      <div><h2>Total Paid</h2></div>
+      <div><h2>Paid via {{showOrder.paymentmode}}</h2></div>
+      <div><h2>{{showOrder.price | currency:"INR":"symbol":"1.0-0"}}</h2></div>
+    </div>
+      </div>
+    </div>
+  </div>  
+
+  <!------------------------------- viewDetails ------------------------------->
+</body>

@@ -16,15 +16,9 @@ export class ExchangeComponent {
   time=0;
   dots:any;
 
-  constructor(private route:Router){
-    // setInterval(()=>{
-    //   this.time=this.time+12500;
-    // console.log(this.time);
-    //   this.firstdiv();
-    // },this.time)
+  constructor(private route:Router){}
 
-    }
-
+//Slideshow using ngx-slick-carousel
   slides = [
     { img: "../assets/EV mart/offer slide.jpg"},
     { img: "../assets/EV mart/exchange_4.webp"},
@@ -69,6 +63,8 @@ export class ExchangeComponent {
       }
     ]
   };
+
+  //This block is used to show the rules 
   firstdiv(){
     this.colordiv=document.getElementById('dotscolor');
       this.colordiv.style.visibility="visible";
@@ -77,6 +73,7 @@ export class ExchangeComponent {
     },2500);
   }
 
+  //This block is used to show the rules 
   nextdiv(){
    setTimeout(()=>{
     this.colordiv1.style.visibility="hidden";

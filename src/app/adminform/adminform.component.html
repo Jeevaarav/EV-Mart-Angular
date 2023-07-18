@@ -1,61 +1,81 @@
+<!-- 
+Description:This component is used to slot the time for the user for the requested service
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 01-05-2023
+Reviewed by: Nil
+-->
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
+  <!-------------------- Admin service form for slot alloting ---------------->
   <div class="main">
     <div class="form">
       <div class="heading">
         <p>EV Mart Admin Service</p>
       </div>
-      <form [formGroup]="servform" (ngSubmit)="servform.valid && submit(email.value,category.value,vehicleno.value,model.value)">
+      <form [formGroup]="servform"
+        (ngSubmit)="servform.valid && submit(email.value,category.value,vehicleno.value,model.value,Brand.value)">
         <div class="divide">
-        <div>
-          <label>Email</label>
-        <input type="text" class="box" placeholder="Email ID" value="{{val3.email}}" readonly #email>
-      </div>
-      <div>
-        <label>Problem Category</label>
-        <input type="text" class="box" placeholder="Category" value="{{val3.category}}" readonly #category>
-      </div>
-      <div>
-        <label>Vehicle Number</label>
-        <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.vehiclenumber}}" readonly #vehicleno>
-      </div>
-      <div>
-        <label>Vehicle Model</label>
-        <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.varient}}-Model" readonly #model>
-      </div>
-      <div>
-        <label>Problem Description</label>
-        <textarea class="box" cols="10" rows="5" placeholder="Problem description" value="{{val3.problem}}" readonly></textarea>
-      </div>
-    </div>
-    <div class="divide">
-      <div>
-        <label>Service date</label>
-        <input type="date" class="box" formControlName="date" #date (change)="checkDate(date.value)">
-        <small *ngIf="servform.controls['date'].errors?.['required'] && servform.controls['date'].touched">Provide date of service</small>
-        <small *ngIf="servform.controls['date'].errors?.['pattern']">Provide Proper format of date</small>
-        <small *ngIf="datecheck">Date Expires. Choose proper date</small>
-      </div>
-      <div>
-        <label>Service time</label>
-        <input type="time" class="box" formControlName="time" #time (change)="checkTime(time.value)">
-        <small *ngIf="servform.controls['time'].errors?.['required'] && servform.controls['time'].touched">Provide time slot for service</small>
-        <small *ngIf="timeCheck">Time Expires. Choose proper time</small>
-      </div>
-      <div>
-        <label>Remarks</label>
-       <textarea  placeholder="Remarks" cols="30" rows="2" formControlName="Reply" class="box" #remarks></textarea>
-        <small *ngIf="servform.controls['Reply'].errors?.['required'] && servform.controls['Reply'].dirty">Reply mail</small>
-      </div>
-      <button class="book">
-        Reply
-      </button>
-    </div>
+          <div>
+            <label>Email</label>
+            <input type="text" class="box" placeholder="Email ID" value="{{val3.email}}" readonly #email>
+          </div>
+          <div>
+            <label>Problem Category</label>
+            <input type="text" class="box" placeholder="Category" value="{{val3.category}}" readonly #category>
+          </div>
+          <div>
+            <label>Brand of Vehicle</label>
+            <input type="text" class="box" placeholder="Brand" value="{{val3.Brand}}" readonly #Brand>
+          </div>
+          <div>
+            <label>Vehicle Number</label>
+            <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.vehiclenumber}}" readonly
+              #vehicleno>
+          </div>
+          <div>
+            <label>Vehicle Model</label>
+            <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.varient}}-Model" readonly #model>
+          </div>
+          <div>
+            <label>Problem Description</label>
+            <textarea class="box" cols="10" rows="5" placeholder="Problem description" value="{{val3.problem}}"
+              readonly></textarea>
+          </div>
+        </div>
+        <div class="divide">
+          <div>
+            <label>Service date</label>
+            <input type="date" class="box" formControlName="date" #date (change)="checkDate(date.value)">
+            <small *ngIf="servform.controls['date'].errors?.['required'] && servform.controls['date'].touched">Provide
+              date of service</small>
+            <small *ngIf="servform.controls['date'].errors?.['pattern']">Provide Proper format of date</small>
+            <small *ngIf="datecheck">Date Expires. Choose proper date</small>
+          </div>
+          <div>
+            <label>Service time</label>
+            <input type="time" class="box" formControlName="time" #time (change)="checkTime(time.value)">
+            <small *ngIf="servform.controls['time'].errors?.['required'] && servform.controls['time'].touched">Provide
+              time slot for service</small>
+            <small *ngIf="timeCheck">Time Expires. Choose proper time</small>
+          </div>
+          <div>
+            <label>Remarks</label>
+            <textarea placeholder="Remarks" cols="30" rows="2" formControlName="Reply" class="box" #remarks></textarea>
+            <small *ngIf="servform.controls['Reply'].errors?.['required'] && servform.controls['Reply'].dirty">Reply
+              mail</small>
+          </div>
+          <button class="book">
+            Reply
+          </button>
+        </div>
       </form>
     </div>
   </div>
+  <!-------------------- Admin service form for slot alloting ---------------->
 </body>

@@ -1,52 +1,78 @@
+<!-- 
+Description:This component is used for displaying the set of rules for the exchange offers and it will redirect to book the exchange value 
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 10-04-2023
+Reviewed by: Nil
+-->
 
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Offers</title>
 </head>
 
 <body>
+  <!--------------------- header image  ------------------------->
   <section class="exchange">
     <div class="eximg">
       <img src="../../assets/EV mart/EV Mart exchange program.png" alt="Exchange program" title="Exchange program">
     </div>
   </section>
+  <!--------------------- header image  ------------------------->
+
+  <!--------------------- glimpse about EV  ------------------------->
   <section class="comparison">
     <div class="grid">
       <div class="flex">
-        <div><p>Why move to Electric Vehicles?</p></div>
-        <div><h4>Your current petrol two-wheeler has a drinking problem, and you deserve better.</h4></div>
+        <div>
+          <p>Why move to Electric Vehicles?</p>
+        </div>
+        <div>
+          <h4>Your current petrol two-wheeler has a drinking problem, and you deserve better.</h4>
+        </div>
       </div>
       <div><img src="../../assets/EV mart/Leading Electric vehicle.png" alt="EV vs Petrol" title="EV vs Petrol"></div>
     </div>
   </section>
+  <!--------------------- glimpse about EV  ------------------------->
+
+  <!--------------------- Rules Slideshow  ------------------------->
   <section class="slides">
-  <div class="row">
-    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-      <div ngxSlickItem *ngFor="let image of slides" class="slide">
+    <div class="row">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let image of slides" class="slide">
+          <div>
+            <img src="{{image.img}}" width="100%">
+          </div>
+        </div>
+      </ngx-slick-carousel>
+      <div class="dots">
         <div>
-        <img src="{{image.img}}" width="100%"></div>
-      </div>
-    </ngx-slick-carousel>
-  <div class="dots">
-    <div><h4>Exchange your old one in 3 steps</h4></div>
-    <div class="flex">
-    <div><span> Visit an EV Mart Centre</span><p>
-      Bring your petrol scooter to a nearby EV Mart centre</p>
-    </div>
-    </div>
-    <div class="flex">
-      <div class="flexgap"><span> Get your vehicle inspected</span><p>
-        After we check your vehicle, we will provide you with a quote.</p>
-      </div>
-      </div>
-      <div class="flex">
-        <div><span> Ride home your new Electric one</span><p>
-          Purchase the vehicle for a reduced amount and pay in full or via split payment</p>
+          <h4>Exchange your old one in 3 steps</h4>
         </div>
-        <div><a (click)="book()">Exchange Vehicle &nbsp;<i class="fa-solid fa-arrow-right fa-flip"></i></a></div>
+        <div class="flex">
+          <div><span> Visit an EV Mart Centre</span>
+            <p>
+              Bring your petrol scooter to a nearby EV Mart centre</p>
+          </div>
         </div>
-  </div>
-  </div>
+        <div class="flex">
+          <div class="flexgap"><span> Get your vehicle inspected</span>
+            <p>
+              After we check your vehicle, we will provide you with a quote.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div><span> Ride home your new Electric one</span>
+            <p>
+              Purchase the vehicle for a reduced amount and pay in full or via split payment</p>
+          </div>
+          <div><a (click)="book()">Exchange Vehicle &nbsp;<i class="fa-solid fa-arrow-right fa-flip"></i></a></div>
+        </div>
+      </div>
+    </div>
   </section>
-  <app-footer></app-footer>
+  <!--------------------- Rules Slideshow  ------------------------->
 </body>

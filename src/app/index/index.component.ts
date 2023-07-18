@@ -10,6 +10,8 @@ export class IndexComponent {
   constructor(private orderInterval:OrderintervalService){
     this.orderInterval.startInterval();
   }
+
+  //Slidesow using ngx-slick-careousal
   images = [
     { img: "../assets/EV mart/OlA.png",title:"OLA S1",price:"99,999/-",span1:"181 km ARAI certified range",span2:"10 stunning colors",span3:"116kmph top speed" },
     { img: "../assets/EV mart/Revolt.png",title:"Revolt",price:"1,30,892/-",span1:"150 km ARAI certified range",span2:"3 stunning colors",span3:"85kmph top speed" },

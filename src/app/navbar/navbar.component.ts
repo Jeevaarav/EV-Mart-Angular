@@ -14,16 +14,19 @@ import { ForgotService } from '../forgot.service';
   encapsulation:ViewEncapsulation.None
 })
 export class NavbarComponent {
+
+error:any="";
+close:any="close";
+reguser:any;
+
+btn:boolean=false;
+logbtn:boolean=true;
 exit:boolean=false;
 create:boolean=false;
 forgot:boolean=false;
 forgotnew:boolean=false;
-error:any="";
-btn:boolean=false;
-logbtn:boolean=true;
-close:any="close";
-reguser:any;
 dropdown:boolean=false;
+
 constructor(private form:FormBuilder,private service:LogincredentialsService,private route:Router){
   this.reguser=sessionStorage.getItem('reguser');
   console.log(localStorage.getItem('loggedin'));
@@ -38,10 +41,7 @@ constructor(private form:FormBuilder,private service:LogincredentialsService,pri
     }
  }
 
-// forgotform1=this.form.group({
-//   forgotemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-//   forgotuser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
-// })
+ //logout after login 
 logout(){
   if(confirm("Are you sure want to log-out?")){
   this.dropdown=false;

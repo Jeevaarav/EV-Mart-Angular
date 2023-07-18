@@ -1,134 +1,252 @@
+<!-- 
+Description:This component is used for busting the myth for electric vehicle available in information module
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 28-06-2023
+Reviewed by: Nil
+-->
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Benefits of EV</title>
 </head>
+
 <body>
+  <!-------------heading  ----------------->
   <div class="main">
     <div>
       <h2>BUSTING COMMON ELECTRIC VEHICLE MYTHS</h2>
     </div>
     <div>
-
     </div>
   </div>
+  <!-------------heading  ----------------->
+
+  <!------------- Cost Savings  ----------------->
   <div class="intro">
-    <p>A new form of mobility has ushered in, bringing with it several misconceptions. Some of the common myths are busted here for you:</p>
+    <p>A new form of mobility has ushered in, bringing with it several misconceptions. Some of the common myths are
+      busted here for you:</p>
   </div>
   <div class="cost">
     <div>
-    <img src="../../assets/EV mart/economical.jpg" alt="Cost Savings" title="Cost Savings">
-  </div>
-  <div>
-    <div class="benefithead">
-    <div class="design"></div><h3>Electric vehicles are uneconomical</h3>
-  </div>
-  <div class="fact" (click)="openfact()"><p><b>Fact:</b> Electric vehicles are more economical when you take fuel and maintenance costs.<i class="fa-solid fa-chevron-down"></i></p></div>
-    <p *ngIf="fact" class="factpara">Every new technology follows an economic path where the initial upfront price is higher. This reaches a maximum and then decreases when people adopt this technology commonly. Electric vehicles are the same, but the higher price points are quickly changing as the costs go down. To help with high initial costs, many subsidies and incentives are offered by the government.
-    The contribution to reduced life-cycle costs comes from the lower operation and maintenance costs as electric vehicles have fewer moving parts and less wear and tear.</p>
-  </div>
-  </div>
-  <div class="cost">
-  <div>
-    <div class="benefithead">
-    <div class="design"></div><h3>It takes too long to charge</h3>
-  </div>
-  <div class="fact" (click)="openfact1()"><p><b>Fact:</b>Cars spend over 90% of the time parked. You can plug in your car in this downtime at home to charge it. If you need to charge quickly on the road, fast and rapid chargers are entering the Indian market. Some electric vehicles can charge from 20% - 80% in about half an hour on these chargers.<i class="fa-solid fa-chevron-down"></i></p></div>
-    <p *ngIf="fact1" class="factpara">The time of electric vehicle charging depends upon the type of charger used. As per the Bureau of Energy Efficiency, currently available electric vehicles across vehicle segments (2-wheeler, 3-wheeler, 4-wheeler) can be charged from 0%-80% in around 1 to 5 hours from Slow/Moderate chargers while using Fast chargers, electric vehicles can be charged in less than 1 hour. Fast chargers are mainly used to charge electric 4-wheelers with bigger batteries.</p>
-  </div>
-  <div>
-    <img src="../../assets/EV mart/waiting-time.jpg" alt="Charging Time" title="Charging Time">
-  </div>
-  </div>
-  <div class="cost">
+      <img src="../../assets/EV mart/economical.jpg" alt="Cost Savings" title="Cost Savings">
+    </div>
     <div>
-    <img src="../../assets/EV mart/car-battery.jpg" alt="battery life" title="Battery life">
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3>Electric vehicles are uneconomical</h3>
+      </div>
+      <div class="fact" (click)="openfact()">
+        <p><b>Fact:</b> Electric vehicles are more economical when you take fuel and maintenance costs.<i
+            class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact" class="factpara">Every new technology follows an economic path where the initial upfront price is
+        higher. This reaches a maximum and then decreases when people adopt this technology commonly. Electric vehicles
+        are the same, but the higher price points are quickly changing as the costs go down. To help with high initial
+        costs, many subsidies and incentives are offered by the government.
+        The contribution to reduced life-cycle costs comes from the lower operation and maintenance costs as electric
+        vehicles have fewer moving parts and less wear and tear.</p>
+    </div>
   </div>
-  <div>
-    <div class="benefithead">
-    <div class="design"></div><h3> EV batteries will only last a few years</h3>
-  </div>
-  <div class="fact" (click)="openfact2()"><p><b>Fact:</b>Electric vehicle batteries last for several years, and many of them will have a life beyond that of the vehicle for storing energy.<i class="fa-solid fa-chevron-down"></i></p></div>
-    <p *ngIf="fact2" class="factpara">Every new technology follows an economic path where the initial upfront price is higher. This reaches a maximum and then decreases when people adopt this technology commonly. Electric vehicles are the same, but the higher price points are quickly changing as the costs go down. To help with high initial costs, many subsidies and incentives are offered by the government.
-    The contribution to reduced life-cycle costs comes from the lower operation and maintenance costs as electric vehicles have fewer moving parts and less wear and tear.</p>
-  </div>
-  </div>
+  <!------------- Cost Savings  ----------------->
+
+  <!------------- Charging  ----------------->
   <div class="cost">
     <div>
       <div class="benefithead">
-      <div class="design"></div><h3>The Emission impacts of an electric vehicle</h3>
+        <div class="design"></div>
+        <h3>It takes too long to charge</h3>
+      </div>
+      <div class="fact" (click)="openfact1()">
+        <p><b>Fact:</b>Cars spend over 90% of the time parked. You can plug in your car in this downtime at home to
+          charge it. If you need to charge quickly on the road, fast and rapid chargers are entering the Indian market.
+          Some electric vehicles can charge from 20% - 80% in about half an hour on these chargers.<i
+            class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact1" class="factpara">The time of electric vehicle charging depends upon the type of charger used. As
+        per the Bureau of Energy Efficiency, currently available electric vehicles across vehicle segments (2-wheeler,
+        3-wheeler, 4-wheeler) can be charged from 0%-80% in around 1 to 5 hours from Slow/Moderate chargers while using
+        Fast chargers, electric vehicles can be charged in less than 1 hour. Fast chargers are mainly used to charge
+        electric 4-wheelers with bigger batteries.</p>
     </div>
-    <div class="fact" (click)="openfact3()"><p><b>Fact:</b>Electric vehicles typically have a smaller carbon footprint than Petrol and Diesel Vehicles, even when accounting for the electricity used for charging and the carbon footprint of manufacturing batteries.<i class="fa-solid fa-chevron-down"></i></p></div>
-      <p *ngIf="fact3" class="factpara">Electric vehicles can convert about 59% to 62% of the electrical energy from the grid to power at the wheels. Conventional petrol vehicles can only convert almost 17% to 21% of the energy stored in petrol to power at the wheels. Even CNG engines are not entirely clean as they emit ammonia and produce particulate emissions.While you might argue that electricity generated for electric vehicles also leads to carbon pollution, the amount varies directly with how the local power is generated. India has ambitions to achieve about 40 percent cumulative electric power installed capacity from non-fossil fuel-based energy resources by the year 2030.</p>
+    <div>
+      <img src="../../assets/EV mart/waiting-time.jpg" alt="Charging Time" title="Charging Time">
+    </div>
+  </div>
+  <!------------- Charging  ----------------->
+
+  <!------------- car Battery  ----------------->
+  <div class="cost">
+    <div>
+      <img src="../../assets/EV mart/car-battery.jpg" alt="battery life" title="Battery life">
+    </div>
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3> EV batteries will only last a few years</h3>
+      </div>
+      <div class="fact" (click)="openfact2()">
+        <p><b>Fact:</b>Electric vehicle batteries last for several years, and many of them will have a life beyond that
+          of the vehicle for storing energy.<i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact2" class="factpara">Every new technology follows an economic path where the initial upfront price is
+        higher. This reaches a maximum and then decreases when people adopt this technology commonly. Electric vehicles
+        are the same, but the higher price points are quickly changing as the costs go down. To help with high initial
+        costs, many subsidies and incentives are offered by the government.
+        The contribution to reduced life-cycle costs comes from the lower operation and maintenance costs as electric
+        vehicles have fewer moving parts and less wear and tear.</p>
+    </div>
+  </div>
+  <!------------- car Battery  ----------------->
+
+  <!------------- Emission ----------------->
+  <div class="cost">
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3>The Emission impacts of an electric vehicle</h3>
+      </div>
+      <div class="fact" (click)="openfact3()">
+        <p><b>Fact:</b>Electric vehicles typically have a smaller carbon footprint than Petrol and Diesel Vehicles, even
+          when accounting for the electricity used for charging and the carbon footprint of manufacturing batteries.<i
+            class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact3" class="factpara">Electric vehicles can convert about 59% to 62% of the electrical energy from the
+        grid to power at the wheels. Conventional petrol vehicles can only convert almost 17% to 21% of the energy
+        stored in petrol to power at the wheels. Even CNG engines are not entirely clean as they emit ammonia and
+        produce particulate emissions.While you might argue that electricity generated for electric vehicles also leads
+        to carbon pollution, the amount varies directly with how the local power is generated. India has ambitions to
+        achieve about 40 percent cumulative electric power installed capacity from non-fossil fuel-based energy
+        resources by the year 2030.</p>
     </div>
     <div>
       <img src="../../assets/EV mart/Emission-impact.jpg" alt="emission" title="emission">
     </div>
-    </div>
-    <div class="cost">
-      <div>
+  </div>
+  <!------------- Emission ----------------->
+
+  <!------------- Range ----------------->
+  <div class="cost">
+    <div>
       <img src="../../assets/EV mart/ev-range.jpg" alt="EV Range" title="EV Range">
     </div>
     <div>
       <div class="benefithead">
-      <div class="design"></div><h3> Electric vehicles have very low range</h3>
+        <div class="design"></div>
+        <h3> Electric vehicles have very low range</h3>
+      </div>
+      <div class="fact" (click)="openfact4()">
+        <p><b>Fact:</b>The range of electric vehicles is enough for the typical daily mileage of the average Indian
+          driver<i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact4" class="factpara">It is natural for drivers to be concerned about being stranded with a flat
+        battery miles from a charging station, but as electric vehicles become more commonplace, their range is
+        increasing. The electric vehicles currently available can easily accommodate the average daily mileage of Indian
+        drivers.As per the Bureau of Energy Efficiency, the average range of electric 2-wheelers currently available in
+        the market is around 84 km per charge, which is enough for day-to-day travel within a city. The average range of
+        electric cars available in the market is between 150-200 km per charge. This range, when considered with the
+        continuously increasing charging infrastructure, makes commuting even inter-cities easier.</p>
     </div>
-    <div class="fact" (click)="openfact4()"><p><b>Fact:</b>The range of electric vehicles is enough for the typical daily mileage of the average Indian driver<i class="fa-solid fa-chevron-down"></i></p></div>
-      <p *ngIf="fact4" class="factpara">It is natural for drivers to be concerned about being stranded with a flat battery miles from a charging station, but as electric vehicles become more commonplace, their range is increasing. The electric vehicles currently available can easily accommodate the average daily mileage of Indian drivers.As per the Bureau of Energy Efficiency, the average range of electric 2-wheelers currently available in the market is around 84 km per charge, which is enough for day-to-day travel within a city. The average range of electric cars available in the market is between 150-200 km per charge. This range, when considered with the continuously increasing charging infrastructure, makes commuting even inter-cities easier.</p>
+  </div>
+  <!------------- Range ----------------->
+
+  <!------------- bad Performance ----------------->
+  <div class="cost">
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3>EVs are slow and have bad performance</h3>
+      </div>
+      <div class="fact" (click)="openfact5()">
+        <p><b>Fact:</b>Electric vehicles typically have a smaller carbon footprint than Petrol and Diesel Vehicles, even
+          when accounting for the electricity used for charging and the carbon footprint of manufacturing batteries.<i
+            class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <p *ngIf="fact5" class="factpara">Electric vehicles are powered by an electric motor that generates torque
+        instantly without any gears. As soon as you push down the accelerator, the electric vehicles will accelerate
+        from stationary without lag.</p>
     </div>
+    <div>
+      <img src="../../assets/EV mart/slo-ev.jpg" alt="Slow and bad" title="Slow and bad">
     </div>
-    <div class="cost">
-      <div>
-        <div class="benefithead">
-        <div class="design"></div><h3>EVs are slow and have bad performance</h3>
+  </div>
+  <!------------- bad Performance ----------------->
+
+  <!------------- Electricity ----------------->
+  <div class="cost">
+    <div>
+      <img src="../../assets/EV mart/india-electricity.jpg" alt="electricity" title="electricity">
+    </div>
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3>India’s electricity grid is not suited for EVs</h3>
       </div>
-      <div class="fact" (click)="openfact5()"><p><b>Fact:</b>Electric vehicles typically have a smaller carbon footprint than Petrol and Diesel Vehicles, even when accounting for the electricity used for charging and the carbon footprint of manufacturing batteries.<i class="fa-solid fa-chevron-down"></i></p></div>
-        <p *ngIf="fact5" class="factpara">Electric vehicles are powered by an electric motor that generates torque instantly without any gears. As soon as you push down the accelerator, the electric vehicles will accelerate from stationary without lag.</p>
+      <div class="fact" (click)="openfact6()">
+        <p><b>Fact:</b>Electric vehicles result in a reduction of life-cycle carbon dioxide emissions even with the
+          current Indian grid fuel mix.<i class="fa-solid fa-chevron-down"></i></p>
       </div>
-      <div>
-        <img src="../../assets/EV mart/slo-ev.jpg" alt="Slow and bad" title="Slow and bad">
+      <p *ngIf="fact6" class="factpara">India has committed to having 175 GW of installed Renewable Energy (RE) capacity
+        by 2022 and up to 450 GW by 2030. The current weighted average emission factor of the country for the national
+        grid has been nearly constant over the past few years at 0.82 tCO2 / MWh (as of 2018-19).As the share of
+        renewables increases and dependency on coal decreases, the overall emissions from electric vehicles use will
+        also decrease further.</p>
+    </div>
+  </div>
+  <!------------- Electricity ----------------->
+
+  <!------------- Electric Stations ----------------->
+  <div class="cost">
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3>India’s EV charging stations are not enough</h3>
       </div>
+      <div class="fact" (click)="openfact7()">
+        <p><b>Fact:</b>When you need to charge while on the road, you’ll find 934 stations in India available to the
+          public. If you can install a charger at home where you park, you can charge your vehicle conveniently there.<i
+            class="fa-solid fa-chevron-down"></i></p>
       </div>
-      <div class="cost">
-        <div>
-        <img src="../../assets/EV mart/india-electricity.jpg" alt="electricity" title="electricity">
+      <p *ngIf="fact7" class="factpara">There are already 934 charging stations in India with more and more providers,
+        both public and private, entering the space. Measures have been taken by the government to ensure public
+        charging infrastructure penetration further increases. The Ministry of Power (MoP) provides the following
+        minimum requirements for the location of public charging stations:</p>
+      <p class="bullets" *ngIf="bullet">
+        &bullet;&nbsp;At least one charging station should be available in a grid of 3km x 3km.</p>
+      <p class="bullets" *ngIf="bullet">&bullet;&nbsp;One charging station to be set up every 25km on both sides of
+        highways/roads</p>
+    </div>
+    <div>
+      <img src="../../assets/EV mart/charging-station-not-enough.jpg" alt="charging Station" title="charging Station">
+    </div>
+  </div>
+  <!------------- Electric Stations ----------------->
+
+  <!------------- Indian Electricity ----------------->
+  <div class="cost">
+    <div>
+      <img src="../../assets/EV mart/india-electricity.jpg" alt="electricity" title="electricity">
+    </div>
+    <div>
+      <div class="benefithead">
+        <div class="design"></div>
+        <h3> EV get damaged in waterlogged areas</h3>
       </div>
-      <div>
-        <div class="benefithead">
-        <div class="design"></div><h3>India’s electricity grid is not suited for EVs</h3>
+      <div class="fact" (click)="openfact8()">
+        <p><b>Fact:</b>An undamaged electric vehicle will have water ingress protection. This means that its electrical
+          components are well-sealed and extremely unlikely to provide an electrical hazard.<i
+            class="fa-solid fa-chevron-down"></i></p>
       </div>
-      <div class="fact" (click)="openfact6()"><p><b>Fact:</b>Electric vehicles result in a reduction of life-cycle carbon dioxide emissions even with the current Indian grid fuel mix.<i class="fa-solid fa-chevron-down"></i></p></div>
-        <p *ngIf="fact6" class="factpara">India has committed to having 175 GW of installed Renewable Energy (RE) capacity by 2022 and up to 450 GW by 2030. The current weighted average emission factor of the country for the national grid has been nearly constant over the past few years at 0.82 tCO2 / MWh (as of 2018-19).As the share of renewables increases and dependency on coal decreases, the overall emissions from electric vehicles use will also decrease further.</p>
-      </div>
-      </div>
-      <div class="cost">
-        <div>
-          <div class="benefithead">
-          <div class="design"></div><h3>India’s EV charging stations are not enough</h3>
-        </div>
-        <div class="fact" (click)="openfact7()"><p><b>Fact:</b>When you need to charge while on the road, you’ll find 934 stations in India available to the public. If you can install a charger at home where you park, you can charge your vehicle conveniently there.<i class="fa-solid fa-chevron-down"></i></p>
-        </div>
-          <p *ngIf="fact7" class="factpara">There are already 934 charging stations in India with more and more providers, both public and private, entering the space. Measures have been taken by the government to ensure public charging infrastructure penetration further increases. The Ministry of Power (MoP) provides the following minimum requirements for the location of public charging stations:</p>
-          <p class="bullets" *ngIf="bullet">
-            &bullet;&nbsp;At least one charging station should be available in a grid of 3km x 3km.</p>
-            <p class="bullets" *ngIf="bullet">&bullet;&nbsp;One charging station to be set up every 25km on both sides of highways/roads</p>
-        </div>
-        <div>
-          <img src="../../assets/EV mart/charging-station-not-enough.jpg" alt="charging Station" title="charging Station">
-        </div>
-        </div>
-        <div class="cost">
-          <div>
-          <img src="../../assets/EV mart/india-electricity.jpg" alt="electricity" title="electricity">
-        </div>
-        <div>
-          <div class="benefithead">
-          <div class="design"></div><h3> EV get damaged in waterlogged areas</h3>
-        </div>
-        <div class="fact" (click)="openfact8()"><p><b>Fact:</b>An undamaged electric vehicle will have water ingress protection. This means that its electrical components are well-sealed and extremely unlikely to provide an electrical hazard.<i class="fa-solid fa-chevron-down"></i></p></div>
-          <p *ngIf="fact8" class="factpara">All electric vehicles come with compliance to an Ingress Protection (IP) as standard. Most of the electric vehicles have an IP67 rating or more; here 67 represents the protection against two elements - dust and water. To give you reference, anything past 67 is generally used for specialized equipment such as submarines. Thus, your electric vehicle will not have any malfunction and will not conduct electricity in and around water if it has not been previously damaged.</p>
-        </div>
-        </div>
-        <div class="foot">
-        </div>
-        <app-footer></app-footer>
+      <p *ngIf="fact8" class="factpara">All electric vehicles come with compliance to an Ingress Protection (IP) as
+        standard. Most of the electric vehicles have an IP67 rating or more; here 67 represents the protection against
+        two elements - dust and water. To give you reference, anything past 67 is generally used for specialized
+        equipment such as submarines. Thus, your electric vehicle will not have any malfunction and will not conduct
+        electricity in and around water if it has not been previously damaged.</p>
+    </div>
+  </div>
+  <!------------- Indian Electricity ----------------->
+  <div class="foot">
+  </div>
 </body>

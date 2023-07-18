@@ -22,7 +22,7 @@
       "reguser": "Aravinth",
       "regpass": "Jeeva@2001",
       "regconfirm": "Jeeva@2001",
-      "regphonenum": "6374505533",
+      "regphonenum": "6374505534",
       "address": [
         {
           "fulladdress": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
@@ -33,12 +33,44 @@
       ],
       "paymentcard": [
         {
-          "cardnumber": "XXXXXXXXXXXX5255",
-          "cardholdername": "ARAVINTH",
+          "cardnumber": "XXXXXXXXXXXX5232",
+          "cardholdername": "JEEVA ARAVINTH J V",
           "cardtype": "Visa"
         }
       ],
-      "orders": []
+      "orders": [],
+      "orderedDate": [],
+      "deliveredDate": [],
+      "ordered": [],
+      "deliveredOrders": [
+        {
+          "orderid": 907,
+          "varientcolor": "Hero Blue",
+          "varientimg": "../../assets/EV mart/OptimaCX/display1.webp",
+          "varientname": "Optima CX",
+          "battery": "2kWh",
+          "range": "89 km",
+          "topspeed": "48 kmph",
+          "price": "106590",
+          "bookingdate": "16-Jul-2023 04:16:29 PM",
+          "onlinepaidamount": "31,977",
+          "deliveryDate": "16-Jul-2023 04:18:29 PM",
+          "day": "Sunday",
+          "State": "Delhi (NCT)",
+          "City": "Central Delhi",
+          "Centername": "EV MART Centre, Sector 2, Noida",
+          "mail": "jeevaaravinth2001@gmail.com",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "firstname": "Aravinth",
+          "lastname": "zdxcgvhb",
+          "phonenumber": "6374505534",
+          "landmark": "Jaisuryas",
+          "pincode": "636010",
+          "doorno": "621B",
+          "paymentmode": "Debit Card",
+          "paymentstatus": "paid"
+        }
+      ]
     },
     {
       "regemail": "harish@gmail.com",
@@ -46,7 +78,20 @@
       "regpass": "Harish@2001",
       "regconfirm": "Harish@2001",
       "regphonenum": "9894823544",
-      "orders": []
+      "orders": [],
+      "service": [],
+      "servicedone": [
+        {
+          "regemail": "harish@gmail.com",
+          "Brand": "Revolt",
+          "category": "Circuit Issue-Category",
+          "vehicleno": "TN 25 L 2568",
+          "varient": "RV400-Model",
+          "date": "2023-07-19",
+          "time": "23:20",
+          "reply": "Thanks for Choosing our Service"
+        }
+      ]
     }
   ],
   "subscription": [
@@ -122,7 +167,7 @@
           "battery": "3kWh",
           "range": "141 km",
           "topspeed": "95 kmph",
-          "price": "1,29,999"
+          "price": "129999"
         }
       ],
       "OLAS1Pro": [
@@ -130,7 +175,7 @@
           "battery": "4kWh",
           "range": "181 km",
           "topspeed": "116 kmph",
-          "price": "1,39,000"
+          "price": "139000"
         }
       ],
       "OLAS1Air": [
@@ -138,7 +183,7 @@
           "battery": "3kWh",
           "range": "125 km",
           "topspeed": "85 kmph",
-          "price": "1,09,999"
+          "price": "109999"
         }
       ],
       "regemail": 1
@@ -176,7 +221,7 @@
           "battery": "2kWh",
           "range": "89 km",
           "topspeed": "48 kmph",
-          "price": "1,06,590"
+          "price": "106590"
         }
       ],
       "OptimaLX": [
@@ -184,7 +229,7 @@
           "battery": "1.5kWh",
           "range": "85 km",
           "topspeed": "25 kmph",
-          "price": "77,690"
+          "price": "77690"
         }
       ],
       "regemail": 2
@@ -225,7 +270,7 @@
           "battery": "3.24kWh",
           "range": "150 km",
           "topspeed": "85 kmph",
-          "price": "1,42,000"
+          "price": "142000"
         }
       ],
       "regemail": 3
@@ -281,13 +326,13 @@
           "battery": "3kWh",
           "range": "181 km",
           "topspeed": "116 kmph",
-          "price": "1,14,000"
+          "price": "114000"
         },
         {
           "battery": "2kWh",
           "range": "100 km",
           "topspeed": "100 kmph",
-          "price": "1,00,000"
+          "price": "100000"
         }
       ],
       "Ather450XProPack": [
@@ -295,13 +340,13 @@
           "battery": "1kWh",
           "range": "120 km",
           "topspeed": "50 kmph",
-          "price": "1,30,000"
+          "price": "130000"
         },
         {
           "battery": "2kWh",
           "range": "150 km",
           "topspeed": "80 kmph",
-          "price": "1,50,000"
+          "price": "150000"
         }
       ],
       "regemail": 4
@@ -363,7 +408,7 @@
           "battery": "3kWh",
           "range": "107 km",
           "topspeed": "77 kmph",
-          "price": "1,09,900"
+          "price": "109900"
         }
       ],
       "MagnusEX": [
@@ -371,7 +416,7 @@
           "battery": "2kWh",
           "range": "100 km",
           "topspeed": "50 kmph",
-          "price": "1,04,743"
+          "price": "104743"
         }
       ],
       "ZealEX": [
@@ -379,7 +424,7 @@
           "battery": "2.3kWh",
           "range": "100 km",
           "topspeed": "50-55 kmph",
-          "price": "96,690"
+          "price": "96690"
         }
       ],
       "regemail": 5
@@ -426,7 +471,7 @@
           "battery": "7.1kWh",
           "range": "206 km",
           "topspeed": "140 kmph",
-          "price": "3,80,000"
+          "price": "380000"
         }
       ],
       "F77Recon": [
@@ -434,7 +479,7 @@
           "battery": "10.3kWh",
           "range": "307 km",
           "topspeed": "147 kmph",
-          "price": "4,55,000"
+          "price": "455000"
         }
       ],
       "F77Limited": [
@@ -442,7 +487,7 @@
           "battery": "10.3kWh",
           "range": "307 km",
           "topspeed": "147 kmph",
-          "price": "5,50,000"
+          "price": "550000"
         }
       ],
       "regemail": 6
@@ -569,48 +614,49 @@
       "content": "Other services like spare parts, body, fasteners etc. will be mentioned here."
     }
   ],
-  "Serviceform": [
-    {
-      "email": "jeevaaravinth2001@gmail.com",
-      "Brand": "Ultraviolette",
-      "varient": "F77 Original",
-      "vehiclenumber": "TN 30 6559",
-      "problem": "The problem is circuit which short circuit and fired inside and components gone",
-      "category": "Circuit Issue-Category",
-      "date": "2023-07-03T06:18:47.383Z",
-      "regemail": 1
-    }
-  ],
+  "Serviceform": [],
   "servicedone": [
     {
-      "email": "jeevaaravinth2001@gmail.com",
-      "category": "Circuit Issue-Category",
-      "vehicleno": "TN 20 L 2569",
-      "varient": "OLA S1 Air-Model",
-      "date": "2023-07-04",
-      "time": "19:32",
-      "reply": "Thanks for Choosing our Service.",
+      "email": "harish@gmail.com",
+      "Brand": "Ampere",
+      "category": "Dashboard Issue-Category",
+      "vehicleno": "TN 25 L 4899",
+      "varient": "Primus-Model",
+      "date": "2023-07-19",
+      "time": "12:17",
+      "reply": "Thanks for Choosing our Service",
       "regemail": 1
+    },
+    {
+      "email": "harish@gmail.com",
+      "Brand": "Revolt",
+      "category": "Circuit Issue-Category",
+      "vehicleno": "TN 25 L 2568",
+      "varient": "RV400-Model",
+      "date": "2023-07-19",
+      "time": "23:20",
+      "reply": "Thanks for Choosing our Service",
+      "regemail": 2
     }
   ],
   "offers": [
     {
       "img": "../../assets/EV mart/ather offer.webp",
       "content": "Get ₹5,000* off on the Ather 550!",
-      "time": "July 03 2023 13:17:00",
+      "time": "July 18 2023 13:17:00",
       "link": "",
-      "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
+      "validity": "We have always got your back! Watch out this offer, valid only for 18 June",
       "button": "Order now",
-      "regemail": "1"
+      "regemail": 1
     },
     {
-      "img": "../../assets/EV mart/ather offer.webp",
-      "content": "Get ₹5,000* off on the Ather 550!",
-      "time": "July 03 2023 13:17:00",
+      "img": "../../assets/EV mart/offer1.jpg",
+      "content": "Get ₹5,000* off on the OLA S1 Pro!",
+      "time": "July 19 2023 13:17:00",
       "link": "",
-      "validity": "We have always got your back! Watch out this offer, valid only for 27 June",
+      "validity": "We have always got your back! Watch out this offer, valid only for 19 June",
       "button": "Order now",
-      "regemail": "2"
+      "regemail": 2
     }
   ],
   "map": [
@@ -2042,28 +2088,28 @@
           "color": "Brown/Bronze/Copper"
         }
       ],
-      "loan":[
+      "loan": [
         {
-          "status":"Completed"
+          "status": "Completed"
         },
         {
-          "status":"Pending"
+          "status": "Pending"
         }
       ],
-      "condition":[
+      "condition": [
         {
-          "status":"Running"
+          "status": "Running"
         },
         {
-          "status":"Not Working"
+          "status": "Not Working"
         }
       ],
-      "vehicleowner":[
+      "vehicleowner": [
         {
-          "status":"First"
+          "status": "First"
         },
         {
-          "status":"Second"
+          "status": "Second"
         }
       ]
     },
@@ -2094,28 +2140,28 @@
           "color": "Brown/Bronze/Copper"
         }
       ],
-      "loan":[
+      "loan": [
         {
-          "status":"Completed"
+          "status": "Completed"
         },
         {
-          "status":"Pending"
+          "status": "Pending"
         }
       ],
-      "condition":[
+      "condition": [
         {
-          "status":"Running"
+          "status": "Running"
         },
         {
-          "status":"Not Working"
+          "status": "Not Working"
         }
       ],
-      "vehicleowner":[
+      "vehicleowner": [
         {
-          "status":"First"
+          "status": "First"
         },
         {
-          "status":"Second"
+          "status": "Second"
         }
       ]
     },
@@ -2146,28 +2192,28 @@
           "color": "Brown/Bronze/Copper"
         }
       ],
-      "loan":[
+      "loan": [
         {
-          "status":"Completed"
+          "status": "Completed"
         },
         {
-          "status":"Pending"
+          "status": "Pending"
         }
       ],
-      "condition":[
+      "condition": [
         {
-          "status":"Running"
+          "status": "Running"
         },
         {
-          "status":"Not Working"
+          "status": "Not Working"
         }
       ],
-      "vehicleowner":[
+      "vehicleowner": [
         {
-          "status":"First"
+          "status": "First"
         },
         {
-          "status":"Second"
+          "status": "Second"
         }
       ]
     }
@@ -2200,22 +2246,28 @@
   ],
   "kilometerrange": [
     {
-      "kms": "0-10000"
+      "kms": "0-10000",
+      "value": "20000"
     },
     {
-      "kms": "10001-20000"
+      "kms": "10001-20000",
+      "value": "17000"
     },
     {
-      "kms": "200001-30000"
+      "kms": "200001-30000",
+      "value": "13000"
     },
     {
-      "kms": "30001-40000"
+      "kms": "30001-40000",
+      "value": "10000"
     },
     {
-      "kms": "40001-60000"
+      "kms": "40001-60000",
+      "value": "7000"
     },
     {
-      "kms": "Greater than 60000"
+      "kms": "Greater than 60000",
+      "value": "6000"
     }
   ]
 }

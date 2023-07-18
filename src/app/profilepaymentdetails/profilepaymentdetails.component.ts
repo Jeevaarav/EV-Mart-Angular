@@ -7,15 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./profilepaymentdetails.component.css']
 })
 export class ProfilepaymentdetailsComponent {
-  hideNoPaymentcard:Boolean=true;
   getUserDetails:any;
   cardTypeIcon:any;
-  showPaymentCard:Boolean=true;
   showCardHolder:any;
   showCardNumber:any;
+
+  hideNoPaymentcard:Boolean=true;
+  showPaymentCard:Boolean=true;
   
 
   constructor(private _http:HttpClient){
+    //retreive card details from particular user
     this._http.get<any>("http://localhost:3000/Register").subscribe((paymentcard)=>{
       const user=paymentcard.find((register:any)=>{
         this.getUserDetails=register;

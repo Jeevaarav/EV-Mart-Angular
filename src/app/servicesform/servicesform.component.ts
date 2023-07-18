@@ -29,6 +29,8 @@ constructor(private service:EvmartserviceService,private formbuild:FormBuilder,p
   console.log(value[0].Brandname[0]);
   })
 }
+
+//service form validators
 servform=this.formbuild.group({
   brand:['',Validators.required],
   varient:['',Validators.required],
@@ -36,6 +38,7 @@ servform=this.formbuild.group({
   problem:['',[Validators.required,Validators.minLength(100)]]
 });
 
+//getting data from inputs after submit the form
 submit(category:any){
   this.date=new Date();
   const brand=this.servform.controls['brand'].value;
@@ -46,6 +49,7 @@ submit(category:any){
   this.service.storedata(brand,varient,vehiclenumber,problem,mail,this.date,category);
 }
 
+//take brand and varients for particular brand
 takeBrand(brand:any){
   console.log(brand);
   this.http.get<any>("http://localhost:3000/Servicedata").subscribe((val)=>{
@@ -63,9 +67,9 @@ takeBrand(brand:any){
       alert("Not found");
     }
   })
-  // console.log(this.totalVal[0].Brandname[index]);
-  // this.varientData=this.totalVal[0].Brandname[index];
 }
+
+//varient data
 takeVarient(varient:any){
   console.log(varient);
 }

@@ -17,7 +17,9 @@ export class ProfilePageComponent {
   evMartuser:any;
   evMartemail:any;
   evMartprof:any;
+
   editprof:boolean=false;
+
   constructor(private form:FormBuilder, private service:LogincredentialsService){
     this.evMartprofile=localStorage.getItem('profilepage');
     this.evMartemail=JSON.parse(this.evMartprofile);
@@ -28,6 +30,8 @@ export class ProfilePageComponent {
     this.email=this.evMartemail.regemail;
     localStorage.setItem('updatemail',this.email);
   }
+
+  //used for hide and show
   showrightBar(){
     this.editprof=true;
   }
@@ -35,12 +39,13 @@ export class ProfilePageComponent {
     this.editprof=false;
   }
 
+  //validators for input
   updateinfo=this.form.group({
     regphonenum:[localStorage.getItem('updatephone'),[Validators.required,Validators.pattern("[0-9]{1}[0-9]{9}")]],
     reguser:[localStorage.getItem('updateuser'),[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
   });
 
-
+  //update the user details 
   updatedetails(){
    if(confirm("Are you sure to update the profile details?")){
     const phone=this.updateinfo.controls['regphonenum'].value;

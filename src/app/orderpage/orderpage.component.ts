@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderbookingService } from '../orderbooking.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-orderpage',
@@ -22,7 +23,6 @@ export class OrderpageComponent implements OnInit {
   spec:any;
   div:any; show:any;show1:any;show2:any;
   split1:any;split2:any;
-  status:boolean=true; boolstatus:boolean=true; range:boolean=true;
   use:any; usestore:any
   specselect:any;
   spec1:any;
@@ -31,10 +31,31 @@ export class OrderpageComponent implements OnInit {
   vname:any;
   path:any; path1:any; path2:any; colorchgpath:any;
   showcase:any;
-  check:Boolean=false;
   border:any;
+  parseOldValue:any;
+  OldVehicleDetails:any;
+  Exchangeoffer:any;
+  usePriceValue:any;
+  date:any;
+  estimatedDate:any;
+  deliveryDate:any;
+  userLocalPrice:any;
+  exShowroomPrice:any;
+
+  status:boolean=true; 
+  boolstatus:boolean=true; 
+  range:boolean=true;
+  check:Boolean=false;
+  showPopUp:Boolean=false;
 
   constructor(private service:OrderbookingService){
+    //displaying the default values for the selection of vehicles
+    this.date=new Date();
+    console.log(this.date.getDate());
+    this.estimatedDate=this.date.setDate(
+      this.date.getDate()+4
+    )
+    this.deliveryDate=formatDate(this.estimatedDate,'dd-MMM-yyyy','en-US','+0530');
     this.storeparse=sessionStorage.getItem('orderpage1');
     this.useval=JSON.parse(this.storeparse);
     this.vname=this.useval.varients[0].vname.split(' ').join("");
@@ -48,24 +69,51 @@ export class OrderpageComponent implements OnInit {
     this.path2=this.path1[1].split('.png');
     this.colorindex=this.path2[0];
     sessionStorage.setItem('varient_Color',this.colorindex);
+    this.Exchangeoffer=sessionStorage.getItem('ExchangeValue');
+    this.Exchangeoffer=parseInt(this.Exchangeoffer);
     // console.log(this.vname);
     // console.log(this.useval);
     this.spec=this.useval[this.vname];
-    sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
     // console.log(this.spec);
+    this.parseOldValue=sessionStorage.getItem('ExchangeValue');
+    this.OldVehicleDetails=JSON.parse(this.parseOldValue);
+    this.usePriceValue=this.spec[0].price;
+    this.userLocalPrice=parseInt(this.usePriceValue);
+    this.exShowroomPrice=this.userLocalPrice-5000;
+    console.log(this.userLocalPrice);
+    if(this.parseOldValue && sessionStorage.getItem('oldVehicleDetails')){
+      this.price=parseInt(this.spec[0].price)-parseInt(this.parseOldValue);
+      this.price=this.price;
+      let spec={
+        battery:this.spec[0].battery,
+        price:this.price,
+        range:this.spec[0].range,
+        topspeed:this.spec[0].topspeed
+      }
+      sessionStorage.setItem('Spec',JSON.stringify(spec));
+      console.log(spec);
+    }
+    else{
+    sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
     this.price=this.spec[0].price;
+    this.price=parseInt(this.price);
+    }
     this.varients=this.useval.varients;
     sessionStorage.setItem('varient_name',this.varients[0].vname);
     this.loop=this.useval.div;
     sessionStorage.setItem('varientindex',"0");
     sessionStorage.setItem('index',"0")
-    // console.log(this.div);
-
-
-    // this.div=document.getElementById("var0");
-    // this.div.style.background='red'
   }
 
+  //These blocks are used to show and hide the content
+  hidePopUp(){
+    this.showPopUp=false;
+  }
+  showVarientPrice(){
+    this.showPopUp=true;
+  }
+
+  //checkbox for terms and conditions
   checked(e:any){
     console.log("works");
     if(this.spec[0]){
@@ -76,9 +124,9 @@ export class OrderpageComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  //varient or model selection
   varient(ind:any,vname:any){
-    // this.vname=this.useval.varients[ind].vname.split(' ').join("");
-    // console.log(this.vname);
     sessionStorage.setItem('varient_name',vname);
     this.boolstatus=false;
     this.show1=sessionStorage.getItem('varientindex');
@@ -88,19 +136,40 @@ export class OrderpageComponent implements OnInit {
     this.show2.style.background='white';
     this.use=sessionStorage.getItem('orderpage1');
     this.usestore=JSON.parse(this.use);
-    // console.log(this.usestore);
     this.split1=vname.split(" ");
     this.split2=this.split1.join("");
-    // console.log(this.split2);
     this.spec=this.usestore[this.split2];
-    sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
-    // console.log(this.spec);
+    
     this.price=this.spec[0].price;
+      if(this.parseOldValue && sessionStorage.getItem('oldVehicleDetails')){
+        this.price=parseInt(this.spec[0].price)-parseInt(this.parseOldValue);
+        this.price=this.price;
+        this.usePriceValue=this.spec[0].price;
+        this.userLocalPrice=parseInt(this.usePriceValue);
+        this.exShowroomPrice=this.userLocalPrice-5000;
+        let specchange={
+        battery:this.spec[0].battery,
+        price:this.price,
+        range:this.spec[0].range,
+        topspeed:this.spec[0].topspeed
+        }
+        sessionStorage.setItem('Spec',JSON.stringify(specchange));
+        console.log(this.price);
+      }
+      else{
+        this.price=this.spec[0].price;
+        this.price=parseInt(this.price);
+        sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
+        this.userLocalPrice=parseInt(this.usePriceValue);
+        this.exShowroomPrice=this.userLocalPrice-5000;
+      }
     this.show=document.getElementById("state"+ind);
     this.show.style.background='#EADDCA';
     this.show.style.border='1px solid green';
     sessionStorage.setItem('varientindex',ind);
   }
+
+  //  used for color change of vehicle
   colorchange(index:any,color:any){
     this.colorchgpath=this.useval.varients[0].vname;
     this.imgchange=document.getElementById("changeimg");
@@ -130,12 +199,10 @@ export class OrderpageComponent implements OnInit {
     this.imgchange.src=this.useval.displayimg[index].img;
     sessionStorage.setItem('varient_image',this.imgchange.src);
   }
+
+  //used for selecting the specifications from the model
   specifications(h:any){
     this.range=false;
-    // this.vname=this.useval.varients[h].vname.split(' ').join("");
-    // this.spec=this.useval[this.vname];
-    // console.log(this.spec);
-    // console.log(this.spec[h]);
     sessionStorage.setItem('Spec',JSON.stringify(this.spec[h]));
     this.price=this.spec[h].price;
     this.spec1=localStorage.getItem('specification');
@@ -146,9 +213,6 @@ export class OrderpageComponent implements OnInit {
     this.specselect.style.background='white';
    this.border=this.specselect.style.border='2px solid green';
    console.log(this.border);
-    // if(this.specselect.style.border=='2px solid green'){
-
-    // }
     localStorage.setItem('specification',h);
   }
 

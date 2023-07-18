@@ -55,7 +55,7 @@ export class FillbookdetailsService {
     this.bookingDate=formatDate(this.getTime,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
 
     this.deliveryDate=this.orderDate.setMinutes(
-      this.orderDate.getMinutes()+15
+      this.orderDate.getMinutes()+2
     )
 
     this.formatDeliveryDate=formatDate(this.deliveryDate,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
@@ -81,6 +81,7 @@ export class FillbookdetailsService {
       topspeed:this.parseDetails.topspeed,
       price:this.parseDetails.price,
       bookingdate:this.bookingDate,
+      onlinepaidamount:this.parseDetails.onlinepaidamount,
       deliveryDate:this.formatDeliveryDate,
       day:this.parseDetails.day,
       State:this.parseDetails.State,
@@ -115,6 +116,7 @@ export class FillbookdetailsService {
           console.log(z);
           this.route.navigateByUrl("");
           this.orderInterval.getTime(this.formateDateset);
+          this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
         });
         }
         else{
@@ -123,6 +125,7 @@ export class FillbookdetailsService {
           console.log("patched");
           this.route.navigateByUrl("");
           this.orderInterval.getTime(this.formateDateset);
+          this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
         })
       }
       }

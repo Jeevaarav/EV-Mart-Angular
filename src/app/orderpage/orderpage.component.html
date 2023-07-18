@@ -1,9 +1,17 @@
+<!-- 
+Description:This component is used for showcasing the products specifications and color.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 30-04-2023
+Reviewed by: Nil
+-->
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <!------------------------------ display color of vehicle  --------------------->
   <div class="main">
     <div class="displayimg">
       <img src="{{showcase}}" alt="display1" id="changeimg">
@@ -18,7 +26,9 @@
      </div>
     </div>
   </div>
+  <!------------------------------ display color of vehicle  --------------------->
 
+  <!------------------------------ display model of vehicle  --------------------->
   <div class="varients">
    <div class="choose"> <p>Choose Model and Varients</p></div>
     <div class="display">
@@ -43,12 +53,12 @@
       </div>
       </div>
       <div class="delivery">
-        <p>Estimated delivery by 14th July 2023</p>
+        <p>Estimated delivery by {{deliveryDate}}</p>
       </div>
     </div>
   </div>
   <div class="evenspec">
-   <a routerLink="/offers/exchange"> <img src="../../assets/EV mart/Poster offer.png" alt="Exchange offer" title="Exchange offer"></a>
+   <a routerLink="/exchange"> <img src="../../assets/EV mart/Poster offer.png" alt="Exchange offer" title="Exchange offer"></a>
   </div>
   <div class="checkflex">
     <input type="checkbox" class="check" (click)="checked($event)">
@@ -56,14 +66,47 @@
   </div>
   </div>
     </div>
+    <!------------------------------ display model of vehicle  --------------------->
+
+    <!------------------------------ Booking vehicle  --------------------->
     <div class="continue">
       <div class="switch">
         <p>#Switch to Electric</p>
       </div>
       <div class="conflex">
-      <div><h3>₹ {{price}}</h3></div>
+      <div><h3>{{price | currency:"INR":"symbol":"1.0-0"}}<i class="fa-solid fa-circle-info" (click)="showVarientPrice()"></i></h3></div>
       <a routerLink="/orderpage/revieworder"><div><button class="btncon" [disabled]="!check">Continue</button></div></a>
     </div>
     </div>
   </div>
+      <!------------------------------ Booking vehicle  --------------------->
+
+      <!------------------------------ popup for price tag --------------------->
+  <div class="price-details" *ngIf="showPopUp">
+    <div class="price-details__showprice">
+      <div><p>OLA S1 Pro</p></div>
+      <div class="price-pipe"><p>{{userLocalPrice | currency:"INR":"symbol":"1.0-0"}}</p></div>
+    </div> 
+    <div class="price-box">
+      <div class="price-list">
+        <div><p>Effective ex-showroom</p></div>
+        <div class="price-pipe"><p>{{exShowroomPrice | currency:'INR':"symbol":'1.0-0'}}</p></div>   
+      </div>
+     
+      <div class="varient-price">
+        <div> <p>Ola S1 Pro (On road)</p></div>
+        <div class="price-pipe"><p>{{userLocalPrice | currency:'INR':"symbol":'1.0-0'}}</p></div>
+      </div>
+      <div class="varient-price">
+        <div><p>Exchange Value</p></div>
+        <div class="exchange-offer price-pipe"><p >-{{Exchangeoffer | currency:"INR":"symbol":'1.0-0'}}</p></div>
+      </div>
+      
+    </div>
+    <div class="got-it" (click)="hidePopUp()">
+      <button>Got it</button>
+    </div>
+    
+  </div>
+      <!------------------------------ popup for price tag --------------------->
 </body>

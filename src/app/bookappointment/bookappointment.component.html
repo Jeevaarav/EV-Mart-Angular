@@ -1,3 +1,10 @@
+<!-- 
+Description:This component is used for book for the old vehicle exchange with electric vehicle
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 19-04-2023
+Reviewed by: Nil
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +16,26 @@
 </head>
 
 <body>
+  <!------------- Check the Pincode for the availability of center ------------>
   <section class="appoint">
     <div>
       <img src="../../assets/EV mart/Video tag.gif" alt="Exchange" class="videoimg">
     </div>
     <form class="pin-code" [formGroup]="Pincode" (ngSubmit)="Pincode.valid && getPincode()">
       <a routerLink="/offers"><i class="fa-solid fa-arrow-left"></i></a>
-      <div><h2>Enter your Pincode</h2></div>
-      <div><p>Please enter your PIN code as per your registration address proof and check whether online exchange is available at your doorsteps.</p></div>
       <div>
-        <input type="tel" placeholder="Pincode" class="box" formControlName="Pincode" maxlength="6" #pincode (keyup)="searchPincode(pincode.value)">
+        <h2>Enter your Pincode</h2>
+      </div>
+      <div>
+        <p>Please enter your PIN code as per your registration address proof and check whether online exchange is
+          available at your doorsteps.</p>
+      </div>
+      <div>
+        <input type="tel" placeholder="Pincode" class="box" formControlName="Pincode" maxlength="6" #pincode
+          (keyup)="searchPincode(pincode.value)">
         <div></div>
-        <small *ngIf="Pincode.controls['Pincode'].errors?.['required'] && Pincode.controls['Pincode'].dirty">Pincode is required</small>
+        <small *ngIf="Pincode.controls['Pincode'].errors?.['required'] && Pincode.controls['Pincode'].dirty">Pincode is
+          required</small>
         <small *ngIf="Pincode.controls['Pincode'].errors?.['pattern']">Enter Proper Pincode</small>
         <small class="show-pin">{{showPin}}</small>
       </div>
@@ -29,5 +44,7 @@
       </div>
     </form>
   </section>
+  <!------------- Check the Pincode for the availability of center ------------>
 </body>
+
 </html>

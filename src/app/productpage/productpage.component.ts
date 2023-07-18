@@ -13,13 +13,14 @@ import { HttpClient } from '@angular/common/http';
 export class ProductpageComponent {
   vehdetails:any;
 constructor(private vehservice:AdminService,private book:OrderbookingService,private login:LogincredentialsService){
+  //count and display the vehicles of brand
   this.vehservice.countread().subscribe(data=>{
     this.vehdetails=data;
     console.log(this.vehdetails);
-    console.log("Jeeva");
   })
 }
 
+//redirect the particular brand varient with information
 order(order:any){
   this.book.productpage(order);
 }

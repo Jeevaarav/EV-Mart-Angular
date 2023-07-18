@@ -16,6 +16,8 @@ fact6:boolean=false;
 fact7:boolean=false;
 fact8:boolean=false;
 bullet:boolean=false;
+
+  //These blocks are used to hide and show the description for the particular clicked content
     openfact(){
       this.fact=true;
     }

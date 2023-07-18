@@ -18,6 +18,10 @@
     text-transform:capitalize;
     transition: all .2s linear;
 }
+body{
+  background-image: url("../../assets/EV mart/maintenance.png");
+  background-size: 400px;
+}
 .book{
     display: inline-block;
     margin-top: 1rem;

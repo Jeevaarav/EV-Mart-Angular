@@ -1,9 +1,17 @@
+<!-- 
+Description:This component is used for admin service page for pending and accepting
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 01-05-2023
+Reviewed by: Nil
+-->
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
   integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <!------------------- header  -------------------->
   <header class="header">
     <div>
         <div class="head">
@@ -14,6 +22,9 @@
     <button class="book1" (click)="logout()">Logout</button>
 </div>
 </header>
+<!------------------- header  -------------------->
+
+<!------------------- service request pending  -------------------->
   <section class="section">
     <div class="flex">
       <div class="category">
@@ -42,7 +53,9 @@
         </div>
         </div>
         </div>
+<!------------------- service request pending  -------------------->
 
+<!------------------- service accepted  -------------------->
         <div class="done">
           <div class="Accepted">
             <h1>Service request Accepted</h1>
@@ -64,16 +77,8 @@
         </div>
         </div>
         </div>
-        <!-- <div class="maintain" *ngFor="let serv of evmartserv">
-         <a routerLink="/admin/adminserv/adminform">
-          <div class="vehicle" (click)="details(this.serv)" id="vehicle" #vehicle>
-            <p>{{serv.email}}<i class="fa-solid fa-chevron-right fa-beat"></i></p>
-            <h5>{{serv.problem}}</h5>
-            <h5><b>Date Alloted:</b> {{serv.Date}}</h5><h5><b>Time slot:</b> {{serv.Time}}</h5>
-          </div>
-        </a>
-        </div> -->
       </div>
     </div>
   </section>
+  <!------------------- service accepted  -------------------->
 </body>

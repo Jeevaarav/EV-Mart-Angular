@@ -1,49 +1,80 @@
+<!-- 
+Description:This component is the footer used through out the website
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 04-04-2023
+Reviewed by: Nil
+-->
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../slideshow.js"></script>
 </head>
+<!--------------------------- Subscription -------------------->
 <section class="foot">
   <footer class="footer">
     <div>
       <p>Subscribe to get updated</p>
       <form [formGroup]="subscribe" (ngSubmit)="subscribe.valid && store()" class="subform">
-      <input type="text" placeholder="mail address" class="box" formControlName="mail" name="mail">
-      <div *ngIf="subscribe.controls['mail'].invalid && subscribe.controls['mail'].dirty"></div>
-    <div *ngIf="subenter"><small *ngIf="subscribe.controls['mail'].errors?.['required']">Please enter mail ID</small></div>
-      <div *ngIf="subvalid"><small *ngIf="subscribe.controls['mail'].errors?.['pattern']">Please enter proper mail ID</small></div>
-      <div *ngIf="thanks"><small *ngIf="subscribe.controls['mail'].valid" class="success"><i class="fa-solid fa-circle-check fa-bounce"></i>Thanks for the subscription</small></div>
-      <button class="book" type="submit" (click)="substore()">Subscribe</button>
-    </form>
+        <input type="text" placeholder="mail address" class="box" formControlName="mail" name="mail">
+        <div *ngIf="subscribe.controls['mail'].invalid && subscribe.controls['mail'].dirty"></div>
+        <div *ngIf="subenter"><small *ngIf="subscribe.controls['mail'].errors?.['required']">Please enter mail
+            ID</small></div>
+        <div *ngIf="subvalid"><small *ngIf="subscribe.controls['mail'].errors?.['pattern']">Please enter proper mail
+            ID</small></div>
+        <div *ngIf="thanks"><small *ngIf="subscribe.controls['mail'].valid" class="success"><i
+              class="fa-solid fa-circle-check fa-bounce"></i>Thanks for the subscription</small></div>
+        <button class="book" type="submit" (click)="substore()">Subscribe</button>
+      </form>
     </div>
+    <!--------------------------- Subscription -------------------->
+
+    <!--------------------------- Contact Details -------------------->
     <div class="box1">
       <h3>contact details</h3>
-          <a href="#"><i class="fas fa-phone"></i>+91-7904925991</a>
-          <a href="#"><i class="fas fa-phone"></i>+91-6374505526</a>
-          <a href="mailto:jeevaaravinth2001@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i>jeevaaravinth2001@gmail.com</a>
-          <a href="mailto:electricveemart@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i>electricveemart@gmail.com</a>
-  </div>
-  <div class="box2">
-    <h3>Follow us</h3>
-        <a href="https://www.facebook.com/profile.php?id=100090281825277&sk=about" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a>
-        <a href="https://twitter.com/EVMart2023" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
-        <a href="https://www.instagram.com/ev_mart2022" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-        <a href="https://www.linkedin.com/in/ev-mart-526859265/" target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a>
-        <a href= "mailto:jeevaaravinth2001@gmail.com" target="_blank"></a>
-</div>
-<div class="aboutus">
-  <h3>About Us</h3>
-  <p>Electric vehicles are booming up in the recent days, We provide a service to increase the switch over ratio from Petrol to Electric<a routerLink="About"> know more......</a></p>
-</div>
-  </footer>
- </section>
+      <a href="#"><i class="fas fa-phone"></i>+91-7904925991</a>
+      <a href="#"><i class="fas fa-phone"></i>+91-6374505526</a>
+      <a href="mailto:jeevaaravinth2001@gmail.com" target="_blank"><i
+          class="fa-solid fa-envelope"></i>jeevaaravinth2001@gmail.com</a>
+      <a href="mailto:electricveemart@gmail.com" target="_blank"><i
+          class="fa-solid fa-envelope"></i>electricveemart@gmail.com</a>
+    </div>
+    <!--------------------------- Contact Details -------------------->
 
- <section class="copyrights">
+    <!--------------------------- Social Medias -------------------->
+    <div class="box2">
+      <h3>Follow us</h3>
+      <a href="https://www.facebook.com/profile.php?id=100090281825277&sk=about" target="_blank"><i
+          class="fab fa-facebook-f"></i>Facebook</a>
+      <a href="https://twitter.com/EVMart2023" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
+      <a href="https://www.instagram.com/ev_mart2022" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+      <a href="https://www.linkedin.com/in/ev-mart-526859265/" target="_blank"><i
+          class="fab fa-linkedin"></i>Linkedin</a>
+      <a href="mailto:jeevaaravinth2001@gmail.com" target="_blank"></a>
+    </div>
+    <!--------------------------- Social Medias -------------------->
+
+    <!--------------------------- About us -------------------->
+    <div class="aboutus">
+      <h3>About Us</h3>
+      <p>Electric vehicles are booming up in the recent days, We provide a service to increase the switch over ratio
+        from Petrol to Electric<a routerLink="About"> know more......</a></p>
+    </div>
+    <!--------------------------- About us -------------------->
+  </footer>
+</section>
+
+<!--------------------------- Copyrights -------------------->
+<section class="copyrights">
   <div>
     <p>copyright &copy; 2023 | EV Mart</p>
   </div>
   <div>
     <p>Designed by Jeeva Aravinth J V</p>
   </div>
- </section>
+</section>
+<!--------------------------- Copyrights -------------------->

@@ -1,129 +1,201 @@
+<!-- 
+Description:This component is used for getting the data from user about their old vehicles
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 13-07-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Old Vehicle Details</title>
 </head>
+
 <body>
+  <!-------------------- Exchange form for old vehicles --------------------------->
   <section class="appoint">
     <div>
       <img src="../../assets/EV mart/Video tag.gif" alt="Exchange" class="videoimg">
     </div>
-    <form class="old-vehicle"  [formGroup]="oldvehicledetails" (ngSubmit)="oldvehicledetails.valid && getOldVehicledetails()">
-     <div class="book-appoint"> <a routerLink="/offers"><i class="fa-solid fa-arrow-left"></i></a></div>
-     <div><h3>Ready to ditch your Petrol 2-wheeler?</h3></div>
-     <div><h4>Fill in the details of your vehicle to avail exchange value of up to ₹45,000*.</h4></div>
-     <div><a (click)="howWorks()">How it works ?</a></div>
-     <div>
-      <select name="" id="" class="box" formControlName="Brand" #oldvehiclebrand (change)="oldVehicleBrand(oldvehiclebrand.value)">
-        <option value="" selected disabled >Brand</option>
-        <option value="{{oldvehicle.Brand}}" *ngFor="let oldvehicle of Brand">{{oldvehicle.Brand}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Brand'].errors?.['required'] && oldvehicledetails.controls['Brand'].touched">Please Select Old Vehicle Brandname</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Model">
-        <option value="" selected disabled>Model</option>
-        <option value="{{modelname.model1}}" *ngFor="let modelname of modelName">{{modelname.model1}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Model'].errors?.['required'] && oldvehicledetails.controls['Model'].touched">First, Please Select Old Vehicle Brandname</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Varient">
-        <option value="" selected disabled>Varient</option>
-        <option value="all">all</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Varient'].errors?.['required'] && oldvehicledetails.controls['Varient'].touched">First, Please Select Old Vehicle Brandname</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Color">
-        <option value="" selected disabled>Color</option>
-        <option value="{{vehiclecolor.color}}" *ngFor="let vehiclecolor of vehicleColor">{{vehiclecolor.color}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Color'].errors?.['required'] && oldvehicledetails.controls['Color'].touched">Please Select Old Vehicle Color</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Yearofmfr">
-        <option value="" selected disabled>Year of Manufacture</option>
-        <option value="{{year.year}}" *ngFor="let year of yearOfManufacture">{{year.year}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Yearofmfr'].errors?.['required'] && oldvehicledetails.controls['Yearofmfr'].touched">Please Select Year of manufacture</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Kilometer">
-        <option value="" disabled selected>Kilometer Range</option>
-        <option value="{{kms.kms}}" *ngFor="let kms of kilometerOfVehicle">{{kms.kms}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Kilometer'].errors?.['required'] && oldvehicledetails.controls['Kilometer'].touched">Please Select Old Vehicle KMs</small>
-     </div>
-     <div>
-      <input type="text" class="box" placeholder="Registration number" formControlName="Registrationnum" maxlength="10">
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Registrationnum'].errors?.['required'] && oldvehicledetails.controls['Registrationnum'].touched">Please enter Registration number</small>
-      <small *ngIf="oldvehicledetails.controls['Registrationnum'].errors?.['pattern']">Provide proper Registration number</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Loan">
-        <option value="" disabled selected>Vehicle Loan Status</option>
-        <option value="{{loan.status}}" *ngFor="let loan of loanStatus">{{loan.status}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Loan'].errors?.['required'] && oldvehicledetails.controls['Loan'].touched">Please Select Old Vehicle Loan</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Vehiclecondition">
-        <option value="" disabled selected>Vehicle Condition</option>
-        <option value="{{condition.status}}" *ngFor="let condition of vehicleCondition">{{condition.status}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Vehiclecondition'].errors?.['required'] && oldvehicledetails.controls['Vehiclecondition'].touched">Please Select Old Vehicle Condition</small>
-     </div>
-     <div>
-      <input type="text" class="box" placeholder="Owner's Name" formControlName="Ownername">
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Ownername'].errors?.['required'] && oldvehicledetails.controls['Ownername'].touched">Please enter Vehicle Owner name</small>
-      <small *ngIf="oldvehicledetails.controls['Ownername'].errors?.['pattern']">Provide proper Vehicle Owner name</small>
-     </div>
-     <div>
-      <select name="" id="" class="box" formControlName="Ownership">
-        <option value="" selected disabled>Ownership</option>
-        <option value="{{owner.status}}" *ngFor="let owner of ownerShip">{{owner.status}}</option>
-      </select>
-      <div></div>
-      <small *ngIf="oldvehicledetails.controls['Ownership'].errors?.['required'] && oldvehicledetails.controls['Ownership'].touched">Please Select Old Vehicle ownership</small>
-     </div>
-     <div><button class="checkvalue" [disabled]="!oldvehicledetails.valid">Check Exchange Value</button></div>
+    <form class="old-vehicle" [formGroup]="oldvehicledetails"
+      (ngSubmit)="oldvehicledetails.valid && getOldVehicledetails()">
+      <div class="book-appoint"> <a routerLink="/offers"><i class="fa-solid fa-arrow-left"></i></a></div>
+      <div>
+        <h3>Ready to ditch your Petrol 2-wheeler?</h3>
+      </div>
+      <div>
+        <h4>Fill in the details of your vehicle to avail exchange value of up to ₹45,000*.</h4>
+      </div>
+      <div><a (click)="howWorks()">How it works ?</a></div>
+      <div>
+        <select name="" id="" class="box" formControlName="Brand" #oldvehiclebrand
+          (change)="oldVehicleBrand(oldvehiclebrand.value)">
+          <option value="" selected disabled>Brand</option>
+          <option value="{{oldvehicle.Brand}}" *ngFor="let oldvehicle of Brand">{{oldvehicle.Brand}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Brand'].errors?.['required'] && oldvehicledetails.controls['Brand'].touched">Please
+          Select Old Vehicle Brandname</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Model">
+          <option value="" selected disabled>Model</option>
+          <option value="{{modelname.model1}}" *ngFor="let modelname of modelName">{{modelname.model1}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Model'].errors?.['required'] && oldvehicledetails.controls['Model'].touched">First,
+          Please Select Old Vehicle Brandname</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Varient">
+          <option value="" selected disabled>Varient</option>
+          <option value="all">all</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Varient'].errors?.['required'] && oldvehicledetails.controls['Varient'].touched">First,
+          Please Select Old Vehicle Brandname</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Color">
+          <option value="" selected disabled>Color</option>
+          <option value="{{vehiclecolor.color}}" *ngFor="let vehiclecolor of vehicleColor">{{vehiclecolor.color}}
+          </option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Color'].errors?.['required'] && oldvehicledetails.controls['Color'].touched">Please
+          Select Old Vehicle Color</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Yearofmfr">
+          <option value="" selected disabled>Year of Manufacture</option>
+          <option value="{{year.year}}" *ngFor="let year of yearOfManufacture">{{year.year}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Yearofmfr'].errors?.['required'] && oldvehicledetails.controls['Yearofmfr'].touched">Please
+          Select Year of manufacture</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Kilometer">
+          <option value="" disabled selected>Kilometer Range</option>
+          <option value="{{kms.kms}}" *ngFor="let kms of kilometerOfVehicle">{{kms.kms}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Kilometer'].errors?.['required'] && oldvehicledetails.controls['Kilometer'].touched">Please
+          Select Old Vehicle KMs</small>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Registration number" formControlName="Registrationnum"
+          maxlength="10">
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Registrationnum'].errors?.['required'] && oldvehicledetails.controls['Registrationnum'].touched">Please
+          enter Registration number</small>
+        <small *ngIf="oldvehicledetails.controls['Registrationnum'].errors?.['pattern']">Provide proper Registration
+          number</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Loan" #loanStatus1
+          (change)="loanStatusChange(loanStatus1.value)">
+          <option value="" disabled selected>Vehicle Loan Status</option>
+          <option value="{{loan.status}}" *ngFor="let loan of loanStatus">{{loan.status}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Loan'].errors?.['required'] && oldvehicledetails.controls['Loan'].touched">Please
+          Select Old Vehicle Loan</small>
+        <small>{{loanPending}}</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Vehiclecondition" #ownerStatus
+          (change)="ownerShipstatus(ownerStatus.value)">
+          <option value="" disabled selected>Vehicle Condition</option>
+          <option value="{{condition.status}}" *ngFor="let condition of vehicleCondition">{{condition.status}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Vehiclecondition'].errors?.['required'] && oldvehicledetails.controls['Vehiclecondition'].touched">Please
+          Select Old Vehicle Condition</small>
+        <small>{{ownerShipvehicle}}</small>
+      </div>
+      <div>
+        <input type="text" class="box" placeholder="Owner's Name" formControlName="Ownername">
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Ownername'].errors?.['required'] && oldvehicledetails.controls['Ownername'].touched">Please
+          enter Vehicle Owner name</small>
+        <small *ngIf="oldvehicledetails.controls['Ownername'].errors?.['pattern']">Provide proper Vehicle Owner
+          name</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" formControlName="Ownership">
+          <option value="" selected disabled>Ownership</option>
+          <option value="{{owner.status}}" *ngFor="let owner of ownerShip">{{owner.status}}</option>
+        </select>
+        <div></div>
+        <small
+          *ngIf="oldvehicledetails.controls['Ownership'].errors?.['required'] && oldvehicledetails.controls['Ownership'].touched">Please
+          Select Old Vehicle ownership</small>
+      </div>
+      <div><button class="checkvalue" [disabled]="!oldvehicledetails.valid">Check Exchange Value</button></div>
     </form>
     <div class="pop-up-msg" *ngIf="showFAQ">
-        <div class="pop-notify">
-          <div><h1>FAQ's</h1></div>
-          <div><h1>How does the exchange program work?</h1></div>
-          <div>
-            <ol>
-              <li>The exchange program is facilitated by EV Mart's exchange partners on behalf of EV Mart. Please refer to the terms and conditions related to the exchange process.</li>
-              <li>Once you provide the details of your old vehicle via the EV Mart digital purchase journey, an exchange value for your vehicle will be determined.</li>
-              <li>You can confirm to apply the determined exchange value as discount and make payment of the discounted price to confirm your order.</li>
-              <li>The exchange partner’s team will coordinate with you to inspect the vehicle at your premises or the address provided by you.</li>
-              <li>If the inspection is successful, you have to submit the original documents pertaining to your old vehicle. Post the successful verification of documents, your vehicle will be picked up.</li>
-            </ol>
-          </div>
-          <div><h1>Which vehicles are eligible for exchange?</h1></div>
-          <div><p>The vehicle models allowed for exchange are configured in the EV Mart digital purchase journey. You will be able to see the applicable models based on the pincode of registration.</p></div>
-          <div><h1>What documents need to be submitted?</h1></div>
-          <div><ol>
-            <li>The Customer must ensure that the details provided at the time of making the purchase with exchange (make, model, variant, manufacturing year, km driven, RC number) match the details of the vehicle at the time of inspection.</li>
-            <li>The Customer must also provide the original registration certificate, valid insurance document, picture of the exchange vehicle, KYC documents of the registered owner of the vehicle and any other document requested by the exchange partner’s team</li>
-            <li>For vehicles purchased on loan, the loan must be cleared and a valid NOC (No Objection Certificate) from the financier is needed to remove hypothecation.</li>
-            <li> The customer must provide a surrender letter for the Exchange Vehicle and sign all the relevant documents/forms required under law for the transfer of the ownership / removal of hypothecation as part of the exchange process under the applicable law.</li>
-          </ol></div>
+      <div class="pop-notify">
+        <div>
+          <h1>FAQ's</h1>
         </div>
-        <button class="book" (click)="closePopup()">Got it</button>
+        <div>
+          <h1>How does the exchange program work?</h1>
+        </div>
+        <div>
+          <ol>
+            <li>The exchange program is facilitated by EV Mart's exchange partners on behalf of EV Mart. Please refer to
+              the terms and conditions related to the exchange process.</li>
+            <li>Once you provide the details of your old vehicle via the EV Mart digital purchase journey, an exchange
+              value for your vehicle will be determined.</li>
+            <li>You can confirm to apply the determined exchange value as discount and make payment of the discounted
+              price to confirm your order.</li>
+            <li>The exchange partner’s team will coordinate with you to inspect the vehicle at your premises or the
+              address provided by you.</li>
+            <li>If the inspection is successful, you have to submit the original documents pertaining to your old
+              vehicle. Post the successful verification of documents, your vehicle will be picked up.</li>
+          </ol>
+        </div>
+        <div>
+          <h1>Which vehicles are eligible for exchange?</h1>
+        </div>
+        <div>
+          <p>The vehicle models allowed for exchange are configured in the EV Mart digital purchase journey. You will be
+            able to see the applicable models based on the pincode of registration.</p>
+        </div>
+        <div>
+          <h1>What documents need to be submitted?</h1>
+        </div>
+        <div>
+          <ol>
+            <li>The Customer must ensure that the details provided at the time of making the purchase with exchange
+              (make, model, variant, manufacturing year, km driven, RC number) match the details of the vehicle at the
+              time of inspection.</li>
+            <li>The Customer must also provide the original registration certificate, valid insurance document, picture
+              of the exchange vehicle, KYC documents of the registered owner of the vehicle and any other document
+              requested by the exchange partner’s team</li>
+            <li>For vehicles purchased on loan, the loan must be cleared and a valid NOC (No Objection Certificate) from
+              the financier is needed to remove hypothecation.</li>
+            <li> The customer must provide a surrender letter for the Exchange Vehicle and sign all the relevant
+              documents/forms required under law for the transfer of the ownership / removal of hypothecation as part of
+              the exchange process under the applicable law.</li>
+          </ol>
+        </div>
+      </div>
+      <button class="book" (click)="closePopup()">Got it</button>
     </div>
   </section>
+  <!-------------------- Exchange form for old vehicles --------------------------->
 </body>

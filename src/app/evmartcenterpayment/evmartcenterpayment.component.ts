@@ -14,7 +14,8 @@ export class EvmartcenterpaymentComponent {
   constructor(){
     this.orderedVehicleImage=sessionStorage.getItem('varient_image');
     this.orderedVehicleName=sessionStorage.getItem('varient_name');
-
+   
+    //generation of random code for the order payment at EV Mart center
     for(var i=0;i<5;i++){
       const randomCode=Math.floor(Math.random()*this.uniqueCode.length);
       const randomIndex=this.uniqueCode.charAt(randomCode);

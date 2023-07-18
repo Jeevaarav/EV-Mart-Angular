@@ -1,67 +1,95 @@
+<!-- 
+Description:This component is used for profile page to change the address by the user
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 03-07-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Book Appointment</title>
 </head>
+
 <body>
   <div class="main">
+    <!----------------------- address display for the user if already registered or add the address  ------------------->
     <div class="address" *ngIf="alreadyAdded">
       <div class="newone">
         <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div><h3>Delivery Address</h3></div>
-      </div>
-        <div class="button">
-          <button class="book" (click)="showManageaddress()">Add Address</button>
+        <div>
+          <h3>Delivery Address</h3>
         </div>
+      </div>
+      <div class="button">
+        <button class="book" (click)="showManageaddress()">Add Address</button>
+      </div>
     </div>
+    <!----------------------- address display for the user if already registered or add the address  ------------------->
+
+    <!----------------------- address display for the user if already registered or add the address  ------------------->
     <div class="newaddress" *ngIf="newAddress">
       <div class="newone">
         <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div><h5>D.No.{{printAddress.doorno}} , {{printAddress.fulladdress}} - {{printAddress.pincode}}</h5>
+        <div>
+          <h5>D.No.{{printAddress.doorno}} , {{printAddress.fulladdress}} - {{printAddress.pincode}}</h5>
           <h5>Landmark- {{printAddress.landmark}}</h5>
         </div>
       </div>
-        <div class="modifybutton">
-          <div><button class="book" (click)="editAddress()">Edit Address</button></div>
-        </div>
+      <div class="modifybutton">
+        <div><button class="book" (click)="editAddress()">Edit Address</button></div>
+      </div>
     </div>
-      <div class="evMarteditprofile" *ngIf="editaddress">
-        <div class="rightBar">
-          <i class="fa-solid fa-xmark" (click)="closeAddress()"></i>
-          <p>Manage Address</p>
-          <form [formGroup]="manageaddress" (ngSubmit)="manageaddress.valid && addressDetails()">
-            <div class="addressinput">
+    <!----------------------- address display for the user if already registered or add the address  ------------------->
+
+    <!----------------------- edit address by the user by form  ------------------->
+    <div class="evMarteditprofile" *ngIf="editaddress">
+      <div class="rightBar">
+        <i class="fa-solid fa-xmark" (click)="closeAddress()"></i>
+        <p>Manage Address</p>
+        <form [formGroup]="manageaddress" (ngSubmit)="manageaddress.valid && addressDetails()">
+          <div class="addressinput">
             <label>Address</label>
             <textarea name="" id="" cols="30" rows="03" class="box1" formControlName="fulladdress"></textarea>
             <div></div>
-            <small *ngIf="manageaddress.controls['fulladdress'].errors?.['required'] && manageaddress.controls['fulladdress'].touched">Fill the Address</small>
+            <small
+              *ngIf="manageaddress.controls['fulladdress'].errors?.['required'] && manageaddress.controls['fulladdress'].touched">Fill
+              the Address</small>
             <small *ngIf="manageaddress.controls['fulladdress'].errors?.['minlength']">Provide Proper Address</small>
           </div>
           <div class="manageadd">
             <label>Door/Flat no. &nbsp;&nbsp;</label>
             <input type="tel" class="box" formControlName="doorno">
             <div></div>
-            <small *ngIf="manageaddress.controls['doorno'].errors?.['required'] && manageaddress.controls['doorno'].touched">Fill your Door/Flat No.</small>
+            <small
+              *ngIf="manageaddress.controls['doorno'].errors?.['required'] && manageaddress.controls['doorno'].touched">Fill
+              your Door/Flat No.</small>
             <small *ngIf="manageaddress.controls['doorno'].errors?.['pattern']">provide Door/Flat No. only</small>
           </div>
           <div class="manageadd">
             <label>Landmark &nbsp;&nbsp;</label>
             <input type="text" class="box" formControlName="landmark">
             <div></div>
-            <small *ngIf="manageaddress.controls['landmark'].errors?.['required'] && manageaddress.controls['landmark'].touched">Fill the Landmark</small>
+            <small
+              *ngIf="manageaddress.controls['landmark'].errors?.['required'] && manageaddress.controls['landmark'].touched">Fill
+              the Landmark</small>
             <small *ngIf="manageaddress.controls['landmark'].errors?.['minlength']">Provide Proper Landmark</small>
           </div>
           <div class="manageadd">
             <label>Pincode &nbsp;&nbsp;</label>
             <input type="tel" class="box" formControlName="pincode" name="pincode" maxlength="6">
             <div></div>
-            <small *ngIf="manageaddress.controls['pincode'].errors?.['required'] && manageaddress.controls['pincode'].touched">Enter your Pincode</small>
+            <small
+              *ngIf="manageaddress.controls['pincode'].errors?.['required'] && manageaddress.controls['pincode'].touched">Enter
+              your Pincode</small>
             <small *ngIf="manageaddress.controls['pincode'].errors?.['pattern']">Provide Proper Pincode</small>
           </div>
           <button class="evMartbtnupd" [disabled]="!manageaddress.valid">Save Address</button>
-          </form>
-        </div>
+        </form>
       </div>
-      </div>
+    </div>
+    <!----------------------- edit address by the user by form ------------------->
+  </div>
 </body>

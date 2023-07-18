@@ -1,3 +1,11 @@
+<!-- 
+Description:This component is used for cash on delivery for the customers to pay at EV Mart center
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 08-07-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -5,13 +13,14 @@
 </head>
 
 <body>
+  <!----------------------- Unique code generation and payment details  ----------------->
   <div class="payment-display">
     <div class="vehicle-image">
       <img src="{{orderedVehicleImage}}" alt="orderedVehicleImage" title="{{orderedVehicleName}}">
     </div>
     <div class="payment-heading">
       <div>
-       <a routerLink="/payment"> <i class="fa-solid fa-arrow-left"></i></a>
+        <a routerLink="/payment"> <i class="fa-solid fa-arrow-left"></i></a>
       </div>
       <div class="payment-price">
         <div>
@@ -26,22 +35,36 @@
       </div>
       <div class="customer-code">
         <div><img src="../../assets/EV mart/swiping card.png" alt="swipeimg" title="swipeimg"></div>
-        <div><h5>YOUR UNIQUE CODE</h5></div>
-        <div><h4>{{randomCode}}</h4></div>
+        <div>
+          <h5>YOUR UNIQUE CODE</h5>
+        </div>
+        <div>
+          <h4>{{randomCode}}</h4>
+        </div>
       </div>
       <div class="border-line"></div>
       <div class="steps-follow">
-        <div><small>1</small></div><div><p>Share this code with EV Mart champion</p></div>
+        <div><small>1</small></div>
+        <div>
+          <p>Share this code with EV Mart champion</p>
+        </div>
       </div>
       <div class="steps-follow">
-       <div> <small>2</small></div><div><p>Our brand champion will initiate your payment request</p></div>
+        <div> <small>2</small></div>
+        <div>
+          <p>Our brand champion will initiate your payment request</p>
+        </div>
       </div>
       <div class="steps-follow">
-        <div><small>3</small></div><div><p>Finally, champion update the payment status</p></div>
+        <div><small>3</small></div>
+        <div>
+          <p>Finally, champion update the payment status</p>
+        </div>
       </div>
       <div class="pay-button">
         <button>Payment Done</button>
       </div>
     </div>
   </div>
+  <!----------------------- Unique code generation and payment details  ----------------->
 </body>

@@ -13,12 +13,16 @@ import { Router } from '@angular/router';
 })
 export class ForgotnewComponent {
   inputmsg:any=this.forgot.inputval;
-  constructor(private forgot:ForgotService,private formbuilder:FormBuilder,private routes:Router){
-  }
+
+  constructor(private forgot:ForgotService,private formbuilder:FormBuilder,private routes:Router){}
+
+  //validators for forgotpassword entry point
   forgotnew=this.formbuilder.group({
     forpass:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]],
     confirmpass:['',Validators.required]
   });
+
+  //allow the user to change the password by validate with regsiter credentials
   changepass(a:any){
     console.log(this.forgotnew.value);
     this.forgot.changepassword(this.forgotnew.value,a);

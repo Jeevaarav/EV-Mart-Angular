@@ -1,8 +1,16 @@
+<!-- 
+Description:This component is used for displaying the offers
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 09-04-2023
+Reviewed by: Nil
+-->
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Offers</title>
 </head>
 <body>
+  <!--------------- exchange offers heading --------------------->
   <section class="offimg">
     <div>
       <h1>EV MART EXCHANGE PROGRAM</h1>
@@ -14,13 +22,16 @@
     <h1>Switch to Electric</h1>
   </div>
   </section>
+  <!--------------- exchange offers heading --------------------->
+
+    <!--------------- exchange offers and offered vehicles --------------------->
   <section class="displayoff">
     <div>
       <h1>Own the Vehicles with offers</h1>
     </div>
-    <div class="limitedoffer" >
+    <!-- <div class="limitedoffer" >
       <img src="../../assets/EV mart/Limitedoffers.png" alt="Limitedoffers" >
-    </div>
+    </div> -->
     <div class="grid">
       <div class="exchange-offer">
       <div>
@@ -35,29 +46,14 @@
       </div>
       <div>  <h4>{{offers.content}}</h4></div>
       <p class="validity">{{offers.validity}}</p>
+      <p>{{offers.time}}</p>
       <div class="know"><a href="{{offers.link}}">{{offers.button}}<i class="fa-solid fa-arrow-right"></i></a></div>
-      <div class="timer">
-        <h4> Revail offfer before countdown </h4>
-        <span id="days"> {{daysToDday}} </span>Day(s)
-        <span id="hours"> {{hoursToDday}} </span>Hrs
-        <span id="minutes"> {{minutesToDday}} </span>Min
-        <span id="seconds"> {{secondsToDday}} </span>S
-    </div>
       </div>
-      <!-- <div class="flex">
-        <div>
-        <img src="../../assets/EV mart/offer2.webp" alt="EV Mart Exchange" title="EV Mart Exchange"></div>
-       <div> <h4>Upgrade your ride - Get ₹2,000* as Exchange Bonus</h4></div>
-       <div class="know"><a routerLink="/offers/exchange">Know More<i class="fa-solid fa-motorcycle fa-shake"></i></a></div>
-      </div>
-      <div class="flex">
-        <div>
-        <img src="../../assets/EV mart/ather offer.webp" alt="Ather" title="Ather offer"></div>
-       <div> <h4>Get ₹5,000* off on the Ather 550</h4></div>
-       <div class="know"><a href="#">Know More<i class="fa-solid fa-motorcycle fa-shake"></i></a></div>
-      </div> -->
     </div>
   </section>
+  <!--------------- exchange offers and offered vehicles --------------------->
+
+  <!--------------- payment options --------------------->
   <section class="payment">
     <h1>Easy financing offers</h1>
     <div class="paygrid">
@@ -81,11 +77,10 @@
     </div>
   </div>
   </section>
+  <!--------------- payment options --------------------->
+
   <section class="displayslide" >
 
-  </section>
-  <section>
-    <app-footer></app-footer>
   </section>
 </body>
 <router-outlet></router-outlet>

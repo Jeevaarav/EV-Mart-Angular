@@ -22,6 +22,7 @@ export class ServiceadminComponent {
   serviceDone:any;
 
   constructor(private service:EvmartserviceService,private reply:AdminService,private route:Router,private http:HttpClient){
+    //retrieve service data
     this.service.retrieveserv().subscribe((data)=>{
       this.evmartserv=data;
       console.log(this.evmartserv.length);
@@ -39,6 +40,7 @@ export class ServiceadminComponent {
       }
     });
 
+    //accepted services data
     this.http.get<any>("http://localhost:3000/servicedone").subscribe((servicedone)=>{
       this.serviceDone=servicedone;
       console.log(this.serviceDone);
@@ -53,10 +55,14 @@ export class ServiceadminComponent {
     })
 
   }
+
+  //particular user service identification
   details(index:any){
     console.log(this.evmartserv[index]);
     sessionStorage.setItem('adminservicedetails',JSON.stringify(this.evmartserv[index]));
   }
+
+  //logout for admin
   logout(){
     alert("Are you sure want to logout");
     this.route.navigateByUrl('');

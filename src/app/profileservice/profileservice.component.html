@@ -1,1 +1,61 @@
-<p>profileservice works!</p>
+<!-- 
+Description:This component is used for showing the services pending and accepted in the profile page
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 06-07-2023
+Reviewed by: Nil
+-->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!---------------------- pending services  ----------------------->
+  <div class="pastordershown" *ngIf="pastOrderHeading"><p>Pending Services</p></div>
+  <div class="orderprofile" *ngIf="ordersEmpty">
+    <div><img src="../../assets/EV mart/serviceempty.gif" alt="emptygif" title="Order(S) empty"></div>
+    <div><p>No Pending Services</p></div>
+  </div>
+  <div class="main" *ngFor="let pastorder of customerServices;let i=index;" >
+    <div  class="inside-showorder" *ngIf="showPastOrders">
+    <div class="img" >
+    <img src="{{serviceVehicleImage}}" alt="">
+  </div>
+  <div class="details">
+    <p class="varient">{{pastorder.varient}}</p>
+    <p>Vehicle Number - {{pastorder.vehiclenumber}}</p>
+    <p>{{pastorder.category}}</p>
+    <p>Request Date - {{dateFormat}}</p>
+  </div>
+  <div><p class="delivered">Yet not accepted <i class="fa-solid fa-circle-xmark"></i></p></div>
+</div>
+  </div>
+  <div class="view-more" *ngIf="viewmorebtn"><a routerLink="/userService"><button class="book">View More</button></a></div>
+  <!---------------------- pending services  ----------------------->
+
+
+  <!---------------------- accepted services  ----------------------->
+  <div class="pastordershown" *ngIf="Accepted"><p>Accepted Services</p></div>
+  <div class="orderprofile" *ngIf="servicedoneempty">
+    <div><img src="../../assets/EV mart/serviceempty.gif" alt="emptygif" title="Order(S) empty"></div>
+    <div *ngIf="noaccepted"><p>No Accepted Services</p></div>
+    <div *ngIf="noservices"><p>No Services</p></div>
+  </div>
+  <div class="main" *ngFor="let servicesDone of serviceDone;let i=index;" >
+    <div  class="inside-showorder" *ngIf="showPastOrders">
+    <div class="img" >
+    <img src="{{serviceImage}}" alt="">
+  </div>
+  <div class="details">
+    <p class="varient">{{servicesDone.varient}}</p>
+    <p>Vehicle Number - {{servicesDone.vehicleno}}</p>
+    <p>{{servicesDone.category}}</p>
+    <p>Slot Date - {{serviceDoneDateFormat}}</p>
+  </div>
+  <div><p class="delivered">Service Accepted <i class="fa-solid fa-circle-check" id="check"></i></p></div>
+</div>
+  </div>
+  <div class="view-more" *ngIf="viewmorebtn"><a routerLink="/userService"><button class="book">View More</button></a></div>
+  <!---------------------- accepted services  ----------------------->
+</body>

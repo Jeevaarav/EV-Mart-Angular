@@ -1,6 +1,7 @@
 import { Component, Input, ViewEncapsulation,OnInit } from '@angular/core';
 import { LogincredentialsService } from './logincredentials.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { OrderintervalService } from './orderinterval.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,13 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
   encapsulation:ViewEncapsulation.None
 })
-export class AppComponent {
-  title:any;
+export class AppComponent implements OnInit {
+//navbarvisibility variable
   navopen1:boolean=true;
-  constructor(private navopen:LogincredentialsService,private router:Router){
+  title:any;
+  constructor(private navopen:LogincredentialsService,private router:Router,private orderInterval:OrderintervalService){
+
+  //This block is used to hide the navbar for the particular component when it is not required
     router.events.subscribe((val)=>{
       if(val instanceof NavigationEnd){
         if(val.url=='/login'){
@@ -72,11 +76,31 @@ export class AppComponent {
         else if(val.url=='/oldvehicle'){
           this.navopen1=false;
         }
+        else if(val.url=='/userPastorderDetails'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/userDeliveryDetails'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/userNewOrders'){
+          this.navopen1=false;
+        }
+        else if(val.url=='/userService'){
+          this.navopen1=false;
+        }
         else{
           this.navopen1=true;
         }
       }
     });
 
+  }
+
+  ngOnInit() {
+
+    //This block is used for run the time intrval for order purposes
+    if(sessionStorage.getItem('logmail')){
+      this.orderInterval.startInterval();
+    }
   }
 }

@@ -12,8 +12,6 @@ import * as alertifyjs from 'alertifyjs';
   `.subform input.ng-invalid{border: none}`]
 })
 export class ManageAddressComponent {
-  editaddress:Boolean=false;
-  alreadyAdded:Boolean=true;
   addressStore:any;
   fulladdress:any;
   profile:any;
@@ -23,8 +21,11 @@ export class ManageAddressComponent {
   doorno:any;
   landmark:any;
   pincode:any;
-  newAddress:Boolean=false;
   printAddress:any;
+
+  newAddress:Boolean=false;
+  editaddress:Boolean=false;
+  alreadyAdded:Boolean=true;
 
   constructor(private form:FormBuilder,private http:HttpClient){
     this.http.get<any>("http://localhost:3000/Register").subscribe((addressCheck)=>{
@@ -48,6 +49,8 @@ export class ManageAddressComponent {
     })
   }
 
+
+  //edit the address after registered
   editAddress(){
     this.editaddress=true;
     this.profile=sessionStorage.getItem("profilepage");
@@ -56,7 +59,7 @@ export class ManageAddressComponent {
     this.getAddress=this.profileaddress.address[0];
   }
 
-
+  //used for hide and show the edit bar address
   closeAddress(){
     this.editaddress=false;
   }
@@ -64,6 +67,7 @@ export class ManageAddressComponent {
     this.editaddress=true;
   }
 
+  //validators for manage the address
   manageaddress=this.form.group({
     fulladdress:[sessionStorage.getItem('fulladdress'),[Validators.required,Validators.minLength(20)]],
     doorno:[sessionStorage.getItem('doorno'),[Validators.required,Validators.pattern("^[0-9]+\s*[a-zA-Z]?(\/[0-9]+\s*[a-zA-Z]?)?$")]],
@@ -71,6 +75,7 @@ export class ManageAddressComponent {
     pincode:[sessionStorage.getItem('pincode'),[Validators.required,Validators.pattern("[0-9]{6}")]]
   })
 
+  //getting input data for address after submission and update the address
   addressDetails(){
     const fulladdress=this.manageaddress.controls['fulladdress'].value;
     const doorno=this.manageaddress.controls['doorno'].value;

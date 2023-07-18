@@ -46,6 +46,11 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
 import { EvmartcenterpaymentComponent } from './evmartcenterpayment/evmartcenterpayment.component';
 import { ProfilepaymentdetailsComponent } from './profilepaymentdetails/profilepaymentdetails.component';
 import { ExchangebookingComponent } from './exchangebooking/exchangebooking.component';
+import { UserpastordersComponent } from './userpastorders/userpastorders.component';
+import { ProfiledeliveredordersComponent } from './profiledeliveredorders/profiledeliveredorders.component';
+import { UsernewordersComponent } from './userneworders/userneworders.component';
+import { UserseevicesComponent } from './userseevices/userseevices.component';
+import { UserserviceacceptedComponent } from './userserviceaccepted/userserviceaccepted.component';
 
 
 @NgModule({
@@ -90,6 +95,11 @@ import { ExchangebookingComponent } from './exchangebooking/exchangebooking.comp
     EvmartcenterpaymentComponent,
     ProfilepaymentdetailsComponent,
     ExchangebookingComponent,
+    UserpastordersComponent,
+    ProfiledeliveredordersComponent,
+    UsernewordersComponent,
+    UserseevicesComponent,
+    UserserviceacceptedComponent,
   ],
   imports: [
     BrowserModule,

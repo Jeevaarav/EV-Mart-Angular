@@ -17,17 +17,20 @@ export class ForgotpassComponent {
   call:any;
   store:any;
   break:any;
-  // const disp=document.getElementById('br');
+
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){
     setInterval(()=>{
       this.call=this.forgotserv.errormsg;
     },300);
   }
+
+  //Validators for change password
   forgotform1=this.form.group({
     forgotemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
     forgotuser:['',[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
   })
 
+  //check if the inputs are empty
   forgotuser(forgotmail:any,forgotuser:any){
     if(forgotmail=="" || forgotuser==""){
       this.call="";
@@ -42,6 +45,8 @@ export class ForgotpassComponent {
       this.msg="";
     }
   }
+
+  //update the chnaged password after submitting the form
   forgotcheck(){
     const mail=this.forgotform1.controls['forgotemail'].value;
     const user=this.forgotform1.controls['forgotuser'].value;
@@ -50,8 +55,9 @@ export class ForgotpassComponent {
     this.forgotserv.errormsg="";
   }
 
-message()
-{
+  //passing message to input
+ message()
+ {
   this.msg=this.store;
-}
+ }
 }

@@ -24,6 +24,8 @@ export class RegisterpageComponent {
       this.call=this.logincred.regcheck;
     });
   }
+  
+  //register validators
   register=this.form.group({
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$")]],
     reguser:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
@@ -32,6 +34,8 @@ export class RegisterpageComponent {
     regconfirm:['',Validators.required]
   });
 
+
+  //checking confirm password
   regdetails(){
     const email=this.register.controls['regemail'].value;
     const username=this.register.controls['reguser'].value;
@@ -46,13 +50,9 @@ export class RegisterpageComponent {
     else{
       alert("Password does not match");
     }
-
-    // this.logincred.savedata(this.register.value).subscribe(()=>{
-    //   alert("Thanks for registering EV Mart, Let's experience the EV world");
-    //   this.route.navigateByUrl('/login');
-    // });
-
   }
+
+  //check if input is blank
   fill(a:any,b:any,c:any,d:any){
     if(a=="" || b=="" || c=="" || d==""){
       this.errorfill="Please fill the blanks";
@@ -65,6 +65,7 @@ export class RegisterpageComponent {
     }
   }
 
+  //These blocks are usef for show password
   togglefunction(){
     this.field=!this.field;
   }

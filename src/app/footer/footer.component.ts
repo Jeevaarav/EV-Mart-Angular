@@ -14,16 +14,21 @@ export class FooterComponent {
   thanks:boolean=false;
   constructor(private form:FormBuilder,private subservice:SubserviceService){
   }
+
+  //validating the subscription input
   subscribe=this.form.group({
     mail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
   });
 
+  //store the subscription mail ID
   store(){
     console.log(this.subscribe.value);
     this.subservice.subscriptiondata(this.subscribe.value).subscribe(z=>{
       alert("EV mart Subscribed");
     });
   }
+
+  //To hide and show error and success messages
   substore(){
     this.subenter=true;
     this.subvalid=true;

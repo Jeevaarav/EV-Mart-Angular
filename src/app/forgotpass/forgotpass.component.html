@@ -1,23 +1,40 @@
+<!-- 
+Description:This component is used for changing the password by the user
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 15-04-2023
+Reviewed by: Nil
+-->
+
+<!----------------------------------- form for changing password for user  ----------------------------->
 <div class="section">
   <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
   <div class="login-form">
     <form [formGroup]="forgotform1" class="forgot" (ngSubmit)="forgotform1.valid && forgotcheck()">
-    <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
-<h3>Recover Password</h3>
-<small class="msg">{{msg}}</small><br id="br"><br>
-<small class="msg1">{{call}}</small>
-<div class="control">
-        <input type="text" class="box" placeholder="Email" id="email" name="email" formControlName="forgotemail" #mail><br><br>
-        <small *ngIf="forgotform1.controls['forgotemail'].errors?.['required'] && forgotform1.controls['forgotemail'].dirty">Please enter email ID</small>
+      <button class="fa-solid fa-circle-xmark fa-beat" id="close"></button>
+      <h3>Recover Password</h3>
+      <small class="msg">{{msg}}</small><br id="br"><br>
+      <small class="msg1">{{call}}</small>
+      <div class="control">
+        <input type="text" class="box" placeholder="Email" id="email" name="email" formControlName="forgotemail"
+          #mail><br><br>
+        <small
+          *ngIf="forgotform1.controls['forgotemail'].errors?.['required'] && forgotform1.controls['forgotemail'].dirty">Please
+          enter email ID</small>
         <small *ngIf="forgotform1.controls['forgotemail'].errors?.['pattern']">Please provide email ID</small>
       </div>
       <div class="control">
-        <input type="text" class="box" placeholder="Username" id="username" name="username" formControlName="forgotuser" #user>
-        <small *ngIf="forgotform1.controls['forgotuser'].errors?.['required'] && forgotform1.controls['forgotuser'].dirty">Please enter username</small>
-        <small *ngIf="forgotform1.controls['forgotuser'].errors?.['pattern']">Provide proper username(Don't start with number)</small>
+        <input type="text" class="box" placeholder="Username" id="username" name="username" formControlName="forgotuser"
+          #user>
+        <small
+          *ngIf="forgotform1.controls['forgotuser'].errors?.['required'] && forgotform1.controls['forgotuser'].dirty">Please
+          enter username</small>
+        <small *ngIf="forgotform1.controls['forgotuser'].errors?.['pattern']">Provide proper username(Don't start with
+          number)</small>
       </div>
-        <button type="submit" class="book" (click)="forgotuser(mail.value,user.value)">Submit</button>
-        <p>Remember the password? <a routerLink="/login" class="link">sign-in</a></p>
-      </form>
+      <button type="submit" class="book" (click)="forgotuser(mail.value,user.value)">Submit</button>
+      <p>Remember the password? <a routerLink="/login" class="link">sign-in</a></p>
+    </form>
   </div>
 </div>
+<!----------------------------------- form for changing password for user  ----------------------------->

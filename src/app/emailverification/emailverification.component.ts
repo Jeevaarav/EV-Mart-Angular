@@ -8,6 +8,8 @@ import { LogincredentialsService } from '../logincredentials.service';
 })
 export class EmailverificationComponent {
   constructor(private loginserv:LogincredentialsService){}
+
+  //Used for display the videos of the particular vehicles
   imagechange:any=["../../assets/EV mart/OLA video.gif","../../assets/EV mart/Ather video.gif","../../assets/EV mart/Ampere video.gif","../../assets/EV mart/Revolt video.gif"];
   change:any="../../assets/EV mart/OLA video.gif";
   Ola(){
@@ -26,7 +28,8 @@ export class EmailverificationComponent {
     this.change=document.getElementById("olaimg");
     return this.change=this.imagechange[3];
   }
-
+  
+   //Used for resending the mail which is called in the service.
   sendmail(){
     this.loginserv.resendemail();
   }

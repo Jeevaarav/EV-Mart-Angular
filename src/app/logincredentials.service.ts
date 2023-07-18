@@ -31,6 +31,10 @@ export class LogincredentialsService {
     console.log(a);
     return this.http.post<any>("http://localhost:3000/Register",a);
   }
+
+  registerDetails(){
+    return this.http.get<any>("http://localhost:3000/Register");
+  }
   // retrievedata(body:any){
   //   console.log(body);
   //   return this.http.get<any>("http://localhost:3000/Register"+"/"+body);

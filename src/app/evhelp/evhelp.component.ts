@@ -9,6 +9,8 @@ export class EVhelpComponent {
   answer1:boolean=false;
   answer2:boolean=false;
   answer3:boolean=false;
+
+  //Used to show and hide the particular details
   answer(){
     this.answer1=true;
   }

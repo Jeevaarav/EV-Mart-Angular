@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class OrderconfirmpageComponent {
   orderPlaced:Boolean=true;
+
   constructor(private route:Router){
+    //used for redirect after few seconds
     setTimeout(() => {
       this.orderPlaced=false;
       this.route.navigateByUrl("Product");

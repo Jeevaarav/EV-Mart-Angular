@@ -16,6 +16,7 @@ export class WalletdetailsComponent {
     Amount:any;
     
     constructor(private upidetails:CarddetailsService){
+      //set the available payment mode
       this.Amount=sessionStorage.getItem("Amount");
       this.orderedVehicleImage=sessionStorage.getItem('varient_image');
       this.orderedVehicleName=sessionStorage.getItem('varient_name');
@@ -27,12 +28,15 @@ export class WalletdetailsComponent {
           this.hideUPI[i]=true;
         }
       })
-      
     }
+
+    //hide and show UPI
     showButton(index:any){
       this.hideUPI[index]=false;
       this.showProceed[index]=true;
     }
+
+    //hide and show UPI
     closeButton(index:any){
       this.hideUPI[index]=true;
       this.showProceed[index]=false;

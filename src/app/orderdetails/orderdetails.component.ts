@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Subscription,interval } from 'rxjs';
+import { LogincredentialsService } from '../logincredentials.service';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-orderdetails',
   templateUrl: './orderdetails.component.html',
   styleUrls: ['./orderdetails.component.css']
 })
-export class OrderdetailsComponent {
+export class OrderdetailsComponent implements OnChanges {
   orderdetails:any;
-  getOrder:any=[];
   i:any;
-  cancel:Boolean=true;
   date:any;
   Dday:any;
   milliSecondsInASecond:any;
@@ -22,7 +23,6 @@ export class OrderdetailsComponent {
   subscription:any;
   secondsToDday:any; minutesToDday:any; hoursToDday:any; daysToDday:any;
   offertime:any;
-  limited:boolean=false;
   showoffer:any;
   local:any;
   a:any=0;
@@ -31,15 +31,34 @@ export class OrderdetailsComponent {
   getFullDetails:any;
   canceldetails:any;
   usemail:any;
-  ordersEmpty:Boolean=true;
-  ordersBooked:Boolean=false;
-  pastOrders:any;
-
+  pastOrders:any; 
+  orderprint:any;
+  showOrder:any;
   dummyTime:any;
   dummySliceTime:any;
-  showPastOrders:Boolean=true;
 
-  constructor(private http:HttpClient){
+  pastOrderHeading:Boolean=true;
+  viewmorebtn:Boolean=true;
+  userNewOrders:Boolean=true;
+  viewmorenew:Boolean=true;
+  viewDeliverybtn:Boolean=true;
+  showPastOrders:Boolean=true;
+  deliveryOrders:Boolean=true;
+  showDeliveryOrders:Boolean=true;
+  showOrderDetails:Boolean=false;
+  NewOrdersExit:Boolean=true;
+  arrivalOn:Boolean=false;
+  deliveredOn:Boolean=true;
+  limited:boolean=false;
+  cancel:Boolean=true;
+  ordersEmpty:Boolean=true;
+  ordersBooked:Boolean=false;
+
+  getOrder:any=[];
+  newOrders:any=[];
+  getDeliveryOrders:any=[];
+
+  constructor(private http:HttpClient,private userDetails:LogincredentialsService,private changes:ChangeDetectorRef){
     this.subscription=Subscription;
     this.date=new Date();
     this.milliSecondsInASecond = 1000;
@@ -47,88 +66,149 @@ export class OrderdetailsComponent {
     this.minutesInAnHour = 60;
     this.SecondsInAMinute  = 60;
 
-    this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
+    //userorder details
+    this.userDetails.registerDetails().subscribe((x)=>{
       const user=x.find((logged:any)=>{
         this.orderdetails=logged;
-        // console.log(this.orderdetails.order);
         return logged.regemail==sessionStorage.getItem('logmail');
       });
       if(user){
-        if(this.orderdetails.ordered || this.orderdetails.orders){
+        if(this.orderdetails.ordered || this.orderdetails.orders || this.orderdetails.deliveredOrders){
+          // -----------------use try catch here------------------------
           if(this.orderdetails.orders.length>0){
-            this.pastOrders=this.orderdetails.orders;
+            console.log("inside orders");
+            this.viewmorenew=true;
             this.ordersEmpty=false;
-            this.showPastOrders=true;
+            this.deliveryOrders=false;
+            this.viewDeliverybtn=false;
+            this.ordersBooked=true;
+            this.pastOrderHeading=false; 
+            this.viewmorebtn=false;
+            this.showPastOrders=false;
+            this.userNewOrders=true;
+            if(this.orderdetails.orders.length==1){
+              console.log("enter in inside");
+              for(var i=0;i<1;i++){
+                console.log(this.orderdetails.orders);
+                this.newOrders[i]=this.orderdetails.orders[i];
+              }
+            }
+            else{
+              for(var i=0;i<2;i++){
+                console.log(this.orderdetails.orders[i]);
+                this.newOrders[i]=this.orderdetails.orders[i];
+              }
+            }
           }
-          if(this.orderdetails.ordered){
+          else if(this.orderdetails.ordered.length>0){
+            if(this.orderdetails.ordered.length>0){
+            this.viewmorenew=false;
+          this.pastOrderHeading=true; 
+          this.viewmorebtn=true;
           this.ordersEmpty=false;
-          this.ordersBooked=true;
-          for(this.i=0;this.i<this.orderdetails.ordered.length;this.i++){
+          this.userNewOrders=false;
+          this.ordersBooked=false;
+          this.showPastOrders=true;
+          this.deliveryOrders=false;
+          this.viewDeliverybtn=false;
+          if(this.orderdetails.ordered.length==1){
+            for(var i=0;i<1;i++){
+              this.getOrder[i]=this.orderdetails.ordered[i];
+            }
+          }
+          else{
+          for(this.i=0;this.i<2;this.i++){
           console.log(this.orderdetails.ordered.length);
           this.getOrder[this.i]=this.orderdetails.ordered[this.i];
           console.log(this.getOrder[this.i].varientimg);
           }
         }
+      }
+        }
+        else if(this.orderdetails.deliveredOrders.length>0){
+          if(this.orderdetails.deliveredOrders.length>0){
+          this.showDeliveryOrders=true;
+          this.viewmorenew=false;
+          this.pastOrderHeading=false; 
+          this.viewmorebtn=false;
+          this.ordersEmpty=false;
+          this.userNewOrders=false;
+          this.ordersBooked=false;
+          this.showPastOrders=false
+          if(this.orderdetails.deliveredOrders.length==1){
+            for(var i=0;i<1;i++){
+              this.getDeliveryOrders[i]=this.orderdetails.deliveredOrders[i];
+            }
+          }
+          else{
+            for(var j=0;j<2;j++){
+              this.getDeliveryOrders[j]=this.orderdetails.deliveredOrders[j];
+            }
+          }
+          this.pastOrderHeading=false; 
+          this.viewmorebtn=false;
+          this.userNewOrders=false;
+        }
+        }
+        else{
+          this.pastOrderHeading=false; 
+          this.viewmorebtn=false;
+          this.userNewOrders=false;
+          this.deliveryOrders=false;
+          this.viewmorenew=false;
+          this.viewDeliverybtn=false;
+
+        }
           
         }
         else{
-          if(this.orderdetails.orders.length>0){
-            
-          }
-          else{ 
             this.ordersBooked=false;
             this.showPastOrders=false;
-          }
-         
         }
       }
+
       
     });
   }
 
-  // getTimeDifference(){
-  //   // console.log(this.a);
-  //   this.local=localStorage.getItem('offertime'+this.a);
-  //   // console.log(this.local);
-  //   console.log(this.getOrder[1].bookingdate);
-  //   this.dummyTime=this.getOrder[1].bookingdate;
-  //   this.dummySliceTime=this.dummyTime.slice(12,17);
-  //   console.log(this.dummySliceTime);
-  //   this.Dday=new Date('10-Jul-2023 01:9 PM');
-  //   console.log(this.Dday);
-  //   this.timeDifference=this.Dday.getTime()-new Date().getTime();
-  //   this.allocateTime(this.timeDifference);
-  // }
 
-  // allocateTime(timeDifference:any){
-  //       this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
-  //       this.minutesToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour) % this.SecondsInAMinute);
-  //       this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
-  //       this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
-  //       this.checkdate(this.secondsToDday,this.minutesToDday,this.hoursToDday,this.daysToDday);
-  // }
-  // checkdate(sec:any,min:any,hours:any,day:any){
-  //   if(sec==0 && min==0 && hours==0 && day==0){
-      
-  //   }
-  //   else{
-  //     // if(this.a<this.length-1){
-  //     //   console.log(this.a);
-  //     //   this.a++;
-  //     // }
-  //     console.log("not zero");
-  //   }
+  ngOnChanges(changes: SimpleChanges) {
+    //reload if any changes in array length
+    if(changes[this.orderdetails]){
+      window.location.reload();
+    }
+  }
 
-  // ngOnInit() {
-  //   this.subscription = interval(1000).subscribe(x =>
-  //     {
-  //        this.getTimeDifference();
-  //     });
-  // }
-  // ngOnDestroy(){
-  //   this.subscription.unsubscribe();
-  // }
+//show the delivered orders information
+viewOrderDetails(index:any){
+  this.showOrderDetails=true;
+  this.showOrder=this.orderdetails.deliveredOrders[index];
+  console.log(this.showOrder);
+}
 
+//show the past order details
+viewPastOrderDetails(index:any){
+  this.showOrderDetails=true;
+  this.showOrder=this.orderdetails.ordered[index];
+  console.log(this.showOrder);
+  this.deliveredOn=false;
+  this.arrivalOn=true;
+}
+
+//show the new order details
+viewNewOrderDetails(index:any){
+  this.showOrderDetails=true;
+  this.showOrder=this.orderdetails.orders[index];
+  console.log(this.showOrder);
+  this.NewOrdersExit=false;
+}
+
+//used for hide and show
+showOrderbooked(){
+  this.showOrderDetails=false;
+}
+
+//cancel the order within the time
   cancelorder(index:any){
     this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
       const user=x.find((logged:any)=>{

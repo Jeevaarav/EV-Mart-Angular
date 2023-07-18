@@ -1,61 +1,82 @@
+<!-- 
+Description:This component is used for showing the profile page for the user.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 22-06-2023
+Reviewed by: Nil
+-->
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Profile Page</title>
 </head>
+
 <body>
+  <!--------------- used for display all the details about particular user  -->
   <div class="body">
-  <section class="relative">
-    <div class="main">
-      <div class="evMartDetails">
-      <p>{{evMartuser}}</p>
-      <div class="evMartnumber">
-      <h5>{{phone}}</h5>
-      <h3>.</h3>
-      <h4>{{email}}</h4>
-    </div>
-      </div>
-      <div class="evMartbtn">
-        <button class="evMartedit" (click)="showrightBar()">Edit Profile</button>
-      </div>
-    </div>
-    <div class="outer">
-      <div class="evMartdisplay">
-        <div class="sideBar">
-          <a routerLink="Orders" routerLinkActive="active">Orders</a>
-          <a routerLink="Address" routerLinkActive="active">Address</a>
-          <a>Service</a>
-          <a routerLink="profilePayment" routerLinkActive="active">Payment</a>
-        </div>
-        <div class="sideDisplay">
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-      <div class="evMarteditprofile" *ngIf="editprof">
-        <div class="rightBar">
-          <i class="fa-solid fa-xmark" (click)="close()"></i>
-          <p>Edit Profile</p>
-          <form [formGroup]="updateinfo" (ngSubmit)="updateinfo.valid && updatedetails()">
-            <div>
-            <label>Phone Number</label>
-            <input type="te1" class="box" maxlength="10"  formControlName="regphonenum" name="regphonenum">
-            <div></div>
-            <small *ngIf="updateinfo.controls['regphonenum'].errors?.['required'] && updateinfo.controls['regphonenum'].dirty">Enter Phone Number</small>
-            <small *ngIf="updateinfo.controls['regphonenum'].errors?.['pattern'] && updateinfo.controls['regphonenum'].dirty">Provide Proper Phone Number</small>
+    <section class="relative">
+      <div class="main">
+        <div class="evMartDetails">
+          <p>{{evMartuser}}</p>
+          <div class="evMartnumber">
+            <h5>{{phone}}</h5>
+            <h3>.</h3>
+            <h4>{{email}}</h4>
           </div>
-          <div>
-            <label>Username &nbsp;&nbsp;</label>
-            <input type="text" class="box"  formControlName="reguser" name="reguser">
-            <div></div>
-            <small *ngIf="updateinfo.controls['reguser'].errors?.['required'] && updateinfo.controls['reguser'].dirty">Enter Username</small>
-            <small *ngIf="updateinfo.controls['reguser'].errors?.['pattern'] && updateinfo.controls['reguser'].dirty">Provide Proper Username</small>
-          </div>
-          <button class="evMartbtnupd">Update Info</button>
-          </form>
+        </div>
+        <div class="evMartbtn">
+          <button class="evMartedit" (click)="showrightBar()">Edit Profile</button>
         </div>
       </div>
+      <div class="outer">
+        <div class="evMartdisplay">
+          <div class="sideBar">
+            <a routerLink="Orders" routerLinkActive="active">Orders</a>
+            <a routerLink="Address" routerLinkActive="active">Address</a>
+            <a routerLink="userProfileService" routerLinkActive="active">Service</a>
+            <a routerLink="profilePayment" routerLinkActive="active">Payment</a>
+          </div>
+          <div class="sideDisplay">
+            <!---------- router components  ------------->
+            <router-outlet></router-outlet>
+            <!---------- router components  ------------->
+          </div>
+        </div>
+        <div class="evMarteditprofile" *ngIf="editprof">
+          <div class="rightBar">
+            <i class="fa-solid fa-xmark" (click)="close()"></i>
+            <p>Edit Profile</p>
+            <form [formGroup]="updateinfo" (ngSubmit)="updateinfo.valid && updatedetails()">
+              <div>
+                <label>Phone Number</label>
+                <input type="te1" class="box" maxlength="10" formControlName="regphonenum" name="regphonenum">
+                <div></div>
+                <small
+                  *ngIf="updateinfo.controls['regphonenum'].errors?.['required'] && updateinfo.controls['regphonenum'].dirty">Enter
+                  Phone Number</small>
+                <small
+                  *ngIf="updateinfo.controls['regphonenum'].errors?.['pattern'] && updateinfo.controls['regphonenum'].dirty">Provide
+                  Proper Phone Number</small>
+              </div>
+              <div>
+                <label>Username &nbsp;&nbsp;</label>
+                <input type="text" class="box" formControlName="reguser" name="reguser">
+                <div></div>
+                <small
+                  *ngIf="updateinfo.controls['reguser'].errors?.['required'] && updateinfo.controls['reguser'].dirty">Enter
+                  Username</small>
+                <small
+                  *ngIf="updateinfo.controls['reguser'].errors?.['pattern'] && updateinfo.controls['reguser'].dirty">Provide
+                  Proper Username</small>
+              </div>
+              <button class="evMartbtnupd">Update Info</button>
+            </form>
+          </div>
+        </div>
       </div>
-</section>
-</div>
+    </section>
+  </div>
+  <!--------------- used for display all the details about particular user  -->
 </body>
