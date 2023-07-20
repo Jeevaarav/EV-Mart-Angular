@@ -44,6 +44,7 @@ import { ProfiledeliveredordersComponent } from './profiledeliveredorders/profil
 import { UsernewordersComponent } from './userneworders/userneworders.component';
 import { ProfileserviceComponent } from './profileservice/profileservice.component';
 import { UserseevicesComponent } from './userseevices/userseevices.component';
+import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 
 
 
@@ -218,6 +219,10 @@ const routes: Routes = [
   {
     path:"orderconfirmpage",
     component:OrderconfirmpageComponent
+  },
+  {
+    path:"userorderfeedback",
+    component:UserorderfeedbackComponent
   },
   {
     path:"userPastorderDetails",

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for displaying the offers
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -36,7 +36,7 @@ Reviewed by: Nil
       <div class="exchange-offer">
       <div>
         <img src="../../assets/EV mart/offer2.webp" alt="EV Mart Exchange" title="EV Mart Exchange"></div>
-       <div> <h4>Upgrade your ride - Get ₹2,000* as Exchange Bonus</h4></div>
+       <div> <h4>Upgrade your ride - Get minimum ₹2,000* as Exchange Bonus</h4></div>
        <div class="know"><a routerLink="/exchange">Know More<i class="fa-solid fa-motorcycle fa-shake"></i></a></div>
       </div>
       <div class="flex" *ngFor="let offers of offer; let h=index">
@@ -45,8 +45,8 @@ Reviewed by: Nil
         <img src="{{offers.img}}" alt="OLA" title="OLA">
       </div>
       <div>  <h4>{{offers.content}}</h4></div>
-      <p class="validity">{{offers.validity}}</p>
-      <p>{{offers.time}}</p>
+      <p class="validity">{{offers.validity}} {{formattedDate[h]}}</p>
+      <p class="timeOfOffer">{{formattedDate[h]}}</p>
       <div class="know"><a href="{{offers.link}}">{{offers.button}}<i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>

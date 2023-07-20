@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderbookingService } from '../orderbooking.service';
 import { formatDate } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orderpage',
@@ -41,14 +42,15 @@ export class OrderpageComponent implements OnInit {
   deliveryDate:any;
   userLocalPrice:any;
   exShowroomPrice:any;
+  popupVarientName:any;
 
-  status:boolean=true; 
-  boolstatus:boolean=true; 
+  status:boolean=true;
+  boolstatus:boolean=true;
   range:boolean=true;
   check:Boolean=false;
   showPopUp:Boolean=false;
 
-  constructor(private service:OrderbookingService){
+  constructor(private service:OrderbookingService,private route:Router){
     //displaying the default values for the selection of vehicles
     this.date=new Date();
     console.log(this.date.getDate());
@@ -77,13 +79,13 @@ export class OrderpageComponent implements OnInit {
     // console.log(this.spec);
     this.parseOldValue=sessionStorage.getItem('ExchangeValue');
     this.OldVehicleDetails=JSON.parse(this.parseOldValue);
-    this.usePriceValue=this.spec[0].price;
-    this.userLocalPrice=parseInt(this.usePriceValue);
-    this.exShowroomPrice=this.userLocalPrice-5000;
-    console.log(this.userLocalPrice);
+
     if(this.parseOldValue && sessionStorage.getItem('oldVehicleDetails')){
       this.price=parseInt(this.spec[0].price)-parseInt(this.parseOldValue);
       this.price=this.price;
+      this.userLocalPrice=parseInt(this.price);
+      console.log(this.userLocalPrice);
+      this.exShowroomPrice=this.userLocalPrice-5000;
       let spec={
         battery:this.spec[0].battery,
         price:this.price,
@@ -97,8 +99,12 @@ export class OrderpageComponent implements OnInit {
     sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
     this.price=this.spec[0].price;
     this.price=parseInt(this.price);
+    this.usePriceValue=this.spec[0].price;
+    this.userLocalPrice=parseInt(this.usePriceValue);
+    this.exShowroomPrice=this.userLocalPrice-5000;
     }
     this.varients=this.useval.varients;
+    this.popupVarientName=this.useval.varients[0].vname;
     sessionStorage.setItem('varient_name',this.varients[0].vname);
     this.loop=this.useval.div;
     sessionStorage.setItem('varientindex',"0");
@@ -139,17 +145,18 @@ export class OrderpageComponent implements OnInit {
     this.split1=vname.split(" ");
     this.split2=this.split1.join("");
     this.spec=this.usestore[this.split2];
-    
+    this.popupVarientName=this.useval.varients[ind].vname;
+
     this.price=this.spec[0].price;
       if(this.parseOldValue && sessionStorage.getItem('oldVehicleDetails')){
         this.price=parseInt(this.spec[0].price)-parseInt(this.parseOldValue);
         this.price=this.price;
-        this.usePriceValue=this.spec[0].price;
+        this.usePriceValue=this.price;
         this.userLocalPrice=parseInt(this.usePriceValue);
         this.exShowroomPrice=this.userLocalPrice-5000;
         let specchange={
         battery:this.spec[0].battery,
-        price:this.price,
+        price:this.price.toString(),
         range:this.spec[0].range,
         topspeed:this.spec[0].topspeed
         }
@@ -160,7 +167,7 @@ export class OrderpageComponent implements OnInit {
         this.price=this.spec[0].price;
         this.price=parseInt(this.price);
         sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
-        this.userLocalPrice=parseInt(this.usePriceValue);
+        this.userLocalPrice=parseInt(this.price);
         this.exShowroomPrice=this.userLocalPrice-5000;
       }
     this.show=document.getElementById("state"+ind);
@@ -214,6 +221,12 @@ export class OrderpageComponent implements OnInit {
    this.border=this.specselect.style.border='2px solid green';
    console.log(this.border);
     localStorage.setItem('specification',h);
+  }
+
+  backToProduct(){
+    this.route.navigateByUrl('Product').then(()=>{
+      window.location.reload();
+    });
   }
 
 }

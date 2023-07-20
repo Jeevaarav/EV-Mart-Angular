@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for showcasing the products specifications and color.
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -18,7 +18,7 @@ Reviewed by: Nil
     </div>
     <div class="config">
       <div class="con">
-        <a routerLink="/Product"><i class="fa-solid fa-arrow-left"></i></a>
+        <a (click)="backToProduct()"><i class="fa-solid fa-arrow-left"></i></a>
      <p> COLOR : <small class="colorindex">{{colorindex}}</small></p>
      <div class="flex">
      <div class="img" *ngFor="let color1 of loop;let w=index;let second=first" >
@@ -84,29 +84,29 @@ Reviewed by: Nil
       <!------------------------------ popup for price tag --------------------->
   <div class="price-details" *ngIf="showPopUp">
     <div class="price-details__showprice">
-      <div><p>OLA S1 Pro</p></div>
+      <div><p>{{popupVarientName}}</p></div>
       <div class="price-pipe"><p>{{userLocalPrice | currency:"INR":"symbol":"1.0-0"}}</p></div>
-    </div> 
+    </div>
     <div class="price-box">
       <div class="price-list">
         <div><p>Effective ex-showroom</p></div>
-        <div class="price-pipe"><p>{{exShowroomPrice | currency:'INR':"symbol":'1.0-0'}}</p></div>   
+        <div class="price-pipe"><p>{{exShowroomPrice | currency:'INR':"symbol":'1.0-0'}}</p></div>
       </div>
-     
+
       <div class="varient-price">
-        <div> <p>Ola S1 Pro (On road)</p></div>
+        <div> <p>{{popupVarientName}} (On road)</p></div>
         <div class="price-pipe"><p>{{userLocalPrice | currency:'INR':"symbol":'1.0-0'}}</p></div>
       </div>
       <div class="varient-price">
         <div><p>Exchange Value</p></div>
         <div class="exchange-offer price-pipe"><p >-{{Exchangeoffer | currency:"INR":"symbol":'1.0-0'}}</p></div>
       </div>
-      
+
     </div>
     <div class="got-it" (click)="hidePopUp()">
       <button>Got it</button>
     </div>
-    
+
   </div>
       <!------------------------------ popup for price tag --------------------->
 </body>

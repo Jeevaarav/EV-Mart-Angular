@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for showing the delivered order for the vehicle
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -24,7 +24,7 @@ Reviewed by: Nil
     <p class="varient">{{deliveredorder.varientname}}</p>
     <p>Order ID - #{{deliveredorder.orderid}}</p>
     <p>Color - {{deliveredorder.varientcolor}}</p>
-    <p>Price - Rs.{{deliveredorder.price}}</p>
+    <p>Price - {{deliveredorder.price | currency:"INR":"symbol":"1.0-0"}}</p>
     <p>{{deliveredorder.day}} , {{deliveredorder.bookingdate}}</p>
     <a (click)="viewOrderDetails(i)">View Details</a>
   </div>
@@ -90,5 +90,5 @@ Reviewed by: Nil
     </div>
   </div>
     <!----------------------- viewDeliveredOrders -------------------------->
-  
+
 </body>

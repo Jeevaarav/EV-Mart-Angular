@@ -51,6 +51,7 @@ import { ProfiledeliveredordersComponent } from './profiledeliveredorders/profil
 import { UsernewordersComponent } from './userneworders/userneworders.component';
 import { UserseevicesComponent } from './userseevices/userseevices.component';
 import { UserserviceacceptedComponent } from './userserviceaccepted/userserviceaccepted.component';
+import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 
 
 @NgModule({
@@ -100,6 +101,7 @@ import { UserserviceacceptedComponent } from './userserviceaccepted/userservicea
     UsernewordersComponent,
     UserseevicesComponent,
     UserserviceacceptedComponent,
+    UserorderfeedbackComponent,
   ],
   imports: [
     BrowserModule,

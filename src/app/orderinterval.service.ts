@@ -9,6 +9,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class OrderintervalService{
 
+  deliveryMail:any;
+
   subscription:Subscription[]=[];
 
   orderConfirm:any=[];
@@ -177,24 +179,46 @@ getDeliveredInfo(deliveredInfo:any){
   console.log(deliveredInfo);
     this.loggedPhonenumber = sessionStorage.getItem('profilepage');
     this.userMob = JSON.parse(this.loggedPhonenumber);
+    this.deliveryMail={
+      orderid:deliveredInfo.orderid,
+      varientname:deliveredInfo.varientname,
+      price:deliveredInfo.price,
+      bookingdate:deliveredInfo.bookingdate,
+      onlinepaidamount:deliveredInfo.onlinepaidamount,
+      deliveryDate:deliveredInfo.deliveryDate,
+      day:deliveredInfo.day,
+      Centername:deliveredInfo.Centername,
+      mail:deliveredInfo.mail,
+      firstname:deliveredInfo.firstname,
+      lastname:deliveredInfo.lastname,
+    }
     this.http.get("http://localhost:3000/Register/"+this.userMob.regemail).subscribe(x=>{
       this.customerDetails=x;
       this.deliveryDetails=this.customerDetails.deliveredOrders;
-
       if(this.deliveryDetails==null || this.deliveryDetails.length==0){
         console.log("mani");
          this.http.patch("http://localhost:3000/Register/"+this.userMob.regemail,{deliveredOrders:[deliveredInfo]}).subscribe(x=>{
+          this.sendEmail("http://localhost:4000/deliveryorder",this.deliveryMail).subscribe((mailinfo:any)=>{
+            let res:any=mailinfo;
+            });
           console.log(x);
          });
       }
       else{
         this.deliveryDetails.push(deliveredInfo);
         this.http.patch("http://localhost:3000/Register/"+this.userMob.regemail,{deliveredOrders:this.deliveryDetails}).subscribe(x=>{
+          this.sendEmail("http://localhost:4000/deliveryorder",this.deliveryMail).subscribe((mailinfo:any)=>{
+            let res:any=mailinfo;
+            });
           console.log(x);
          });;
       }
 
     })
+  }
+  sendEmail(url:any,data:any){
+    console.log(url);
+    return this.http.post(url,data);
   }
 
 }

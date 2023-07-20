@@ -30,6 +30,7 @@ export class FillbookdetailsService {
   cancelDate:any;
   deliveryDate:any;
   formatDeliveryDate:any;
+  orderedEmail:any;
 
   constructor(private http:HttpClient,private route:Router,private orderInterval:OrderintervalService) { }
 
@@ -51,7 +52,7 @@ export class FillbookdetailsService {
     this.parseDetails=JSON.parse(this.getFillDetails);
     this.orderDate=new Date();
     this.getTime=this.orderDate.getTime();
-    
+
     this.bookingDate=formatDate(this.getTime,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
 
     this.deliveryDate=this.orderDate.setMinutes(
@@ -68,7 +69,7 @@ export class FillbookdetailsService {
       this.cancelDate.getMinutes()+1
     );
     this.formateDateset=formatDate(this.setDate,'dd-MMM-yyyy hh:mm:ss a','en-US','+0530');
-    
+
 
     if(paymentMode=="Debit Card"){
       this.orderDetails={
@@ -115,8 +116,12 @@ export class FillbookdetailsService {
           this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:this.getOrder}).subscribe((z)=>{
           console.log(z);
           this.route.navigateByUrl("");
+          sessionStorage.removeItem('ExchangeValue');
           this.orderInterval.getTime(this.formateDateset);
           this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
+          this.sendEmail("http://localhost:4000/neworders",this.orderDetails).subscribe((mailinfo:any)=>{
+            let res:any=mailinfo;
+            });
         });
         }
         else{
@@ -124,13 +129,21 @@ export class FillbookdetailsService {
         this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:[this.orderDetails]}).subscribe((patched)=>{
           console.log("patched");
           this.route.navigateByUrl("");
+          sessionStorage.removeItem('ExchangeValue');
           this.orderInterval.getTime(this.formateDateset);
           this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
+          this.sendEmail("http://localhost:4000/neworders",this.orderDetails).subscribe((mailinfo:any)=>{
+            let res:any=mailinfo;
+            });
         })
       }
       }
-      
+
     });
     }
+  }
+  sendEmail(url:any,data:any){
+    console.log(url);
+    return this.http.post(url,data);
   }
 }

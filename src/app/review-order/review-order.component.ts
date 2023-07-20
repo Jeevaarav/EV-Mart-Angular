@@ -66,11 +66,11 @@ export class ReviewOrderComponent {
     this.battery=this.specdetails.battery;
     this.range=this.specdetails.range;
     this.topspeed=this.specdetails.topspeed;
-    this.price=this.specdetails.price;
-    this.splitPrice=this.price.split(',');
-    this.joinPrice=this.splitPrice.join('');
-    console.log(this.joinPrice);
-    this.reserveAmount=Math.floor(parseInt(this.joinPrice)*(30/100));
+    this.price=parseInt(this.specdetails.price);
+    // this.splitPrice=this.price.split(',');
+    // this.joinPrice=this.splitPrice.join('');
+    // console.log(this.joinPrice);
+    this.reserveAmount=Math.floor(parseInt(this.price)*(30/100));
     this.formatedAmount=this.reserveAmount.toString();
     this.Amount= Number(this.formatedAmount).toLocaleString();
     console.log(this.Amount);
@@ -107,7 +107,7 @@ export class ReviewOrderComponent {
       this.route.navigateByUrl('/orderpage');
     }
   }
-  
+
   //selection of state value
   stateselect(state:any){
       this.state=state;

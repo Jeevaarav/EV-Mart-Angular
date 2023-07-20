@@ -37,6 +37,8 @@ Reviewed by: Nil
   </div>
   <div>
     <button class="book" *ngIf="cancel" (click)="cancelorder(this.i)">Cancel Order</button>
+    <div><small class="cancelmsg">Cancel your order within</small></div>
+    <div><p class="cancel-date">{{getCancelDate[i]}}</p></div>
   </div>
 </div> 
   </div>

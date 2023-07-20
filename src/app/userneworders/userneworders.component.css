@@ -28,6 +28,7 @@
     font-size: 1.7rem;
     cursor: pointer;
     padding: 1rem 2rem; 
+    margin: 1rem 20rem 1rem;
 }
 html{
     font-size: 60%;
@@ -362,4 +363,15 @@ html{
 }
 .details a{
   color: green;
+}
+.cancelmsg{
+  color: red;
+  font-size: 2rem;
+  text-transform: none;
+  margin: 1rem 15rem 1rem;
+}
+.cancel-date{
+  color: #130f40;
+  font-size: 2rem;
+  margin: 1rem 15rem 1rem;
 }

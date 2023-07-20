@@ -27,7 +27,11 @@ Reviewed by: Nil
     <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
     <a (click)="viewOrderDetails(i)">View Details</a>
   </div>
-  <div class="delivered"><p >Yet to be delivered <i class="fa-solid fa-circle-xmark"></i></p></div>
+  <div>
+    <button class="book" (click)="cancelorder(this.i)">Cancel Order</button>
+    <div><small class="cancelmsg">Cancel your order within</small></div>
+    <div><p class="cancel-date">{{getCancelDate[i]}}</p></div>
+  </div>
 </div>
   </div>
 

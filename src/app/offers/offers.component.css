@@ -87,6 +87,7 @@ html{
   text-align: center;
   color: #130f40;
   font-size: 2rem;
+  text-transform: none;
 }
 .displayoff .grid .flex{
   display: flex;
@@ -199,4 +200,8 @@ margin-bottom:0.8rem;
 .exchange-offer .know i{
   color: green;
   padding-left: 1rem;
+}
+.timeOfOffer{
+  font-size: 2rem;
+  color: red;
 }
