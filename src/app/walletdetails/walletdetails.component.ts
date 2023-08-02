@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CarddetailsService } from '../carddetails.service';
+import { FillbookdetailsService } from '../fillbookdetails.service';
 
 @Component({
   selector: 'app-walletdetails',
@@ -14,8 +15,8 @@ export class WalletdetailsComponent {
     getPaymentDetails:any;
     phoneNumber:any;
     Amount:any;
-    
-    constructor(private upidetails:CarddetailsService){
+
+    constructor(private upidetails:CarddetailsService,private orderDetails:FillbookdetailsService){
       //set the available payment mode
       this.Amount=sessionStorage.getItem("Amount");
       this.orderedVehicleImage=sessionStorage.getItem('varient_image');
@@ -41,4 +42,10 @@ export class WalletdetailsComponent {
       this.hideUPI[index]=true;
       this.showProceed[index]=false;
     }
-} 
+
+    //payment type
+    paymentUPI(paymentname:any){
+      this.orderDetails.orderbooked("UPI");
+      sessionStorage.setItem('UPI',paymentname);
+    }
+}

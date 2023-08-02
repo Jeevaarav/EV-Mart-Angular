@@ -47,13 +47,13 @@ Reviewed by: Nil
       <div>  <h4>{{offers.content}}</h4></div>
       <p class="validity">{{offers.validity}} {{formattedDate[h]}}</p>
       <p class="timeOfOffer">{{formattedDate[h]}}</p>
-      <div class="know"><a href="{{offers.link}}">{{offers.button}}<i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="know"><a (click)="orderNow(this.offers.brand)">Order now<i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>
   </section>
   <!--------------- exchange offers and offered vehicles --------------------->
 
-  <!--------------- payment options --------------------->
+  <!------------------- payment options --------------------->
   <section class="payment">
     <h1>Easy financing offers</h1>
     <div class="paygrid">

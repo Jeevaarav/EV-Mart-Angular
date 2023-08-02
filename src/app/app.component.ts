@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation,OnInit } from '@angular/core';
 import { LogincredentialsService } from './logincredentials.service';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { OrderintervalService } from './orderinterval.service';
 
 @Component({
@@ -14,7 +14,14 @@ export class AppComponent implements OnInit {
   navopen1:boolean=true;
   title:any;
   footerClose:Boolean=true;
-  constructor(private navopen:LogincredentialsService,private router:Router,private orderInterval:OrderintervalService){
+  currentPageEmail:any;
+  currentPageOrder:any;
+  constructor(private navopen:LogincredentialsService,private router:Router,private orderInterval:OrderintervalService,private activeroute:ActivatedRoute){
+
+    this.activeroute.queryParamMap.subscribe(params=>{
+      this.currentPageEmail=params.get('email');
+      this.currentPageOrder=params.get('order-id');
+    })
 
   //This block is used to hide the navbar for the particular component when it is not required
     router.events.subscribe((val)=>{
@@ -113,6 +120,18 @@ export class AppComponent implements OnInit {
           this.footerClose=false;
         }
         else if(val.url=='/Product'){
+          this.footerClose=false;
+        }
+        else if(val.url=='/userorderfeedback'){
+          this.navopen1=false;
+          this.footerClose=false;
+        }
+        else if(val.url=='/userorderfeedback?email='+this.currentPageEmail+'&order-id='+this.currentPageOrder){
+          this.navopen1=false;
+          this.footerClose=false;
+        }
+        else if(val.url=='/admin/offersmanagement'){
+          this.navopen1=false;
           this.footerClose=false;
         }
         else{

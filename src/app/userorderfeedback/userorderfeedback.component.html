@@ -1,1 +1,343 @@
-<p>userorderfeedback works!</p>
+<!--
+Description:This component is used for getting feedback from the user.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 18-07-2023
+Reviewed by: Nil
+-->
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Book Appointment</title>
+</head>
+
+<!--
+Description:This component is used for login to use the website by the user
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 14-04-2023
+Reviewed by: Nil
+-->
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Book Appointment</title>
+</head>
+
+<body>
+  <!----------------- login form for authenticate the user  ---------------->
+  <div class="section">
+    <div class="head">
+      <a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a>
+      <div class="userfeedback-heading"><h1>EV Mart User Feedback</h1></div>
+    </div>
+    <div class="login-form">
+      <form [formGroup]="feedbackform" (ngSubmit)="feedbackform.valid && feedbackSubmission()">
+        <div class="side-input">
+        <div class="form-feedback">
+          <div><label>Email ID</label></div>
+          <div><input type="text" class="box" placeholder="Email ID" value="{{email}}" readonly></div>
+        </div>
+        <div class="form-feedback">
+          <div><label>Order ID</label></div>
+          <div><input type="text" class="box" placeholder="Order ID" value="{{orderID}}" readonly></div>
+        </div>
+      </div>
+        <div class="feedback-question">
+          <div class="feedback-que"><label>1) Let's get going. When you first used the product, what was your overall impression of it?This question is required.</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="user-react">
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="user-react">
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="user-react">
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="user-react">
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="user-react">
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>2) Overall Quality of the product- Rate below with emoji</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="quality-react">
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="quality-react">
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="quality-react">
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="quality-react">
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="quality-react">
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>3) And how innovative is the product?</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="innovative-react">
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="innovative-react">
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="innovative-react">
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="innovative-react">
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="innovative-react">
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>4) Total honesty — how much do you need the product?</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="honesty-react">
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="honesty-react">
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="honesty-react">
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="honesty-react">
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="honesty-react">
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>5) How would you rate its value for money?</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction" (change)="moneyreaction(moneyreact.value)">
+                <div>
+                <input type="radio" class="box" name="money-react" #moneyreact>
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="money-react" >
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="money-react" >
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="money-react" >
+                <!-- <small *ngIf="feedbackform.controls['moneyreact'].errors?.['required']">Please select one option</small> -->
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="money-react" >
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+            <!-- <div>
+              <small *ngIf="feedbackform.controls['moneyreact'].errors?.['required']">Please select one option</small></div> -->
+          </div>
+          <div class="feedback-que"><label>6) How likely are you to replace your current solution with this product?</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="solution-react" required>
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="solution-react" >
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="solution-react" >
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="solution-react" >
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="solution-react" >
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>7) How likely are you to recommend this product to someone you know?</label></div>
+          <div class="radio-block">
+            <div class="inline-block">
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="recommend-react">
+                <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
+              </div>
+                <label>Really positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="recommend-react">
+                <img src="../../assets/EV mart/happy.png" alt="happy">
+              </div>
+              <label>positive</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="recommend-react">
+                <img src="../../assets/EV mart/alright.png" alt="alright">
+              </div>
+              <label>It was alright</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="recommend-react">
+                <img src="../../assets/EV mart/sad.png" alt="sad">
+              </div>
+              <label>Negative</label>
+              </label>
+              <label class="reaction">
+                <div>
+                <input type="radio" class="box" name="recommend-react">
+                <img src="../../assets/EV mart/really sad.png" alt="really sad">
+              </div>
+              <label>Really Negative</label>
+              </label>
+            </div>
+          </div>
+          <div class="feedback-que"><label>8) Anyother feedback about the product</label></div>
+          <div class="text-area"><textarea cols="30" rows="03" placeholder="Feedback" class="box" formControlName="feedbackmessage"></textarea></div>
+          <small *ngIf="feedbackform.controls['feedbackmessage'].errors?.['required'] && feedbackform.controls['feedbackmessage'].dirty">Please provide feedback message</small>
+      </div>
+      <button class="feedback-button" [disabled]="!feedbackform.valid">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+  <!----------------- login form for authenticate the user  ---------------->
+</body>

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is the footer used through out the website
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -28,6 +28,7 @@ Reviewed by: Nil
             ID</small></div>
         <div *ngIf="thanks"><small *ngIf="subscribe.controls['mail'].valid" class="success"><i
               class="fa-solid fa-circle-check fa-bounce"></i>Thanks for the subscription</small></div>
+              <small>{{alreadyRegistered}}</small>
         <button class="book" type="submit" (click)="substore()">Subscribe</button>
       </form>
     </div>

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for showing the wallet for payment for users.
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -31,7 +31,7 @@ Reviewed by: Nil
         </div>
       </div>
       <div class="google-pay" *ngFor="let paymentupi of getPaymentDetails;let index=index">
-        <div><img src="{{paymentupi.UPIimg}}" alt="{{paymentupi.UPIimg}}" title="paymentupi.UPIname"></div>
+        <div><img src="{{paymentupi.UPIimg}}" alt="{{paymentupi.UPIimg}}" title="{{paymentupi.UPIname}}"></div>
         <div>
           <h2>{{paymentupi.UPIname}}</h2>
         </div>
@@ -46,7 +46,7 @@ Reviewed by: Nil
           </div>
           <div class="pay-button">
             <div><button class="book" (click)="closeButton(index)">CANCEL</button></div>
-            <div><button class="book">CONTINUE</button></div>
+            <div><button class="book" (click)="paymentUPI(this.paymentupi.UPIname)">CONTINUE</button></div>
           </div>
         </div>
       </div>

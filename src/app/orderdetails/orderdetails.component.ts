@@ -32,7 +32,7 @@ export class OrderdetailsComponent implements OnChanges {
   canceldetails:any;
   usemail:any;
   customerDetails:any;
-  pastOrders:any; 
+  pastOrders:any;
   orderprint:any;
   showOrder:any;
   dummyTime:any;
@@ -43,6 +43,8 @@ export class OrderdetailsComponent implements OnChanges {
   cancelOrdermail:any;
   deliveredDate:any;
   orderedDate:any;
+  onlinePaidAmount:any;
+  paidAmountSplit:any;
 
   pastOrderHeading:Boolean=false;
   viewmorebtn:Boolean=false;
@@ -91,7 +93,7 @@ export class OrderdetailsComponent implements OnChanges {
         this.deliveryOrders=false;
         this.viewDeliverybtn=false;
         this.ordersBooked=true;
-        this.pastOrderHeading=false; 
+        this.pastOrderHeading=false;
         this.viewmorebtn=false;
         this.showPastOrders=false;
         this.userNewOrders=true;
@@ -114,7 +116,7 @@ export class OrderdetailsComponent implements OnChanges {
       }
       else if(this.orderdetails.ordered.length>0){
         this.viewmorenew=false;
-      this.pastOrderHeading=true; 
+      this.pastOrderHeading=true;
       this.viewmorebtn=true;
       this.ordersEmpty=false;
       this.userNewOrders=false;
@@ -139,7 +141,7 @@ export class OrderdetailsComponent implements OnChanges {
      else if(this.orderdetails.deliveredOrders.length>0){
       this.showDeliveryOrders=true;
       this.viewmorenew=false;
-      this.pastOrderHeading=false; 
+      this.pastOrderHeading=false;
       this.viewmorebtn=false;
       this.ordersEmpty=false;
       this.userNewOrders=false;
@@ -158,10 +160,10 @@ export class OrderdetailsComponent implements OnChanges {
           this.getDeliveryOrders[j]=this.orderdetails.deliveredOrders[j];
         }
       }
-      this.pastOrderHeading=false; 
+      this.pastOrderHeading=false;
       this.viewmorebtn=false;
       this.userNewOrders=false;
-    } 
+    }
     }
     else{
         this.ordersBooked=false;
@@ -169,10 +171,10 @@ export class OrderdetailsComponent implements OnChanges {
     }
   }
 
-  
+
 });
     },1000)
-   
+
   }
 
 
@@ -187,7 +189,10 @@ export class OrderdetailsComponent implements OnChanges {
 viewOrderDetails(index:any){
   this.showOrderDetails=true;
   this.showOrder=this.orderdetails.deliveredOrders[index];
-  console.log(this.showOrder);
+  this.paidAmountSplit=this.showOrder.onlinepaidamount;
+  this.onlinePaidAmount=this.paidAmountSplit.split(',').join('');
+  this.onlinePaidAmount=parseInt(this.onlinePaidAmount);
+  console.log(this.onlinePaidAmount);
 }
 
 //show the past order details
@@ -242,12 +247,12 @@ showOrderbooked(){
       console.log(x);
       });
     })
-    
+
   }
   sendEmail(url:any,data:any){
     console.log(url);
     return this.http.post(url,data);
   }
-  
+
 }
 

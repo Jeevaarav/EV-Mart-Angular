@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for showing the order is confirmed
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -30,7 +30,7 @@ Reviewed by: Nil
     <p class="varient">{{order.varientname}}</p>
     <p>Order ID - #{{order.orderid}}</p>
     <p>Color - {{order.varientcolor}}</p>
-    <p>Total Price - Rs.{{order.price}}</p>
+    <p>Total Price - {{order.price | currency:"INR":"symbol":"1.0-0"}}</p>
     <p>{{order.day}} , {{order.bookingdate}}</p>
     <p>Online Paid Amount-Rs. {{order.onlinepaidamount}}</p>
     <a (click)="viewNewOrderDetails(i)">View Details</a>
@@ -40,7 +40,7 @@ Reviewed by: Nil
     <div><small class="cancelmsg">Cancel your order within</small></div>
     <div><p class="cancel-date">{{getCancelDate[i]}}</p></div>
   </div>
-</div> 
+</div>
   </div>
   <div class="view-more" *ngIf="viewmorenew"><a routerLink="/userNewOrders"><button class="book">View More</button></a></div>
    <!------------------------------ new orders ---------------------->
@@ -56,9 +56,9 @@ Reviewed by: Nil
     <p class="varient">{{pastorder.varientname}}</p>
     <p>Order ID - #{{pastorder.orderid}}</p>
     <p>Color - {{pastorder.varientcolor}}</p>
-    <p>Total Price - Rs.{{pastorder.price}}</p>
+    <p>Total Price - {{pastorder.price | currency:"INR":"symbol":"1.0-0"}}</p>
     <p>{{pastorder.day}} , {{pastorder.bookingdate}}</p>
-    <p>Online Paid Amount-Rs. {{pastorder.onlinepaidamount}}</p>
+    <p>Online Paid Amount- Rs.{{pastorder.onlinepaidamount }}</p>
     <a (click)="viewPastOrderDetails(i)">View Details</a>
   </div>
   <div><p class="delivered">Yet to be delivered <i class="fa-solid fa-circle-xmark"></i></p></div>
@@ -114,11 +114,11 @@ Reviewed by: Nil
         </div>
         <div class="order-products">
           <div><h2>Effective Ex-showroom price</h2></div>
-          <div><h2>Rs. {{showOrder.price-10000}}</h2></div>
+          <div><h2>{{showOrder.price-10000 | currency:"INR":"symbol":"1.0-0"}}</h2></div>
         </div>
         <div class="order-productsdetails">
           <div><h2>{{showOrder.varientname}} (On Road)</h2></div>
-          <div><h2>Rs. {{showOrder.price}}</h2></div>
+          <div><h2>{{showOrder.price | currency:"INR":"symbol":"1.0-0"}}</h2></div>
         </div>
         <div class="order-products">
           <div><h2 class="spec">Specifications</h2></div>
@@ -138,7 +138,7 @@ Reviewed by: Nil
         <div class="order-finaldetails">
           <div><h2>Total Paid</h2></div>
           <div><h2>Paid via {{showOrder.paymentmode}}</h2></div>
-          <div><h2>{{showOrder.price}}</h2></div>
+          <div><h2>{{onlinePaidAmount | currency:"INR":"symbol":"1.0-0"}}</h2></div>
         </div>
           </div>
         </div>

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+.book{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #ffee80;
+    color:#130f40;
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+.book1{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #ffee80;
+    color:#130f40;
+    font-weight: 500;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.head1{
+    background-color:#ffee80;
+    padding: 2rem;
+    position: sticky;
+    top: 105px;
+    z-index: 2;
+}
+section{
+    padding: 1.5rem 5%;
+}
+.head1 a{
+    color: #130f40;
+    font-size: 2rem;
+}
+.head1 nav{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.head1 a:hover{
+    border-bottom-style:solid;
+}
+.head1 a:visited,.head a:active, .head a:focus{
+    border-bottom-style: solid;
+}
+.head1 a:target{
+    border-bottom-style: solid;
+}
+.heading{
+    text-align: center;
+    padding-bottom:2rem;
+    font-size: 4.5rem;
+    color: #130f40;
+}
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+.heading span::before{
+    content: '';
+    position: absolute;
+    bottom:1rem;left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+    background: #f9d806;
+    clip-path: polygon(0 90%,100% 80%,100% 100%, 0% 100%);
+}
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+    gap: 2.5rem;
+    margin: 0.8rem;
+}
+.services .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+    border: .1rem solid rgba(0,0,0,.1);
+}
+.services .box-container .box i{
+    height: 6rem;
+    width:6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    color: #130f40;
+    background: #f9d806;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.services .box-container .box h3{
+    color: #130f40;
+    font-size: 2.5rem;
+}
+.services .box-container .box p{
+    color: #666;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+    text-align: justify;
+}
+.services .box-container .box img{
+    width: 350px;
+    height: 300px;
+}
+.vehbrand{
+    color:#130f40;
+    font-size: 4rem;
+}
+
+
+#text{
+resize: none;
+}
+small{
+    font-size: 1.4rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  background: url("../../assets/EV mart/header4.jpg");
+  align-items: center;
+}
+.header h3{
+  font-size: 3.5rem;
+  color: #f9d806;
+}
+
+.header .head{
+  display: flex;
+  gap: 5rem;
+}
+.head i{
+  font-size: 3rem;
+  padding-top: 1.1rem;
+  cursor: pointer;
+  color: #f9d806;
+}
+.header .Logo{
+  width:200px;
+  height:80px;
+  cursor: pointer;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  padding: 2rem;
+  margin: 20rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  background: #fff;
+  border: .1rem solid rgba(0,0,0,.1);
+  text-align: center;
+  width: 50rem;
+}
+.form form .box{
+  margin: .7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+}
+.form form textarea{
+  resize: none;
+}
+.heading p{
+  font-size: 3rem;
+  color: #130f40;
+}
+small{
+  text-transform: none;
+}
+#select{
+  cursor: pointer;
+}
+.success{
+  color: green;
+  font-size: 1.8rem;
+}

@@ -192,6 +192,10 @@ margin-bottom:0.8rem;
 }
 .exchange-offer .know a{
   color: green;
+  cursor: pointer;
+}
+.flex .know a{
+  cursor: pointer;
 }
 .exchange-offer .know{
   font-size: 2rem;

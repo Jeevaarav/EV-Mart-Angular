@@ -1,7 +1,9 @@
 import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription,interval } from 'rxjs';
+import { OrderbookingService } from '../orderbooking.service';
 
 @Component({
   selector: 'app-offers',
@@ -39,7 +41,7 @@ export class OffersComponent implements OnInit {
   formattedDate:any=[];
   offertime:any=[];
 
-  constructor(private _http:HttpClient){
+  constructor(private _http:HttpClient,private route:Router,private offerBooking:OrderbookingService){
     this._http.get<any>("http://localhost:3000/offers").subscribe(x=>{
     this.offer=x;
     this.length=x.length;
@@ -98,6 +100,11 @@ export class OffersComponent implements OnInit {
   }
   check(){
     console.log("works");
+  }
+
+  orderNow(brandname:any){
+    console.log(brandname);
+    this.offerBooking.productpage(brandname);
   }
 
 

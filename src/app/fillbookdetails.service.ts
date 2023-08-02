@@ -99,7 +99,36 @@ export class FillbookdetailsService {
       paymentmode:"Debit Card",
       paymentstatus:"paid"
       }
-
+    }
+    if(paymentMode=="UPI"){
+      this.orderDetails={
+        orderid:this.parseDetails.orderid,
+        varientcolor:this.parseDetails.varientcolor,
+        varientimg:this.parseDetails.varientimg,
+        varientname:this.parseDetails.varientname,
+        battery:this.parseDetails.battery,
+        range:this.parseDetails.range,
+        topspeed:this.parseDetails.topspeed,
+        price:this.parseDetails.price,
+        bookingdate:this.bookingDate,
+        onlinepaidamount:this.parseDetails.onlinepaidamount,
+        deliveryDate:this.formatDeliveryDate,
+        day:this.parseDetails.day,
+        State:this.parseDetails.State,
+        City:this.parseDetails.City,
+        Centername:this.parseDetails.Centername,
+        mail:this.parseDetails.mail,
+        address:this.parseDetails.address,
+        firstname:this.parseDetails.firstname,
+        lastname:this.parseDetails.lastname,
+        phonenumber:this.parseDetails.phonenumber,
+        landmark:this.parseDetails.landmark,
+        pincode:this.parseDetails.pincode,
+        doorno:this.parseDetails.doorno,
+        paymentmode:JSON.stringify(sessionStorage.getItem('UPI')),
+        paymentstatus:"paid"
+    }
+  }
 
 
       this.stringifyOrderDetails=JSON.stringify(this.orderDetails);
@@ -115,21 +144,22 @@ export class FillbookdetailsService {
           this.getOrder.push(this.orderDetails);
           this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:this.getOrder}).subscribe((z)=>{
           console.log(z);
-          this.route.navigateByUrl("");
           sessionStorage.removeItem('ExchangeValue');
+          this.route.navigateByUrl("orderconfirmpage");
           this.orderInterval.getTime(this.formateDateset);
           this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
           this.sendEmail("http://localhost:4000/neworders",this.orderDetails).subscribe((mailinfo:any)=>{
             let res:any=mailinfo;
             });
+
         });
         }
         else{
           alert("check patched first");
         this.http.patch("http://localhost:3000/Register/"+this.orderDetails.mail,{orders:[this.orderDetails]}).subscribe((patched)=>{
           console.log("patched");
-          this.route.navigateByUrl("");
           sessionStorage.removeItem('ExchangeValue');
+          this.route.navigateByUrl("orderconfirmpage");
           this.orderInterval.getTime(this.formateDateset);
           this.orderInterval.getDeliveredTime(this.formatDeliveryDate);
           this.sendEmail("http://localhost:4000/neworders",this.orderDetails).subscribe((mailinfo:any)=>{
@@ -140,7 +170,7 @@ export class FillbookdetailsService {
       }
 
     });
-    }
+
   }
   sendEmail(url:any,data:any){
     console.log(url);

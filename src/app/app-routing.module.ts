@@ -45,6 +45,7 @@ import { UsernewordersComponent } from './userneworders/userneworders.component'
 import { ProfileserviceComponent } from './profileservice/profileservice.component';
 import { UserseevicesComponent } from './userseevices/userseevices.component';
 import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
+import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffermanagement.component';
 
 
 
@@ -258,6 +259,10 @@ const routes: Routes = [
 {
   path:"admin/adminserv/adminform",
   component:AdminformComponent
+},
+{
+  path:"admin/offersmanagement",
+  component:AdminoffermanagementComponent
 }]
   }
 ];

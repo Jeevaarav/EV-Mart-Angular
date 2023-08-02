@@ -1,0 +1,276 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.book{
+  display: inline-block;
+  border-radius:5rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color:#130f40;
+  background: #ffee80;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.head{
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 40%;
+}
+.head img{
+  width: 250px;
+  height: 100px;
+  cursor: pointer;
+}
+.head a{
+  text-decoration: none;
+}
+.background{
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 70%;
+  background-color: rgba(6, 76, 240, 0.233);
+  animation: formslide 0.5s linear;
+  transition: transform 1000ms ease-in-out;
+  transform-origin: top;
+}
+@keyframes formslide {
+from{
+  transform: scaleY(0);
+}
+to{
+  transform: scaleY(1);
+}
+}
+/*      signin               */
+.section{
+  padding: 1rem 2%;
+}
+.small{
+  font-size: 1.5rem;
+}
+.msg{
+  background-color: rgba(254, 121, 104,0.3);
+  font-size: 2rem;
+}
+.login-form{
+  /* background: url("../../assets/EV mart/liquid-cheese.png"); */
+  background-color: rgba(108, 122, 137,.2 );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form form{
+  padding: 2rem;
+  margin: 20rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  background: #fff;
+  border: .1rem solid rgba(0,0,0,.1);
+  text-align: center;
+  width: 70%;
+}
+.login-form form .buttons{
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}
+.login-form form .book{
+  display: block;
+  width: 100%;
+  margin:.5rem 0;
+}
+.login-form form h3{
+ color: #130f40;
+ font-size: 2.5rem;
+ padding-bottom:1rem;
+ text-transform: uppercase;
+}
+.login-form form .box{
+  margin: .7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+  /* caret-color: lime; */
+}
+
+.login-form form p{
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: #666;
+}
+.login-form form #close{
+  font-size: 2rem;
+  cursor: pointer;
+  float: right;
+}
+.login-form form .link{
+  color: #f9d806;
+  padding-left: 0.3rem;
+}
+.login-form form .link:hover{
+  color: #f9d806;
+  text-decoration: underline;
+}
+small{
+  color: red;
+  font-size: 1.3rem;
+}
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+.control {
+  display: flex;
+  flex-direction: row;
+  gap: -5rem;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.control .input{
+  width: 86%;
+}
+.control .input input{
+  border-top-right-radius:0;
+  border-bottom-right-radius: 0;
+}
+.control .icon i{
+  font-size: 1.5rem;
+  background-color: #E5E4E2;
+  padding:1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.control .icon{
+  cursor: pointer;
+}
+.fa-eye-slash{
+  color: black;
+}
+.fa-eye{
+  color: black;
+}
+.form-feedback{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 50%;
+}
+.form-feedback label{
+  font-size: 1.8rem;
+  text-transform: none;
+  color: #130f40;
+  float: left;
+}
+.side-input{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.feedback-question{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+}
+.feedback-question label{
+  font-size: 1.8rem;
+  text-transform: none;
+  color: #130f40;
+  float: left;
+  text-align: left;
+}
+.feedback-question{
+  margin-top: 2rem;
+}
+.feedback-question label{
+  letter-spacing: 0.2rem;
+}
+.reaction{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.reaction img{
+ width: 70px;
+ height: 70px;
+  color: green;
+}
+[type=radio] + img {
+  cursor: pointer;
+  color: green;
+}
+[type=radio]:checked + img {
+  outline: 2px solid green;
+  border-radius: 50%;
+  outline-offset: 1rem;
+}
+.inline-block{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  justify-content: center;
+}
+.feedback-que{
+  padding-bottom: 2.5rem;
+  padding-top: 2rem;
+}
+.text-area textarea{
+  resize: none;
+}
+.feedback-button{
+  width: 90%;
+  padding: 1rem 0 1rem 0;
+  color: #fff;
+  background-color: black;
+  font-size: 2.5rem;
+  text-transform: none;
+}
+button:disabled{
+  border: 1px solid black;
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+

@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./orderconfirmpage.component.css']
 })
 export class OrderconfirmpageComponent {
-  orderPlaced:Boolean=true;
 
   constructor(private route:Router){
     //used for redirect after few seconds
     setTimeout(() => {
-      this.orderPlaced=false;
-      this.route.navigateByUrl("Product");
+      this.route.navigateByUrl("Product").then(()=>{
+        window.location.reload();
+      });
   }, 4000);
   }
 

@@ -1,0 +1,98 @@
+<!--
+Description:This component is used by admin to allocate the offers for Vehicles.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 28-07-2023
+Reviewed by: Nil
+-->
+
+<head>
+  <title>Offers Management</title>
+</head>
+<body>
+   <!----------------- header ---------------->
+   <header class="header">
+    <div>
+      <div class="head">
+        <i class="fa-solid fa-bars"></i>
+        <h3>EV Mart Admin</h3>
+      </div>
+    </div>
+    <div>
+      <button class="book1" (click)="logout()">Logout</button>
+    </div>
+  </header>
+  <!----------------- header ---------------->
+
+  <!----------------- header ---------------->
+  <header class="head1">
+    <nav>
+      <a>offers Management</a>
+    </nav>
+  </header>
+  <!----------------- header ---------------->
+
+  <!----------------- Brand Management  -------------------->
+  <div class="main">
+    <div class="form">
+      <form [formGroup]="servform" (ngSubmit)="servform.valid && submit()">
+        <div class="heading">
+          <p>EV Mart offers Management</p>
+        </div>
+        <div>
+          <select  id="select" class="box" #brand (change)="takeBrand(brand.value)" formControlName="brand">
+            <option value="" disabled selected>Select your Brand of Vehicle</option>
+            <option value={{servdata.Brand}}  *ngFor="let servdata of servicedata;let ind=index">{{servdata.Brand}}</option>
+          </select>
+          <small *ngIf="servform.controls['brand'].errors?.['required'] && servform.controls['brand'].touched">Please select Brand of Vehicle</small>
+      </div>
+      <div>
+        <select name="" id="" class="box" #varient (change)="takeVarient(varient.value)" formControlName="varient">
+          <option value="" disabled selected>Select your Varient</option>
+          <option value="{{vardata.Varient}}" *ngFor="let vardata of varientLoop;let ind=index">{{vardata.Varient}}</option>
+        </select>
+        <small *ngIf="servform.controls['varient'].errors?.['required'] && servform.controls['varient'].touched">Please select Brandname first</small>
+      </div>
+
+      <div>
+        <select name="" id="" class="box" #battery (change)="specBattery(battery.value)" formControlName="battery">
+          <option value="" disabled selected>Select Battery</option>
+          <option value="{{specData.spec}}" *ngFor="let specData of batterySpec;let ind=index">{{specData.spec}}</option>
+        </select>
+        <small *ngIf="servform.controls['battery'].errors?.['required'] && servform.controls['battery'].touched">Please select above options first</small>
+      </div>
+
+      <div>
+        <input type="text" readonly class="box" placeholder="Original price" value="{{originalPrice | currency:'INR':'symbol':'1.0-0'}}">
+      </div>
+
+      <div>
+        <select name="" id="" class="box"  #offerPercentage (change)="getOfferPercentage(offerPercentage.value)">
+          <option value="" disabled selected>Select Offer percentage</option>
+          <option value="5%">5%</option>
+          <option value="10%">10%</option>
+          <option value="20%">20%</option>
+          <option value="25%">25%</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="text" class="box" readonly placeholder="offered price" value="{{offeredPrice | currency:'INR':'symbol':'1.0-0'}}">
+      </div>
+
+      <div>
+        <input type="datetime-local" class="box" placeholder="Select date and time">
+      </div>
+
+      <div>
+        <input type="file" class="box" placeholder="Choose image for the display in offers" (change)="showPreviewImage($event)">
+      </div>
+
+      <button class="book">
+        Request Service
+      </button>
+      </form>
+    </div>
+  </div>
+  <!----------------- Brand Management  -------------------->
+</body>

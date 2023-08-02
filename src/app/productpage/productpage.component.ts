@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { OrderbookingService } from '../orderbooking.service';
 import { LogincredentialsService } from '../logincredentials.service';
@@ -7,8 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-productpage',
   templateUrl: './productpage.component.html',
-  styleUrls: ['./productpage.component.css'],
-  encapsulation:ViewEncapsulation.None
+  styleUrls: ['./productpage.component.css']
 })
 export class ProductpageComponent {
   vehdetails:any;

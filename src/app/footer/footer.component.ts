@@ -12,8 +12,19 @@ export class FooterComponent {
   subenter:boolean=false;
   subvalid:boolean=false;
   thanks:boolean=false;
+  alreadyRegistered:any;
   constructor(private form:FormBuilder,private subservice:SubserviceService){
+
   }
+
+  // this.alreadyRegistered=this.subservice.errormsg;
+  // setInterval(()=>{
+
+  //   setTimeout(()=>{
+  //     this.alreadyRegistered="";
+  //   },2000)
+  // },500)
+
 
   //validating the subscription input
   subscribe=this.form.group({
@@ -23,9 +34,7 @@ export class FooterComponent {
   //store the subscription mail ID
   store(){
     console.log(this.subscribe.value);
-    this.subservice.subscriptiondata(this.subscribe.value).subscribe(z=>{
-      alert("EV mart Subscribed");
-    });
+    this.subservice.subscriptiondata(this.subscribe.value);
   }
 
   //To hide and show error and success messages

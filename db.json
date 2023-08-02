@@ -33,8 +33,8 @@
       ],
       "paymentcard": [
         {
-          "cardnumber": "XXXXXXXXXXXX2352",
-          "cardholdername": "JEEVA ARAVINTH",
+          "cardnumber": "XXXXXXXXXXXX1052",
+          "cardholdername": "JEEVA",
           "cardtype": "Visa"
         }
       ],
@@ -177,6 +177,60 @@
           "doorno": "621B",
           "paymentmode": "Debit Card",
           "paymentstatus": "paid"
+        },
+        {
+          "orderid": 620,
+          "varientcolor": "Hero Blue",
+          "varientimg": "http://localhost:4200/assets/EV%20mart/OptimaCX/display1.webp",
+          "varientname": "Optima LX",
+          "battery": "1.5kWh",
+          "range": "85 km",
+          "topspeed": "25 kmph",
+          "price": 49440,
+          "bookingdate": "20-Jul-2023 08:35:23 PM",
+          "onlinepaidamount": "14,832",
+          "deliveryDate": "20-Jul-2023 08:37:23 PM",
+          "day": "Thursday",
+          "State": "Bihar",
+          "City": "Jehanabad",
+          "Centername": "EV MART Center, Arwal",
+          "mail": "jeevaaravinth2001@gmail.com",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "firstname": "Aravinth",
+          "lastname": "hgyhb",
+          "phonenumber": "6374505534",
+          "landmark": "Jaisuryas",
+          "pincode": "636010",
+          "doorno": "621B",
+          "paymentmode": "Debit Card",
+          "paymentstatus": "paid"
+        },
+        {
+          "orderid": 547,
+          "varientcolor": "Maroon",
+          "varientimg": "http://localhost:4200/assets/EV%20mart/OptimaCX/display2.webp",
+          "varientname": "Optima CX",
+          "battery": "2kWh",
+          "range": "89 km",
+          "topspeed": "48 kmph",
+          "price": 106590,
+          "bookingdate": "24-Jul-2023 10:19:42 PM",
+          "onlinepaidamount": "31,977",
+          "deliveryDate": "24-Jul-2023 10:21:42 PM",
+          "day": "Monday",
+          "State": "Bihar",
+          "City": "Jamui",
+          "Centername": "EV MART Center, Aurangabad",
+          "mail": "jeevaaravinth2001@gmail.com",
+          "address": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
+          "firstname": "Aravinth",
+          "lastname": "sdcsx",
+          "phonenumber": "6374505534",
+          "landmark": "Jaisuryas",
+          "pincode": "636010",
+          "doorno": "621B",
+          "paymentmode": "\"BHIM\"",
+          "paymentstatus": "paid"
         }
       ]
     },
@@ -252,19 +306,7 @@
   "subscription": [
     {
       "mail": "jeevaaravinth2001@gmail.com",
-      "id": 1
-    },
-    {
-      "mail": "mani2002@gmail.com",
-      "id": 2
-    },
-    {
-      "mail": "harish@gmail.com",
-      "id": 3
-    },
-    {
-      "mail": "2k19ece07@kiot.ac.in",
-      "id": 5
+      "regemail": 1
     }
   ],
   "vehicleBrands": [
@@ -805,18 +847,7 @@
       "regemail": 3
     }
   ],
-  "offers": [
-    {
-      "img": "../../assets/EV mart/offer1.jpg",
-      "content": "Get ₹5,000* off on the OLA S1 Pro!",
-      "time": "July 21 2023 13:17:00",
-      "link": "",
-      "validity": "We have always got your back! Watch out this offer, valid upto",
-      "button": "Order now",
-      "brand": "OLA",
-      "regemail": 1
-    }
-  ],
+  "offers": [],
   "map": [
     {
       "link": ""
@@ -829,13 +860,31 @@
           "Brand": "OLA",
           "Varients": [
             {
-              "Varient": "OLA S1"
+              "Varient": "OLA S1",
+              "battery": [
+                {
+                  "spec":"3kWh",
+                  "price":"129999"
+                }
+            ]
             },
             {
-              "Varient": "OLA S1 Pro"
+              "Varient": "OLA S1 Pro",
+              "battery":[
+                {
+                  "spec":"4kWh",
+                  "price":"139000"
+                }
+              ]
             },
             {
-              "Varient": "OLA S1 Air"
+              "Varient": "OLA S1 Air",
+              "battery":[
+                {
+                  "spec":"5kWh",
+                  "price":"109999"
+                }
+              ]
             }
           ]
         },
@@ -843,10 +892,30 @@
           "Brand": "Ather",
           "Varients": [
             {
-              "Varient": "Ather 450X"
+              "Varient": "Ather 450X",
+              "battery":[
+                {
+                  "spec":"3kWh",
+                  "price": "114000"
+                },
+                {
+                  "spec":"2kwh",
+                  "price": "100000"
+                }
+              ]
             },
             {
-              "Varient": "Ather 450X Pro"
+              "Varient": "Ather 450X Pro",
+              "battery":[
+                {
+                  "spec":"1kWh",
+                  "price": "130000"
+                },
+                {
+                  "spec":"2kwh",
+                  "price": "150000"
+                }
+              ]
             }
           ]
         },
@@ -854,13 +923,31 @@
           "Brand": "Ampere",
           "Varients": [
             {
-              "Varient": "Primus"
+              "Varient": "Primus",
+              "battery":[
+                {
+                  "spec":"3kWh",
+                  "price": "109900"
+                }
+              ]
             },
             {
-              "Varient": "Magnus EX"
+              "Varient": "Magnus EX",
+              "battery":[
+                {
+                  "spec":"2kWh",
+                  "price": "104743"
+                }
+              ]
             },
             {
-              "Varient": "Zeal EX"
+              "Varient": "Zeal EX",
+              "battery":[
+                {
+                  "spec":"2.3kWh",
+                  "price": "96690"
+                }
+              ]
             }
           ]
         },
@@ -868,7 +955,13 @@
           "Brand": "Revolt",
           "Varients": [
             {
-              "Varient": "RV400"
+              "Varient": "RV400",
+              "battery":[
+                {
+                  "spec":"3.24kWh",
+                  "price": "142000"
+                }
+              ]
             }
           ]
         },
@@ -876,13 +969,28 @@
           "Brand": "Ultraviolette",
           "Varients": [
             {
-              "Varient": "F77 Original"
+              "Varient": "F77 Original",
+              "battery":[
+                {
+                  "spec":"7.1kWh"
+                }
+              ]
             },
             {
-              "Varient": "F77 Recon"
+              "Varient": "F77 Recon",
+              "battery":[
+                {
+                  "spec":"10.3kWh"
+                }
+              ]
             },
             {
-              "Varient": "F77 Limited"
+              "Varient": "F77 Limited",
+              "battery":[
+                {
+                  "spec":"10.3kwh"
+                }
+              ]
             }
           ]
         },
@@ -890,10 +998,21 @@
           "Brand": "Hero Electric",
           "Varients": [
             {
-              "Varient": "Optima CX"
+              "Varient": "Optima CX",
+              "battery":[
+                {
+                  "spec":"4kWh"
+                }
+              ],
+              "price":"1,06,590"
             },
             {
-              "Varient": "Optima LX"
+              "Varient": "Optima LX",
+              "battery":[
+                {
+                  "spec":"4kWh"
+                }
+              ]
             }
           ]
         }
