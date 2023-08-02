@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-profileservice',
@@ -33,14 +34,14 @@ export class ProfileserviceComponent {
 
 
   constructor(private _http:HttpClient){
-    //service profile page 
-    this._http.get<any>("http://localhost:3000/Register").subscribe((userDetails)=>{
+    //service profile page
+    this._http.get<any>(url.customerDetails).subscribe((userDetails)=>{
       const findUser=userDetails.find((user:any)=>{
         this.customerDetails=user;
         return user.regemail==sessionStorage.getItem("logmail");
       });
       if(findUser){
-       
+
         if(this.customerDetails.service || this.customerDetails.servicedone){
           if(this.customerDetails.service){
             if(this.customerDetails.service.length>0){
@@ -68,7 +69,7 @@ export class ProfileserviceComponent {
           else if(this.serviceBrand=="HeroElectric"){
             this.serviceVehicleImage="../../assets/EV mart/OptimaCX/display1.webp"
           }
-        } 
+        }
       }
       else{
         this.ordersEmpty=true;
@@ -103,7 +104,7 @@ export class ProfileserviceComponent {
         else if(this.brandImage=="HeroElectric"){
           this.serviceImage="../../assets/EV mart/OptimaCX/display1.webp"
         }
-      } 
+      }
     }
     else{
       this.servicedoneempty=true;
@@ -122,7 +123,7 @@ export class ProfileserviceComponent {
             this.servicedoneempty=true;
           }
         this.userServiceLength=this.customerServices.length;
-       
+
       }
       console.log(this.serviceImage);
     })

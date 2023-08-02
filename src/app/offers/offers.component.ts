@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription,interval } from 'rxjs';
 import { OrderbookingService } from '../orderbooking.service';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-offers',
@@ -42,7 +43,7 @@ export class OffersComponent implements OnInit {
   offertime:any=[];
 
   constructor(private _http:HttpClient,private route:Router,private offerBooking:OrderbookingService){
-    this._http.get<any>("http://localhost:3000/offers").subscribe(x=>{
+    this._http.get<any>(url.offers).subscribe(x=>{
     this.offer=x;
     this.length=x.length;
     for(this.i=0;this.i<x.length;this.i++){
@@ -67,7 +68,7 @@ export class OffersComponent implements OnInit {
         console.log(this.formattedDate[j]);
 
         setInterval(()=>{
-        this._http.get("http://localhost:3000/offers").subscribe((offers)=>{
+        this._http.get(url.offers).subscribe((offers)=>{
           this.offerTime=offers;
           const offer=this.offerTime.find((findTime:any)=>{
           this.regemailID=findTime.regemail;

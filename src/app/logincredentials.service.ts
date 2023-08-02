@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http'
 import { Router } from '@angular/router';
 import * as alertifyjs from 'alertifyjs';
+import { environment } from 'src/Environment/environment';
+import {url} from 'src/Environment/environment';
+import {nodemailer} from 'src/Environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,18 +32,18 @@ export class LogincredentialsService {
   }
   savedata(a:any){
     console.log(a);
-    return this.http.post<any>("http://localhost:3000/Register",a);
+    return this.http.post<any>(url.customerDetails,a);
   }
 
   registerDetails(){
-    return this.http.get<any>("http://localhost:3000/Register");
+    return this.http.get<any>(url.customerDetails);
   }
   // retrievedata(body:any){
   //   console.log(body);
   //   return this.http.get<any>("http://localhost:3000/Register"+"/"+body);
   // }
   retrievedata(custmail:any,custpass:any,returl:any,servurl:any){
-    this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
+    this.http.get<any>(url.customerDetails).subscribe((x)=>{
       const user=x.find((logged:any)=>{
         this.profiledetails=JSON.stringify(logged);
         sessionStorage.setItem('profilepage',this.profiledetails);
@@ -49,6 +52,7 @@ export class LogincredentialsService {
         sessionStorage.setItem('regphone',logged.regphonenum);
         return logged.regemail===custmail && logged.regpass===custpass;
       });
+      console.log(user);
       if(user){
         this.custemail=custmail;
         this.reguser=localStorage.getItem('reguser');
@@ -86,13 +90,13 @@ export class LogincredentialsService {
         this.logoutshow=true;
         return alert("Login Successfull");
       }
-      else if(custmail=="evadmin2023@gmail.com" && custpass=="EVadmin@2023"){
+      else if(environment.adminmail==custmail && environment.adminpassword==custpass){
         this.route.navigateByUrl('/admin');
         alert("Admin login Successfull");
         return this.closenav=false;
       }
       else{
-        return alert("Invalid Details");
+        alert("Invalid Details");
       }
     });
 
@@ -108,7 +112,7 @@ export class LogincredentialsService {
   }
 
   registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any,regphone:any){
-    this.http.get<any>("http://localhost:3000/Register").subscribe((check)=>{
+    this.http.get<any>(url.customerDetails).subscribe((check)=>{
       const regcheck=check.find((find:any)=>{
         return find.regemail==regmail;
       });
@@ -117,7 +121,7 @@ export class LogincredentialsService {
         return this.regcheck;
       }
       else{
-        this.http.post<any>("http://localhost:3000/Register",{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm,regphonenum:regphone,orders:[]}).subscribe((data)=>{
+        this.http.post<any>(url.customerDetails,{regemail:regmail,reguser:reguser,regpass:regpass,regconfirm:regconfirm,regphonenum:regphone,orders:[]}).subscribe((data)=>{
         alert("Thanks for registering EV Mart, Let's experience the EV world");
         localStorage.setItem('key',regmail);
         localStorage.setItem('key1',reguser);
@@ -125,7 +129,7 @@ export class LogincredentialsService {
           mail:regmail,
           name:reguser
         }
-        this.sendEmail("http://localhost:4000/sendmail",user).subscribe((mailinfo:any)=>{
+        this.sendEmail(nodemailer.mailURL,user).subscribe((mailinfo:any)=>{
         let res:any=mailinfo;
         });
         this.route.navigateByUrl('/emailverify');
@@ -139,9 +143,8 @@ export class LogincredentialsService {
       mail:localStorage.getItem('key'),
       name:localStorage.getItem('key1')
     }
-    this.resendEmail("http://localhost:4000/sendmail",resenduser).subscribe((mailinfo:any)=>{
+    this.resendEmail(nodemailer.mailURL,resenduser).subscribe((mailinfo:any)=>{
         let res:any=mailinfo;
-
         });
         alertifyjs.success().setContent('<h3>Email resent success</h3>').show();
         this.route.navigateByUrl('/emailverify');
@@ -163,14 +166,14 @@ export class LogincredentialsService {
 
 
   profileupdate(phone:any,mail:any,user:any){
-    this.http.get<any>("http://localhost:3000/Register").subscribe((update)=>{
+    this.http.get<any>(url.customerDetails).subscribe((update)=>{
       const userprofile=update.find((profile:any)=>{
         this.profilemail=localStorage.setItem('mailcheck',profile.regemail);
         console.log(this.profilemail);
         return profile.regemail==mail ;
       })
       if(userprofile){
-         this.http.patch("http://localhost:3000/Register"+'/'+localStorage.getItem('mailcheck'),{regphonenum:phone,reguser:user}).subscribe((changedet)=>{
+         this.http.patch(url.customerDetails+'/'+localStorage.getItem('mailcheck'),{regphonenum:phone,reguser:user}).subscribe((changedet)=>{
          this.phone=localStorage.setItem('updatephone',phone);
          this.user=localStorage.setItem('updateuser',user);
         this.profilepageget=localStorage.getItem('profilepage');

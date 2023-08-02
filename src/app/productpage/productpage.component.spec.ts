@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing'
 import { ProductpageComponent } from './productpage.component';
+import { FooterComponent } from '../footer/footer.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ProductpageComponent', () => {
   let component: ProductpageComponent;
@@ -8,7 +11,9 @@ describe('ProductpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductpageComponent ]
+      imports:[HttpClientModule,HttpClientTestingModule],
+      declarations: [ ProductpageComponent,FooterComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
 

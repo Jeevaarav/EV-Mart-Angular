@@ -4,6 +4,7 @@ import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
 import { HttpClient } from '@angular/common/http';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-serviceadmin',
@@ -41,7 +42,7 @@ export class ServiceadminComponent {
     });
 
     //accepted services data
-    this.http.get<any>("http://localhost:3000/servicedone").subscribe((servicedone)=>{
+    this.http.get<any>(url.serviceDone).subscribe((servicedone)=>{
       this.serviceDone=servicedone;
       console.log(this.serviceDone);
       if(this.serviceDone.length==0){

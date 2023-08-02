@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing'
 import { RegisterpageComponent } from './registerpage.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('RegisterpageComponent', () => {
   let component: RegisterpageComponent;
@@ -8,7 +10,8 @@ describe('RegisterpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterpageComponent ]
+      imports:[HttpClientModule,HttpClientTestingModule,ReactiveFormsModule],
+      declarations: [ RegisterpageComponent]
     })
     .compileComponents();
 

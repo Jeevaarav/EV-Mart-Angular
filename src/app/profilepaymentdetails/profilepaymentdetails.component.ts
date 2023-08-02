@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-profilepaymentdetails',
@@ -14,11 +15,11 @@ export class ProfilepaymentdetailsComponent {
 
   hideNoPaymentcard:Boolean=true;
   showPaymentCard:Boolean=true;
-  
+
 
   constructor(private _http:HttpClient){
     //retreive card details from particular user
-    this._http.get<any>("http://localhost:3000/Register").subscribe((paymentcard)=>{
+    this._http.get<any>(url.customerDetails).subscribe((paymentcard)=>{
       const user=paymentcard.find((register:any)=>{
         this.getUserDetails=register;
         return register.regemail==sessionStorage.getItem("logmail");

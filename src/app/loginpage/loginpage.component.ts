@@ -3,7 +3,7 @@ import { Component,ViewEncapsulation} from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
-import { ForgotService } from '../forgot.service';
+
 
 @Component({
   selector: 'app-loginpage',
@@ -21,7 +21,7 @@ export class LoginpageComponent {
 
   field2:boolean=true;
 
-  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private router:ActivatedRoute){
+  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private router:ActivatedRoute){
     this.router.queryParamMap.subscribe(servform=>{
       this.servurl=servform.get('serviceurl');
       console.log(this.servurl);

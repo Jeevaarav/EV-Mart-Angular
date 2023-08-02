@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { EvmartserviceService } from '../evmartservice.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-servicesform',
@@ -22,7 +23,7 @@ export class ServicesformComponent {
 constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private http:HttpClient){
   this.value=localStorage.getItem('serviceform');
 
-  this.http.get<any>("http://localhost:3000/Servicedata").subscribe((value)=>{
+  this.http.get<any>(url.serviceData).subscribe((value)=>{
   this.servicedata=value[0].Brandname;
   this.totalVal=value;
   console.log(this.servicedata);
@@ -52,7 +53,7 @@ submit(category:any){
 //take brand and varients for particular brand
 takeBrand(brand:any){
   console.log(brand);
-  this.http.get<any>("http://localhost:3000/Servicedata").subscribe((val)=>{
+  this.http.get<any>(url.serviceData).subscribe((val)=>{
     console.log(val[0].Brandname);
     const check=val[0].Brandname.find((y:any)=>{
       console.log(y.Brand);

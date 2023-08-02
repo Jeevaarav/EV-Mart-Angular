@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-profiledeliveredorders',
@@ -15,7 +16,7 @@ export class ProfiledeliveredordersComponent {
   showOrderDetails:Boolean=false;
 
   constructor(private _http:HttpClient){
-    this._http.get<any>("http://localhost:3000/Register").subscribe((deliveredOrders)=>{
+    this._http.get<any>(url.customerDetails).subscribe((deliveredOrders)=>{
       //retriving delivered details
       const user=deliveredOrders.find((delivered:any)=>{
         this.userDeliveredOrders=delivered;

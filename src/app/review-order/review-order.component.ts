@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { FillbookdetailsService } from '../fillbookdetails.service';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-review-order',
@@ -111,7 +112,7 @@ export class ReviewOrderComponent {
   //selection of state value
   stateselect(state:any){
       this.state=state;
-      this.http.get<any>("http://localhost:3000/states").subscribe((states)=>{
+      this.http.get<any>(url.states).subscribe((states)=>{
         const stateactive=states.find((states:any)=>{
           this.districtstate=states;
           return states.state==state;
@@ -194,8 +195,10 @@ export class ReviewOrderComponent {
       pincode:this.reviewform.controls['pincode'].value,
       doorno:this.reviewform.controls['doorno'].value
     }
+    if(sessionStorage.getItem('isLogged')=='true'){
+      this.filldetails.storeDetails(filldetails);
+    }
 
-    this.filldetails.storeDetails(filldetails);
 
   }
 }

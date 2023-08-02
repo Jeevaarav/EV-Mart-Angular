@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import {url} from 'src/Environment/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class OrderbookingService {
   constructor(private http:HttpClient, private route:Router) { }
 
   productpage(order:any){
-    this.http.get<any>("http://localhost:3000/vehicleBrands").subscribe((x)=>{
+    this.http.get<any>(url.getVehicleDetails).subscribe((x)=>{
       const user=x.find((y:any)=>{
         this.store=y;
         return y.Brandname==order;

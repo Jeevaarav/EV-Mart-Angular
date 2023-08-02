@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import * as alertifyjs from 'alertifyjs';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-manage-address',
@@ -28,7 +29,7 @@ export class ManageAddressComponent {
   alreadyAdded:Boolean=true;
 
   constructor(private form:FormBuilder,private http:HttpClient){
-    this.http.get<any>("http://localhost:3000/Register").subscribe((addressCheck)=>{
+    this.http.get<any>(url.customerDetails).subscribe((addressCheck)=>{
       const user=addressCheck.find((logged:any)=>{
         this.addressStore=logged;
         this.fulladdress=logged.address;
@@ -82,9 +83,9 @@ export class ManageAddressComponent {
     const landmark=this.manageaddress.controls['landmark'].value;
     const pincode=this.manageaddress.controls['pincode'].value;
     const mail=sessionStorage.getItem('logmail');
-    
 
-    this.http.get<any>("http://localhost:3000/Register").subscribe((x)=>{
+
+    this.http.get<any>(url.customerDetails).subscribe((x)=>{
       const user=x.find((logged:any)=>{
         console.log(logged.regemail);
         return logged.regemail==mail;

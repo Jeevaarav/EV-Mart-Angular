@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-adminoffermanagement',
@@ -31,7 +32,7 @@ export class AdminoffermanagementComponent {
   constructor(private route:Router,private formbuild:FormBuilder,private _http:HttpClient){
     this.value=localStorage.getItem('serviceform');
 
-  this._http.get<any>("http://localhost:3000/Servicedata").subscribe((value)=>{
+  this._http.get<any>(url.serviceData).subscribe((value)=>{
   this.servicedata=value[0].Brandname;
   this.totalVal=value;
   console.log(this.servicedata);
@@ -58,7 +59,7 @@ submit(){
 //take brand and varients for particular brand
 takeBrand(brand:any){
   console.log(brand);
-  this._http.get<any>("http://localhost:3000/Servicedata").subscribe((val)=>{
+  this._http.get<any>(url.serviceData).subscribe((val)=>{
     console.log(val[0].Brandname);
     const check=val[0].Brandname.find((y:any)=>{
       console.log(y.Brand);
@@ -103,6 +104,7 @@ specBattery(battery:any){
   }
 }
 
+//Image file upload
 showPreviewImage(event:any){
   if (event.target.files && event.target.files[0]) {
     var reader = new FileReader();
@@ -114,6 +116,7 @@ showPreviewImage(event:any){
 }
 }
 
+//offered price calculation
 getOfferPercentage(offerPercentage:any){
   this.percentageValue=offerPercentage.split('%');
   this.percentageCalculation=(this.percentageValue[0]/100);

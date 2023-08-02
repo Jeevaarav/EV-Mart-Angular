@@ -26,15 +26,15 @@
       "address": [
         {
           "fulladdress": "Mariamman Kovil Street, Sanjeevarayanpet, Salem",
-          "doorno": "621B",
+          "doorno": "621C",
           "landmark": "Jaisuryas",
           "pincode": "636010"
         }
       ],
       "paymentcard": [
         {
-          "cardnumber": "XXXXXXXXXXXX1052",
-          "cardholdername": "JEEVA",
+          "cardnumber": "XXXXXXXXXXXX2155",
+          "cardholdername": "JEEVAARAVINTH",
           "cardtype": "Visa"
         }
       ],
@@ -232,6 +232,19 @@
           "paymentmode": "\"BHIM\"",
           "paymentstatus": "paid"
         }
+      ],
+      "service": [],
+      "servicedone": [
+        {
+          "regemail": "jeevaaravinth2001@gmail.com",
+          "Brand": "Ampere",
+          "category": "Vehicle Maintanence-Category",
+          "vehicleno": "TN 12 L 2889",
+          "varient": "Primus-Model",
+          "date": "2023-08-04",
+          "time": "15:02",
+          "reply": "Thanks for Choosing our Service"
+        }
       ]
     },
     {
@@ -256,8 +269,8 @@
       ],
       "paymentcard": [
         {
-          "cardnumber": "XXXXXXXXXXXX2121",
-          "cardholdername": "JEEVA ",
+          "cardnumber": "XXXXXXXXXXXX6326",
+          "cardholdername": "HARISH",
           "cardtype": "Visa"
         }
       ],
@@ -845,6 +858,17 @@
       "time": "18:21",
       "reply": "Thanks for Choosing our Service",
       "regemail": 3
+    },
+    {
+      "email": "jeevaaravinth2001@gmail.com",
+      "Brand": "Ampere",
+      "category": "Vehicle Maintanence-Category",
+      "vehicleno": "TN 12 L 2889",
+      "varient": "Primus-Model",
+      "date": "2023-08-04",
+      "time": "15:02",
+      "reply": "Thanks for Choosing our Service",
+      "regemail": 4
     }
   ],
   "offers": [],
@@ -863,26 +887,26 @@
               "Varient": "OLA S1",
               "battery": [
                 {
-                  "spec":"3kWh",
-                  "price":"129999"
+                  "spec": "3kWh",
+                  "price": "129999"
                 }
-            ]
+              ]
             },
             {
               "Varient": "OLA S1 Pro",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"4kWh",
-                  "price":"139000"
+                  "spec": "4kWh",
+                  "price": "139000"
                 }
               ]
             },
             {
               "Varient": "OLA S1 Air",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"5kWh",
-                  "price":"109999"
+                  "spec": "5kWh",
+                  "price": "109999"
                 }
               ]
             }
@@ -893,26 +917,26 @@
           "Varients": [
             {
               "Varient": "Ather 450X",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"3kWh",
+                  "spec": "3kWh",
                   "price": "114000"
                 },
                 {
-                  "spec":"2kwh",
+                  "spec": "2kwh",
                   "price": "100000"
                 }
               ]
             },
             {
               "Varient": "Ather 450X Pro",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"1kWh",
+                  "spec": "1kWh",
                   "price": "130000"
                 },
                 {
-                  "spec":"2kwh",
+                  "spec": "2kwh",
                   "price": "150000"
                 }
               ]
@@ -924,27 +948,27 @@
           "Varients": [
             {
               "Varient": "Primus",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"3kWh",
+                  "spec": "3kWh",
                   "price": "109900"
                 }
               ]
             },
             {
               "Varient": "Magnus EX",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"2kWh",
+                  "spec": "2kWh",
                   "price": "104743"
                 }
               ]
             },
             {
               "Varient": "Zeal EX",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"2.3kWh",
+                  "spec": "2.3kWh",
                   "price": "96690"
                 }
               ]
@@ -956,9 +980,9 @@
           "Varients": [
             {
               "Varient": "RV400",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"3.24kWh",
+                  "spec": "3.24kWh",
                   "price": "142000"
                 }
               ]
@@ -970,25 +994,25 @@
           "Varients": [
             {
               "Varient": "F77 Original",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"7.1kWh"
+                  "spec": "7.1kWh"
                 }
               ]
             },
             {
               "Varient": "F77 Recon",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"10.3kWh"
+                  "spec": "10.3kWh"
                 }
               ]
             },
             {
               "Varient": "F77 Limited",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"10.3kwh"
+                  "spec": "10.3kwh"
                 }
               ]
             }
@@ -999,18 +1023,18 @@
           "Varients": [
             {
               "Varient": "Optima CX",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"4kWh"
+                  "spec": "4kWh"
                 }
               ],
-              "price":"1,06,590"
+              "price": "1,06,590"
             },
             {
               "Varient": "Optima LX",
-              "battery":[
+              "battery": [
                 {
-                  "spec":"4kWh"
+                  "spec": "4kWh"
                 }
               ]
             }

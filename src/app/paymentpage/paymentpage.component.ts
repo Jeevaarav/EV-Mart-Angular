@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-paymentpage',
@@ -29,7 +30,7 @@ export class PaymentpageComponent {
       this.totalPayamount=sessionStorage.getItem('Amount');
 
       //used for displaying the card if registered by the user.
-      this._http.get<any>("http://localhost:3000/Register").subscribe((register)=>{
+      this._http.get<any>(url.customerDetails).subscribe((register)=>{
         const user=register.find((check:any)=>{
           this.getDebitCardNumber=check;
           return check.regemail==sessionStorage.getItem("logmail");

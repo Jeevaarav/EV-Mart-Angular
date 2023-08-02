@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { url } from 'src/Environment/environment';
 
 @Component({
   selector: 'app-exchangebooking',
@@ -30,7 +31,7 @@ export class ExchangebookingComponent {
   showFAQ:Boolean=false;
 
   constructor(private form:FormBuilder,private _http:HttpClient,private route:Router){
-    this._http.get<any>("http://localhost:3000/oldvehicle").subscribe((oldvehicle)=>{
+    this._http.get<any>(url.oldvehilcle).subscribe((oldvehicle)=>{
     this.Brand=oldvehicle;
     })
   }
@@ -57,10 +58,10 @@ export class ExchangebookingComponent {
     Ownername:['',[Validators.required,Validators.pattern("^(?!.*(.).*\\1{3})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
     Ownership:['',Validators.required]
   })
-  
+
   //Checking brand name and retrieve data for the year and kilometers
   oldVehicleBrand(brandName:any){
-    this._http.get<any>("http://localhost:3000/oldvehicle").subscribe((brandname)=>{
+    this._http.get<any>(url.oldvehilcle).subscribe((brandname)=>{
       const Brand=brandname.find((brandname:any)=>{
         this.storeBrandname=brandname;
         return brandname.Brand==brandName;
@@ -72,12 +73,12 @@ export class ExchangebookingComponent {
         console.log(this.storeBrandname);
         this.modelName=this.storeBrandname.Model;
         this.ownerShip=this.storeBrandname.vehicleowner;
-        this._http.get<any>("http://localhost:3000/yearofmanufacture").subscribe((year)=>{
+        this._http.get<any>(url.yearOfmanufacture).subscribe((year)=>{
           this.yearOfManufacture=year;
         });
-        this._http.get<any>("http://localhost:3000/kilometerrange").subscribe((Kilometer)=>{
+        this._http.get<any>(url.kilometers).subscribe((Kilometer)=>{
           this.kilometerOfVehicle=Kilometer;
-        })  
+        })
       }
       else{
         console.log("Not found");
@@ -108,7 +109,7 @@ export class ExchangebookingComponent {
       this.ownerShipCount=1;
     }
   }
-  
+
   //Getting data from input after form submission
   getOldVehicledetails(){
     if(this.oldvehicledetails.controls['Yearofmfr'].value=="2015"){
@@ -136,7 +137,7 @@ export class ExchangebookingComponent {
       this.yearCalculation=Math.floor(Math.random()* (40000-42000)+42000);
     }
 
-    this._http.get<any>("http://localhost:3000/kilometerrange").subscribe((kms)=>{
+    this._http.get<any>(url.kilometers).subscribe((kms)=>{
       const kmsfind=kms.find((kmsvalue:any)=>{
         this.vehicleKMS=kmsvalue;
         return kmsvalue.kms==this.oldvehicledetails.controls['Kilometer'].value
@@ -172,5 +173,5 @@ export class ExchangebookingComponent {
     }
    console.log(this.oldvehicledetails.value);
   }
-  
+
 }

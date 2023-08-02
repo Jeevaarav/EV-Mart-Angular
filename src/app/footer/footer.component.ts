@@ -17,15 +17,6 @@ export class FooterComponent {
 
   }
 
-  // this.alreadyRegistered=this.subservice.errormsg;
-  // setInterval(()=>{
-
-  //   setTimeout(()=>{
-  //     this.alreadyRegistered="";
-  //   },2000)
-  // },500)
-
-
   //validating the subscription input
   subscribe=this.form.group({
     mail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]

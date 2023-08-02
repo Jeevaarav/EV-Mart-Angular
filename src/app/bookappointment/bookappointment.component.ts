@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { url } from 'src/Environment/environment';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class BookappointmentComponent {
   showButton:any=0;
 
   constructor(private form:FormBuilder,private _http:HttpClient,private route:Router){}
-  //Pincode Validators 
+  //Pincode Validators
   Pincode=this.form.group({
     Pincode:['',[Validators.required,Validators.pattern("[0-9]{6}")]]
   })
@@ -25,7 +26,7 @@ export class BookappointmentComponent {
   //This block is used to search for the pincode and validating the pincode
   searchPincode(pincode:any){
     if(pincode.length==6){
-      this._http.get<any>("http://localhost:3000/exchangeoffers").subscribe((pincodeval)=>{
+      this._http.get<any>(url.exchangeOffers).subscribe((pincodeval)=>{
       const code=pincodeval.find((pin:any)=>{
         this.getPin=pin;
         return pincode==pin.pincode;

@@ -5,6 +5,8 @@ import { formatDate } from '@angular/common';
 import { FillbookdetailsService } from '../fillbookdetails.service';
 import { HttpClient } from '@angular/common/http';
 import { debitcard } from '../fillbooking.guard';
+import { url } from 'src/Environment/environment';
+
 
 @Component({
   selector: 'app-debitcardpayment',
@@ -57,7 +59,7 @@ export class DebitcardpaymentComponent implements debitcard {
         this.mastercard=y;
       })
 
-      //Validating the input 
+      //Validating the input
       this.myform=formName.group({
         input:['',[Validators.required,Validators.pattern("^[45][0-9]{15}$")]],
         CVV:['',[Validators.required,Validators.pattern("[0-9]{1,4}")]],
@@ -69,7 +71,7 @@ export class DebitcardpaymentComponent implements debitcard {
       this.myform.valueChanges.subscribe(x=>{
         this.cardValidation(x.input);
       })
-  
+
 
     }
 
@@ -142,7 +144,7 @@ export class DebitcardpaymentComponent implements debitcard {
                 this.bankNotFound="";
               }
             }
-  
+
           }
         }
       }
@@ -166,7 +168,7 @@ export class DebitcardpaymentComponent implements debitcard {
                 this.bankNotFound="";
               }
             }
-  
+
           }
         }
       }
@@ -202,7 +204,7 @@ export class DebitcardpaymentComponent implements debitcard {
       this.encryptCardNumber=this.encryptNumber.concat(this.splitLastdigit);
       console.log(this.encryptCardNumber);
 
-      this._http.get<any>("http://localhost:3000/Register").subscribe((paymentdetails)=>{
+      this._http.get<any>(url.customerDetails).subscribe((paymentdetails)=>{
       const user=paymentdetails.find((getDetails:any)=>{
         return getDetails.regemail==sessionStorage.getItem('logmail');
       })
@@ -214,5 +216,5 @@ export class DebitcardpaymentComponent implements debitcard {
       })
       this.fillDetails.orderbooked(this.getCarddetails);
     }
-  } 
+  }
   }

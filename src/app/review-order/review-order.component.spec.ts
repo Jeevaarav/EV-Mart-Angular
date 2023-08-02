@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing'
 import { ReviewOrderComponent } from './review-order.component';
 
 describe('ReviewOrderComponent', () => {
@@ -8,6 +9,7 @@ describe('ReviewOrderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule,HttpClientTestingModule],
       declarations: [ ReviewOrderComponent ]
     })
     .compileComponents();

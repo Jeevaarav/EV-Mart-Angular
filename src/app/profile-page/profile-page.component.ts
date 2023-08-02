@@ -21,14 +21,14 @@ export class ProfilePageComponent {
   editprof:boolean=false;
 
   constructor(private form:FormBuilder, private service:LogincredentialsService){
-    this.evMartprofile=localStorage.getItem('profilepage');
+    this.evMartprofile=sessionStorage.getItem('profilepage');
     this.evMartemail=JSON.parse(this.evMartprofile);
     this.evMartuser=this.evMartemail.reguser;
-    localStorage.setItem('updateuser',this.evMartuser);
+    sessionStorage.setItem('updateuser',this.evMartuser);
     this.phone=this.evMartemail.regphonenum;
-    localStorage.setItem('updatephone',this.phone);
+    sessionStorage.setItem('updatephone',this.phone);
     this.email=this.evMartemail.regemail;
-    localStorage.setItem('updatemail',this.email);
+    sessionStorage.setItem('updatemail',this.email);
   }
 
   //used for hide and show
@@ -41,11 +41,11 @@ export class ProfilePageComponent {
 
   //validators for input
   updateinfo=this.form.group({
-    regphonenum:[localStorage.getItem('updatephone'),[Validators.required,Validators.pattern("[0-9]{1}[0-9]{9}")]],
-    reguser:[localStorage.getItem('updateuser'),[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
+    regphonenum:[sessionStorage.getItem('updatephone'),[Validators.required,Validators.pattern("[0-9]{1}[0-9]{9}")]],
+    reguser:[sessionStorage.getItem('updateuser'),[Validators.required,Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")]]
   });
 
-  //update the user details 
+  //update the user details
   updatedetails(){
    if(confirm("Are you sure to update the profile details?")){
     const phone=this.updateinfo.controls['regphonenum'].value;
