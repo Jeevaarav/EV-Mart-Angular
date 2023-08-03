@@ -52,16 +52,19 @@ export class OrderpageComponent implements OnInit {
 
   constructor(private service:OrderbookingService,private route:Router){
     //displaying the default values for the selection of vehicles
+    if(sessionStorage.getItem('isLogged')=="true"){
     this.date=new Date();
     console.log(this.date.getDate());
     this.estimatedDate=this.date.setDate(
       this.date.getDate()+4
     )
     this.deliveryDate=formatDate(this.estimatedDate,'dd-MMM-yyyy','en-US','+0530');
-    this.storeparse=sessionStorage.getItem('orderpage1');
-    this.useval=JSON.parse(this.storeparse);
-    this.vname=this.useval.varients[0].vname.split(' ').join("");
-    console.log(this.vname);
+
+      this.storeparse=sessionStorage.getItem('orderpage1');
+      this.useval=JSON.parse(this.storeparse);
+      this.vname=this.useval.varients[0].vname.split(' ').join("");
+      console.log(this.vname);
+
     this.showcase="../../assets/EV mart/"+this.vname+"/display1.webp";
     sessionStorage.setItem('varient_image',this.showcase);
     this.path=this.useval.div[0].color;
@@ -109,6 +112,7 @@ export class OrderpageComponent implements OnInit {
     this.loop=this.useval.div;
     sessionStorage.setItem('varientindex',"0");
     sessionStorage.setItem('index',"0")
+  }
   }
 
   //These blocks are used to show and hide the content

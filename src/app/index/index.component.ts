@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { OrderintervalService } from '../orderinterval.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-index',
@@ -19,6 +20,8 @@ export class IndexComponent {
     { img: "../assets/EV mart/Hero electric.png",title:"Hero Electric",price:"86,540/-" ,span1:"138 km certified range",span2:"2 stunning colors",span3:"42kmph top speed"},
     { img: "../assets/EV mart/ampere-removebg-preview.png",title:"Ampere",price:"61,993",span1:"120 km certified range",span2:"3 stunning colors",span3:"50kmph top speed" },
   ];
+
+  
   slideConfig = {
     "slidesToShow": 3,
     "slidesToScroll": 1,

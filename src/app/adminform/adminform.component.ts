@@ -12,7 +12,7 @@ import { AdminService } from '../admin.service';
 export class AdminformComponent {
     value:any;
     val2:any;
-    val3:any;
+    val3:any=[];
     mail:any;
     check:any;
     valCheck:any;
@@ -25,13 +25,15 @@ export class AdminformComponent {
     splitTime:any;
     booleanDate:any;
 
-    datecheck:Boolean=false; 
+    datecheck:Boolean=false;
     timeCheck:Boolean=false;
 
 
   constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private admin:AdminService){
-    this.value=sessionStorage.getItem('adminservicedetails');
+    if(sessionStorage.getItem('isLogged')=="true"){
+      this.value=sessionStorage.getItem('adminservicedetails');
     this.val3=JSON.parse(this.value);
+    }
     console.log(this.checkDate);
   }
 
@@ -76,7 +78,7 @@ export class AdminformComponent {
     console.log(this.currentMinute);
   }
 
-  
+
 //form submission after validation
   submit(mail:any,category:any,vehicleno:any,model:any,brand:any){
     console.log(this.servform.value);

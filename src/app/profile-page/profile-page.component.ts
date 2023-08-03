@@ -21,6 +21,7 @@ export class ProfilePageComponent {
   editprof:boolean=false;
 
   constructor(private form:FormBuilder, private service:LogincredentialsService){
+    if(sessionStorage.getItem('isLogged')=="true"){
     this.evMartprofile=sessionStorage.getItem('profilepage');
     this.evMartemail=JSON.parse(this.evMartprofile);
     this.evMartuser=this.evMartemail.reguser;
@@ -29,6 +30,7 @@ export class ProfilePageComponent {
     sessionStorage.setItem('updatephone',this.phone);
     this.email=this.evMartemail.regemail;
     sessionStorage.setItem('updatemail',this.email);
+    }
   }
 
   //used for hide and show

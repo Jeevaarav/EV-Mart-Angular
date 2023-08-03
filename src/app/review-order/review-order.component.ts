@@ -53,6 +53,7 @@ export class ReviewOrderComponent {
   centerNameStore:any;
 
   constructor(private route:Router,private form:FormBuilder,private http:HttpClient,private filldetails:FillbookdetailsService){
+    if(sessionStorage.getItem('isLogged')=="true"){
    this.mail=sessionStorage.getItem('logmail');
     this.user=sessionStorage.getItem('reguser');
     this.profile=sessionStorage.getItem('profilepage');
@@ -85,6 +86,7 @@ export class ReviewOrderComponent {
       this.stateListStore=stateslist;
       console.log(this.stateListStore[0].districts[0]);
     })
+  }
   }
 
   //review order form validators

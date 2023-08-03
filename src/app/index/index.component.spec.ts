@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import {HttpClientTestingModule} from '@angular/common/http/testing'
 import { IndexComponent } from './index.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 describe('IndexComponent', () => {
   let component: IndexComponent;
@@ -9,7 +10,7 @@ describe('IndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,HttpClientTestingModule],
+      imports:[HttpClientModule,HttpClientTestingModule,SlickCarouselModule],
       declarations: [ IndexComponent ]
     })
     .compileComponents();

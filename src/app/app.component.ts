@@ -12,7 +12,7 @@ import { OrderintervalService } from './orderinterval.service';
 export class AppComponent implements OnInit {
 //navbarvisibility variable
   navopen1:boolean=true;
-  title:any;
+  title:any="jeeva";
   footerClose:Boolean=true;
   currentPageEmail:any;
   currentPageOrder:any;

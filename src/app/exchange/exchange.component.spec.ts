@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExchangeComponent } from './exchange.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 describe('ExchangeComponent', () => {
   let component: ExchangeComponent;
@@ -8,6 +9,7 @@ describe('ExchangeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[SlickCarouselModule],
       declarations: [ ExchangeComponent ]
     })
     .compileComponents();
