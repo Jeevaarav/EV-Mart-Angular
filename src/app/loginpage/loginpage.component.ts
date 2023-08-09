@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,ViewEncapsulation} from '@angular/core';
+import { Component,OnInit,ViewEncapsulation} from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
+import { LoggerService } from '../logger.service';
 
 
 @Component({
@@ -14,21 +15,19 @@ import { LogincredentialsService } from '../logincredentials.service';
   `.subform input.ng-invalid{border: none}` ],
   encapsulation:ViewEncapsulation.None
 })
-export class LoginpageComponent {
-  msg:any="";
+export class LoginpageComponent implements OnInit {
+  message:any="";
   returl:any;
   servurl:any;
 
   field2:boolean=true;
 
-  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private router:ActivatedRoute){
-    this.router.queryParamMap.subscribe(servform=>{
-      this.servurl=servform.get('serviceurl');
-      console.log(this.servurl);
+  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private router:ActivatedRoute,private logger:LoggerService){
+    this.router.queryParamMap.subscribe(guardNavigationEndUrl=>{
+      this.servurl=guardNavigationEndUrl.get('serviceurl');
     })
     this.router.queryParamMap.subscribe(data=>{
       this.returl=data.get('returl');
-      console.log(this.returl);
     })
    }
 
@@ -41,10 +40,11 @@ login=this.form.group({
 //check if the inputs are blanks
 check(a:any,b:any){
   if(a=="" && b==""){
-    this.msg="Please fill the blanks";
+    this.logger.error("Please fill the blanks")
+    this.message="Please fill the blanks";
   }
   else{
-    this.msg="";
+    this.message="";
   }
 }
 
@@ -60,5 +60,9 @@ logdetails(){
 //used for show password
 togglepass(){
   this.field2=!this.field2;
+}
+
+ngOnInit(): void {
+  this.logger.info("Login Page initialized..");
 }
 }

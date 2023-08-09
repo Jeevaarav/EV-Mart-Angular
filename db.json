@@ -237,12 +237,12 @@
       "servicedone": [
         {
           "regemail": "jeevaaravinth2001@gmail.com",
-          "Brand": "Ampere",
-          "category": "Vehicle Maintanence-Category",
-          "vehicleno": "TN 12 L 2889",
-          "varient": "Primus-Model",
-          "date": "2023-08-04",
-          "time": "15:02",
+          "Brand": "Ather",
+          "category": "Battery Replacement-Category",
+          "vehicleno": "TN 25 L 2589",
+          "varient": "Ather 450X-Model",
+          "date": "2023-08-11",
+          "time": "23:53",
           "reply": "Thanks for Choosing our Service"
         }
       ]
@@ -869,6 +869,17 @@
       "time": "15:02",
       "reply": "Thanks for Choosing our Service",
       "regemail": 4
+    },
+    {
+      "email": "jeevaaravinth2001@gmail.com",
+      "Brand": "Ather",
+      "category": "Battery Replacement-Category",
+      "vehicleno": "TN 25 L 2589",
+      "varient": "Ather 450X-Model",
+      "date": "2023-08-11",
+      "time": "23:53",
+      "reply": "Thanks for Choosing our Service",
+      "regemail": 5
     }
   ],
   "offers": [],

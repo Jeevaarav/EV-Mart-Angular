@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,ViewEncapsulation} from '@angular/core';
+import { Component,OnInit,ViewEncapsulation} from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
 import { ForgotService } from '../forgot.service';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-registerpage',
@@ -14,17 +15,17 @@ import { ForgotService } from '../forgot.service';
   `.logform input.ng-valid{border: 2px solid green}`,`.logform input.ng-invalid && .regform input.ng-dirty{border:2px solid red}`,
   `.subform input.ng-invalid{border: none}` ]
 })
-export class RegisterpageComponent {
+export class RegisterpageComponent implements OnInit{
   errorfill:any="";
   call:any="";
   field:boolean=true;
   field2:boolean=true;
-  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService){
+  constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private forgotserv:ForgotService,private logger:LoggerService){
     setInterval(()=>{
       this.call=this.logincred.regcheck;
     });
   }
-  
+
   //register validators
   register=this.form.group({
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$")]],
@@ -36,7 +37,7 @@ export class RegisterpageComponent {
 
 
   //checking confirm password
-  regdetails(){
+  registrationDetails(){
     const email=this.register.controls['regemail'].value;
     const username=this.register.controls['reguser'].value;
     const password=this.register.controls['regpass'].value;
@@ -48,6 +49,7 @@ export class RegisterpageComponent {
     this.register.reset();
     }
     else{
+      this.logger.error("Password does not match");
       alert("Password does not match");
     }
   }
@@ -55,6 +57,7 @@ export class RegisterpageComponent {
   //check if input is blank
   fill(a:any,b:any,c:any,d:any){
     if(a=="" || b=="" || c=="" || d==""){
+      this.logger.error("Please fill the blanks");
       this.errorfill="Please fill the blanks";
       setTimeout(()=>{
         this.errorfill="";
@@ -72,6 +75,10 @@ export class RegisterpageComponent {
 
   togglepass(){
     this.field2=!this.field2;
+  }
+
+  ngOnInit(): void {
+    this.logger.info("Register page initialized..");
   }
 }
 

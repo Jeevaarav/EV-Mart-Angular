@@ -129,5 +129,6 @@ getOfferPercentage(offerPercentage:any){
   logout(){
     alert("Are you sure want to logout");
     this.route.navigateByUrl('');
+    sessionStorage.setItem('isAdminLogged','false');
   }
 }

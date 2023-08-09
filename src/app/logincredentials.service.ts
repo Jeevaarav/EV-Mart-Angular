@@ -5,6 +5,7 @@ import * as alertifyjs from 'alertifyjs';
 import { environment } from 'src/Environment/environment';
 import {url} from 'src/Environment/environment';
 import {nodemailer} from 'src/Environment/environment';
+import { LoggerService } from './logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -28,10 +29,9 @@ export class LogincredentialsService {
   profilepageget:any;
   parse:any;
   profilemail:any; address:any; profileaddress:any;
-  constructor(private http:HttpClient,private route:Router) {
+  constructor(private http:HttpClient,private route:Router,private logger:LoggerService) {
   }
   savedata(a:any){
-    console.log(a);
     return this.http.post<any>(url.customerDetails,a);
   }
 
@@ -52,7 +52,6 @@ export class LogincredentialsService {
         sessionStorage.setItem('regphone',logged.regphonenum);
         return logged.regemail===custmail && logged.regpass===custpass;
       });
-      console.log(user);
       if(user){
         this.custemail=custmail;
         this.reguser=localStorage.getItem('reguser');
@@ -88,14 +87,17 @@ export class LogincredentialsService {
         localStorage.setItem('loggedin','true');
         sessionStorage.setItem('isLogged','true');
         this.logoutshow=true;
+        this.logger.info("Login Successfull");
         return alert("Login Successfull");
       }
       else if(environment.adminmail==custmail && environment.adminpassword==custpass){
         this.route.navigateByUrl('/admin');
         alert("Admin login Successfull");
+        sessionStorage.setItem('isAdminlogged','true');
         return this.closenav=false;
       }
       else{
+        this.logger.error("Invalid Details");
         alert("Invalid Details");
       }
     });
@@ -118,6 +120,7 @@ export class LogincredentialsService {
       });
       if(regcheck){
         this.regcheck="Email Id already exist, sign-in instead";
+        this.logger.error("Email Id already exist, sign-in instead");
         return this.regcheck;
       }
       else{
@@ -133,6 +136,7 @@ export class LogincredentialsService {
         let res:any=mailinfo;
         });
         this.route.navigateByUrl('/emailverify');
+        this.logger.warn("Please verify your mail address");
         })
       }
     })
@@ -147,6 +151,7 @@ export class LogincredentialsService {
         let res:any=mailinfo;
         });
         alertifyjs.success().setContent('<h3>Email resent success</h3>').show();
+        this.logger.info("Mail resent");
         this.route.navigateByUrl('/emailverify');
   }
 

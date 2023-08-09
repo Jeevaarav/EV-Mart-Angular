@@ -10,9 +10,9 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./adminform.component.css']
 })
 export class AdminformComponent {
-    value:any;
+    adminServiceDetails:any;
     val2:any;
-    val3:any=[];
+    parsedServiceDetails:any=[];
     mail:any;
     check:any;
     valCheck:any;
@@ -25,16 +25,16 @@ export class AdminformComponent {
     splitTime:any;
     booleanDate:any;
 
-    datecheck:Boolean=false;
-    timeCheck:Boolean=false;
+    isDateCheck:Boolean=false;
+    isTimeCheck:Boolean=false;
 
 
   constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private admin:AdminService){
-    if(sessionStorage.getItem('isLogged')=="true"){
-      this.value=sessionStorage.getItem('adminservicedetails');
-    this.val3=JSON.parse(this.value);
+    if(sessionStorage.getItem('isAdminlogged')=='true'){
+      this.adminServiceDetails=sessionStorage.getItem('adminservicedetails');
+    this.parsedServiceDetails=JSON.parse(this.adminServiceDetails);
     }
-    console.log(this.checkDate);
+    console.log(this.parsedServiceDetails);
   }
 
   //validators for each input
@@ -96,15 +96,15 @@ export class AdminformComponent {
     }
     else{
       if(this.booleanCheck==false){
-        this.datecheck=true;
+        this.isDateCheck=true;
         setTimeout(()=>{
-          this.datecheck=false;
+          this.isDateCheck=false;
         },5000);
       }
       if(this.booleanDate==false){
-        this.timeCheck=true;
+        this.isTimeCheck=true;
         setTimeout(()=>{
-          this.timeCheck=false;
+          this.isTimeCheck=false;
         },5000);
       }
     }

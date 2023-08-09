@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderbookingService } from '../orderbooking.service';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-orderpage',
@@ -50,36 +51,28 @@ export class OrderpageComponent implements OnInit {
   check:Boolean=false;
   showPopUp:Boolean=false;
 
-  constructor(private service:OrderbookingService,private route:Router){
+  constructor(private service:OrderbookingService,private route:Router,private logger:LoggerService){
     //displaying the default values for the selection of vehicles
     if(sessionStorage.getItem('isLogged')=="true"){
     this.date=new Date();
-    console.log(this.date.getDate());
     this.estimatedDate=this.date.setDate(
       this.date.getDate()+4
     )
     this.deliveryDate=formatDate(this.estimatedDate,'dd-MMM-yyyy','en-US','+0530');
-
       this.storeparse=sessionStorage.getItem('orderpage1');
       this.useval=JSON.parse(this.storeparse);
       this.vname=this.useval.varients[0].vname.split(' ').join("");
-      console.log(this.vname);
 
     this.showcase="../../assets/EV mart/"+this.vname+"/display1.webp";
     sessionStorage.setItem('varient_image',this.showcase);
     this.path=this.useval.div[0].color;
-    console.log(this.path);
     this.path1=this.path.split(this.vname+'/');
-    console.log(this.path1);
     this.path2=this.path1[1].split('.png');
     this.colorindex=this.path2[0];
     sessionStorage.setItem('varient_Color',this.colorindex);
     this.Exchangeoffer=sessionStorage.getItem('ExchangeValue');
     this.Exchangeoffer=parseInt(this.Exchangeoffer);
-    // console.log(this.vname);
-    // console.log(this.useval);
     this.spec=this.useval[this.vname];
-    // console.log(this.spec);
     this.parseOldValue=sessionStorage.getItem('ExchangeValue');
     this.OldVehicleDetails=JSON.parse(this.parseOldValue);
 
@@ -87,7 +80,6 @@ export class OrderpageComponent implements OnInit {
       this.price=parseInt(this.spec[0].price)-parseInt(this.parseOldValue);
       this.price=this.price;
       this.userLocalPrice=parseInt(this.price);
-      console.log(this.userLocalPrice);
       this.exShowroomPrice=this.userLocalPrice-5000;
       let spec={
         battery:this.spec[0].battery,
@@ -96,7 +88,6 @@ export class OrderpageComponent implements OnInit {
         topspeed:this.spec[0].topspeed
       }
       sessionStorage.setItem('Spec',JSON.stringify(spec));
-      console.log(spec);
     }
     else{
     sessionStorage.setItem('Spec',JSON.stringify(this.spec[0]));
@@ -125,14 +116,14 @@ export class OrderpageComponent implements OnInit {
 
   //checkbox for terms and conditions
   checked(e:any){
-    console.log("works");
     if(this.spec[0]){
     this.check=!this.check;
     }
   }
 
   ngOnInit(): void {
-
+    this.logger.info("Order page Component initialized..");
+    this.logger.warn("Please checked Terms and Conditions");
   }
 
   //varient or model selection
@@ -140,7 +131,6 @@ export class OrderpageComponent implements OnInit {
     sessionStorage.setItem('varient_name',vname);
     this.boolstatus=false;
     this.show1=sessionStorage.getItem('varientindex');
-    console.log(this.show1);
     this.show2=document.getElementById("state"+this.show1);
     this.show2.style.border='none';
     this.show2.style.background='white';
@@ -182,6 +172,7 @@ export class OrderpageComponent implements OnInit {
 
   //  used for color change of vehicle
   colorchange(index:any,color:any){
+
     this.colorchgpath=this.useval.varients[0].vname;
     this.imgchange=document.getElementById("changeimg");
     this.status=false;
@@ -190,25 +181,20 @@ export class OrderpageComponent implements OnInit {
       sessionStorage.setItem('index',index);
     this.showborder1=sessionStorage.getItem('index');
     }
-    console.log(index);
-    console.log(this.imgchange);
     this.showborder2=document.getElementById("wave"+this.showborder1);
-    console.log(this.showborder2);
     this.showborder2.style.outline='none';
     this.color=color.split(this.vname+'/');
-    console.log(this.color);
     this.colorfinal=this.color[1].split('.png');
     this.colorindex=this.colorfinal[0];
     sessionStorage.setItem('varient_Color',this.colorindex);
-    console.log(index);
 
     this.showborder=document.getElementById("wave"+index);
-    console.log(this.showborder);
     sessionStorage.setItem('index',index);
     this.showborder.style.outline='4px solid green';
     this.showborder.style.outlineOffset='5px';
     this.imgchange.src=this.useval.displayimg[index].img;
     sessionStorage.setItem('varient_image',this.imgchange.src);
+
   }
 
   //used for selecting the specifications from the model
@@ -223,7 +209,6 @@ export class OrderpageComponent implements OnInit {
     this.specselect=document.getElementById("spec"+h);
     this.specselect.style.background='white';
    this.border=this.specselect.style.border='2px solid green';
-   console.log(this.border);
     localStorage.setItem('specification',h);
   }
 

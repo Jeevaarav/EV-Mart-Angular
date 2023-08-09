@@ -9,16 +9,17 @@ import { LogincredentialsService } from '../logincredentials.service';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent {
-  count:any="";
-  servcount:any;
+  vehicleCount:any="";
+  serviceRequestCount:any;
 
   constructor(private route:Router,private service:LogincredentialsService,private details:AdminService){
+
     //take count for the dashboard for respective management
-    this.details.countread().subscribe(data=>{
-      this.count=data.length;
+    this.details.countread().subscribe(availableVehicleCount=>{
+      this.vehicleCount=availableVehicleCount.length;
     });
-    this.details.servicecount().subscribe(servcount=>{
-      this.servcount=servcount.length;
+    this.details.servicecount().subscribe(newServiceRequest=>{
+      this.serviceRequestCount=newServiceRequest.length;
     })
     //take count for the dashboard for respective management
   }
@@ -28,6 +29,7 @@ export class AdminComponent {
     this.service.closenav=true;
     alert("Are you sure want to logout");
     this.route.navigateByUrl('');
+    sessionStorage.setItem('isAdminlogged','false');
   }
   //logout for the Admin
 

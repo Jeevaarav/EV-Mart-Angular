@@ -23,28 +23,28 @@ Reviewed by: Nil
         <div class="divide">
           <div>
             <label>Email</label>
-            <input type="text" class="box" placeholder="Email ID" value="{{val3.email}}" readonly #email>
+            <input type="text" class="box" placeholder="Email ID" value="{{parsedServiceDetails.email}}" readonly #email>
           </div>
           <div>
             <label>Problem Category</label>
-            <input type="text" class="box" placeholder="Category" value="{{val3.category}}" readonly #category>
+            <input type="text" class="box" placeholder="Category" value="{{parsedServiceDetails.category}}" readonly #category>
           </div>
           <div>
             <label>Brand of Vehicle</label>
-            <input type="text" class="box" placeholder="Brand" value="{{val3.Brand}}" readonly #Brand>
+            <input type="text" class="box" placeholder="Brand" value="{{parsedServiceDetails.Brand}}" readonly #Brand>
           </div>
           <div>
             <label>Vehicle Number</label>
-            <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.vehiclenumber}}" readonly
+            <input type="text" class="box" placeholder="Vehiclenumber" value="{{parsedServiceDetails.vehiclenumber}}" readonly
               #vehicleno>
           </div>
           <div>
             <label>Vehicle Model</label>
-            <input type="text" class="box" placeholder="Vehiclenumber" value="{{val3.varient}}-Model" readonly #model>
+            <input type="text" class="box" placeholder="Vehiclenumber" value="{{parsedServiceDetails.varient}}-Model" readonly #model>
           </div>
           <div>
             <label>Problem Description</label>
-            <textarea class="box" cols="10" rows="5" placeholder="Problem description" value="{{val3.problem}}"
+            <textarea class="box" cols="10" rows="5" placeholder="Problem description" value="{{parsedServiceDetails.problem}}"
               readonly></textarea>
           </div>
         </div>
@@ -55,14 +55,14 @@ Reviewed by: Nil
             <small *ngIf="servform.controls['date'].errors?.['required'] && servform.controls['date'].touched">Provide
               date of service</small>
             <small *ngIf="servform.controls['date'].errors?.['pattern']">Provide Proper format of date</small>
-            <small *ngIf="datecheck">Date Expires. Choose proper date</small>
+            <small *ngIf="isDateCheck">Date Expires. Choose proper date</small>
           </div>
           <div>
             <label>Service time</label>
             <input type="time" class="box" formControlName="time" #time (change)="checkTime(time.value)">
             <small *ngIf="servform.controls['time'].errors?.['required'] && servform.controls['time'].touched">Provide
               time slot for service</small>
-            <small *ngIf="timeCheck">Time Expires. Choose proper time</small>
+            <small *ngIf="isTimeCheck">Time Expires. Choose proper time</small>
           </div>
           <div>
             <label>Remarks</label>

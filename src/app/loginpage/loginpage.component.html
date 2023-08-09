@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Description:This component is used for login to use the website by the user
 Title:EV Mart
 Author name: Jeeva Aravinth J V
@@ -20,7 +20,7 @@ Reviewed by: Nil
     <div class="login-form">
       <form [formGroup]="login" (ngSubmit)="login.valid && logdetails()" class="logform">
         <h3>login here</h3>
-        <small class="msg">{{msg}}</small>
+        <small class="msg">{{message}}</small>
         <div class="control">
           <input type="email" placeholder="email" class="box" id="email" name="email" formControlName="email" #email>
           <div

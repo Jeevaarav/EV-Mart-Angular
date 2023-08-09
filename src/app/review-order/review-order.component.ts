@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { FillbookdetailsService } from '../fillbookdetails.service';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-review-order',
@@ -12,7 +13,7 @@ import { url } from 'src/Environment/environment';
   styleUrls: ['./review-order.component.css'],
   styles:[`input.ng-invalid && .details-form input.ng-dirty {border:2px solid red}`,`input.valid{border:2px solid green}`]
 })
-export class ReviewOrderComponent {
+export class ReviewOrderComponent implements OnInit {
   mail:any;
   user:any;
   profile:any;
@@ -52,14 +53,13 @@ export class ReviewOrderComponent {
   evmartcenter:any;
   centerNameStore:any;
 
-  constructor(private route:Router,private form:FormBuilder,private http:HttpClient,private filldetails:FillbookdetailsService){
+  constructor(private route:Router,private form:FormBuilder,private http:HttpClient,private filldetails:FillbookdetailsService,private logger:LoggerService){
     if(sessionStorage.getItem('isLogged')=="true"){
    this.mail=sessionStorage.getItem('logmail');
     this.user=sessionStorage.getItem('reguser');
     this.profile=sessionStorage.getItem('profilepage');
     this.parseVal=JSON.parse(this.profile);
     this.phonenumber=this.parseVal.regphonenum;
-    console.log(this.phonenumber);
     this.varientName=sessionStorage.getItem('varient_name');
     this.varientColor=sessionStorage.getItem('varient_Color');
     this.varientimage=sessionStorage.getItem('varient_image');
@@ -75,7 +75,6 @@ export class ReviewOrderComponent {
     this.reserveAmount=Math.floor(parseInt(this.price)*(30/100));
     this.formatedAmount=this.reserveAmount.toString();
     this.Amount= Number(this.formatedAmount).toLocaleString();
-    console.log(this.Amount);
     sessionStorage.setItem('Amount',this.Amount);
     this.date=new Date();
     this.year=this.date.getFullYear();
@@ -84,7 +83,6 @@ export class ReviewOrderComponent {
 
     this.filldetails.stateDisplay().subscribe((stateslist)=>{
       this.stateListStore=stateslist;
-      console.log(this.stateListStore[0].districts[0]);
     })
   }
   }
@@ -106,8 +104,13 @@ export class ReviewOrderComponent {
 
   //prevent backward
   notify(){
+    this.logger.warn("Are you sure to logout, information filled will deleted");
     if(confirm("Are you sure? If you go back you will have to fill in your booking details again")){
+      this.logger.info("Back to reselect the Vehicle");
       this.route.navigateByUrl('/orderpage');
+    }
+    else{
+      this.logger.info("Request cancelled");
     }
   }
 
@@ -202,5 +205,9 @@ export class ReviewOrderComponent {
     }
 
 
+  }
+
+  ngOnInit(): void {
+    this.logger.info("Review order page Initialized..");
   }
 }
