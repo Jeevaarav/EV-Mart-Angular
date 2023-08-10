@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Subscription,interval } from 'rxjs';
 import { OrderbookingService } from '../orderbooking.service';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-offers',
@@ -42,7 +43,7 @@ export class OffersComponent implements OnInit {
   formattedDate:any=[];
   offertime:any=[];
 
-  constructor(private _http:HttpClient,private route:Router,private offerBooking:OrderbookingService){
+  constructor(private _http:HttpClient,private route:Router,private offerBooking:OrderbookingService,private logger:LoggerService){
     this._http.get<any>(url.offers).subscribe(x=>{
     this.offer=x;
     this.length=x.length;
@@ -53,19 +54,12 @@ export class OffersComponent implements OnInit {
     this.date=new Date();
     this.formatNewTime=this.date.getTime();
     this.formatNewDate=formatDate(this.formatNewTime,'dd-MMM-yyyy hh:MM:ss a','en-US','+0530');
-    // console.log(this.offertime[0]);
-    // this.getDate=new Date(this.offertime[0]);
-    // console.log(this.getDate);
     for(var j=0;j<this.offertime.length;j++){
       this.getDate=new Date(this.offertime[j]);
       this.getTime=this.getDate.getTime();
       this.formattedDate[j]=formatDate(this.getTime,'dd-MMM-yyyy hh:MM:ss a','en-US','+0530');
     }
 
-      console.log(this.formattedDate[j]<this.formatNewDate);
-      console.log(this.formattedDate)
-
-        console.log(this.formattedDate[j]);
 
         setInterval(()=>{
         this._http.get(url.offers).subscribe((offers)=>{
@@ -78,14 +72,10 @@ export class OffersComponent implements OnInit {
           this.date=new Date();
           this.formatNewTime=this.date.getTime();
           this.formatNewDate=formatDate(this.formatNewTime,'dd-MMM-yyyy hh:MM:ss a','en-US','+0530');
-          console.log(this.formatFindTime);
-          console.log(this.formatNewDate);
           return this.finddateTime<this.formatNewTime;
         });
         if(offer){
-          console.log(offer);
           this._http.delete("http://localhost:3000/offers/"+this.regemailID).subscribe((deleteoffer)=>{
-        console.log("deleteoffer");
         window.location.reload();
         });
         }
@@ -93,24 +83,19 @@ export class OffersComponent implements OnInit {
       },1000)
 
 
-
-
-    console.log(this.formattedDate[0]>this.formatNewDate);
-
     })
   }
   check(){
-    console.log("works");
+    this.logger.info("works");
   }
 
   orderNow(brandname:any){
-    console.log(brandname);
     this.offerBooking.productpage(brandname);
   }
 
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    this.logger.info("Offer page Component initialized..");
   }
 
 }

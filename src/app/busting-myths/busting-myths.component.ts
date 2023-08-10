@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-busting-myths',
   templateUrl: './busting-myths.component.html',
   styleUrls: ['./busting-myths.component.css']
 })
-export class BustingMythsComponent {
+export class BustingMythsComponent implements OnInit {
+
+  constructor(private logger:LoggerService){}
+
 fact:boolean=false;
 fact1:boolean=false;
 fact2:boolean=false;
@@ -45,5 +49,9 @@ bullet:boolean=false;
     }
     openfact8(){
       this.fact8=true;
+    }
+
+    ngOnInit(): void {
+      this.logger.info("Busting of myths Component initialized..");
     }
 }

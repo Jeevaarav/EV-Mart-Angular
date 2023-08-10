@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 
 @Component({
@@ -11,13 +12,13 @@ import { url } from 'src/Environment/environment';
   styleUrls: ['./bookappointment.component.css'],
   styles:[`.bookform input.ng-invalid && .bookform input.ng-dirty{border:2px solid red}`]
 })
-export class BookappointmentComponent {
+export class BookappointmentComponent implements OnInit {
   getPin:any;
   showPin:any;
   storePin:any;
   showButton:any=0;
 
-  constructor(private form:FormBuilder,private _http:HttpClient,private route:Router){}
+  constructor(private form:FormBuilder,private _http:HttpClient,private route:Router,private logger:LoggerService){}
   //Pincode Validators
   Pincode=this.form.group({
     Pincode:['',[Validators.required,Validators.pattern("[0-9]{6}")]]
@@ -34,10 +35,11 @@ export class BookappointmentComponent {
       if(code){
         this.showPin=this.getPin.city;
         this.showButton++;
-        console.log(this.showButton);
+        this.logger.info("City searched..");
       }
       else{
         this.showPin="Online Exchange is not available for above location";
+        this.logger.error("Online Exchange is not available for above location");
         this.showButton=0;
       }
       })
@@ -50,7 +52,6 @@ export class BookappointmentComponent {
   //This block is used to get the pincode after form submitted
   getPincode(){
     if(this.showButton>0){
-      console.log(this.Pincode.value);
       let store={
         Pincode:this.Pincode.controls['Pincode'].value,
         city:this.showPin
@@ -59,5 +60,9 @@ export class BookappointmentComponent {
       sessionStorage.setItem('exchangepincode',this.storePin);
       this.route.navigateByUrl('/oldvehicle');
     }
+  }
+
+  ngOnInit(): void {
+    this.logger.info("Book appointment Component initialized..");
   }
   }

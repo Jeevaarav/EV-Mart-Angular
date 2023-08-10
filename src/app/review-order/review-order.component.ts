@@ -69,9 +69,6 @@ export class ReviewOrderComponent implements OnInit {
     this.range=this.specdetails.range;
     this.topspeed=this.specdetails.topspeed;
     this.price=parseInt(this.specdetails.price);
-    // this.splitPrice=this.price.split(',');
-    // this.joinPrice=this.splitPrice.join('');
-    // console.log(this.joinPrice);
     this.reserveAmount=Math.floor(parseInt(this.price)*(30/100));
     this.formatedAmount=this.reserveAmount.toString();
     this.Amount= Number(this.formatedAmount).toLocaleString();
@@ -125,10 +122,9 @@ export class ReviewOrderComponent implements OnInit {
         if(stateactive){
           this.districtStore=this.districtstate.districts;
           this.centerNameStore=this.districtstate.Evmartcenter;
-          console.log(this.districtStore);
         }
         else{
-          console.log("Not found");
+          this.logger.error("State not found");
         }
       })
   }
@@ -201,6 +197,7 @@ export class ReviewOrderComponent implements OnInit {
       doorno:this.reviewform.controls['doorno'].value
     }
     if(sessionStorage.getItem('isLogged')=='true'){
+      this.logger.info("User reviewed order");
       this.filldetails.storeDetails(filldetails);
     }
 

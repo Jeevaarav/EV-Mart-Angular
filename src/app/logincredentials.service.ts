@@ -75,13 +75,11 @@ export class LogincredentialsService {
           this.route.navigateByUrl("/Product");
         }
         else if(servurl!=null){
-          console.log(servurl);
           this.route.navigate([servurl]).then(()=>{
             window.location.reload();
           });
         }
         else{
-          console.log(returl);
           this.route.navigate([returl]);
         }
         localStorage.setItem('loggedin','true');
@@ -105,11 +103,9 @@ export class LogincredentialsService {
 
   }
   sendEmail(url:any,data:any){
-    console.log(url);
     return this.http.post(url,data);
   }
   resendEmail(reurl:any,redata:any){
-    console.log(reurl);
     return this.http.post(reurl,redata);
   }
 
@@ -174,7 +170,6 @@ export class LogincredentialsService {
     this.http.get<any>(url.customerDetails).subscribe((update)=>{
       const userprofile=update.find((profile:any)=>{
         this.profilemail=localStorage.setItem('mailcheck',profile.regemail);
-        console.log(this.profilemail);
         return profile.regemail==mail ;
       })
       if(userprofile){
@@ -189,12 +184,11 @@ export class LogincredentialsService {
           reguser:user
         }
         localStorage.setItem('profilepage',JSON.stringify(userdata));
-         console.log("success");
          window.location.reload();
         });
         }
       else{
-        console.log("Cannot found");
+        this.logger.error("Username not found");
       }
     })
 

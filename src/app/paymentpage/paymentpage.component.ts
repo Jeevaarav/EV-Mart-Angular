@@ -1,14 +1,15 @@
 import { CurrencyPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-paymentpage',
   templateUrl: './paymentpage.component.html',
   styleUrls: ['./paymentpage.component.css']
 })
-export class PaymentpageComponent {
+export class PaymentpageComponent implements OnInit {
     orderedVehicleImage:any;
     orderedVehicleName:any;
     totalPayamount:any;
@@ -24,7 +25,7 @@ export class PaymentpageComponent {
     showSaved:Boolean=false;
     linkedAccount:Boolean=true;
 
-    constructor(private _http:HttpClient){
+    constructor(private _http:HttpClient,private logger:LoggerService){
       this.orderedVehicleImage=sessionStorage.getItem('varient_image');
       this.orderedVehicleName=sessionStorage.getItem('varient_name');
       this.totalPayamount=sessionStorage.getItem('Amount');
@@ -37,7 +38,6 @@ export class PaymentpageComponent {
         })
         if(user){
           if(this.getDebitCardNumber.paymentcard.length!=null){
-            console.log(this.getDebitCardNumber.paymentcard[0].cardnumber);
             this.linkedAccount=false;
             this.showSaved=true;
           this.displayCardDetails=this.getDebitCardNumber.paymentcard[0].cardtype;
@@ -50,7 +50,6 @@ export class PaymentpageComponent {
           else{
             this.cardTypeIcon="fa-brands fa-cc-mastercard";
           }
-          console.log(this.cardTypeIcon);
           }
           else{
             this.linkedAccount=true;
@@ -66,5 +65,9 @@ export class PaymentpageComponent {
     }
     closeDebit(){
       this.showPaymentCard=false;
+    }
+
+    ngOnInit(): void {
+      this.logger.info("Paymentpage component initialized..");
     }
 }

@@ -1,15 +1,16 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-exchangebooking',
   templateUrl: './exchangebooking.component.html',
   styleUrls: ['./exchangebooking.component.css']
 })
-export class ExchangebookingComponent {
+export class ExchangebookingComponent implements OnInit{
   Brand:any;
   modelName:any;
   storeBrandname:any;
@@ -30,7 +31,7 @@ export class ExchangebookingComponent {
 
   showFAQ:Boolean=false;
 
-  constructor(private form:FormBuilder,private _http:HttpClient,private route:Router){
+  constructor(private form:FormBuilder,private _http:HttpClient,private route:Router,private logger:LoggerService){
     this._http.get<any>(url.oldvehilcle).subscribe((oldvehicle)=>{
     this.Brand=oldvehicle;
     })
@@ -70,7 +71,6 @@ export class ExchangebookingComponent {
         this.vehicleColor=this.storeBrandname.vehiclecolor;
         this.loanStatus=this.storeBrandname.loan;
         this.vehicleCondition=this.storeBrandname.condition;
-        console.log(this.storeBrandname);
         this.modelName=this.storeBrandname.Model;
         this.ownerShip=this.storeBrandname.vehicleowner;
         this._http.get<any>(url.yearOfmanufacture).subscribe((year)=>{
@@ -81,7 +81,7 @@ export class ExchangebookingComponent {
         })
       }
       else{
-        console.log("Not found");
+        this.logger.error("Brand not found");
       }
     })
   }
@@ -89,10 +89,12 @@ export class ExchangebookingComponent {
   //validating the input dynamically for loan status
   loanStatusChange(loanstatus:any){
     if(loanstatus=="Pending"){
+      this.logger.error("Not Eligible for Exchange Offers");
       this.loanPending="Not Eligible for Exchange offer";
       this.count=0;
     }
     else{
+      this.logger.info("Eligible for Exchange offer");
       this.loanPending="";
       this.count=1;
     }
@@ -101,10 +103,12 @@ export class ExchangebookingComponent {
   //Validating the input dynamically for ownership status
   ownerShipstatus(ownerShip:any){
     if(ownerShip==="Not Working"){
+      this.logger.error("Not Eligible for Exchange offer");
       this.ownerShipvehicle="Not Eligible for Exchange offer";
       this.ownerShipCount=0;
     }
     else{
+      this.logger.info("Eligible for Exchange offer");
       this.ownerShipvehicle="",
       this.ownerShipCount=1;
     }
@@ -146,11 +150,9 @@ export class ExchangebookingComponent {
         this.vehicleKilometerCalculation=parseInt(this.vehicleKMS.value)+parseInt(this.yearCalculation);
         this.vehicleStringCalculation=this.vehicleKilometerCalculation.toString();
         sessionStorage.setItem('ExchangeValue',this.vehicleKilometerCalculation);
-        console.log(this.vehicleStringCalculation);
       }
     })
 
-    console.log(this.yearCalculation);
     let oldVehicleFullDetails={
       Brandname:this.oldvehicledetails.controls['Brand'].value,
       Modelname:this.oldvehicledetails.controls['Model'].value,
@@ -169,9 +171,14 @@ export class ExchangebookingComponent {
       this.route.navigateByUrl('Product');
     }
     else{
+      this.logger.error("Not Eligible for Exchange Offers");
       alert("Not Eligible for Exchange Offers");
     }
-   console.log(this.oldvehicledetails.value);
+
+  }
+
+  ngOnInit(): void {
+this.logger.info("Exchange booking component intialized..");
   }
 
 }

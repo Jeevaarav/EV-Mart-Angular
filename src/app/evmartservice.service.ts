@@ -17,7 +17,6 @@ export class EvmartserviceService {
   }
 
   serviceform(data:any){
-    console.log(data);
     localStorage.setItem('serviceform',data);
   }
 
@@ -33,14 +32,13 @@ export class EvmartserviceService {
     }
     this.http.get<any>("http://localhost:3000/Register").subscribe((userDetails)=>{
       const registerDetails=userDetails.find((userfind:any)=>{
-        console.log(this.serviceDetails);
         this.serviceDetails=userfind;
         return userfind.regemail==mail;
       })
       if(registerDetails){
         if(this.serviceDetails.service && this.serviceDetails.service.length>0 ){
           this.serviceDetails.service.push(service);
-          this.http.patch<any>("http://localhost:3000/Register/"+mail,{service:this.serviceDetails.service}).subscribe((x)=>{
+          this.http.patch<any>("http://localhost:3000/Register/"+mail,{service:this.serviceDetails.service}).subscribe((patchDetails)=>{
             setTimeout(()=>{
               this.route.navigateByUrl("/Service");
              },4000)
@@ -48,7 +46,7 @@ export class EvmartserviceService {
           })
         }
         else{
-          this.http.patch<any>("http://localhost:3000/Register/"+mail,{service:[service]}).subscribe((x)=>{
+          this.http.patch<any>("http://localhost:3000/Register/"+mail,{service:[service]}).subscribe((patchNewDetails)=>{
             setTimeout(()=>{
               this.route.navigateByUrl("/Service");
              },4000)
@@ -60,7 +58,7 @@ export class EvmartserviceService {
         })
       }
     })
-    
+
   }
 
   retrieveserv(){

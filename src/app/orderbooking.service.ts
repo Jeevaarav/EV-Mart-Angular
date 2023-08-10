@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {url} from 'src/Environment/environment'
+import { LoggerService } from './logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,22 @@ import {url} from 'src/Environment/environment'
 export class OrderbookingService {
   store:any="";
   storejson:any;
-  constructor(private http:HttpClient, private route:Router) { }
+  constructor(private http:HttpClient, private route:Router,private logger:LoggerService) { }
 
   productpage(order:any){
-    this.http.get<any>(url.getVehicleDetails).subscribe((x)=>{
-      const user=x.find((y:any)=>{
-        this.store=y;
-        return y.Brandname==order;
+    this.http.get<any>(url.getVehicleDetails).subscribe((vehicleDetails)=>{
+      const user=vehicleDetails.find((vehicleName:any)=>{
+        this.store=vehicleName;
+        return vehicleName.Brandname==order;
       });
       if(user){
-        console.log("route enters");
        this.storejson=JSON.stringify(this.store);
-        console.log(this.storejson);
         sessionStorage.setItem('orderpage1',this.storejson);
         this.route.navigateByUrl('/orderpage');
       }
       else{
-        alert("not found");
+        this.logger.error("Brand not found");
+        alert("Brand not found");
       }
     })
   }

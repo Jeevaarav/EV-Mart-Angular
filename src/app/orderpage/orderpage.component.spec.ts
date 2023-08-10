@@ -22,4 +22,14 @@ describe('OrderpageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("Testing component name",()=>{
+    expect(component.componentName).toBe("Orderpage");
+  });
+
+  // it("Testing functions",()=>{
+  //   expect(component.varient(2,MagnusEX).toBe(MagnusEX)=>{
+
+  //   })
+  // });
 });

@@ -1,8 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { EvmartserviceService } from '../evmartservice.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { url } from 'src/Environment/environment';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-servicesform',
@@ -10,7 +11,7 @@ import { url } from 'src/Environment/environment';
   styleUrls: ['./servicesform.component.css'],
   encapsulation:ViewEncapsulation.None
 })
-export class ServicesformComponent {
+export class ServicesformComponent implements OnInit {
   value:any;
   val2:any;
   servicedata:any;
@@ -20,14 +21,12 @@ export class ServicesformComponent {
   varientLoop:any;
   date:any;
   splitdate:any;
-constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private http:HttpClient){
+constructor(private service:EvmartserviceService,private formbuild:FormBuilder,private http:HttpClient,private logger:LoggerService){
   this.value=localStorage.getItem('serviceform');
 
   this.http.get<any>(url.serviceData).subscribe((value)=>{
   this.servicedata=value[0].Brandname;
   this.totalVal=value;
-  console.log(this.servicedata);
-  console.log(value[0].Brandname[0]);
   })
 }
 
@@ -52,26 +51,27 @@ submit(category:any){
 
 //take brand and varients for particular brand
 takeBrand(brand:any){
-  console.log(brand);
   this.http.get<any>(url.serviceData).subscribe((val)=>{
-    console.log(val[0].Brandname);
     const check=val[0].Brandname.find((y:any)=>{
-      console.log(y.Brand);
       this.store=y;
-      console.log(this.store.Varients);
       return y.Brand==brand;
     });
     if(check){
       this.varientLoop=this.store.Varients;
     }
     else{
-      alert("Not found");
+      this.logger.error("Varients not found");
+      alert("Varients not found");
     }
   })
 }
 
 //varient data
 takeVarient(varient:any){
-  console.log(varient);
+  this.logger.info(varient);
+}
+
+ngOnInit(): void {
+this.logger.info("User service form Component initialized..");
 }
 }

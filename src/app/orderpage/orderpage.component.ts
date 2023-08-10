@@ -10,6 +10,7 @@ import { LoggerService } from '../logger.service';
   styleUrls: ['./orderpage.component.css']
 })
 export class OrderpageComponent implements OnInit {
+  componentName:any="Orderpage";
   storeimg:any;
   storeparse:any;
   useval:any;
@@ -118,6 +119,7 @@ export class OrderpageComponent implements OnInit {
   checked(e:any){
     if(this.spec[0]){
     this.check=!this.check;
+    this.logger.info("Terms and conditions are read..");
     }
   }
 

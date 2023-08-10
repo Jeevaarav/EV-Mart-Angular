@@ -1,14 +1,15 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OrderintervalService } from '../orderinterval.service';
 import * as $ from 'jquery';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
-  constructor(private orderInterval:OrderintervalService){
+export class IndexComponent implements OnInit {
+  constructor(private orderInterval:OrderintervalService,private logger:LoggerService){
     this.orderInterval.startInterval();
   }
 
@@ -58,4 +59,8 @@ export class IndexComponent {
       }
     ]
   };
+
+  ngOnInit(): void {
+    this.logger.info("Index page initialized..");
+  }
 }
