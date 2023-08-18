@@ -81,18 +81,19 @@ Reviewed by: Nil
       </div>
 
       <div>
-        <input type="datetime-local" class="box" placeholder="Select date and time">
+        <input type="datetime-local" class="box" placeholder="Select date and time" formControlName="dateandtime">
+        <small *ngIf="servform.controls['dateandtime'].errors?.['required'] && servform.controls['dateandtime'].dirty">Select time and date</small>
       </div>
 
       <div>
         <input type="file" class="box" placeholder="Choose image for the display in offers" (change)="showPreviewImage($event)">
-        <img src="{{localUrl}}" alt="">
       </div>
 
       <button class="book">
-        Request Service
+        Post Offer
       </button>
       </form>
+
     </div>
   </div>
   <!----------------- Brand Management  -------------------->

@@ -106,7 +106,7 @@ export class LogincredentialsService {
     return this.http.post(url,data);
   }
   resendEmail(reurl:any,redata:any){
-    return this.http.post(reurl,redata);
+    return this.http.post(reurl,redata); 
   }
 
   registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any,regphone:any){

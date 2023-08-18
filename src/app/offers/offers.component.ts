@@ -58,6 +58,7 @@ export class OffersComponent implements OnInit {
       this.getDate=new Date(this.offertime[j]);
       this.getTime=this.getDate.getTime();
       this.formattedDate[j]=formatDate(this.getTime,'dd-MMM-yyyy hh:MM:ss a','en-US','+0530');
+      console.log(this.formattedDate);
     }
 
 

@@ -22,3 +22,8 @@ export const nodemailer={
   production:false,
   mailURL:"http://localhost:4000/sendmail"
 }
+
+export const logger={
+  production:false,
+  loggerurl:"http://localhost:4000/api/logs"
+}

@@ -45,7 +45,8 @@ servform=this.formbuild.group({
   brand:['',Validators.required],
   varient:['',Validators.required],
   battery:['',Validators.required],
-  Content:['We have always got your back! Watch out this offer, valid',Validators.required]
+  Content:['We have always got your back! Watch out this offer, valid',Validators.required],
+  dateandtime:['',Validators.required]
 });
 
 //getting data from inputs after submit the form
@@ -54,6 +55,14 @@ submit(){
   const brand=this.servform.controls['brand'].value;
   const varient=this.servform.controls['varient'].value;
   const mail=sessionStorage.getItem('logmail');
+  const imgurl=this.localUrl;
+  const validity="We have always got your back! Watch out this offer, valid upto";
+  const button="Order Now";
+  const dateandtime=this.servform.controls['dateandtime'].value;
+
+  this._http.post("http://localhost:3000/offers",{img:imgurl,content:"Get ₹5,000* off on the",time:dateandtime,validity:validity,brand:brand,varient:varient,button:button,regemail:mail}).subscribe((offerposted)=>{
+  console.log(offerposted);
+  })
 }
 
 //take brand and varients for particular brand
