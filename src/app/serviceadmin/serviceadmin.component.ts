@@ -4,7 +4,7 @@ import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { LogincredentialsService } from '../logincredentials.service';
 import { HttpClient } from '@angular/common/http';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 
 @Component({
   selector: 'app-serviceadmin',

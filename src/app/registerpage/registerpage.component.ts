@@ -68,7 +68,7 @@ export class RegisterpageComponent implements OnInit{
     }
   }
 
-  //These blocks are usef for show password
+  //These blocks are used for show password
   togglefunction(){
     this.field=!this.field;
   }

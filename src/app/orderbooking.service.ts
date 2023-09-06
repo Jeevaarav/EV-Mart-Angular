@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {url} from 'src/Environment/environment'
+import {url} from 'src/environments/environment'
 import { LoggerService } from './logger.service';
 
 @Injectable({

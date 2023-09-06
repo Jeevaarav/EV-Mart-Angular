@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 
 @Component({
   selector: 'app-adminoffermanagement',

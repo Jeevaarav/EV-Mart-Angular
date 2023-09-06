@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { FillbookdetailsService } from '../fillbookdetails.service';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 import { LoggerService } from '../logger.service';
 
 @Component({

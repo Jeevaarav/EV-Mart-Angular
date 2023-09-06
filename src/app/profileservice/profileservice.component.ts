@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 
 @Component({
   selector: 'app-profileservice',

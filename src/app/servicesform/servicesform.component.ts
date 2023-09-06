@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { EvmartserviceService } from '../evmartservice.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { url } from 'src/Environment/environment';
+import {url} from 'src/environments/environment';
 import { LoggerService } from '../logger.service';
 
 @Component({

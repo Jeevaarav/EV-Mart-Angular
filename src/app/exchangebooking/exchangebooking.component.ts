@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 import { LoggerService } from '../logger.service';
 
 @Component({

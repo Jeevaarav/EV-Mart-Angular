@@ -5,7 +5,7 @@ import { formatDate } from '@angular/common';
 import { FillbookdetailsService } from '../fillbookdetails.service';
 import { HttpClient } from '@angular/common/http';
 import { debitcard } from '../fillbooking.guard';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 
 
 @Component({

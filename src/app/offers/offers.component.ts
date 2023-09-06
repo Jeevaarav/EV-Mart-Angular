@@ -4,7 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription,interval } from 'rxjs';
 import { OrderbookingService } from '../orderbooking.service';
-import { url } from 'src/Environment/environment';
+import { url } from 'src/environments/environment';
 import { LoggerService } from '../logger.service';
 
 @Component({

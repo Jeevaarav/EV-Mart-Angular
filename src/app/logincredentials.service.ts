@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http'
 import { Router } from '@angular/router';
 import * as alertifyjs from 'alertifyjs';
-import { environment } from 'src/Environment/environment';
-import {url} from 'src/Environment/environment';
-import {nodemailer} from 'src/Environment/environment';
+import { environment } from 'src/environments/environment';
+import {url} from 'src/environments/environment';
+import {nodemailer} from 'src/environments/environment';
 import { LoggerService } from './logger.service';
 
 @Injectable({
@@ -106,7 +106,7 @@ export class LogincredentialsService {
     return this.http.post(url,data);
   }
   resendEmail(reurl:any,redata:any){
-    return this.http.post(reurl,redata); 
+    return this.http.post(reurl,redata);
   }
 
   registrationcheck(regmail:any,reguser:any,regpass:any,regconfirm:any,regphone:any){
