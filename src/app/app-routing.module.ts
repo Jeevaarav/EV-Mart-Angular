@@ -46,6 +46,7 @@ import { ProfileserviceComponent } from './profileservice/profileservice.compone
 import { UserseevicesComponent } from './userseevices/userseevices.component';
 import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffermanagement.component';
+import { HelpanswersComponent } from './helpanswers/helpanswers.component';
 
 
 
@@ -103,7 +104,11 @@ const routes: Routes = [
   },
   {
     path:"Help",
-    component:EVhelpComponent
+    component:EVhelpComponent,
+  },
+  {
+    path:"Helpanswers",
+    component:HelpanswersComponent
   },
   {
     path:"orderpage",

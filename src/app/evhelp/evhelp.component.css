@@ -22,13 +22,22 @@
 .book{
     display: inline-block;
     margin-top: 1rem;
-    border-radius: 5rem;
     background: #ffee80;
     color:#130f40;
     font-weight: 500;
     font-size: 1.7rem;
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
+}
+.book1{
+  display: inline-block;
+  margin-top: 1rem;
+  background: #ffee80;
+  color:#130f40;
+  font-weight: 500;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
 }
 html{
     font-size: 60%;
@@ -38,7 +47,7 @@ html{
 }
 .main img{
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   opacity: 0.6;
 }
 .main{
@@ -52,6 +61,8 @@ html{
 .search input{
   padding: 1.5rem;
   width: 500px;
+  font-size: 1.5rem;
+  text-transform: none;
 }
 .search h1{
   font-size: 4.5rem;
@@ -62,48 +73,108 @@ html{
   font-size: 1.5rem;
   text-transform: none;
 }
+.searchresults{
+  width: 40%;
+  background-color: #E5E4E2;
+  position: absolute;
+  top: 78%;
+  left: 15%;
+  z-index: 1;
+  padding: 1rem;
+  line-height: 2rem;
+}
+.searchresults h3{
+  text-transform: none;
+}
+.searchresults ol{
+  padding-left: 2rem;
+}
+.searchresults ol li:hover{
+  border-bottom: 2px solid #6F8FAF;
+}
+.searchresults li{
+  text-transform: none;
+  font-size: 1.5rem;
+  text-align: justify;
+  padding: 1rem;
+  cursor: pointer;
+}
+.searchresults #questiondisplay{
+  color: #0047AB;
+}
+.articles-results{
+  display: flex;
+  justify-content: center;
+}
 .heading h1{
   font-size: 3rem;
   color: #130f40;
   text-transform: none;
   padding: 5.5rem 0 1.5rem 15rem;
 }
-.FAQ{
+.faq{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 4rem;
+  margin-bottom: 3rem;
 }
-.question{
-  width: 70%;
-  height: 50px;
-  background-color: #E5E4E2;
-  border-bottom: 0.5px solid black;
+.questions{
+  padding: 1rem;
+}
+.answers{
   display: flex;
-  align-items: center;
+  width: 100rem;
   cursor: pointer;
+  justify-content: space-between;
+  /* background-color: #E5E4E2; */
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 2px solid black;
 }
-.question p{
+.answers h2{
+  text-transform: none;
+  font-size: 2rem;
+}
+.answers i{
+  font-size: 2rem;
+  color: #130f40;
+}
+.content-answer{
+  display: flex;
+  justify-content: center;
+  animation: animation 100ms ease-in-out;
+  transform-origin: top;
+}
+@keyframes animation {
+  0%{
+    transform: scaleX(0);
+  }
+  100%{
+    transform: scaleX(1);
+  }
+}
+.content-answer p{
   text-transform: none;
   font-size: 1.5rem;
-  color: #130f40;
-  padding-left: 2.5rem;
+  width: 90rem;
+  text-align: justify;
 }
-.answer{
-  text-transform: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 950px;
-  font-size: 1.5rem;
-  padding: 1.5rem;
-}
-.question i{
-  font-size: 2.5rem;
-  padding-left: 70rem;
-  color: #130f40;
+.question-para{
+  display: flex;
+  flex-direction: column;
 }
 .foot{
   width: 100%;
   height: 80px;
   background-color: #E5E4E2;
 }
+.help-submit{
+  display: flex;
+  gap:2rem;
+  flex-direction: row;
+}
+small{
+  color: red;
+  text-transform: none;
+  font-size:1.8rem;
+}
+

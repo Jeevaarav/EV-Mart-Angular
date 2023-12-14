@@ -71,7 +71,7 @@ registerDetails:any;
         }
       })
       })
-       
+
       alertifyjs.success("Service request accepted and Mail sent");
       setTimeout(()=>{
         this.route.navigateByUrl('/admin/adminserv')

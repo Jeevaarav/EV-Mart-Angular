@@ -53,6 +53,7 @@ import { UserseevicesComponent } from './userseevices/userseevices.component';
 import { UserserviceacceptedComponent } from './userserviceaccepted/userserviceaccepted.component';
 import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffermanagement.component';
+import { HelpanswersComponent } from './helpanswers/helpanswers.component';
 
 
 @NgModule({
@@ -104,6 +105,7 @@ import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffer
     UserserviceacceptedComponent,
     UserorderfeedbackComponent,
     AdminoffermanagementComponent,
+    HelpanswersComponent,
   ],
   imports: [
     BrowserModule,

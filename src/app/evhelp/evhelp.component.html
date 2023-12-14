@@ -1,6 +1,6 @@
-<!-- 
-Description:This component is used for display the benefits of the vehicle
-Title:EV Mart
+<!--
+Description: This component is used for support the user to ask queries.
+Title: EV Mart
 Author name: Jeeva Aravinth J V
 Started on: 30-06-2023
 Reviewed by: Nil
@@ -10,7 +10,7 @@ Reviewed by: Nil
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Benefits of EV</title>
+  <title>EV Mart Support</title>
 </head>
 
 <body>
@@ -19,33 +19,47 @@ Reviewed by: Nil
     <img src="../../assets/EV mart/Support.jpeg" alt="Support" title="Support">
     <div class="search">
       <h1>Welcome to EV Mart Support</h1>
-      <input type="text" placeholder="What help do you need?">
+      <div class="help-submit">
+        <div>
+        <input type="text" placeholder="What help do you need?" #helpque (keyup)="helpsearch(helpque.value)">
+        <div><small>{{errormsg}}</small></div>
+      </div>
+      <div>
+      <a id="submitform" (click)="submitHelp(helpque.value)"><button class="book1" >Submit</button></a>
+    </div>
+    </div>
     </div>
   </div>
   <!-------------------- Heading  ---------------------->
 
-  <!-------------------- Common asked FAQ  --------------------->
-  <div class="heading">
-    <h1>Frequently Asked Questions</h1>
-  </div>
-  <div class="FAQ">
-    <div class="question" (click)="answer()">
-      <p>Are test rides available for the Ola Scooter?<i class="fa-solid fa-angle-down"></i></p>
+  <!------------------- Search results  ---------------------->
+    <div class="searchresults" *ngIf="showsearch">
+      <div class="articles-results">
+        <h3>Top Articles Results</h3>
+      </div>
+      <ol>
+        <li id="questiondisplay" *ngFor="let searchresults of searchresults;">{{searchresults.question}}</li>
+      </ol>
     </div>
-    <p class="answer" *ngIf="answer1">Home test rides for the Ola Scooter are live across India! These include
-      Ahmedabad, Bangalore, Bhopal, Chennai, Coimbatore, Delhi, Hyderabad, Indore, Jaipur, Kochi, Kolkata, Mumbai,
-      Nagpur, Panaji, Pune, Vijayawada & Lucknow. We will soon be scaling up test rides all across India.</p>
-    <div class="question" (click)="showanswer1()">
-      <p>What are the primary vehicle specifications?<i class="fa-solid fa-angle-down"></i></p>
-    </div>
-    <p class="answer" *ngIf="answer2">Vehicle Specifications depend upon the brand and model. You can find out in
-      Information module itself.</p>
+  <!------------------- Search results  ---------------------->
 
-    <div class="question" (click)="showanswer2()">
-      <p>How much does an Ather Scooter cost?<i class="fa-solid fa-angle-down"></i></p>
+  <!-------------------- Common asked FAQ  --------------------->
+  <section class="heading" id="FAQHelp">
+    <h1>Frequently Asked Questions</h1>
+  </section>
+<div class="faq">
+    <div class="questions">
+      <div class="question-para" *ngFor="let faq of faqQuestion;let index=index">
+        <div class="answers" (click)="answer(index)">
+          <div><h2>{{faq.question}}</h2></div>
+          <div><i class="fa-solid fa-angle-down"></i></div>
+        </div>
+        <div class="content-answer" *ngIf="answerShow[index]">
+          <p>{{faq.answer}}</p>
+        </div>
+      </div>
     </div>
-    <p class="answer" *ngIf="answer3">Ather 450X starts from Rs. 1,14,000 to Rs. 1,60,000</p>
-  </div>
+</div>
   <!-------------------- Common asked FAQ  --------------------->
 
   <div class="foot">
