@@ -99,6 +99,9 @@ html{
   padding: 1rem;
   cursor: pointer;
 }
+.searchresults li a{
+  text-transform: none;
+}
 .searchresults #questiondisplay{
   color: #0047AB;
 }

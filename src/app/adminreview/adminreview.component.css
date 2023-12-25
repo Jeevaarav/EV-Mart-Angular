@@ -246,8 +246,12 @@ small{
   align-items: center;
 }
 .header h3{
+  text-transform: none;
   font-size: 3.5rem;
   color: #f9d806;
+}
+.box #head{
+  text-transform: none;
 }
 
 .header .head{
@@ -264,4 +268,12 @@ small{
   width:200px;
   height:80px;
   cursor: pointer;
+}
+.review-react{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review-react div{
+  display: flex;
 }

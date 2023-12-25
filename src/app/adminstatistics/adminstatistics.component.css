@@ -1,0 +1,12 @@
+.graph-container{
+  padding: 2rem 4rem 2rem 4rem;
+}
+.graph-container div{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem 2rem 4rem;
+}
+.graph-container div .graph{
+  display: flex;
+  flex-direction: column;
+}

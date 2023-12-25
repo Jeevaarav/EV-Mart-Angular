@@ -135,6 +135,7 @@ to{
 .login-form form .link{
   color: #f9d806;
   padding-left: 0.3rem;
+  cursor: pointer;
 }
 .login-form form .link:hover{
   color: #f9d806;

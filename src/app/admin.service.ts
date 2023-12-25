@@ -15,6 +15,7 @@ registerDetails:any;
     return this.http.get<any>("http://localhost:3000/vehicleBrands");
   }
   vehaddition(add:any){
+    console.log(add);
     return this.http.post<any>("http://localhost:3000/vehicleBrands",add);
   }
 

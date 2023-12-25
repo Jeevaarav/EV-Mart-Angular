@@ -1,9 +1,47 @@
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
-<p>helpanswers works!</p>
+<!--
+Description:This component is used to display the FAQ by users
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 25-05-2023
+Reviewed by: Nil
+-->
+<!--
+Description:This component is used for showing the profile page for the user.
+Title:EV Mart
+Author name: Jeeva Aravinth J V
+Started on: 22-06-2023
+Reviewed by: Nil
+-->
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Profile Page</title>
+</head>
+
+<body>
+  <!--------------- used for display all the details about particular user  ------------>
+  <div class="body">
+    <section class="relative">
+      <div class="outer">
+        <div class="evMartdisplay">
+          <div class="sideBar">
+            <div *ngFor="let item of searchresults"><a (click)="questionanswer(item.question)">{{item.question}}</a></div>
+            <!-- <a routerLink="Address" routerLinkActive="active">Address</a>
+            <a routerLink="userProfileService" routerLinkActive="active">Service</a>
+            <a routerLink="profilePayment" routerLinkActive="active">Payment</a> -->
+          </div>
+          <div class="sideDisplay">
+            <!---------- router components  ------------->
+           <p>{{question}}</p>
+           <p id="answer">{{answer}}</p>
+            <!---------- router components  ------------->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!--------------- used for display all the details about particular user  -->
+</body>
+

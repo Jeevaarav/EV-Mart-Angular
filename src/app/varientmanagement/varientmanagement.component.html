@@ -1,0 +1,103 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<div >
+  <!----------------- header ---------------->
+  <header class="header">
+    <div>
+      <div class="head">
+        <i class="fa-solid fa-bars"></i>
+        <h3>EV Mart Admin</h3>
+      </div>
+    </div>
+    <div>
+      <button class="book1" (click)="logout()">Logout</button>
+    </div>
+  </header>
+  <!----------------- header ---------------->
+
+  <!-- varients Display -->
+  <div class="varients">
+    <details class="vehbrand">
+      <summary>Customize Brand Varients</summary>
+      <h6>Click the add icon to add Vehicle's Varients</h6>
+    </details>
+    <section class="services" id="services">
+      <div class="box-container">
+        <div class="box1" (click)="addnewVarient()">
+          <h1>Add varients</h1>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="box" *ngFor="let vehbrand of displayVarients;let index=index">
+          <div><img src="{{vimage[index]}}" alt=""></div>
+          <div><h1>Varient {{index+1}} - {{vname[index]}}</h1></div>
+          <div *ngFor="let item of vehbrand;let varient=index" class="details">
+            <h2>Spec {{varient+1}}</h2>
+            <div class="brandofvehicle"><h3 id="head">Battery Capacity :</h3><h3>{{item.battery}}</h3></div>
+            <div class="brandofvehicle"><h3 id="head">Range :</h3><h3>{{item.range}}</h3></div>
+            <div class="brandofvehicle"><h3 id="head">Top Speed :</h3><h3>{{item.topspeed}}</h3></div>
+          </div>
+          <div class="color">
+            <img *ngFor="let item of coloravailable;let count=index" src="{{item[count].color}}" alt="">
+          </div>
+          <div>
+            <button class="book">Update vehicle</button>
+          </div>
+        </div>
+      </div>
+      </section>
+  </div>
+  <!-- varients Display -->
+  <section class="addveh" *ngIf="addVarient">
+    <i class="fa-solid fa-circle-xmark" (click)="addForm()"></i>
+    <div class="form">
+      <form [formGroup]="varientadd" (ngSubmit)="addVehiclevarient()">
+        <div>
+          <input type="text" placeholder="Enter New Varient name" class="box" id="brandname"
+            formControlName="newvarient">
+          <div *ngIf="varientadd.controls['newvarient'].invalid && varientadd.controls['newvarient'].touched"></div>
+          <small *ngIf="varientadd.controls['newvarient'].errors?.['required'] && varientadd.controls['newvarient'].dirty">Enter
+            Varient name</small>
+        </div>
+        <div>
+          <input type="file" placeholder="Enter image path" class="box" name="imgpath" id="imgpath"
+            formControlName="varientimage" (change)="showImage($event)">
+            <div *ngIf="choosedimg" class="choosed-img">
+              <h3>Choosed Photo</h3>
+              <img src="{{choosedVarientimage}}" alt="">
+            </div>
+          <small *ngIf="varientadd.controls['varientimage'].errors?.['required'] && varientadd.controls['varientimage'].dirty">Choose Varient Image</small>
+        </div>
+        <div>
+          <input type="tel" class="box" placeholder="No. of specification(s)" formControlName="numberofimage" #spec (keyup)="battery(spec.value)">
+          <small *ngIf="varientadd.controls['numberofimage'].errors?.['required'] && varientadd.controls['numberofimage'].dirty">Enter number of specification</small>
+        </div>
+        <div class="specifications" *ngIf="specification">
+          <div *ngFor="let item of [].constructor(storeNospec);let index=index" id=specify #specify>
+          <div (keyup)="values(index,specifybattery.value,specifyrange.value,specifytopspeed.value,specifyprice.value)">
+            <h3>Specification {{index+1}}</h3>
+         <div class="form-spec">
+          <input type="text" placeholder="battery" class="box" formControlName="battery" #specifybattery><div class="para"><p>{{requiredSpec[0]}}</p></div>
+          <small *ngIf="varientadd.controls['battery'].errors?.['required'] && varientadd.controls['battery'].dirty">Enter battery capacity</small>
+        </div>
+         <div class="form-spec">
+          <input type="text" placeholder="range" class="box"  formControlName="range" #specifyrange><div class="para"><p>{{requiredSpec[1]}}</p></div>
+          <small *ngIf="varientadd.controls['range'].errors?.['required'] && varientadd.controls['range'].dirty">Enter range of varient</small>
+        </div>
+         <div class="form-spec">
+          <input type="text" placeholder="top speed" class="box" formControlName="topspeed" #specifytopspeed><div class="para" ><p>{{requiredSpec[2]}}</p></div>
+          <small *ngIf="varientadd.controls['topspeed'].errors?.['required'] && varientadd.controls['topspeed'].dirty">Enter top speed of varient</small>
+        </div>
+          <div class="form-spec">
+            <input type="text" placeholder="price" class="box" formControlName="price" #specifyprice><div class="para"><p>{{requiredSpec[3]}}</p></div>
+            <small *ngIf="varientadd.controls['price'].errors?.['required'] && varientadd.controls['price'].dirty">Enter price of varient</small>
+          </div>
+        </div>
+        </div>
+        </div>
+        <button type="submit" class="book1">Update Vehicle</button>
+        <!-- <button type="submit" class="book1" value="updvehicle" name="updvehicle">Update Vehicle</button> -->
+      </form>
+    </div>
+  </section>
+</div>

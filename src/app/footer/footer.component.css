@@ -40,7 +40,8 @@ html{
   flex-wrap: wrap;
   flex-direction: row;
   gap: 9.5rem;
-  align-items: center;
+  margin-top: 2rem;
+  /* align-items: center; */
 }
 .footer form button{
   text-align: center;
@@ -72,6 +73,9 @@ html{
   color: #ffee80;
   font-size: 1.5rem;
   text-transform: lowercase;
+}
+#condition{
+  text-transform: capitalize;
 }
 i{
   color: #f9d806;

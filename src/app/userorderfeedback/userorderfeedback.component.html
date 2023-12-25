@@ -10,22 +10,7 @@ Reviewed by: Nil
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Book Appointment</title>
-</head>
-
-<!--
-Description:This component is used for login to use the website by the user
-Title:EV Mart
-Author name: Jeeva Aravinth J V
-Started on: 14-04-2023
-Reviewed by: Nil
--->
-
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Book Appointment</title>
+  <title>Feedback Page</title>
 </head>
 
 <body>
@@ -36,92 +21,93 @@ Reviewed by: Nil
       <div class="userfeedback-heading"><h1>EV Mart User Feedback</h1></div>
     </div>
     <div class="login-form">
-      <form [formGroup]="feedbackform" (ngSubmit)="feedbackform.valid && feedbackSubmission()">
+      <form [formGroup]="feedbackform" (ngSubmit)="feedbackform.valid && feedbackSubmission(useremail.value,orderid.value)">
         <div class="side-input">
         <div class="form-feedback">
           <div><label>Email ID</label></div>
-          <div><input type="text" class="box" placeholder="Email ID" value="{{email}}" readonly></div>
+          <div><input type="text" class="box" placeholder="Email ID" value="{{email}}" readonly #useremail></div>
         </div>
         <div class="form-feedback">
           <div><label>Order ID</label></div>
-          <div><input type="text" class="box" placeholder="Order ID" value="{{orderID}}" readonly></div>
+          <div><input type="text" class="box" placeholder="Order ID" value="{{orderID}}" readonly #orderid></div>
         </div>
       </div>
         <div class="feedback-question">
-          <div class="feedback-que"><label>1) Let's get going. When you first used the product, what was your overall impression of it?This question is required.</label></div>
+          <div class="feedback-que"><label>1) Let's get going. When you first used the product, what was your overall impression of it?</label></div>
           <div class="radio-block">
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="user-react">
+                <input type="radio" class="box" formControlName="userreact" value="Really happy" #react1>
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="user-react">
+                <input type="radio" class="box" formControlName="userreact" value="happy" #react1>
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="user-react">
+                <input type="radio" class="box" formControlName="userreact" value="alright" #react1>
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="user-react">
+                <input type="radio" class="box" formControlName="userreact" value="sad" #react1>
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="user-react">
+                <input type="radio" class="box" formControlName="userreact" value="really sad" #react1>
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
               </label>
             </div>
+
           </div>
           <div class="feedback-que"><label>2) Overall Quality of the product- Rate below with emoji</label></div>
           <div class="radio-block">
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="quality-react">
+                <input type="radio" class="box" formControlName="qualityreact" value="really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="quality-react">
+                <input type="radio" class="box" formControlName="qualityreact" value="happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="quality-react">
+                <input type="radio" class="box" formControlName="qualityreact" value="alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="quality-react">
+                <input type="radio" class="box" formControlName="qualityreact" value="sad">
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="quality-react">
+                <input type="radio" class="box" formControlName="qualityreact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
@@ -133,35 +119,35 @@ Reviewed by: Nil
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="innovative-react">
+                <input type="radio" class="box" formControlName="innovativereact" value="Really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="innovative-react">
+                <input type="radio" class="box" formControlName="innovativereact" value="happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="innovative-react">
+                <input type="radio" class="box" formControlName="innovativereact" value="alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="innovative-react">
+                <input type="radio" class="box" formControlName="innovativereact" value="sad">
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="innovative-react">
+                <input type="radio" class="box" formControlName="innovativereact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
@@ -173,35 +159,35 @@ Reviewed by: Nil
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="honesty-react">
+                <input type="radio" class="box" formControlName="honestyreact" value="Really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="honesty-react">
+                <input type="radio" class="box" formControlName="honestyreact" value="happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="honesty-react">
+                <input type="radio" class="box" formControlName="honestyreact" value="alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="honesty-react">
+                <input type="radio" class="box" formControlName="honestyreact" value="sad">
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="honesty-react">
+                <input type="radio" class="box" formControlName="honestyreact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
@@ -211,30 +197,30 @@ Reviewed by: Nil
           <div class="feedback-que"><label>5) How would you rate its value for money?</label></div>
           <div class="radio-block">
             <div class="inline-block">
-              <label class="reaction" (change)="moneyreaction(moneyreact.value)">
+              <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="money-react" #moneyreact>
+                <input type="radio" class="box" formControlName="moneyreact" value="Really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="money-react" >
+                <input type="radio" class="box" formControlName="moneyreact" value="Happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="money-react" >
+                <input type="radio" class="box" formControlName="moneyreact" value="Alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="money-react" >
+                <input type="radio" class="box" formControlName="moneyreact" value="Sad">
                 <!-- <small *ngIf="feedbackform.controls['moneyreact'].errors?.['required']">Please select one option</small> -->
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
@@ -242,7 +228,7 @@ Reviewed by: Nil
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="money-react" >
+                <input type="radio" class="box" formControlName="moneyreact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
@@ -256,35 +242,35 @@ Reviewed by: Nil
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="solution-react" required>
+                <input type="radio" class="box" formControlName="solutionreact" value="Really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="solution-react" >
+                <input type="radio" class="box" formControlName="solutionreact" value="Happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="solution-react" >
+                <input type="radio" class="box" formControlName="solutionreact" value="Alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="solution-react" >
+                <input type="radio" class="box" formControlName="solutionreact" value="Sad">
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="solution-react" >
+                <input type="radio" class="box" formControlName="solutionreact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>
@@ -296,35 +282,35 @@ Reviewed by: Nil
             <div class="inline-block">
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="recommend-react">
+                <input type="radio" class="box" formControlName="recommendreact" value="Really happy">
                 <img src="../../assets/EV mart/reallyhappy.png" alt="really happy">
               </div>
                 <label>Really positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="recommend-react">
+                <input type="radio" class="box" formControlName="recommendreact" value="Happy">
                 <img src="../../assets/EV mart/happy.png" alt="happy">
               </div>
               <label>positive</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="recommend-react">
+                <input type="radio" class="box" formControlName="recommendreact" value="Alright">
                 <img src="../../assets/EV mart/alright.png" alt="alright">
               </div>
               <label>It was alright</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="recommend-react">
+                <input type="radio" class="box" formControlName="recommendreact" value="Sad">
                 <img src="../../assets/EV mart/sad.png" alt="sad">
               </div>
               <label>Negative</label>
               </label>
               <label class="reaction">
                 <div>
-                <input type="radio" class="box" name="recommend-react">
+                <input type="radio" class="box" formControlName="recommendreact" value="Really sad">
                 <img src="../../assets/EV mart/really sad.png" alt="really sad">
               </div>
               <label>Really Negative</label>

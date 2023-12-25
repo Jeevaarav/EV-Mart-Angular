@@ -19,7 +19,7 @@ export class LoginpageComponent implements OnInit {
   message:any="";
   returl:any;
   servurl:any;
-
+  expression:boolean=true;
   field2:boolean=true;
 
   constructor(private form:FormBuilder,private logincred:LogincredentialsService,private route:Router,private http:HttpClient,private router:ActivatedRoute,private logger:LoggerService){
@@ -55,6 +55,17 @@ logdetails(){
   this.logincred.retrievedata(email,password,this.returl,this.servurl);
   this.logincred.userlogged(email,password);
   this.login.reset();
+}
+
+register(){
+  this.expression=false;
+  this.route.navigateByUrl('register');
+}
+
+forgot(){
+  this.expression=false;
+  console.log("hi");
+  this.route.navigateByUrl('forgot1');
 }
 
 //used for show password

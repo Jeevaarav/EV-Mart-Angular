@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.body{
+  padding-top: 1rem;
+  background-color: #37718e;
+  padding-bottom: 3rem;
+}
+.book{
+  display: inline-block;
+  border-radius:5rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color:#130f40;
+  background: #ffee80;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 16rem 1rem 16rem;
+  align-items: center;
+}
+.evMartnumber{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.main h4{
+  color: #fff;
+}
+.main h3{
+  color: #fff;
+}
+.evMartnumber h5{
+  color: #fff;
+}
+.evMartDetails p{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+.evMartDetails h5{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.evMartDetails h4{
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+.evMartDetails h3{
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+.evMartbtn .evMartedit{
+  padding: 2rem;
+  font-size: 2rem;
+  box-sizing: border-box;
+  background-color: #E5E4E2;
+}
+.evMartdisplay{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  margin: 0 1rem 0 1rem;
+}
+.sideBar{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: lightblue;
+  padding: 2rem 4rem 2rem 4rem;
+  font-size: 2rem;
+  height: 70vh;
+  width: auto;
+}
+.sideBar a{
+  padding: 1.5rem;
+  cursor: pointer;
+  width: 400px;
+  text-transform: none;
+}
+.sideDisplay{
+  padding: 1rem;
+  width: 80%;
+  background-color: #fff;
+}
+.sideDisplay p{
+  width: 500px;
+  font-size: 2rem;
+  text-transform: none;
+  text-align: justify;
+}
+.sideDisplay #answer{
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.relative{
+  position: relative;
+}
+.evMarteditprofile{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background:rgba(6, 76, 240,0.233);
+  animation: showsidebar 400ms ease-in-out;
+  transform-origin: right;
+}
+@keyframes showsidebar {
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+.rightBar{
+  width: 30%;
+  height: 111vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.rightBar i{
+  font-size: 3rem;
+  color: #130f40;
+  padding: 3rem 0 3rem 3rem;
+  cursor: pointer;
+}
+.box{
+  margin: 1rem 0 0 3rem;
+  width: 70%;
+  text-transform: none;
+  color: #130f40;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border:.3rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+}
+.rightBar p{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #130f40;
+  border-bottom: 4px solid #ffee80;
+  width: 35%;
+  margin: 3rem 0 0 3rem;
+}
+.rightBar form label{
+  font-size: 1.8rem;
+  margin: 3rem 0 0 3rem;
+  color: #130f40;
+}
+.evMartbtnupd{
+  margin: 3rem 5rem 0 14rem ;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  background: #000000;
+  color: #fff;
+  cursor: pointer;
+}
+.rightBar small{
+  margin: 1rem 0 0 3rem;
+}
+.sideBar .active{
+  background-color: #fff;
+  color: #000000;
+  padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+}
+.sideBar a{
+  text-decoration: none;
+  color: #130f40;
+}
+.outer{
+  padding: 2rem;
+  border: .1rem solid rgba(0,0,0,.1);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  margin: 2rem 15rem 2rem 15rem;
+  background-color:#fff;
+}

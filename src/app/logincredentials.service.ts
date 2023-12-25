@@ -72,7 +72,9 @@ export class LogincredentialsService {
         sessionStorage.setItem('logmail',custmail);
         sessionStorage.setItem('logpass',custpass);
         if(returl==null && servurl==null){
-          this.route.navigateByUrl("/Product");
+          this.route.navigateByUrl("/Product").then(()=>{
+            window.location.reload();
+          });
         }
         else if(servurl!=null){
           this.route.navigate([servurl]).then(()=>{

@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation,OnInit } from '@angular/core';
+import { Component, Input, ViewEncapsulation,OnInit, AfterViewInit } from '@angular/core';
 import { LogincredentialsService } from './logincredentials.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { OrderintervalService } from './orderinterval.service';
@@ -9,14 +9,22 @@ import { OrderintervalService } from './orderinterval.service';
   styleUrls: ['./app.component.css'],
   encapsulation:ViewEncapsulation.None
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit,AfterViewInit {
 //navbarvisibility variable
   navopen1:boolean=true;
   title:any="jeeva";
   footerClose:Boolean=true;
+  loading:boolean=true;
   currentPageEmail:any;
   currentPageOrder:any;
+  dummycontent:any;
+  wildcard:any;
+  routeCheck:any;
+  childrenRoute:any=[];
+  checkChildren:any;
+  i:any=0;
   constructor(private navopen:LogincredentialsService,private router:Router,private orderInterval:OrderintervalService,private activeroute:ActivatedRoute){
+
 
     this.activeroute.queryParamMap.subscribe(params=>{
       this.currentPageEmail=params.get('email');
@@ -26,20 +34,57 @@ export class AppComponent implements OnInit {
   //This block is used to hide the navbar for the particular component when it is not required
     router.events.subscribe((val)=>{
       if(val instanceof NavigationEnd){
+        this.wildcard=this.router.config.some(route =>{
+          this.childrenRoute=route.children;
+          var childrensplit=val.url.split("/");
+          console.log(this.childrenRoute);
+          if(this.childrenRoute!=undefined){
+            for(var i=1;i<this.childrenRoute.length;i++){
+              var childpath=this.childrenRoute[i].path;
+              for(var j=0;j<childrensplit.length;j++){
+                // console.log(childrensplit[j]);
+                // console.log(childpath);
+                if(childpath==childrensplit[j]){
+                  console.log("jeeva");
+                  this.routeCheck=true;
+                  break;
+                }
+              }
+            }
+            console.log(this.routeCheck);
+            return this.routeCheck;
+          }
+          else{
+            return "/"+route.path == val.url;
+          }
+
+        })
+          // console.log(this.childrenRoute);
+        // if(this.childrenRoute){
+        //   for(var i=0;i<this.childrenRoute.length;i++){
+        //     console.log(this.childrenRoute);
+        //     console.log("/"+this.childrenRoute[i].path==val.url);
+        //     console.log(val.url);
+        //     this.checkChildren="/"+this.childrenRoute[i].path==val.url;
+        //   }
+        // }
+
+        // console.log(val.url);
         if(val.url=='/login'){
-          console.log(val.url);
+          // console.log(this.dummycontent);
+          // console.log(val.url);
           this.navopen1=false;
           this.footerClose=false;
         }
-        else if(val.url=='/login/register'){
+        else if(val.url=='/register'){
           this.navopen1=false;
           this.footerClose=false;
         }
-        else if(val.url=='/login/forgot1'){
+        else if(val.url=='/forgot1'){
           this.navopen1=false;
           this.footerClose=false;
         }
-        else if(val.url=='/login/forgot1/forgotnew'){
+        else if(val.url=='/forgotnew'){
           this.navopen1=false;
           this.footerClose=false;
         }
@@ -115,6 +160,10 @@ export class AppComponent implements OnInit {
           this.navopen1=false;
           this.footerClose=false;
         }
+        else if(val.url=='/terms'){
+          this.navopen1=false;
+          this.footerClose=false;
+        }
         else if(val.url=='/userService'){
           this.navopen1=false;
           this.footerClose=false;
@@ -134,6 +183,18 @@ export class AppComponent implements OnInit {
           this.navopen1=false;
           this.footerClose=false;
         }
+        else if(val.url=='/adminvarientmanagement'){
+          this.navopen1=false;
+          this.footerClose=false
+        }
+        else if(val.url=='/adminreview'){
+          this.navopen1=false;
+          this.footerClose=false;
+        }
+        else if(!this.wildcard){
+          this.navopen1=false;
+          this.footerClose=false;
+        }
         else{
           this.navopen1=true;
           this.footerClose=true;
@@ -148,6 +209,12 @@ export class AppComponent implements OnInit {
     //This block is used for run the time intrval for order purposes
     if(sessionStorage.getItem('logmail')){
       this.orderInterval.startInterval();
+    }
+  }
+
+  ngAfterViewInit(){
+    window.onload=()=>{
+      this.loading=false;
     }
   }
 }

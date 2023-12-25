@@ -15,7 +15,7 @@ Reviewed by: Nil
 
 <body>
   <!----------------- login form for authenticate the user  ---------------->
-  <div class="section">
+  <div class="section" *ngIf="expression">
     <div class="head"><a routerLink=""><img src="../../assets/image/EV-removebg.png" alt=""></a></div>
     <div class="login-form">
       <form [formGroup]="login" (ngSubmit)="login.valid && logdetails()" class="logform">
@@ -42,11 +42,12 @@ Reviewed by: Nil
             characters</small>
 
         </div>
-        <p>forgot your password?<a routerLink="/login/forgot1" class="link">click here</a></p>
+        <p>forgot your password?<a (click)="forgot()" class="link">click here</a></p>
         <button type="submit" class="book" (click)="check(email.value,password.value)">Login now</button>
-        <p>don't have an account? <a routerLink="/login/register" class="link">create one</a></p>
+        <p>don't have an account? <a (click)="register()" class="link">create one</a></p>
       </form>
     </div>
   </div>
   <!----------------- login form for authenticate the user  ---------------->
+  <router-outlet *ngIf="!expression"></router-outlet>
 </body>

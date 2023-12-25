@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { url } from 'src/environments/environment';
@@ -38,6 +39,8 @@ export class AdminoffermanagementComponent {
   console.log(this.servicedata);
   console.log(value[0].Brandname[0].Varients[0].price);
   })
+
+ 
   }
 
   //service form validators

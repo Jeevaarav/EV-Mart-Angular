@@ -20,10 +20,10 @@ Reviewed by: Nil
     <div class="search">
       <h1>Welcome to EV Mart Support</h1>
       <div class="help-submit">
-        <div>
-        <input type="text" placeholder="What help do you need?" #helpque (keyup)="helpsearch(helpque.value)">
+        <form [formGroup]="helpform">
+        <input type="text" placeholder="What help do you need?" #helpque (keyup)="helpsearch(helpque.value)" formControlName="question">
         <div><small>{{errormsg}}</small></div>
-      </div>
+        </form>
       <div>
       <a id="submitform" (click)="submitHelp(helpque.value)"><button class="book1" >Submit</button></a>
     </div>
@@ -38,7 +38,7 @@ Reviewed by: Nil
         <h3>Top Articles Results</h3>
       </div>
       <ol>
-        <li id="questiondisplay" *ngFor="let searchresults of searchresults;">{{searchresults.question}}</li>
+        <li id="questiondisplay" *ngFor="let searchresults of results;"><a (click)="findResult(this.searchresults)">{{searchresults}}</a></li>
       </ol>
     </div>
   <!------------------- Search results  ---------------------->

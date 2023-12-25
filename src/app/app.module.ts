@@ -54,6 +54,12 @@ import { UserserviceacceptedComponent } from './userserviceaccepted/userservicea
 import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffermanagement.component';
 import { HelpanswersComponent } from './helpanswers/helpanswers.component';
+import { VarientmanagementComponent } from './varientmanagement/varientmanagement.component';
+import { Error404Component } from './error404/error404.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { AdminstatisticsComponent } from './adminstatistics/adminstatistics.component';
+import { AdminreviewComponent } from './adminreview/adminreview.component';
 
 
 @NgModule({
@@ -106,6 +112,11 @@ import { HelpanswersComponent } from './helpanswers/helpanswers.component';
     UserorderfeedbackComponent,
     AdminoffermanagementComponent,
     HelpanswersComponent,
+    VarientmanagementComponent,
+    Error404Component,
+    TermsConditionsComponent,
+    AdminstatisticsComponent,
+    AdminreviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,6 +126,7 @@ import { HelpanswersComponent } from './helpanswers/helpanswers.component';
     FormsModule,
     HttpClientModule,
     NgImageSliderModule,
+    NgApexchartsModule
   ],
   providers: [FillbookingGuard],
   bootstrap: [AppComponent]

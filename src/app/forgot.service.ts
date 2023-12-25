@@ -21,7 +21,7 @@ export class ForgotService {
       });
       if(user){
         localStorage.setItem('forgotuser',this.name);
-        this.routes.navigateByUrl('/login/forgot1/forgotnew');
+        this.routes.navigateByUrl('forgotnew');
         this.inputval=custmail;
       }
       else{

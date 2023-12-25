@@ -47,6 +47,11 @@ import { UserseevicesComponent } from './userseevices/userseevices.component';
 import { UserorderfeedbackComponent } from './userorderfeedback/userorderfeedback.component';
 import { AdminoffermanagementComponent } from './adminoffermanagement/adminoffermanagement.component';
 import { HelpanswersComponent } from './helpanswers/helpanswers.component';
+import { VarientmanagementComponent } from './varientmanagement/varientmanagement.component';
+import { Error404Component } from './error404/error404.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { AdminstatisticsComponent } from './adminstatistics/adminstatistics.component';
+import { AdminreviewComponent } from './adminreview/adminreview.component';
 
 
 
@@ -64,18 +69,19 @@ const routes: Routes = [
   {
     path:"Profile",
     component:ProfilePageComponent,
-    children:[{
+    children:[
+      {
+        path:"",
+        redirectTo:"Orders",
+        pathMatch:'full'
+      },
+      {
       path:"Address",
       component:ManageAddressComponent
     },
     {
       path:"userProfileService",
       component:ProfileserviceComponent
-    },
-    {
-      path:"",
-      redirectTo:"Orders",
-      pathMatch:'full'
     },
   {
     path:"Orders",
@@ -125,27 +131,30 @@ const routes: Routes = [
     ]
   },
   {
-    path:"login",
-    component:LoginpageComponent
-  },
-  {
     path:"",
-    children:[{
-      path:"login/register",
+    component:LoginpageComponent,
+    children:[
+      {
+        path:"",
+        redirectTo:'login',
+        pathMatch:'full'
+      },
+      {
+        path:"login",
+        component:LoginpageComponent
+      },
+      {
+      path:"register",
       component:RegisterpageComponent
     },
     {
-      path:"login/forgot1",
+      path:"forgot1",
       component:ForgotpassComponent
     },
     {
-      path:"login/forgot1/forgotnew",
+      path:"forgotnew",
       component:ForgotnewComponent
-    },
-  {
-    path:"",
-    component:LoginpageComponent
-  }
+    }
 ]
   },
   {
@@ -268,8 +277,31 @@ const routes: Routes = [
 {
   path:"admin/offersmanagement",
   component:AdminoffermanagementComponent
-}]
-  }
+},
+{
+  path:"adminvarientmanagement",
+  component:VarientmanagementComponent
+}
+]
+
+  },
+  {
+    path:"terms",
+    component:TermsConditionsComponent
+  },
+  {
+    path:"adminstatistics",
+    component:AdminstatisticsComponent
+  },
+  {
+    path:"adminreview",
+    component:AdminreviewComponent
+  },
+{
+  path:"**",
+  component:Error404Component
+}
+
 ];
 
 @NgModule({
