@@ -277,3 +277,6 @@ small{
 .review-react div{
   display: flex;
 }
+.review-react h5{
+  font-size: 1.8rem;
+}
