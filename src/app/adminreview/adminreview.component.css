@@ -173,7 +173,7 @@ section{
   font-size: 5rem;
   color: black;
 }
-.services .box-container .box i{
+.services .box-container .box .fa-trash{
     height: 6rem;
     width:6rem;
     line-height: 6rem;
@@ -258,7 +258,7 @@ small{
   display: flex;
   gap: 5rem;
 }
-.head i{
+.head .fa-bars{
   font-size: 3rem;
   padding-top: 1.1rem;
   cursor: pointer;
@@ -279,4 +279,21 @@ small{
 }
 .review-react h5{
   font-size: 1.8rem;
+}
+.review-react .response .fa-face-smile{
+    font-size: 2.5rem;
+    color: green;
+    background:none;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0;
+}
+.review-react .response .fa-face-frown{
+  color: red;
+  font-size: 2.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+.response{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

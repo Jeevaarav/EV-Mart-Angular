@@ -18,7 +18,7 @@ export class AdminreviewComponent {
         this.feedbacklength=feedback.length;
         console.log(this.feedbacklength);
         for(var i=0;i<this.feedbacklength;i++){
-          if((this.userFeedback[i].productreact==="Happy" || this.userFeedback[i].productreact==="Really happy" || this.userFeedback[i].productreact==="Alright") && (this.userFeedback[i].qualityreact=="Really happy" || this.userFeedback[i].qualityreact==="Happy" || this.userFeedback[i].qualityreact==="Alright") && (this.userFeedback[i].innovationreact==="Happy" || this.userFeedback[i].innovationreact==="Really happy" || this.userFeedback[i].innovationreact==="Alright") && (this.userFeedback[i].honestyreact==="Happy" || this.userFeedback[i].honestyreact==="Really happy" || this.userFeedback[i].honestyreact==="Alright") && (this.userFeedback[i].moneyreact==="Happy" || this.userFeedback[i].moneyreact==="Really happy" || this.userFeedback[i].moneyreact==="Alright")
+          if((this.userFeedback[i].productreact==="Happy" || this.userFeedback[i].productreact==="Really happy" || this.userFeedback[i].productreact==="Alright") && (this.userFeedback[i].qualityreact=="Really happy" || this.userFeedback[i].qualityreact==="Happy" || this.userFeedback[i].qualityreact==="Alright") && (this.userFeedback[i].innovationreact==="Happy" || this.userFeedback[i].innovationreact==="Really happy" || this.userFeedback[i].innovationreact==="Alright") && (this.userFeedback[i].honestyreact==="Happy" || this.userFeedback[i].honestyreact==="Really happy" || this.userFeedback[i].honestyreact==="Alright") && (this.userFeedback[i].moneyreact==="Happy" || this.userFeedback[i].moneyreact==="Really happy" || this.userFeedback[i].moneyreact==="Alright") || (this.userFeedback[i].solutionereact==="Happy" || this.userFeedback[i].solutionereact==="Really happy" || this.userFeedback[i].solutionereact==="Alright") || (this.userFeedback[i].recommendreact==="Happy" || this.userFeedback[i].recommendreact==="Really happy" || this.userFeedback[i].recommendreact==="Alright")
           ){
             this.response[i]="Good Response";
           }
@@ -29,6 +29,18 @@ export class AdminreviewComponent {
 
         console.log(this.response);
       })
+  }
+
+  // user review acceptance
+  accept(email:any){
+    this.http.get<any>("http://localhost:3000/adminreview/"+email).subscribe((reviewdata)=>{
+      this.http.post<any>("http://localhost:3000/userreview",reviewdata).subscribe((posted)=>{
+        console.log("posted");
+        this.http.delete("http://localhost:3000/adminreview/"+email).subscribe((deleted)=>{
+          console.log("deleted");
+        })
+      })
+    })
   }
 
   //logout for admin

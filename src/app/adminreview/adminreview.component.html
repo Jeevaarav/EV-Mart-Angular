@@ -44,13 +44,13 @@ Reviewed by: Nil
       <h3 id="head">{{feedback.regemail}}</h3>
       <h3 id="head">order ID - {{feedback.order}}</h3>
       <div class="review-react">
-        <div><h5>Review Response - </h5><h5>{{response[index]}}</h5></div>
+        <div class="response"><h5>Review Response -</h5><i [ngClass]="(response[index]==='Good Response')?'fa-regular fa-face-smile':'fa-regular fa-face-frown'"></i><h5>{{response[index]}}</h5></div>
         <!-- <div><h5>Quality Review - </h5><h5>{{feedback.qualityreact}}</h5></div>
         <div><h5>Innovation Review - </h5><h5>{{feedback.innovationreact}}</h5></div>
         <div><h5>Honesty Review - </h5><h5>{{feedback.honestyreact}}</h5></div> -->
       </div>
       <div class="trash-show">
-      <button class="book" >Accept</button>
+      <button class="book" (click)="accept(this.feedback.regemail)">Accept</button>
       <i class="fa-solid fa-trash" ></i>
     </div>
     </div>
